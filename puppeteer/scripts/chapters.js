@@ -39,4 +39,5 @@ const sortTreeData = (Data) => {
 		status: "1"
 	}
 	fs.writeFileSync('./json/chapters.json', JSON.stringify(chapterData));
+	
 })();

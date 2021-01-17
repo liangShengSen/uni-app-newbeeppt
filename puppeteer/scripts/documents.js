@@ -10,40 +10,43 @@ const fs = require('fs');
 		await page.goto('http://www.pptok.com/kejian/mulu/202.html');
 		let arr = await page.$$eval('#mulu .mldy h2 a', (a) =>
 			a.map((v) => {
-				return { url: v.href };
+				return {
+					name: v.title,
+					url: v.href ,
+				};
 			})
 		);
-		console.log(arr.length)
-		let links = [],list = []
-		for (let i = 0; i <= arr.length; i++) {
-			await page.goto(arr[i].url);
-			const pageEle = await page.$(".bigPage > a");
-			if(pageEle) {
-				let pagesLinks = await page.$$eval('.bigPage a', (a) =>
-					a.map((v) => {
-						return { url: v.href };
-					})
-				);
-				console.log(pagesLinks)
-				for (let j = 0; j <= pagesLinks.length; j++) {
-					await page.goto(pagesLinks[j].url);
-					let arr = await page.$$eval('#tg_box_con > li > a', (a) =>
+		for (let i = 0; i < arr.length; i++) {
+			if(i <= 100) {
+				await page.goto(arr[i].url);
+				const pageEle = await page.$(".bigPage > a");
+				let list = [];
+				if(pageEle) {
+					let pagesLinks = await page.$$eval('.bigPage a', (a) =>
 						a.map((v) => {
-							return { url: v.href };
+							return v.href;
 						})
 					);
-					list = [...list,...arr]
+					for(let j = 0;j < pagesLinks.length;j++) {
+						await page.goto(pagesLinks[j]);
+						let arr = await page.$$eval('#tg_box_con > li > a', (a) =>
+							a.map((v) => {
+								return  v.href
+							})
+						);
+						list = [...list,...arr]
+					}
+				}else{
+					list = await page.$$eval('#tg_box_con > li > a', (a) =>
+						a.map((v) => {
+							return v.href
+						})
+					)
 				}
-			}else{
-				list = await page.$$eval('#tg_box_con > li > a', (a) =>
-					a.map((v) => {
-						return { url: v.href };
-					})
-				);				
+				arr[i]['docs'] = list		
 			}
-			links = [...links,...list]
 		}
-		console.log(links)
+		console.log(arr)
 	} catch (e) {
 		console.log('err', e);
 	} finally {
