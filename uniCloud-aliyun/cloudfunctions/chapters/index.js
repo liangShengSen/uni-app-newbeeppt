@@ -6,9 +6,8 @@ exports.main = async (event, context) => {
 	const collection = db.collection('chapters');
 	const res = await collection.where({
 		version_id:"1000",
-		book_id: "10000"
+		book_id: "10002"
 	}).get()
-	console.log(JSON.stringify(res));
 	//返回数据给客户端
 	return {
 		code: 200,

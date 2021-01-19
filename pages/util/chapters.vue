@@ -4,7 +4,7 @@
 		<view class="text-area">
 			<text class="title">{{ title }}</text>
 		</view>
-		<button type="default" @click="uploadImgs">上传图片</button>
+		<button type="default" @click="uploadImgs">click me</button>
 	</view>
 </template>
 
@@ -19,13 +19,13 @@
 		methods: {
 			getById(Data, name) {
 				var Deep, T, F
-				for (F = Data.length; F; ) {
-				  T = Data[--F]
-				  if (name == T['name']) return T
-				  if (T.children.length) {
-					Deep = this.getById(T['children'], name)
-					if (Deep) return Deep
-				  }
+				for (F = Data.length; F;) {
+					T = Data[--F]
+					if (name == T['name']) return T
+					if (T.children.length) {
+						Deep = this.getById(T['children'], name)
+						if (Deep) return Deep
+					}
 				}
 			},
 			async uploadImgs() {
@@ -35,9 +35,10 @@
 					success: async (res) => {
 						let chapters = res.result.data[0].chapters;
 						for (let i = 0; i < jsonData.length; i++) {
-							if(i < 10) {
-								let item = self.getById(chapters,jsonData[i].name);
-								if(item) {
+							if (i < 2000) {
+								console.log(i);
+								let item = self.getById(chapters, jsonData[i].name);
+								if (item) {
 									let priviewImg = jsonData[i].data.priviewImg;
 									jsonData[i].data.chapter_id = item.id;
 									let [error1, res1] = await uni.downloadFile({
@@ -50,11 +51,20 @@
 											cloudPath: `${jsonData[i].data.title}.${fileExtension}`,
 										});
 										jsonData[i].data['priviewImg'] = result.fileID
+										uniCloud.callFunction({
+											name: 'add', 
+											data: jsonData[i].data,
+											success: (res) => {
+												console.log('插入数据成功');
+											},
+											fail: (msg) => {
+												console.log(msg);
+											}
+										});
 									}
-								}						
+								}
 							}
 						}
-						console.log(jsonData);			
 					}
 				})
 			},
