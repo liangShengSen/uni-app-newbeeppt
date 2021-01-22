@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "newbeeppt",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "component": true,
+  "usingComponents": {
+    "navbar": "/components/navbar/navbar"
+  }
+}

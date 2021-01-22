@@ -1,0 +1,1 @@
+<view><navbar vue-id="6a0e5eef-1" bind:__l="__l"></navbar><block wx:for="{{100}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view>{{''+item+''}}</view></block></view>

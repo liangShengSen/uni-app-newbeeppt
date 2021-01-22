@@ -1,0 +1,1 @@
+<view><navbar vue-id="6a0c8840-1"></navbar><block s-for="{{100}}" s-for-item="item" s-for-index="index" s-key="index"><view>{{''+item+''}}</view></block></view>
