@@ -21,8 +21,8 @@ const sortTreeData = (Data) => {
 		_keys:"chapter",
 		stage: 1,
 		subject: 2,
-		version:141764,
-		book: 160576
+		version:10902,
+		book: 42974
 	}
 	let res = await axios.get('https://www.51jiaoxi.com/api/documents/filters',{
 		params
@@ -33,8 +33,8 @@ const sortTreeData = (Data) => {
 	let chapterData = {
 		stage_id:"1",
 		subject_id:"2",
-		version_id:"1000",
-		book_id: "10011",
+		version_id:"1001",
+		book_id: "10023",
 		chapters: arr,
 		status: "1"
 	}

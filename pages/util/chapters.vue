@@ -3,6 +3,7 @@
 		<view class="text-area">
 			<text class="title">{{ title }}</text>
 		</view>
+		<button type="default" @click="solveName">处理格式</button>
 		<button type="default" @click="uploadImgs">click me</button>
 	</view>
 </template>
@@ -16,11 +17,21 @@
 			};
 		},
 		methods: {
+			solveName() {
+				jsonData.forEach(item => {
+					let str = item.name,
+						re = /《([^》]*)》/ig;
+					if (re.exec(str))
+						item.name = RegExp.$1
+					return RegExp.$1
+				})
+				console.log(jsonData);
+			},
 			getById(Data, name) {
 				var Deep, T, F
 				for (F = Data.length; F;) {
 					T = Data[--F]
-					if (name == T['name']) return T
+					if (T['name'].includes(name)) return T
 					if (T.children.length) {
 						Deep = this.getById(T['children'], name)
 						if (Deep) return Deep
@@ -35,33 +46,35 @@
 						let chapters = res.result.data[0].chapters;
 						let num = 0;
 						for (let i = 0; i < jsonData.length; i++) {
-							console.log(i);
-							let item = self.getById(chapters, jsonData[i].name);
-							if (item) {
-								num++;
-								console.log("%c " + `插入数量：${num}` ,  "color:" + 'red');
-								let priviewImg = jsonData[i].data.priviewImg;
-								jsonData[i].data.chapter_id = item.id;
-								let [error1, res1] = await uni.downloadFile({
-									url: priviewImg,
-								});
-								if (res1.statusCode === 200) {
-									let fileExtension = priviewImg.substring(priviewImg.lastIndexOf('.') + 1);
-									let result = await uniCloud.uploadFile({
-										filePath: res1.tempFilePath,
-										cloudPath: `${jsonData[i].data.title}.${fileExtension}`,
+							if (i < 1) {
+								console.log(i);
+								let item = self.getById(chapters, jsonData[i].name);
+								if (item) {
+									num++;
+									console.log("%c " + `插入数量：${num}`, "color:" + 'red');
+									let priviewImg = jsonData[i].data.priviewImg;
+									jsonData[i].data.chapter_id = item.id;
+									let [error1, res1] = await uni.downloadFile({
+										url: priviewImg,
 									});
-									jsonData[i].data['priviewImg'] = result.fileID
-									uniCloud.callFunction({
-										name: 'add',
-										data: jsonData[i].data,
-										success: (res) => {
-											console.log('插入数据成功');
-										},
-										fail: (msg) => {
-											console.log(msg);
-										}
-									});
+									if (res1.statusCode === 200) {
+										let fileExtension = priviewImg.substring(priviewImg.lastIndexOf('.') + 1);
+										let result = await uniCloud.uploadFile({
+											filePath: res1.tempFilePath,
+											cloudPath: `${jsonData[i].data.title}.${fileExtension}`,
+										});
+										jsonData[i].data['priviewImg'] = result.fileID
+										uniCloud.callFunction({
+											name: 'add',
+											data: jsonData[i].data,
+											success: (res) => {
+												console.log('插入数据成功');
+											},
+											fail: (msg) => {
+												console.log(msg);
+											}
+										});
+									}
 								}
 							}
 						}

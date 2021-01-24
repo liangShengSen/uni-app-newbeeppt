@@ -5,8 +5,8 @@ exports.main = async (event, context) => {
 	console.log('event : ', event)
 	const collection = db.collection('chapters');
 	const res = await collection.where({
-		version_id:"1000",
-		book_id: "10011"
+		version_id:"1001",
+		book_id: "10013"
 	}).get()
 	//返回数据给客户端
 	return {

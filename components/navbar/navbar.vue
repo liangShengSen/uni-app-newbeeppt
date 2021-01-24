@@ -4,7 +4,9 @@
 			<view :style="{height: `${statusBarHeight}px`}"></view>
 			<view class="navbar-content" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}">
 				<view class="navbar-search">
-					<view class="navbar-search_icon"></view>
+					<view class="navbar-search_icon">
+						<uni-icons type="search" size="16" color="#999"></uni-icons>
+					</view>
 					<view class="navbar-search_text">vue</view>
 				</view>							
 			</view>
@@ -63,9 +65,6 @@
 					padding: 0 10px;
 					background-color: #fff;
 					.navbar-search_icon {
-						width: 10px;
-						height: 10px;
-						border: 1px solid red;
 						margin-right: 10px;
 					}
 					.navbar-search_text {

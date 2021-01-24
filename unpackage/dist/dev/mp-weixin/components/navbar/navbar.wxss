@@ -59,9 +59,6 @@
   background-color: #fff;
 }
 .navbar .navbar-fixed .navbar-content .navbar-search .navbar-search_icon {
-  width: 10px;
-  height: 10px;
-  border: 1px solid red;
   margin-right: 10px;
 }
 .navbar .navbar-fixed .navbar-content .navbar-search .navbar-search_text {
