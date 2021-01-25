@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view @click="open">
 		<!-- 基础卡片 -->
 		<view class="listcard" v-if="item.type === 'ppt'">
 			<view class="listcard-image">
@@ -103,6 +103,24 @@
 			return {
 
 			};
+		},
+		methods:{
+			open(){
+				this.$emit('click', this.item)
+				let params = {
+					_id: this.item._id,
+					title: this.item.title,
+					price: this.item.price,
+					fileSize: this.item.fileSize,
+					user_name: this.item.user_name,
+					priviewImg: this.item.priviewImg,
+					download_num: this.item.download_num,
+					create_at: this.item.create_at
+				}
+				uni.navigateTo({
+					url: `/pages/detail/detail?params=${JSON.stringify(params)}`
+				})
+			}
 		}
 	}
 </script>

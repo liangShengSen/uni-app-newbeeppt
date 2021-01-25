@@ -3,17 +3,9 @@ const db = uniCloud.database()
 const $ = db.command.aggregate
 exports.main = async (event, context) => {
 	const {
-		id,
+		value,
 		user_id,
-		page = 1,
-		pageSize = 10
 	} = event
-	let match = {}
-	if (id !== '0') {
-		match = {
-			subject_id: id
-		}
-	}
 	const userInfo = await db.collection('users').doc(user_id).get()
 	const collected_ids = userInfo.data[0].collected_ids
 	const documents = await db.collection('documents').aggregate()
@@ -21,8 +13,10 @@ exports.main = async (event, context) => {
 		is_collect:$.in(['$_id',collected_ids])
 	}).project({
 		intro: 0
-	})
-	.match(match).skip((page - 1) * pageSize).limit(pageSize).end()
+	}).match({
+		title: new RegExp(value)
+	}).limit(500)
+	.end()
 
 	return {
 		code: 200,

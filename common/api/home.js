@@ -20,3 +20,17 @@ export const collect_documents = (data) => {
 		data
 	})
 }
+
+export const get_search = (data) => {
+	return $http({
+		url: 'get_search',
+		data
+	})
+}
+
+export const update_subject = (data) => {
+	return $http({
+		url: 'update_subject',
+		data
+	})
+}

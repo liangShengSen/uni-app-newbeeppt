@@ -35,6 +35,8 @@
 		watch: {
 			tabs(val) {
 				if(val.length === 0) return
+				this.docsCatchData = {}
+				this.load = {}
 				this.getDocuments(this.activeIndex)
 			}
 		},

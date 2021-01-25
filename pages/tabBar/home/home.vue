@@ -18,13 +18,17 @@
 			}
 		},
 		onLoad() {
+			uni.$on('subjectChange',(res) => {
+				this.subjectsList = []
+				this.tabIndex = 0
+				this.activeIndex = 0
+				this.getSubjects()
+			})
 			this.getSubjects()
 		},
 		methods: {
 			getSubjects() {
-				this.$api.get_subjects({
-					name: 'get_subjects'
-				}).then(res => {
+				this.$api.get_subjects().then(res => {
 					const { data } = res
 					data.unshift({
 						id:"0",

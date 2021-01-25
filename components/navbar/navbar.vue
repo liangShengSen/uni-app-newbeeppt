@@ -2,13 +2,19 @@
 	<view class="navbar">
 		<view class="navbar-fixed">
 			<view :style="{height: `${statusBarHeight}px`}"></view>
-			<view class="navbar-content" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}">
-				<view class="navbar-search">
+			<view class="navbar-content" :class="isSearch ? 'search':''" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}" @click.stop="open">
+				<view class="navbar-content_search-icons" v-if="isSearch" @click="back">
+					<uni-icons type="back" size="22" color="#fff"></uni-icons>
+				</view>
+				<view v-if="!isSearch" class="navbar-search">
 					<view class="navbar-search_icon">
 						<uni-icons type="search" size="16" color="#999"></uni-icons>
 					</view>
 					<view class="navbar-search_text">vue</view>
-				</view>							
+				</view>	
+				<view v-else class="navbar-search">
+					<input class="navbar-search_text" type="text" v-model="val" placeholder="请输入您要搜索的内容" @input="inputChange"/>
+				</view>
 			</view>
 		</view>
 		<view :style="{height: `${navbarHeight + statusBarHeight}px`}"></view>
@@ -17,11 +23,27 @@
 
 <script>
 	export default {
+		props:{
+			value:{
+				type: [String,Number],
+				default: ''
+			},
+			isSearch:{
+				type:Boolean,
+				default: false
+			}
+		},
+		watch:{
+			value(val) {
+				this.val = val
+			}
+		},
 		data() {
 			return {
 				statusBarHeight: 20,
 				navbarHeight:44,
 				windowWidth: 375,
+				val: ''
 			};
 		},
 		created() {
@@ -37,6 +59,23 @@
 			// #endif
 			this.windowWidth = menuButtonInfo.left
 			// #endif
+		},
+		methods:{
+			open() {
+				if(this.isSearch) return
+				uni.navigateTo({
+					url: '/pages/search/search'
+				})
+			},
+			inputChange(e) {
+				const {  value } = e.detail
+				this.$emit('input',value)
+			},
+			back() {
+				uni.switchTab({
+					url: '/pages/tabBar/home/home'
+				})
+			}
 		}
 	}
 </script>
@@ -68,10 +107,20 @@
 						margin-right: 10px;
 					}
 					.navbar-search_text {
-						font-size: 12px;
+						font-size: 14px;
 						color: #999;
+						width: 100%;
 					}
-				}				
+				}	
+				&.search {
+					padding-left: 0;
+					.navbar-content_search-icons {
+						margin: 0 8px;
+					}
+					.navbar-search {
+						border-radius: 5px;
+					}
+				}
 			}
 		}
 	}
