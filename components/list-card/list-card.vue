@@ -111,6 +111,7 @@
 					_id: this.item._id,
 					title: this.item.title,
 					price: this.item.price,
+					is_collect: this.item.is_collect,
 					fileSize: this.item.fileSize,
 					user_name: this.item.user_name,
 					priviewImg: this.item.priviewImg,

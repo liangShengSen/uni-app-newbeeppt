@@ -33,7 +33,7 @@
 						<view class="text">分享</view>
 					</view>
 					<view class="collect">
-						<uni-icons size="20" color="#f07373" type="heart"></uni-icons>
+						<uni-icons size="20" color="#f07373" :type="fromData.is_collect ? 'heart-filled' :'heart'"></uni-icons>
 						<view class="text">收藏</view>
 					</view>
 				</view>
