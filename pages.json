@@ -1,6 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/util/image",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
 		    "path" : "pages/tabBar/home/home",
 		    "style" : {
 		        "navigationBarTitleText": "newbeeppt",
@@ -23,13 +29,7 @@
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-        },
-		{
-			"path": "pages/util/chapters",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
+        }
         ,{
             "path" : "pages/search/search",
             "style" :                                                                                    
