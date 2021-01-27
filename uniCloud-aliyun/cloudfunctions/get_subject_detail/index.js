@@ -2,15 +2,15 @@
 const db = uniCloud.database()
 const $ = db.command.aggregate
 exports.main = async (event, context) => {
-	const { user_id, id } = event
+	const { user_id, _id } = event
 	let userInfo = await db.collection('users').doc(user_id).get()
 	userInfo = userInfo.data[0]
-	let document = await db.collection('documents').aggregate()
+	let document = await db.collection('subject_documents').aggregate()
 	.addFields({
 		is_collect:$.in(['$_id',userInfo.collected_ids])
 	})
 	.match({
-		_id:id
+		_id
 	}).end()
 	
 	return {

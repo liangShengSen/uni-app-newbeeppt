@@ -57,7 +57,7 @@
 					}
 				}
 				this.$api.get_documents({
-					id: this.tabs[current].id,
+					subject: this.tabs[current].name,
 					page: this.load[current].page,
 					pageSize: this.pageSize
 				}).then(res => {

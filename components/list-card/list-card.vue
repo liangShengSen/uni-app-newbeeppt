@@ -3,7 +3,7 @@
 		<!-- 基础卡片 -->
 		<view class="listcard" v-if="item.type === 'ppt'">
 			<view class="listcard-image">
-				<image :src="`${item.priviewImg}`" mode="aspectFill"></image>
+				<image :src="`${item.cover_img}`" mode="aspectFill"></image>
 			</view>
 			<view class="listcard-content">
 				<view class="listcard-content_title">
@@ -16,13 +16,13 @@
 					</view>
 					<view class="listcard-content_des-info">
 						<view class="listcard-content_des-info-item">
-							{{item.create_at}}
+							{{item.created_at}}
 						</view>
 						<view class="listcard-content_des-info-item">
 							{{item.download_num}}次下载
 						</view>
 						<view class="listcard-content_des-info-item">
-							{{item.price}}币
+							{{item.price}}豆
 						</view>
 					</view>
 				</view>
@@ -36,7 +36,7 @@
 					<collect :item="item"></collect>
 				</view>
 				<view class="listcard-image">
-					<view v-for="(imgindex) in item.priview_imgs" :key="index" class="listcard-image_item">
+					<view v-for="(img,index) in item.priview_imgs" :key="index" class="listcard-image_item">
 						<image :src="img" mode="aspectFill"></image>
 					</view>
 				</view>
@@ -46,13 +46,13 @@
 					</view>
 					<view class="listcard-content_des-info">
 						<view class="listcard-content_des-info-item">
-							{{item.create_at}}
+							{{item.created_at}}
 						</view>
 						<view class="listcard-content_des-info-item">
 							{{item.download_num}}次下载
 						</view>
 						<view class="listcard-content_des-info-item">
-							{{item.price}}币
+							{{item.price}}豆
 						</view>
 					</view>
 				</view>
@@ -61,7 +61,7 @@
 		<!-- 大图模式 -->
 		<view class="listcard mode-image" v-if="item.type !== 'ppt'">
 			<view class="listcard-image">
-				<image :src="`${item.priviewImg}`" mode="aspectFill"></image>
+				<image :src="`${item.priview_imgs[0]}`" mode="aspectFill"></image>
 			</view>
 			<view class="listcard-content">
 				<view class="listcard-content_title">
@@ -74,13 +74,13 @@
 					</view>
 					<view class="listcard-content_des-info">
 						<view class="listcard-content_des-info-item">
-							{{item.create_at}}
+							{{item.created_at}}
 						</view>
 						<view class="listcard-content_des-info-item">
 							{{item.download_num}}次下载
 						</view>
 						<view class="listcard-content_des-info-item">
-							{{item.price}}币
+							{{item.price}}豆
 						</view>
 					</view>
 				</view>
@@ -107,19 +107,8 @@
 		methods:{
 			open(){
 				this.$emit('click', this.item)
-				let params = {
-					_id: this.item._id,
-					title: this.item.title,
-					price: this.item.price,
-					is_collect: this.item.is_collect,
-					fileSize: this.item.fileSize,
-					user_name: this.item.user_name,
-					priviewImg: this.item.priviewImg,
-					download_num: this.item.download_num,
-					create_at: this.item.create_at
-				}
 				uni.navigateTo({
-					url: `/pages/detail/detail?params=${JSON.stringify(params)}`
+					url: `/pages/detail/detail?_id=${this.item._id}`
 				})
 			}
 		}
@@ -222,7 +211,7 @@
 
 				.listcard-image_item {
 					margin-left: 10px;
-					width: 100%;
+					width: 33.3%;
 					border-radius: 5px;
 					overflow: hidden;
 

@@ -1,45 +1,47 @@
 <template>
 	<view class="detail">
-		<view class="detail-title">{{fromData.title}}</view>
-		<view class="detail-header">
-			<view class="detail-header_content">
-				<text>{{fromData.create_at}}</text>
-				<text>{{fromData.download_num}}次下载</text>
-				<text class="price">{{fromData.price}}币</text>
-			</view>
-		</view>
-		<view class="detail-content">
-			<image :src="fromData.priviewImg" mode="widthFix"></image>
-		</view>
-		<view class="detail-attrs">
-			<view class="attr-tit">资料属性</view>
-			<view class="attr-list">
-				<view class="attr-list_item">资料作者： {{fromData.user_name}}</view>
-				<view class="attr-list_item">资料版本：部编版</view>
-				<view class="attr-list_item">适用地区： 全国</view>
-				<view class="attr-list_item">文件大小：{{fromData.fileSize}}</view>
-				<view class="attr-list_item">资 料 I D： {{fromData._id}}</view>
-			</view>
-		</view>
-		<div class="detail-attrs intro">
-			<view class="attr-tit">资料简介</view>
-			<view class="detail-intro">{{fromData.intro}}</view>
-		</div>
-		<view class="detail-bottom_bar">
-			<view class="content">
-				<view class="content-left">
-					<view class="share">
-						<uni-icons size="20" color="#f07373" type="redo"></uni-icons>
-						<view class="text">分享</view>
-					</view>
-					<view class="collect">
-						<uni-icons size="20" color="#f07373" :type="fromData.is_collect ? 'heart-filled' :'heart'"></uni-icons>
-						<view class="text">收藏</view>
-					</view>
+		<J-skeleton v-if="loading" :loading="loading" :showTitle="true" :row="20" :showAvatar="false"></J-skeleton>
+		<block v-else>	
+			<view class="detail-title">{{detailData.title}}</view>
+			<view class="detail-header">
+				<view class="detail-header_content">
+					<text>{{detailData.created_at}}</text>
+					<text>{{detailData.download_num}}次下载</text>
+					<text class="price">{{detailData.price}}豆</text>
 				</view>
-				<view class="content-right">立即下载</view>
 			</view>
-		</view>
+			<view class="detail-content">
+				<image :src="detailData && detailData.priview_imgs[0]" mode="widthFix"></image>
+			</view>
+			<view class="detail-attrs">
+				<view class="attr-tit">资料属性</view>
+				<view class="attr-list">
+					<view class="attr-list_item">资料作者： {{detailData.author.name}}</view>
+					<view class="attr-list_item">适用地区： 全国</view>
+					<view class="attr-list_item">文件大小：{{detailData.file_size}}</view>
+					<view class="attr-list_item">资 料 I D： {{detailData._id}}</view>
+				</view>
+			</view>
+			<div class="detail-attrs intro">
+				<view class="attr-tit">资料简介</view>
+				<view class="detail-intro">{{detailData.intro}}</view>
+			</div>
+			<view class="detail-bottom_bar">
+				<view class="content">
+					<view class="content-left">
+						<view class="share">
+							<uni-icons size="20" color="#f07373" type="redo"></uni-icons>
+							<view class="text">分享</view>
+						</view>
+						<view class="collect">
+							<uni-icons size="20" color="#f07373" :type="detailData.is_collect ? 'heart-filled' :'heart'"></uni-icons>
+							<view class="text">收藏</view>
+						</view>
+					</view>
+					<view class="content-right">立即下载</view>
+				</view>
+			</view>
+		</block>
 	</view>
 </template>
 
@@ -47,20 +49,25 @@
 	export default {
 		data() {
 			return {
-				fromData: {}
+				_id:'',
+				loading: true,
+				detailData: {}
 			}
 		},
 		onLoad(query) {
-			this.fromData = JSON.parse(query.params)
+			this._id = query._id
 			this.getDetail()
 		},
 		methods: {
 			getDetail() {
-				this.$api.get_detail({
-					id: this.fromData._id
+				this.$api.get_subject_detail({
+					_id:this._id
 				}).then(res => {
 					const {  data } = res
-					this.fromData = data
+					this.detailData = data
+					this.loading = false
+				}).catch(() => {
+					this.loading = false
 				})
 			}
 		}
@@ -68,7 +75,11 @@
 </script>
 
 <style lang="scss">
+	page {
+		height: 100%;
+	}
 	.detail {
+		min-height: 100%;
 		padding-bottom: 60px;
 		background-color: #f8f8f8;
 

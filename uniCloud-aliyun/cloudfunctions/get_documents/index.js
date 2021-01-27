@@ -3,20 +3,20 @@ const db = uniCloud.database()
 const $ = db.command.aggregate
 exports.main = async (event, context) => {
 	const {
-		id,
+		subject,
 		user_id,
 		page = 1,
 		pageSize = 10
 	} = event
 	let match = {}
-	if (id !== '0') {
+	if (subject !== '全部') {
 		match = {
-			subject_id: id
+			subject
 		}
 	}
 	const userInfo = await db.collection('users').doc(user_id).get()
 	const collected_ids = userInfo.data[0].collected_ids
-	const documents = await db.collection('documents').aggregate()
+	const documents = await db.collection('subject_documents').aggregate()
 	.addFields({
 		is_collect:$.in(['$_id',collected_ids])
 	}).project({
