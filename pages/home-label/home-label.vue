@@ -79,6 +79,9 @@
 						icon: 'none'
 					})
 					uni.$emit('subjectChange')
+					uni.switchTab({
+						url: '/pages/tabBar/home/home'
+					})
 				}).catch(() => {
 					uni.hideLoading()
 				})

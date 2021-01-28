@@ -19,8 +19,6 @@ exports.main = async (event, context) => {
 	const documents = await db.collection('subject_documents').aggregate()
 	.addFields({
 		is_collect:$.in(['$_id',collected_ids])
-	}).project({
-		intro: 0
 	})
 	.match(match).skip((page - 1) * pageSize).limit(pageSize).end()
 

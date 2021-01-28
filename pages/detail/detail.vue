@@ -1,73 +1,75 @@
 <template>
-	<view class="detail">
-		<J-skeleton v-if="loading" :loading="loading" :showTitle="true" :row="20" :showAvatar="false"></J-skeleton>
-		<block v-else>	
-			<view class="detail-title">{{detailData.title}}</view>
-			<view class="detail-header">
-				<view class="detail-header_content">
-					<text>{{detailData.created_at}}</text>
-					<text>{{detailData.download_num}}次下载</text>
-					<text class="price">{{detailData.price}}豆</text>
-				</view>
+	<view class="detail" v-if="detailData">
+		<view class="detail-title">{{detailData.title}}</view>
+		<view class="detail-header">
+			<view class="detail-header_content">
+				<text>{{detailData.created_at}}</text>
+				<text>{{detailData.download_num}}次下载</text>
+				<text class="price">{{detailData.price}}豆</text>
 			</view>
-			<view class="detail-content">
-				<image :src="detailData && detailData.priview_imgs[0]" mode="widthFix"></image>
+		</view>
+		<view class="detail-content">
+			<image :src="detailData.priview_imgs[0]" mode="widthFix"></image>
+		</view>
+		<view class="detail-attrs">
+			<view class="attr-tit">资料属性</view>
+			<view class="attr-list">
+				<view class="attr-list_item">资料作者： {{detailData.author.name}}</view>
+				<view class="attr-list_item">适用地区： 全国</view>
+				<view class="attr-list_item">文件大小：{{detailData.file_size}}</view>
+				<view class="attr-list_item">资 料 I D： {{detailData._id}}</view>
 			</view>
-			<view class="detail-attrs">
-				<view class="attr-tit">资料属性</view>
-				<view class="attr-list">
-					<view class="attr-list_item">资料作者： {{detailData.author.name}}</view>
-					<view class="attr-list_item">适用地区： 全国</view>
-					<view class="attr-list_item">文件大小：{{detailData.file_size}}</view>
-					<view class="attr-list_item">资 料 I D： {{detailData._id}}</view>
-				</view>
-			</view>
-			<div class="detail-attrs intro">
-				<view class="attr-tit">资料简介</view>
-				<view class="detail-intro">{{detailData.intro}}</view>
-			</div>
-			<view class="detail-bottom_bar">
-				<view class="content">
-					<view class="content-left">
-						<view class="share">
-							<uni-icons size="20" color="#f07373" type="redo"></uni-icons>
-							<view class="text">分享</view>
-						</view>
-						<view class="collect">
-							<uni-icons size="20" color="#f07373" :type="detailData.is_collect ? 'heart-filled' :'heart'"></uni-icons>
-							<view class="text">收藏</view>
-						</view>
+		</view>
+		<div class="detail-attrs intro">
+			<view class="attr-tit">资料简介</view>
+			<view class="detail-intro">{{detailData.intro}}</view>
+		</div>
+		<view class="detail-bottom_bar">
+			<view class="content">
+				<view class="content-left">
+					<view class="share">
+						<uni-icons size="20" color="#f07373" type="redo"></uni-icons>
+						<view class="text">分享</view>
 					</view>
-					<view class="content-right">立即下载</view>
+					<view class="collect">
+						<collect :item="detailData" :isDetail="true"></collect>
+						<view class="text">收藏</view>
+					</view>
 				</view>
+				<view class="content-right">立即下载</view>
 			</view>
-		</block>
+		</view>
 	</view>
 </template>
 
 <script>
+	import {
+		mapState
+	} from 'vuex'
 	export default {
 		data() {
 			return {
-				_id:'',
-				loading: true,
-				detailData: {}
+				_id: '',
+				detailData: null
 			}
+		},
+		computed:{
+			...mapState(['doc_detail'])
 		},
 		onLoad(query) {
 			this._id = query._id
+			this.detailData = this.doc_detail
 			this.getDetail()
 		},
 		methods: {
 			getDetail() {
 				this.$api.get_subject_detail({
-					_id:this._id
+					_id: this._id
 				}).then(res => {
-					const {  data } = res
+					const {
+						data
+					} = res
 					this.detailData = data
-					this.loading = false
-				}).catch(() => {
-					this.loading = false
 				})
 			}
 		}
@@ -78,6 +80,7 @@
 	page {
 		height: 100%;
 	}
+
 	.detail {
 		min-height: 100%;
 		padding-bottom: 60px;
@@ -126,9 +129,11 @@
 			margin-top: 5px;
 			background-color: #fff;
 			padding: 15px;
+
 			&.intro {
 				margin-top: 10px;
 			}
+
 			.attr-tit {
 				font-size: 16px;
 				font-weight: 800;
@@ -144,6 +149,7 @@
 					color: #666;
 				}
 			}
+
 			.detail-intro {
 				font-size: 12px;
 				line-height: 1.5;
@@ -179,9 +185,14 @@
 
 					.share,
 					.collect {
+						position: relative;
 						display: flex;
 						flex-direction: column;
 						margin-right: 25px;
+
+						.icons {
+							position: inherit;
+						}
 
 						.text {
 							font-size: 12px;

@@ -40,6 +40,13 @@
 				this.getDocuments(this.activeIndex)
 			}
 		},
+		created() {
+			uni.$on('update_doc_status', () => {
+				this.docsCatchData = {}
+				this.load = {}
+				this.getDocuments(this.activeIndex)
+			})
+		},
 		methods:{
 			change(e) {
 				const { current } = e.detail
