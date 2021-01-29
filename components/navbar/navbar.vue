@@ -10,7 +10,7 @@
 					<view class="navbar-search_icon">
 						<uni-icons type="search" size="16" color="#999"></uni-icons>
 					</view>
-					<view class="navbar-search_text">vue</view>
+					<view class="navbar-search_text">PPT课件</view>
 				</view>	
 				<view v-else class="navbar-search">
 					<input class="navbar-search_text" type="text" v-model="val" placeholder="请输入您要搜索的内容" @input="inputChange"/>

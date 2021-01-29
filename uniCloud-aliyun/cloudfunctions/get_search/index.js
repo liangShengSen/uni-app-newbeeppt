@@ -8,11 +8,9 @@ exports.main = async (event, context) => {
 	} = event
 	const userInfo = await db.collection('users').doc(user_id).get()
 	const collected_ids = userInfo.data[0].collected_ids
-	const documents = await db.collection('documents').aggregate()
+	const documents = await db.collection('subject_documents').aggregate()
 	.addFields({
 		is_collect:$.in(['$_id',collected_ids])
-	}).project({
-		intro: 0
 	}).match({
 		title: new RegExp(value)
 	}).limit(500)

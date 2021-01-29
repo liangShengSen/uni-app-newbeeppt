@@ -12,6 +12,10 @@
 				default() {
 					return {}
 				}
+			},
+			isDetail: {
+				type: Boolean,
+				default: null
 			}
 		},
 		data() {
@@ -40,6 +44,10 @@
 						title: this.isCollect ? '收藏成功' : '取消收藏',
 						icon: 'none'
 					})
+					// 更新列表收藏状态
+					if(this.isDetail) {
+						uni.$emit('update_doc_status')
+					}
 				}).catch(() => {
 					uni.hideLoading()
 				})

@@ -106,7 +106,8 @@
 		},
 		methods:{
 			open(){
-				this.$emit('click', this.item)
+				this.$emit('click', this.item) // 触发搜索页的保存搜索记录
+				this.$store.dispatch('set_detail',this.item) // 首页的列表数据保存传到详情页
 				uni.navigateTo({
 					url: `/pages/detail/detail?_id=${this.item._id}`
 				})
