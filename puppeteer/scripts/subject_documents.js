@@ -3,7 +3,7 @@ const fs = require('fs');
 const dayjs = require('dayjs');
 
 (async () => {
-	let pageUrl = 'http://www.pptok.com/pptku/jiachanghuippt/'
+	let pageUrl = 'http://www.pptok.com/kejian/tiyukejianppt/'
 	const browser = await puppeteer.launch({
 		headless: true,
 	});
@@ -46,7 +46,7 @@ const dayjs = require('dayjs');
 						id: "001",
 						name: "Sam"
 					},
-					subject: "家长会",
+					subject: "体育",
 					year: '2021',
 					rank: '0',
 					price: 5,
@@ -63,7 +63,7 @@ const dayjs = require('dayjs');
 				console.log(err)
 			}
 		}
-		fs.writeFileSync('./json/temp.json', JSON.stringify(docsArr));
+		fs.writeFileSync('./json/chapters.json', JSON.stringify(docsArr));
 	} catch (e) {
 		console.log('err', e);
 	} finally {
