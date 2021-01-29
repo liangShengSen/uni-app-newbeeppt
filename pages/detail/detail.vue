@@ -1,6 +1,6 @@
 <template>
 	<view class="detail">
-		<J-skeleton v-if="loading" :loading="loading" :showTitle="true" :row="20" :showAvatar="false"></J-skeleton>
+		<skeleton v-if="loading" :loading="loading" :showTitle="true" :row="20" :showAvatar="false"></skeleton>
 		<block v-else>	
 			<view class="detail-title">{{detailData.title}}</view>
 			<view class="detail-header">

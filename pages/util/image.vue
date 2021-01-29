@@ -25,7 +25,7 @@
 				      reject(0)
 				    }
 				  }, delay);
-				})
+				}) 
 			},
 			async uploadImgs() {
 				let data = jsonData
