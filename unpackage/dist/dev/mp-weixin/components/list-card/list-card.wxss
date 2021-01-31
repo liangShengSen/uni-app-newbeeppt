@@ -126,7 +126,7 @@
 }
 .listcard.mode-column .listcard-image .listcard-image_item {
   margin-left: 10px;
-  width: 100%;
+  width: 33.3%;
   border-radius: 5px;
   overflow: hidden;
 }

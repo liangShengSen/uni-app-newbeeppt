@@ -3,7 +3,10 @@
     "pages/tabBar/home/home",
     "pages/tabBar/category/category",
     "pages/tabBar/my/my",
-    "pages/util/chapters"
+    "pages/search/search",
+    "pages/home-label/home-label",
+    "pages/detail/detail",
+    "pages/login/login"
   ],
   "subPackages": [],
   "window": {
@@ -37,6 +40,6 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap53.json"
+  "permission": {},
+  "usingComponents": {}
 }

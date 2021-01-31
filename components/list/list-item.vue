@@ -1,7 +1,7 @@
 <template>
 	<list-scroll class="list-scroll" @loadmore="loadmore">
 		<list-card :item="item" v-for="item in documents" :key="item._id"></list-card>
-		<uni-load-more v-if="documents.length == 0 || documents.length > 9" :status="load.loading" iconType="snow"></uni-load-more>
+		<uni-load-more v-if="documents.length == 0 || documents.length > 9" :status="load ? load.loading : 'loading'" iconType="snow"></uni-load-more>			
 	</list-scroll>
 </template>
 
