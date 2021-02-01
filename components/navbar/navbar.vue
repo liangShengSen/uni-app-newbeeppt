@@ -71,7 +71,7 @@
 			open() {
 				if(this.type === 'search') return
 				uni.navigateTo({
-					url: '../../pages/search/search'
+					url: '/pages/search/search'
 				})
 			},
 			inputChange(e) {

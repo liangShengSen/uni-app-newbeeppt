@@ -23,12 +23,9 @@ exports.main = async (event, context) => {
 		collected_ids: 0,
 		download_ids: 0
 	}).end()
-	
-	console.log(userInfo);
-	return userInfo
-	// return {
-	// 	code: 200,
-	// 	msg: 'success',
-	// 	data: userInfo.data[0]
-	// }
+	return {
+		code: 200,
+		msg: 'success',
+		data: userInfo.data[0]
+	}
 };

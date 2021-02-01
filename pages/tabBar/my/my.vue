@@ -3,22 +3,23 @@
 		<view class="my-header">
 			<view class="my-header_logo">
 				<view class="my-header_logo-box">
-					<image src="../../../static/images/no_login.png" mode="aspectFill"></image>
+					<image :src="`${userInfo.nickname ? userInfo.nickname : '../../../static/images/no_login.png'}`" mode="aspectFill"></image>
 				</view>
-				<text class="my-header_name" @click="toLogin">登录/注册</text>
+				<text class="my-header_name" v-if="userInfo._id">{{userInfo.nickname ? userInfo.nickname : userInfo.account}}</text>
+				<text class="my-header_name" v-else @click="toLogin">登录/注册</text>
 			</view>
 			<view class="my-header_info">
 				<view class="my-header_info-box">
 					<view class="my-header_info-item">
-						<text class="count">10</text>
+						<text class="count">{{userInfo.downloadCount || 0}}</text>
 						<text class="text">我的下载</text>
 					</view>	
 					<view class="my-header_info-item">
-						<text class="count">5</text>
+						<text class="count">{{userInfo.collectCount || 0}}</text>
 						<text class="text">我的收藏</text>
 					</view>
 					<view class="my-header_info-item">
-						<text class="count">100</text>
+						<text class="count">{{userInfo.coins || 0}}</text>
 						<text class="text">我的P豆</text>
 					</view>
 				</view>
@@ -41,13 +42,20 @@
 			</view>
 			<view class="my-content_list">
 				<view class="my-content_list-title">
+					<uni-icons class="icon" type="chatbubble" size="18"></uni-icons>
+					<text>我的信息</text>
+				</view>
+				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
+			</view>
+			<view class="my-content_list">
+				<view class="my-content_list-title">
 					<uni-icons class="icon" type="help" size="18"></uni-icons>
 					<text>帮助中心</text>
 				</view>
 				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
 			</view>
 		</view>
-		<view class="login-bar">
+		<view class="login-bar" v-if="userInfo._id" @click="logout">
 			<view class="login-box">退出登录</view>
 		</view>
 	</view>
@@ -57,15 +65,18 @@
 	export default {
 		data() {
 			return {
-				
+				userInfo: {}
 			}
 		},
-		onLoad() {
+		onShow() {
 			let user_id = uni.getStorageSync('user_id') || ''
-			console.log(user_id);
-			if(user_id) {
+			if(user_id && !this.userInfo._id) {
+				uni.showLoading()
 				this.$api.get_user({user_id}).then(res => {
-					console.log(res);
+					uni.hideLoading()
+					this.userInfo = res.data
+				}).catch(() => {
+					uni.hideLoading()
 				})
 			}
 		},
@@ -74,6 +85,19 @@
 				uni.navigateTo({
 					url:'../../auth/login/login'
 				})
+			},
+			logout() {
+				uni.showModal({
+				    title: '提示',
+				    content: '确定退出登录吗？',
+					confirmColor: '#f07373',
+				    success: (res) => {
+						if (res.confirm) {
+							this.userInfo = {}
+							uni.removeStorageSync('user_id')
+						}
+				    }
+				});
 			}
 		}
 	}

@@ -4,7 +4,7 @@
 			<navbar type="auth" authTitle="注册"></navbar>
 			<view class="forget-card">
 				<view class="forget-input forget-margin-b">
-					<input v-model="account" placeholder="请输入手机号/邮箱" />
+					<input v-model="username" placeholder="请输入手机号/邮箱" />
 				</view>
 				<view class="forget-input forget-margin-b">
 					<view class="verify-left">
@@ -15,41 +15,59 @@
 					</view>
 				</view>
 				<view class="forget-input">
-					<input v-model="password" @confirm="register" placeholder="请输入密码(8-16位)" />
+					<input v-model="password" @confirm="register" placeholder="请输入密码(6-20位)" />
 				</view>
 			</view>
 		</view>
 		<view class="forget-btn">
 			<button class="landing" type="primary" @click="register">注册</button>
+			<button class="landing" type="primary" @click="updateUser">更新用户信息</button>
 		</view>
 	</view>
 </template>
 
 <script>
-	import { PHONE, EMAIL } from '@/common/js/regx.js'
+	import {
+		PHONE,
+		EMAIL
+	} from '@/common/js/regx.js'
 	export default {
 		data() {
 			return {
 				width: 120,
 				height: 40,
-				account: '',
+				username: '',
 				verify: '',
 				password: ''
 			}
 		},
 		onLoad() {
-			
+
 		},
 		onReady() {
 			this.init();
 		},
 		methods: {
+			updateUser() {
+				uniCloud.callFunction({
+					name: 'update_user',
+					data: {},
+					success(res) {
+						console.log(res);
+						
+					},
+					fail(err) {
+						console.log(err);
+						
+					}
+				})
+			},
 			register() {
-				if(!this.account) {
+				if (!this.username) {
 					this.$utils.toast('请输入账号')
 					return false;
 				}
-				if(!(PHONE.test(this.account) || EMAIL.test(this.account))) {
+				if (!(PHONE.test(this.username) || EMAIL.test(this.username))) {
 					this.$utils.toast('账号格式错误')
 					return false;
 				}
@@ -57,36 +75,69 @@
 					this.$utils.toast('验证码不正确')
 					return false;
 				}
-				if (this.password.length < 8 || this.password.length > 16) {
-					this.$utils.toast('请输入8-16位密码')
+				if (this.password.length < 6 || this.password.length > 20) {
+					this.$utils.toast('请输入6-20位密码')
 					return false;
 				}
 				uni.showLoading()
-				this.$api.register({
-					account: this.account,
-					password: this.password
-				}).then(res => {
-					uni.hideLoading()
-					if(res.code === 200) {
-						uni.setStorageSync('user_id',res.data.id)
-						this.$utils.toast('注册成功',() =>{
-							uni.showModal({
-							    title: '提示',
-							    content: '新用户完善资料可送20P币哦~~',
-								confirmColor: '#f07373',
-							    success: function (res) {
-							        uni.switchTab({
-							        	url: '../../tabBar/my/my'
-							        })	
-							    }
-							});
-													
-						})
+				uniCloud.callFunction({
+					name: 'register',
+					data: {
+						username: this.username,
+						password: this.password
+					},
+					success(res) {
+						console.log(res);
+						if (res.result.code === 0) {
+							uni.setStorageSync('uni_id_token', res.result.token)
+							uni.setStorageSync('uni_id_token_expired', res.result.tokenExpired)
+							this.$utils.toast('注册成功', () => {
+								uni.showModal({
+									title: '提示',
+									content: '新用户完善资料可送20P币哦~~',
+									confirmColor: '#f07373',
+									success: function(res) {
+										uni.switchTab({
+											url: '../../tabBar/my/my'
+										})
+									}
+								});
+							})
+						} else {
+							uni.hideLoading()
+							this.$utils.toast('注册失败，请稍后再试')
+						}
+					},
+					fail(err) {
+						console.log(err);
+						uni.hideLoading()
+						this.$utils.toast('注册失败，请稍后再试')
 					}
-				}).catch((err) => {
-					uni.hideLoading()
-					this.$utils.toast(err.msg)
 				})
+				// this.$api.register({
+				// 	username: this.username,
+				// 	password: this.password
+				// }).then(res => {
+				// 	uni.hideLoading()
+				// 	if(res.code === 200) {
+				// 		uni.setStorageSync('user_id',res.data.id)
+				// 		this.$utils.toast('注册成功',() =>{
+				// 			uni.showModal({
+				// 			    title: '提示',
+				// 			    content: '新用户完善资料可送20P币哦~~',
+				// 				confirmColor: '#f07373',
+				// 			    success: function (res) {
+				// 			        uni.switchTab({
+				// 			        	url: '../../tabBar/my/my'
+				// 			        })	
+				// 			    }
+				// 			});						
+				// 		})
+				// 	}
+				// }).catch((err) => {
+				// 	uni.hideLoading()
+				// 	this.$utils.toast(err.msg)
+				// })
 			},
 			init() {
 				var context = uni.createCanvasContext('imgcanvas', this),
@@ -148,32 +199,39 @@
 	.register {
 		width: 100%;
 	}
-	.verify-left{
+
+	.verify-left {
 		width: calc(100% - 130px);
 	}
-	.verify-right{
+
+	.verify-right {
 		padding-left: 10px;
+
 		.canvas {
 			border-radius: 4px;
 			overflow: hidden;
 		}
 	}
-	.verify-left,.verify-right{
+
+	.verify-left,
+	.verify-right {
 		float: left;
 	}
-	.landing{
+
+	.landing {
 		height: 40px;
 		line-height: 40px;
 		border-radius: 40px;
 		font-size: 16px;
 		@include base-bg;
 	}
-	.forget-btn{
+
+	.forget-btn {
 		padding: 5px 10px;
 		margin-top: 190px;
 	}
 
-	.forget-input input{
+	.forget-input input {
 		background: #F2F5F6;
 		font-size: 14px;
 		padding: 5px 12px;
@@ -181,21 +239,25 @@
 		line-height: 30px;
 		border-radius: 4px;
 	}
-	.forget-margin-b{
+
+	.forget-margin-b {
 		margin-bottom: 12px;
 	}
-	.forget-input{
+
+	.forget-input {
 		padding: 5px 10px;
 		overflow: auto;
 	}
-	.forget-card{
+
+	.forget-card {
 		background: #fff;
 		border-radius: 6px;
 		padding: 30px 12px;
-		box-shadow: 0 3px 9px rgba(0,0,0,0.12);
+		box-shadow: 0 3px 9px rgba(0, 0, 0, 0.12);
 		position: relative;
 		margin-top: 30px;
 	}
+
 	.forget-bg {
 		position: relative;
 		height: 150px;
