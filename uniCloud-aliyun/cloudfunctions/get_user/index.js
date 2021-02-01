@@ -12,8 +12,12 @@ exports.main = async (event, context) => {
 	const userInfo = await db.collection('users').aggregate().match({
 		_id: user_id
 	}).addFields({
-		collectCount: ['$collected_ids'].length,
-		downloadCount: ['$download_ids'].length
+		collectCount: {
+			$size: '$collected_ids'
+		},
+		downloadCount: {
+			$size: '$download_ids'
+		}
 	}).project({
 		subject_ids: 0,
 		collected_ids: 0,
