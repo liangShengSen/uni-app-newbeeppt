@@ -3,13 +3,13 @@
 		<view class="text-area">
 			<text class="title">{{ title }}</text>
 		</view>
-		<button type="default" @click="solveName">处理格式</button>
+		<!-- <button type="default" @click="solveName">处理格式</button> -->
 		<button type="default" @click="uploadImgs">click me</button>
 	</view>
 </template>
 
 <script>
-	let jsonData = require("@/puppeteer/json/chapters.json");
+	let jsonData = require("@/puppeteer/json/temp.json");
 	export default {
 		data() {
 			return {
@@ -17,6 +17,17 @@
 			};
 		},
 		methods: {
+			timeout(delay) {
+				return new Promise((resolve, reject) => {
+					setTimeout(() => {
+						try {
+							resolve(1)
+						} catch (e) {
+							reject(0)
+						}
+					}, delay);
+				})
+			},
 			solveName() {
 				jsonData.forEach(item => {
 					let str = item.name,
@@ -43,39 +54,57 @@
 				uniCloud.callFunction({
 					name: 'chapters',
 					success: async (res) => {
-						let chapters = res.result.data[0].chapters;
-						let num = 0;
+						let arr = []
+						let chapters = res.result[0].chapters;
 						for (let i = 0; i < jsonData.length; i++) {
-							if (i < 1) {
-								console.log(i);
-								let item = self.getById(chapters, jsonData[i].name);
-								if (item) {
-									num++;
-									console.log("%c " + `插入数量：${num}`, "color:" + 'red');
-									let priviewImg = jsonData[i].data.priviewImg;
-									jsonData[i].data.chapter_id = item.id;
-									let [error1, res1] = await uni.downloadFile({
-										url: priviewImg,
+							let item = self.getById(chapters, jsonData[i].name);
+							if (item) {
+								jsonData[i].data.chapter.id = item.id;
+								jsonData[i].data.chapter.name = item.name;
+								let priviewImg = jsonData[i].data.cover_img,
+									downLink = jsonData[i].data.priview_imgs[0];
+								let [error1, res1] = await uni.downloadFile({
+									url: priviewImg,
+								});
+								await this.timeout(500)
+								let [error2, res2] = await uni.downloadFile({
+									url: downLink,
+								});
+								await this.timeout(500)
+								console.log(`res1:${JSON.stringify(error1)}`);
+								console.log(`res2:${JSON.stringify(error2)}`);
+								if (res1.statusCode === 200) {
+									let fileExtension = priviewImg.substring(priviewImg.lastIndexOf('.') + 1);
+									let result = await uniCloud.uploadFile({
+										filePath: res1.tempFilePath,
+										cloudPath: `${jsonData[i]['data']['title']}.${fileExtension}`,
 									});
-									if (res1.statusCode === 200) {
-										let fileExtension = priviewImg.substring(priviewImg.lastIndexOf('.') + 1);
-										let result = await uniCloud.uploadFile({
-											filePath: res1.tempFilePath,
-											cloudPath: `${jsonData[i].data.title}.${fileExtension}`,
-										});
-										jsonData[i].data['priviewImg'] = result.fileID
-										uniCloud.callFunction({
-											name: 'add',
-											data: jsonData[i].data,
-											success: (res) => {
-												console.log('插入数据成功');
-											},
-											fail: (msg) => {
-												console.log(msg);
-											}
-										});
-									}
+									jsonData[i]['data']['cover_img'] = result.fileID
 								}
+								if (res2.statusCode === 200) {
+									let fileExtension = downLink.substring(downLink.lastIndexOf('.') + 1);
+									let result = await uniCloud.uploadFile({
+										filePath: res2.tempFilePath,
+										cloudPath: `${jsonData[i]['data']['title']}.${fileExtension}`,
+									});
+									jsonData[i]['data']['priview_imgs'] = [result.fileID]
+								}
+								await this.timeout(500)
+								let res = await uniCloud.callFunction({
+									name: 'add',
+									data: jsonData[i]['data'],
+								});
+								if (res.success) {
+									console.log(`第${i}条数据: ${jsonData[i]['data']['title']}: 插入成功`);
+								} else {
+									arr.push(jsonData[i].name)
+									console.log("%c " + `${jsonData[i]['data']['title']}: 插入失败`, "color:" + 'red');
+								}
+							}else{
+								arr.push(jsonData[i].name)
+							}
+							if(i === (jsonData.length - 1)) {
+								console.log(`插入数据失败的记录：${arr.length ? arr : '0'}`);
 							}
 						}
 					}
