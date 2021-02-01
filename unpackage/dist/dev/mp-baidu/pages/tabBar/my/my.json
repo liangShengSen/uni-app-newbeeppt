@@ -1,6 +1,9 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "个人中心",
+  "navigationStyle": "custom",
   "enablePullDownRefresh": false,
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-icons": "/components/uni-icons/uni-icons"
+  }
 }

@@ -1,1 +1,1 @@
-<view><navbar vue-id="6a0c8840-1"></navbar><block s-for="{{100}}" s-for-item="item" s-for-index="index" s-key="index"><view>{{''+item+''}}</view></block></view>
+<view class="home"><navbar vue-id="6a0c8840-1"></navbar><tabs vue-id="6a0c8840-2" list="{{subjectsList}}" tabIndex="{{tabIndex}}" data-event-opts="{{[['^tabs',[['tabs']]]]}}" bind:tabs="__e"></tabs><view class="home-list"><list vue-id="6a0c8840-3" tabs="{{subjectsList}}" activeIndex="{{activeIndex}}" data-event-opts="{{[['^change',[['change']]]]}}" bind:change="__e"></list></view></view>

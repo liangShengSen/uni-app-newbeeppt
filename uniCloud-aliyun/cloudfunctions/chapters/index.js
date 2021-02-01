@@ -3,7 +3,7 @@ const db = uniCloud.database()
 exports.main = async (event, context) => {
 	const collection = db.collection('chapters');
 	const res = await collection.where({
-		'book.id':'10002'
+		'book.id':'10005'
 	}).get()
 	return res.data
 };

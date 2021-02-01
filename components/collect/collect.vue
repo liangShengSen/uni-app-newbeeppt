@@ -1,6 +1,6 @@
 <template>
 	<view class="icons" @click.stop="collecting">
-		<uni-icons size="20" color="#f07373" :type="isCollect ? 'heart-filled' : 'heart'"></uni-icons>
+		<uni-icons size="20" :type="isCollect ? 'heart-filled' : 'heart'"></uni-icons>
 	</view>
 </template>
 

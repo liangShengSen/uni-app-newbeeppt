@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "component": true,
+  "usingComponents": {
+    "auth-nav": "/components/auth-nav/auth-nav"
+  }
+}

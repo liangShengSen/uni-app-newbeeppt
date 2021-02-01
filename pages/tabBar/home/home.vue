@@ -1,6 +1,6 @@
 <template>
 	<view class="home">
-		<navbar></navbar>
+		<navbar type="home"></navbar>
 		<tabs :list="subjectsList" :tabIndex="tabIndex" @tabs="tabs"></tabs>
 		<view class="home-list">
 			<list :tabs="subjectsList" :activeIndex="activeIndex" @change="change"></list>

@@ -13,7 +13,11 @@
  */
 
 /* 颜色变量 */
-$base-color:#f07373;
+$base-color: #f07373;
+	
+@mixin base-bg {
+  background: linear-gradient(left,#ff978d, #ffbb69);
+}
 
 /* 行为相关颜色 */
 $uni-color-primary: #007aff;

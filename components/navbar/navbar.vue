@@ -1,19 +1,22 @@
 <template>
 	<view class="navbar">
-		<view class="navbar-fixed">
+		<view :class="['navbar-fixed',type === 'auth' ? 'bg-none':'']">
 			<view :style="{height: `${statusBarHeight}px`}"></view>
-			<view class="navbar-content" :class="isSearch ? 'search':''" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}" @click.stop="open">
-				<view class="navbar-content_search-icons" v-if="isSearch" @click="back">
-					<uni-icons type="back" size="22" color="#fff"></uni-icons>
+			<view class="navbar-content" :class="type === 'search' ? 'is-search':`${type === 'auth'?'is-auth':''}`" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}" @click.stop="open">
+				<view class="navbar-content_search-icons" v-if="type === 'search' || type === 'auth'" @click="back">
+					<uni-icons type="back" size="24" color="#fff"></uni-icons>
 				</view>
-				<view v-if="!isSearch" class="navbar-search">
+				<view v-if="type === 'home'" class="navbar-search">
 					<view class="navbar-search_icon">
 						<uni-icons type="search" size="16" color="#999"></uni-icons>
 					</view>
 					<view class="navbar-search_text">PPT课件</view>
 				</view>	
-				<view v-else class="navbar-search">
+				<view v-if="type === 'search'" class="navbar-search">
 					<input class="navbar-search_text" type="text" v-model="val" placeholder="请输入您要搜索的内容" @input="inputChange"/>
+				</view>
+				<view v-if="type === 'auth'" class="auth-box">
+					<text class="auth-title">{{authTitle}}</text>
 				</view>
 			</view>
 		</view>
@@ -28,9 +31,13 @@
 				type: [String,Number],
 				default: ''
 			},
-			isSearch:{
-				type:Boolean,
-				default: false
+			type:{
+				type: String,
+				default: 'home'
+			},
+			authTitle: {
+				type: String,
+				default: '登录'
 			}
 		},
 		watch:{
@@ -62,9 +69,9 @@
 		},
 		methods:{
 			open() {
-				if(this.isSearch) return
+				if(this.type === 'search') return
 				uni.navigateTo({
-					url: '/pages/search/search'
+					url: '../../pages/search/search'
 				})
 			},
 			inputChange(e) {
@@ -72,9 +79,15 @@
 				this.$emit('input',value)
 			},
 			back() {
-				uni.switchTab({
-					url: '/pages/tabBar/home/home'
-				})
+				if(this.type === 'search') {
+					uni.switchTab({
+						url: '../../pages/tabBar/home/home'
+					})	
+				}else {
+					uni.navigateBack({
+						delta:1
+					})
+				}
 			}
 		}
 	}
@@ -88,7 +101,10 @@
 			left: 0;
 			z-index: 99;
 			width: 100%;
-			background-color: $base-color;
+			@include base-bg;
+			&.bg-none {
+				background-color: transparent;
+			}
 			.navbar-content {
 				display: flex;
 				align-items: center;
@@ -112,13 +128,27 @@
 						width: 100%;
 					}
 				}	
-				&.search {
+				&.is-search {
 					padding-left: 0;
 					.navbar-content_search-icons {
 						margin: 0 8px;
 					}
 					.navbar-search {
 						border-radius: 5px;
+					}
+				}
+				&.is-auth {
+					justify-content: flex-start;
+					.auth-box {
+						width: calc(100% - 50px);
+						text-align: center;
+						.auth-title {
+							color: #fff;
+							font-size: 15px;
+							/*  #ifdef  MP-WEIXIN  */
+							padding-left: 90px; // 胶囊的宽度
+							/*  #endif  */
+						}
 					}
 				}
 			}

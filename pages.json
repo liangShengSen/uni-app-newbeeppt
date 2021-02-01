@@ -26,7 +26,8 @@
 		{
             "path" : "pages/tabBar/my/my",
             "style" : {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "个人中心",
+				"navigationStyle":"custom",
                 "enablePullDownRefresh": false
             }
         }
@@ -54,6 +55,36 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "资料详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/auth/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle":"custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/auth/register/register",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle":"custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/auth/forget/forget",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle":"custom",
                 "enablePullDownRefresh": false
             }
             

@@ -1,6 +1,6 @@
 <template>
 	<view class="search">
-		<navbar :isSearch="true" v-model="value" @input="change"></navbar>
+		<navbar type="search" v-model="value" @input="change"></navbar>
 		<view class="search-list">
 			<view v-if="is_history" class="label-box">
 				<view class="label-header">
@@ -101,6 +101,7 @@
 <style lang="scss">
 	page {
 		display: flex;
+		width: 100%;
 		height: 100%;
 		background-color: #f5f5f5;
 	}

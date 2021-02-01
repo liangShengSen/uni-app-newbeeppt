@@ -30,7 +30,7 @@
       <view class="content">
         <view class="content-left">
           <view class="share">
-            <uni-icons size="20" color="#f07373" type="redo"></uni-icons>
+            <uni-icons size="20" type="redo"></uni-icons>
             <view class="text">分享</view>
           </view>
           <view class="collect">
@@ -209,7 +209,7 @@ page {
         font-size: 14px;
         color: #fff;
         border-radius: 20px;
-        background-color: $base-color;
+        @include base-bg;
       }
     }
   }

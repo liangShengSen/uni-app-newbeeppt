@@ -5,6 +5,8 @@
   "enablePullDownRefresh": false,
   "component": true,
   "usingComponents": {
-    "navbar": "/components/navbar/navbar"
+    "navbar": "/components/navbar/navbar",
+    "tabs": "/components/tabs/tabs",
+    "list": "/components/list/list"
   }
 }

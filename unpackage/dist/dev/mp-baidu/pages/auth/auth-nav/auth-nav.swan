@@ -1,0 +1,1 @@
+<view class="auth-nav"><uni-icons class="back" vue-id="50cdc876-1" type="back" size="26" color="#fff" data-event-opts="{{[['^click',[['back']]]]}}" bind:click="__e"></uni-icons></view>

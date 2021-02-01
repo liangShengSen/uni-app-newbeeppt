@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "资料详情",
+  "enablePullDownRefresh": false,
+  "component": true,
+  "usingComponents": {
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "collect": "/components/collect/collect"
+  }
+}

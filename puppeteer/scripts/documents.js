@@ -9,7 +9,7 @@ const dayjs = require('dayjs');
 	try {
 		const page = await browser.newPage();
 		await page.setDefaultNavigationTimeout(0);
-		await page.goto('http://www.pptok.com/kejian/mulu/204.html');
+		await page.goto('http://www.pptok.com/kejian/mulu/207.html');
 		let arr = await page.$$eval('#mulu .mldy h2 a', (a) =>
 			a.map((v) => {
 				return {
@@ -86,18 +86,18 @@ const dayjs = require('dayjs');
 									"name":"人教部编版"
 								},
 								book:{
-									"id":"10002",
-									"name":"二年级上册"
+									"id":"10005",
+									"name":"三年级下册"
 								},
 								grade: {
-									"id": "2",
-									"name": "二年级"
+									"id": "3",
+									"name": "三年级"
 								},
 								chapter:{
 									"id":"",
 									"name": ""
 								},
-								term: "1",
+								term: "2",
 								year: '2021',
 								rank: '0',
 								price: 5,
