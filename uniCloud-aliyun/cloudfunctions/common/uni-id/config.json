@@ -1,6 +1,6 @@
 {
-	"passwordSecret": "newbeeppt_passwordSecret",
-	"tokenSecret": "newbeeppt_tokenSecret",
+	"passwordSecret": "newbeeppt_secret",
+	"tokenSecret": "newbeeppt_token_secret",
 	"tokenExpiresIn": 7200,
 	"tokenExpiresThreshold": 600,
 	"passwordErrorLimit": 6,
@@ -8,11 +8,28 @@
 	"passwordErrorRetryTime": 3600,
 	"autoSetInviteCode": false,
 	"forceInviteCode": false,
+	"app-plus": {
+		"tokenExpiresIn": 2592000,
+		"oauth" : {
+			"weixin" : {
+				"appid" : "weixin appid",
+				"appsecret" : "weixin appsecret"
+			}
+		}
+	},
 	"mp-weixin": {
 		"oauth" : {
 			"weixin" : {
 				"appid" : "weixin appid",
 				"appsecret" : "weixin appsecret"
+			}
+		}
+	},
+	"mp-alipay": {
+		"oauth" : {
+			"alipay" : {
+				"appid" : "alipay appid",
+				"privateKey" : "alipay privateKey"
 			}
 		}
 	},
@@ -22,11 +39,6 @@
 			"codeExpiresIn": 300,
 			"smsKey": "your sms key",
 			"smsSecret": "your sms secret"
-		},
-		"univerify": {
-			"appid":"__UNI__BC6FAFC",
-			"apiKey": "your apiKey",
-			"apiSecret": "your apiSecret"
 		}
 	}
 }

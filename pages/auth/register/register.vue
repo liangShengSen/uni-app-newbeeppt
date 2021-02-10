@@ -10,18 +10,18 @@
 					<view class="verify-left">
 						<input v-model="verify" maxlength="4" placeholder="请输入验证码" />
 					</view>
-					<view class="verify-right" @click="refresh">
-						<canvas :style="{width:width+'px',height:height+'px'}" canvas-id="imgcanvas" class="canvas" @error="canvasIdErrorCallback"></canvas>
+					<view class="verify-right" @click="getVerify">
+						<canvas v-if="initCode" :style="{width:width+'px',height:height+'px'}" canvas-id="imgcanvas" class="canvas"></canvas>
+						<button type="primary" :loading="loading" v-else class="get-verify">获取验证码</button>
 					</view>
 				</view>
 				<view class="forget-input">
-					<input v-model="password" @confirm="register" placeholder="请输入密码(6-20位)" />
+					<input type="password" v-model="password" @confirm="register" placeholder="请输入密码(6-20位)" />
 				</view>
 			</view>
 		</view>
 		<view class="forget-btn">
 			<button class="landing" type="primary" @click="register">注册</button>
-			<button class="landing" type="primary" @click="updateUser">更新用户信息</button>
 		</view>
 	</view>
 </template>
@@ -36,30 +36,40 @@
 			return {
 				width: 120,
 				height: 40,
+				initCode: false,
 				username: '',
 				verify: '',
-				password: ''
+				password: '',
+				loading: false,
 			}
 		},
-		onLoad() {
-
-		},
-		onReady() {
-			this.init();
-		},
 		methods: {
-			updateUser() {
-				uniCloud.callFunction({
-					name: 'update_user',
-					data: {},
-					success(res) {
-						console.log(res);
-						
-					},
-					fail(err) {
-						console.log(err);
-						
+			getVerify() {
+				if (!this.username) {
+					this.$utils.toast('请输入账号')
+					return false;
+				}
+				if (!(PHONE.test(this.username) || EMAIL.test(this.username))) {
+					this.$utils.toast('请输入手机号码或者邮箱')
+					return false;
+				}
+				let data = {}
+				if(PHONE.test(this.username)) {
+					data['mobile'] = this.username
+				}else{
+					data['email'] = this.username
+				}
+				this.loading = true
+				this.$api.getVerifyCode(data).then(res => {
+					this.loading = false
+					if (res.code === 0) {
+						this.initCode = true
+						setTimeout(() => {
+							this.createVerifyCode(res.data.code)
+						},0)
 					}
+				}).catch(() => {
+					this.loading = false
 				})
 			},
 			register() {
@@ -71,75 +81,40 @@
 					this.$utils.toast('账号格式错误')
 					return false;
 				}
-				if (this.verify.length != 4 || this.verify.toLowerCase() != uni.getStorageSync('imgcode').toLowerCase()) {
-					this.$utils.toast('验证码不正确')
-					return false;
-				}
 				if (this.password.length < 6 || this.password.length > 20) {
 					this.$utils.toast('请输入6-20位密码')
 					return false;
 				}
 				uni.showLoading()
-				uniCloud.callFunction({
-					name: 'register',
-					data: {
-						username: this.username,
-						password: this.password
-					},
-					success(res) {
-						console.log(res);
-						if (res.result.code === 0) {
-							uni.setStorageSync('uni_id_token', res.result.token)
-							uni.setStorageSync('uni_id_token_expired', res.result.tokenExpired)
-							this.$utils.toast('注册成功', () => {
-								uni.showModal({
-									title: '提示',
-									content: '新用户完善资料可送20P币哦~~',
-									confirmColor: '#f07373',
-									success: function(res) {
-										uni.switchTab({
-											url: '../../tabBar/my/my'
-										})
-									}
-								});
-							})
-						} else {
-							uni.hideLoading()
-							this.$utils.toast('注册失败，请稍后再试')
-						}
-					},
-					fail(err) {
-						console.log(err);
-						uni.hideLoading()
-						this.$utils.toast('注册失败，请稍后再试')
+				this.$api.register({
+					username: this.username,
+					code: this.verify,
+					password: this.password
+				}).then(res => {
+					uni.hideLoading()
+					if (res.code === 0) {
+						uni.setStorageSync('uni_id_token', res.token)
+						this.$utils.toast('注册成功', () => {
+							uni.showModal({
+								title: '提示',
+								content: '新用户首次完善资料可送20P豆哦~~',
+								confirmColor: '#f07373',
+								success: function(res) {
+									uni.switchTab({
+										url: '../../tabBar/my/my'
+									})
+								}
+							});
+						})
+					} else {
+						this.$utils.toast(res.msg)
 					}
+				}).catch((err) => {
+					uni.hideLoading()
+					this.$utils.toast(err.msg)
 				})
-				// this.$api.register({
-				// 	username: this.username,
-				// 	password: this.password
-				// }).then(res => {
-				// 	uni.hideLoading()
-				// 	if(res.code === 200) {
-				// 		uni.setStorageSync('user_id',res.data.id)
-				// 		this.$utils.toast('注册成功',() =>{
-				// 			uni.showModal({
-				// 			    title: '提示',
-				// 			    content: '新用户完善资料可送20P币哦~~',
-				// 				confirmColor: '#f07373',
-				// 			    success: function (res) {
-				// 			        uni.switchTab({
-				// 			        	url: '../../tabBar/my/my'
-				// 			        })	
-				// 			    }
-				// 			});						
-				// 		})
-				// 	}
-				// }).catch((err) => {
-				// 	uni.hideLoading()
-				// 	this.$utils.toast(err.msg)
-				// })
 			},
-			init() {
+			createVerifyCode(str) {
 				var context = uni.createCanvasContext('imgcanvas', this),
 					w = this.width,
 					h = this.height;
@@ -149,9 +124,10 @@
 				var pool = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "I", "M", "N", "O", "P", "Q", "R", "S",
 						"T", "U", "V", "W", "S", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
 					],
-					str = '';
-				for (var i = 0; i < 4; i++) {
-					var c = pool[this.rn(0, pool.length - 1)];
+					code = ''
+				let strArr = str.split('')
+				for (var i = 0; i < strArr.length; i++) {
+					var c = strArr[i];
 					var deg = this.rn(-30, 30);
 					context.setFontSize(18);
 					context.setTextBaseline("top");
@@ -161,12 +137,8 @@
 					context.rotate(deg * Math.PI / 180);
 					context.fillText(c, -15 + 5, -15);
 					context.restore();
-					str += c;
+					code += c;
 				}
-				uni.setStorage({
-					key: 'imgcode',
-					data: str,
-				});
 				for (var i = 0; i < 40; i++) {
 					context.beginPath();
 					context.arc(this.rn(0, w), this.rn(0, h), 1, 0, 2 * Math.PI);
@@ -184,12 +156,6 @@
 			},
 			rn(max, min) {
 				return parseInt(Math.random() * (max - min)) + min;
-			},
-			refresh() {
-				this.init();
-			},
-			canvasIdErrorCallback(e) {
-				console.error(e.detail.errMsg)
 			}
 		}
 	}
@@ -206,7 +172,17 @@
 
 	.verify-right {
 		padding-left: 10px;
-
+		.get-verify {
+			display: block;
+			width: 120px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border-radius: 4px;
+			font-size: 15px;
+			color: #fff;
+			@include base-bg;
+		}
 		.canvas {
 			border-radius: 4px;
 			overflow: hidden;

@@ -1,17 +1,32 @@
 'use strict';
 const uniID = require('uni-id')
 exports.main = async function(event, context) {
-	console.log(event);
 	const payload = await uniID.checkToken(event.uniIdToken)
 	if (payload.code) {
 		return payload
 	}
-	const res = await uniID.updateUser({
+	const userRes = await uniID.getUserInfo({
 		uid: payload.uid,
-		nickname: 'Sam',
-		gender: 1,
-		status: 1,
-		collected_ids: [1,3]
+		field: ['is_completed','coins']
 	})
+	const { nickname, gender, mobile, email } = event
+	let data = {
+		uid: payload.uid,
+		gender
+	}
+	if(nickname) {
+		data['nickname'] = nickname
+	}
+	if(mobile) {
+		data['mobile'] =  mobile
+	}
+	if(email) {
+		data['email'] = email
+	}
+	if(userRes.code === 0 && !userRes.userInfo.is_completed) { // 首次完善信息赠送20P币
+		data['is_completed'] = 1
+		data['coins'] = (userRes.userInfo.coins || 0) + 20
+	}
+	const res = await uniID.updateUser(data)
 	return res
 }

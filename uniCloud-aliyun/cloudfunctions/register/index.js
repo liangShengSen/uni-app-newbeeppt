@@ -1,45 +1,44 @@
 'use strict';
-// const db = uniCloud.database()
-// exports.main = async (event, context) => {
-// 	const { username, password } = event
-// 	let user = {
-// 		username,
-// 		password,
-// 		nickname: null,
-// 		gender: null,
-// 		avatar: null,
-// 		status: "1",
-// 		collected_ids: [],
-// 		subject_ids: [],
-// 		download_ids: [],
-// 		coins: 0
-// 	}
-// 	let userExist = await db.collection('users').where({
-// 		username
-// 	}).limit(1).get()
-// 	if(userExist.data.length > 0) {
-// 		return {
-// 			code: 400,
-// 			msg: "账号已注册"
-// 		}		
-// 	}
-// 	let res = await db.collection('users').add(user)
-// 	return {
-// 		code: 200,
-// 		msg: "success",
-// 		data: res
-// 	}
-// };
+const db = uniCloud.database()
 const uniID = require('uni-id')
-exports.main = async function(event,context) {
-    const {
-        username,
-        password
-    } = event
-    // username、password验证是否合法的逻辑
-    const res = await uniID.register({
-        username,
-        password
-    })
-    return res.result
+const PHONE = /^1[3456789][0-9]\d{8}$/
+exports.main = async function(event, context) {
+	const {
+		username,
+		code,
+		password
+	} = event
+	// 校验验证码
+	let verifyData = {
+		code,
+		type: 'register'
+	}
+	if(PHONE.test(username)) {
+		verifyData['mobile'] = username
+	}else{
+		verifyData['email'] = username
+	}
+	const checkRes = await uniID.verifyCode(verifyData)
+	if(checkRes.code !== 0) {
+		return {
+			code: 1,
+			msg: checkRes.msg
+		}
+	}
+	// 查询是否注册
+	let userExist = await db.collection('users').where({
+		username
+	}).limit(1).get()
+	if (userExist.data.length > 0) {
+		return {
+			code: 1,
+			msg: "账号已注册"
+		}
+	}
+	// 注册
+	const res = await uniID.register({
+		username,
+		password
+	})
+	return res
 }

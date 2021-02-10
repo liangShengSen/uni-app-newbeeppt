@@ -5,10 +5,10 @@
 			<view class="login-card">
 				<view class="login-head">请输入你的账户</view>
 				<view class="login-input login-margin-b">
-					<input v-model="account" placeholder="手机号或者邮箱" />
+					<input v-model="username" placeholder="手机号或者邮箱" />
 				</view>
 				<view class="login-input">
-					<input v-model="password" @confirm="login" placeholder="请输入密码(8-16位)" />
+					<input type="password" v-model="password" @confirm="login" placeholder="请输入密码(8-16位)" />
 				</view>
 				<view class="login-function">
 					<view class="login-register" @click="go_register">快速注册</view>
@@ -26,7 +26,7 @@
 	export default {
 		data() {
 			return {
-				account: '',
+				username: '',
 				password: ''
 			}
 		},
@@ -40,31 +40,33 @@
 				})
 			},
 			login() {
-				if(!this.account) {
+				if(!this.username) {
 					this.$utils.toast('请输入账号')
 					return false;
 				}
-				if(!(PHONE.test(this.account) || EMAIL.test(this.account))) {
+				if(!(PHONE.test(this.username) || EMAIL.test(this.username))) {
 					this.$utils.toast('账号格式错误')
 					return false;
 				}
-				if (this.password.length < 8 || this.password.length > 16) {
-					this.$utils.toast('请输入8-16位密码')
+				if (this.password.length < 6 || this.password.length > 20) {
+					this.$utils.toast('请输入6-20位密码')
 					return false;
 				}
 				uni.showLoading()
 				this.$api.login({
-					account: this.account,
+					username: this.username,
 					password: this.password
 				}).then(res => {
 					uni.hideLoading()
-					if(res.code === 200) {
-						uni.setStorageSync('user_id',res.data._id)
-						this.$utils.toast('登录成功',() => {
+					if (res.code === 0) {
+						uni.setStorageSync('uni_id_token', res.token)
+						this.$utils.toast('登录成功', () => {
 							uni.switchTab({
-								url: '../../tabBar/my/my'
-							})							
+								url: '../../tabBar/home/home'
+							})
 						})
+					} else {
+						this.$utils.toast(res.msg)
 					}
 				}).catch((err) => {
 					uni.hideLoading()
