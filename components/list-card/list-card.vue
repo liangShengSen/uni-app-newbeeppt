@@ -8,7 +8,7 @@
 			<view class="listcard-content">
 				<view class="listcard-content_title">
 					<text>{{item.title}}</text>
-					<collect :item="item"></collect>
+					<collect :item="item" :collect="collect"></collect>
 				</view>
 				<view class="listcard-content_des">
 					<view class="listcard-content_des-label">
@@ -33,7 +33,7 @@
 			<view class="listcard-content">
 				<view class="listcard-content_title">
 					<text>{{item.title}} </text>
-					<collect :item="item"></collect>
+					<collect :item="item" :collect="collect"></collect>
 				</view>
 				<view class="listcard-image">
 					<view v-for="(img,index) in item.priview_imgs" :key="index" class="listcard-image_item">
@@ -66,7 +66,7 @@
 			<view class="listcard-content">
 				<view class="listcard-content_title">
 					<text>{{item.title}} </text>
-					<collect :item="item"></collect>
+					<collect :item="item" :collect="collect"></collect>
 				</view>
 				<view class="listcard-content_des">
 					<view class="listcard-content_des-label">
@@ -97,6 +97,10 @@
 				default () {
 					return {}
 				}
+			},
+			collect: {
+				type: Boolean,
+				default: false
 			}
 		},
 		data() {

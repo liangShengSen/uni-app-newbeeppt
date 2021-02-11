@@ -60,6 +60,7 @@
 					uni.hideLoading()
 					if (res.code === 0) {
 						uni.setStorageSync('uni_id_token', res.token)
+						uni.$emit('subjectChange') // 更新tab学科信息
 						this.$utils.toast('登录成功', () => {
 							uni.switchTab({
 								url: '../../tabBar/home/home'

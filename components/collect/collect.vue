@@ -16,6 +16,10 @@
 			isDetail: {
 				type: Boolean,
 				default: null
+			},
+			collect: {
+				type: Boolean,
+				default: false
 			}
 		},
 		data() {
@@ -34,19 +38,26 @@
 		methods:{
 			collecting() {
 				uni.showLoading()
-				this.isCollect = !this.isCollect
 				this.$api.collect_documents({
-					user_id: '600d7452b2f9d8000148f779',
 					document_id: this.item._id
 				}).then(res => {
 					uni.hideLoading()
-					uni.showToast({
-						title: this.isCollect ? '收藏成功' : '取消收藏',
-						icon: 'none'
-					})
-					// 更新列表收藏状态
-					if(this.isDetail) {
-						uni.$emit('update_doc_status')
+					if(res.code === 0) {
+						this.isCollect = !this.isCollect
+						uni.showToast({
+							title: this.isCollect ? '收藏成功' : '取消收藏',
+							icon: 'none'
+						})
+						// 更新列表收藏状态
+						if(this.isDetail) {
+							uni.$emit('update_doc_status')
+						}
+						// 更新收藏列表
+						if(this.collect) {
+							uni.$emit('update_collected', {
+								id: this.item._id
+							})							
+						}
 					}
 				}).catch(() => {
 					uni.hideLoading()

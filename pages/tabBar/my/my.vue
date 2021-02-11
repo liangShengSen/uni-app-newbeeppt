@@ -26,14 +26,14 @@
 			</view>
 		</view>
 		<view class="my-content">
-			<view class="my-content_list" @click="toCollectedAndDownload">
+			<view class="my-content_list" @click="toCollectedAndDownload('download')">
 				<view class="my-content_list-title">
 					<uni-icons class="icon" type="download" size="18"></uni-icons>
 					<text>我的下载</text>
 				</view>
 				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
 			</view>
-			<view class="my-content_list" @click="toCollectedAndDownload">
+			<view class="my-content_list" @click="toCollectedAndDownload('collected')">
 				<view class="my-content_list-title">
 					<uni-icons class="icon" type="heart" size="18"></uni-icons>
 					<text>我的收藏</text>
@@ -129,9 +129,15 @@
 							this.$api.logout().then(res => {
 								uni.hideLoading()
 								if (res.code === 0) {
-									this.$utils.toast('退出成功')
 									this.userInfo = {}
 									uni.removeStorageSync('uni_id_token')
+									uni.$emit('subjectChange') // 更新tab学科信息
+									this.$utils.toast('退出成功',() => {
+										console.log(2323);
+										uni.switchTab({
+											url: '../home/home'
+										})
+									})
 								}
 							})
 						}

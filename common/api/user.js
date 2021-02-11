@@ -46,3 +46,10 @@ export const setUserAvatar = (data) => {
 		data
 	})
 }
+
+export const getDownloadAndCollected = (data) => {
+	return $http({
+		url: 'get_download_collected',
+		data
+	})
+}

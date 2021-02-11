@@ -11,7 +11,7 @@
 			<view v-if="!loading" class="label-content">
 				<view class="label-content_item" v-for="(item,index) in subjectList" :key="item._id">
 					{{item.name}}
-					<uni-icons v-if="is_edit" type="clear" size="20" color="red" class="icons-close" @click="del(index)"></uni-icons>
+					<uni-icons v-if="is_edit" type="clear" size="16" color="red" class="icons-close" @click="del(index)"></uni-icons>
 				</view>
 				<view v-if="subjectList.length === 0 && !loading" class="no-data">
 					当前没有数据
@@ -70,18 +70,18 @@
 				uni.showLoading()
 				this.$api.update_subject({
 					subject_ids:subject_ids.map(item => {
-						return item._id
+						return item.id
 					})
 				}).then(res => {
 					uni.hideLoading()
-					uni.showToast({
-						title: '更新成功',
-						icon: 'none'
-					})
-					uni.$emit('subjectChange')
-					uni.switchTab({
-						url: '/pages/tabBar/home/home'
-					})
+					if(res.code === 0) {
+						uni.$emit('subjectChange')
+						this.$utils.toast(res.msg,() => {
+							uni.switchTab({
+								url: '/pages/tabBar/home/home'
+							})							
+						})
+					}
 				}).catch(() => {
 					uni.hideLoading()
 				})

@@ -1,10 +1,11 @@
 'use strict';
 const db = uniCloud.database()
 const $ = db.command.aggregate
+const uniID = require('uni-id')
 exports.main = async (event, context) => {
 	const {
+		uniIdToken,
 		subject,
-		user_id,
 		page = 1,
 		pageSize = 10
 	} = event
@@ -14,17 +15,18 @@ exports.main = async (event, context) => {
 			subject
 		}
 	}
-	const userInfo = await db.collection('users').doc(user_id).get()
-	const collected_ids = userInfo.data[0].collected_ids
-	const documents = await db.collection('subject_documents').aggregate()
-	.addFields({
-		is_collect:$.in(['$_id',collected_ids])
-	})
-	.match(match).skip((page - 1) * pageSize).limit(pageSize).end()
+	const payload = await uniID.checkToken(uniIdToken)
+	let collected_ids = []
+	if (payload.code === 0) { // 登录态
+		collected_ids = payload.userInfo.collected_ids || []
+	}
+	const res = await db.collection('subject_documents').aggregate().addFields({
+		is_collect: $.in(['$_id', collected_ids])
+	}).match(match).skip((page - 1) * pageSize).limit(pageSize).end()
 
 	return {
-		code: 200,
+		code: 0,
 		msg: 'success',
-		data: documents.data
+		data: res.data
 	}
 };

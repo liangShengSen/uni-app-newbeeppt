@@ -1,12 +1,17 @@
 'use strict';
 const db = uniCloud.database()
+const uniID = require('uni-id')
 exports.main = async (event, context) => {
-	const { user_id, subject_ids = [] } = event
-	await db.collection('users').doc(user_id).update({
+	const { subject_ids = [] } = event
+	const payload = await uniID.checkToken(event.uniIdToken)
+	if (payload.code) {
+		return payload
+	}
+	await db.collection('uni-id-users').doc(payload.userInfo._id).update({
 		subject_ids
 	})
 	return {
-		code: 200,
-		msg: 'success'
+		code: 0,
+		msg: '设置成功'
 	}
 };

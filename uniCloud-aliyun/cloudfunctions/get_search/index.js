@@ -1,13 +1,17 @@
 'use strict';
 const db = uniCloud.database()
 const $ = db.command.aggregate
+const uniID = require('uni-id')
 exports.main = async (event, context) => {
 	const {
-		value,
-		user_id,
+		uniIdToken,
+		value
 	} = event
-	const userInfo = await db.collection('users').doc(user_id).get()
-	const collected_ids = userInfo.data[0].collected_ids
+	const payload = await uniID.checkToken(uniIdToken)
+	let collected_ids = []
+	if (payload.code === 0) {
+		collected_ids = payload.userInfo.collected_ids
+	}
 	const documents = await db.collection('subject_documents').aggregate()
 	.addFields({
 		is_collect:$.in(['$_id',collected_ids])
@@ -17,7 +21,7 @@ exports.main = async (event, context) => {
 	.end()
 
 	return {
-		code: 200,
+		code: 0,
 		msg: 'success',
 		data: documents.data
 	}

@@ -18,7 +18,7 @@
 	    {
             "path" : "pages/tabBar/category/category",
             "style" :{
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "资料筛选",
                 "enablePullDownRefresh": false
             }
             

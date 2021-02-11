@@ -11,7 +11,7 @@ export default function $http(options) {
 				if([30201,30202,30203,30204].includes(res.result.code)) { // token过期
 					uni.showToast({
 						icon:'none',
-						title: res.result.msg,
+						title: 'token不存在或已过期，请先登录',
 						success: () => {
 							uni.removeStorageSync('uni_id_token')
 						}
