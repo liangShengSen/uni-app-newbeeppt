@@ -3,7 +3,7 @@ const fs = require('fs');
 const dayjs = require('dayjs');
 
 (async () => {
-	let pageUrl = 'http://www.pptok.com/kejian/tiyukejianppt/'
+	let pageUrl = 'http://www.pptok.com/pptmb/'
 	const browser = await puppeteer.launch({
 		headless: true,
 	});
@@ -42,21 +42,23 @@ const dayjs = require('dayjs');
 					file_size: await page.$eval('.ver-chose', (span) => span.innerHTML),
 					priview_imgs: [await page.$eval('#soft-intro img', (img) => img.src)],
 					cover_img: list[n].cover_img,
+					download_url: await page.$eval('.scdown .blue', (a) => a.href),
 					author: {
 						id: "001",
 						name: "Sam"
 					},
-					subject: "体育",
+					subject: "其他",
 					year: '2021',
 					rank: '0',
-					price: 5,
+					price: 0,
 					status: '1',
 					download_num: 0,
 					created_at: dayjs().format('YYYY-MM-DD'),
 					type: "ppt",
-					type_label: "课件"
+					type_label: "模板"
 				}
 				docsArr.push(info);
+				console.log(info)
 				console.log(docsArr.length)
 			}catch(err) {
 				console.log(list[n]['href'])

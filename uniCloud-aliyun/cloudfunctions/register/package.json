@@ -11,6 +11,5 @@
   "dependencies": {
     "uni-id": "file:../common/uni-id"
   },
-  "devDependencies": {},
   "description": ""
 }

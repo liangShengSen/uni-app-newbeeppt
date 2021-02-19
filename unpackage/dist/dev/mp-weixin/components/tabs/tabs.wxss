@@ -31,7 +31,8 @@
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #f5f5f5;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .tabs .tabs-scroll {
   -webkit-box-flex: 1;
@@ -49,7 +50,8 @@
   -webkit-flex-wrap: nowrap;
           flex-wrap: nowrap;
   height: 45px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .tabs .tabs-scroll .tabs-scroll_box .tabs-scroll_item {
   -webkit-flex-shrink: 0;

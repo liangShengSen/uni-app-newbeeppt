@@ -1,7 +1,7 @@
 <template>
 	<view class="register">
 		<view class="forget-bg">
-			<navbar type="auth" authTitle="注册"></navbar>
+			<navbar type="auth" title="注册"></navbar>
 			<view class="forget-card">
 				<view class="forget-input forget-margin-b">
 					<input v-model="username" placeholder="请输入手机号/邮箱" />
@@ -22,6 +22,9 @@
 		</view>
 		<view class="forget-btn">
 			<button class="landing" type="primary" @click="register">注册</button>
+			<!-- #ifdef MP-WEIXIN -->
+			<button class="wx-btn" type="primary" @click="getLoginCode">微信注册</button>
+			<!-- #endif -->
 		</view>
 	</view>
 </template>
@@ -44,6 +47,20 @@
 			}
 		},
 		methods: {
+			registerSuccess() {
+				this.$utils.toast('注册成功', () => {
+					uni.showModal({
+						title: '提示',
+						content: '新用户首次完善资料可送20P豆哦~~',
+						confirmColor: '#f07373',
+						success: function(res) {
+							uni.switchTab({
+								url: '../../tabBar/my/my'
+							})
+						}
+					});
+				})
+			},
 			getVerify() {
 				if (!this.username) {
 					this.$utils.toast('请输入账号')
@@ -54,9 +71,9 @@
 					return false;
 				}
 				let data = {}
-				if(PHONE.test(this.username)) {
+				if (PHONE.test(this.username)) {
 					data['mobile'] = this.username
-				}else{
+				} else {
 					data['email'] = this.username
 				}
 				this.loading = true
@@ -66,7 +83,7 @@
 						this.initCode = true
 						setTimeout(() => {
 							this.createVerifyCode(res.data.code)
-						},0)
+						}, 0)
 					}
 				}).catch(() => {
 					this.loading = false
@@ -94,24 +111,50 @@
 					uni.hideLoading()
 					if (res.code === 0) {
 						uni.setStorageSync('uni_id_token', res.token)
-						this.$utils.toast('注册成功', () => {
-							uni.showModal({
-								title: '提示',
-								content: '新用户首次完善资料可送20P豆哦~~',
-								confirmColor: '#f07373',
-								success: function(res) {
-									uni.switchTab({
-										url: '../../tabBar/my/my'
-									})
-								}
-							});
-						})
+						this.registerSuccess()
 					} else {
 						this.$utils.toast(res.msg)
 					}
 				}).catch((err) => {
 					uni.hideLoading()
 					this.$utils.toast(err.msg)
+				})
+			},
+			getLoginCode() {
+				uni.showLoading({
+					title: "微信注册中"
+				})
+				uni.login({
+					provider: 'weixin',
+					success: (result) => {
+						let {
+							code
+						} = result
+						if (code) {
+							this.$api.loginByWeixin({
+								code
+							}).then(res => {
+								uni.hideLoading()
+								if (res.code === 0) {
+									uni.setStorageSync('uni_id_token', res.token)
+									if (res.type === 'register') { // 第一次为注册，其他则是登录
+										this.registerSuccess()
+									} else {
+										this.$utils.toast('该账号已注册',() => {
+											uni.switchTab({
+												url: '../../tabBar/my/my'
+											})
+										})
+									}
+								}
+							}).catch(() => {
+								uni.hideLoading()
+							})
+						}
+					},
+					fail: () => {
+						uni.hideLoading()
+					}
 				})
 			},
 			createVerifyCode(str) {
@@ -172,6 +215,7 @@
 
 	.verify-right {
 		padding-left: 10px;
+
 		.get-verify {
 			display: block;
 			width: 120px;
@@ -183,6 +227,7 @@
 			color: #fff;
 			@include base-bg;
 		}
+
 		.canvas {
 			border-radius: 4px;
 			overflow: hidden;
@@ -200,6 +245,14 @@
 		border-radius: 40px;
 		font-size: 16px;
 		@include base-bg;
+	}
+
+	.wx-btn {
+		height: 40px;
+		line-height: 40px;
+		border-radius: 40px;
+		font-size: 16px;
+		margin-top: 15px;
 	}
 
 	.forget-btn {

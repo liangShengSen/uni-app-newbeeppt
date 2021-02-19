@@ -53,3 +53,23 @@ export const getDownloadAndCollected = (data) => {
 		data
 	})
 }
+
+export const createRechargeRecord = (data) => {
+	return $http({
+		url: 'create_recharge_order',
+		data
+	})
+}
+
+export const getRechargeOrders = () => {
+	return $http({
+		url: 'get_recharge_records'
+	})
+}
+
+export const loginByWeixin = (data) => {
+	return $http({
+		url: 'login_by_weixin',
+		data
+	})
+}

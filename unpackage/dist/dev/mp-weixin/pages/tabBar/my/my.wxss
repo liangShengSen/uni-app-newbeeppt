@@ -35,9 +35,11 @@ page {
 .my .my-header {
   width: 100%;
   height: 150px;
+  background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
   background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
   background: linear-gradient(left, #ff978d, #ffbb69);
-  border-radius: 0px 0px 10px 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+          border-radius: 0px 0px 10px 10px;
   color: #fff;
   padding-top: 20px;
 }
@@ -60,7 +62,8 @@ page {
   width: 60px;
   height: 60px;
   margin: 0 10px 0 15px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   overflow: hidden;
 }
 .my .my-header .my-header_logo .my-header_logo-box image {
@@ -89,8 +92,10 @@ page {
           justify-content: space-evenly;
   height: 100%;
   background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 3px 4px 0 #ece9e9;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 3px 4px 0 #ece9e9;
+          box-shadow: 0 3px 4px 0 #ece9e9;
 }
 .my .my-header .my-header_info .my-header_info-box .my-header_info-item {
   display: -webkit-box;
@@ -144,12 +149,16 @@ page {
   padding: 0 10px;
 }
 .my .login-bar .login-box {
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
   height: 40px;
   line-height: 40px;
   text-align: center;
   font-size: 15px;
-  color: #666;
+  color: #fff;
   background-color: #fff;
+  background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
+  background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
+  background: linear-gradient(left, #ff978d, #ffbb69);
 }
 

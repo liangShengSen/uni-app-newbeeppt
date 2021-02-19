@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<view class="forget-bg">
-			<navbar type="auth" authTitle="忘记密码"></navbar>
+			<navbar type="auth" title="忘记密码"></navbar>
 			<view class="forget-card">
 				<view class="forget-input forget-margin-b">
 					<input type="number" placeholder="请输入您的手机号" />

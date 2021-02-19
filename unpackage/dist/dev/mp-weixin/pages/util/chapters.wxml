@@ -1,1 +1,0 @@
-<view class="content"><view class="text-area"><text class="title">{{title}}</text></view><button type="default" data-event-opts="{{[['tap',[['uploadImgs',['$event']]]]]}}" bindtap="__e">click me</button></view>

@@ -1,6 +1,6 @@
 {
-	"passwordSecret": "newbeeppt_secret",
-	"tokenSecret": "newbeeppt_token_secret",
+	"passwordSecret": "newbeeppt-psw-secret",
+	"tokenSecret": "newbeeppt-token-secret",
 	"tokenExpiresIn": 7200,
 	"tokenExpiresThreshold": 600,
 	"passwordErrorLimit": 6,
@@ -20,8 +20,8 @@
 	"mp-weixin": {
 		"oauth" : {
 			"weixin" : {
-				"appid" : "weixin appid",
-				"appsecret" : "weixin appsecret"
+				"appid" : "wxa0b4c230be5c5add",
+				"appsecret" : "675935984743f7a8d112e9486c407543"
 			}
 		}
 	},

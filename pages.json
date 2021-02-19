@@ -1,7 +1,7 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		// {
-		// 	"path": "pages/util/chapters",
+		// 	"path": "pages/util/image",
 		// 	"style": {
 		// 		"navigationBarTitleText": "11"
 		// 	}
@@ -56,6 +56,7 @@
             {
                 "navigationBarTitleText": "资料详情",
                 "enablePullDownRefresh": false
+				
             }
             
         }
@@ -121,6 +122,25 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "我的下载",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+		,{
+		    "path" : "pages/personal/my_recharge_records",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "充值记录",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/recharge/recharge",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "充值中心",
+				"navigationStyle":"custom",
                 "enablePullDownRefresh": false
             }
             

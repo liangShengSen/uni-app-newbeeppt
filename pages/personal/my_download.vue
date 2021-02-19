@@ -3,7 +3,7 @@
 		<list-scroll class="list-scroll">
 			<uni-load-more v-if="loading" status="loading" iconType="snow"></uni-load-more>
 			<view v-if="downloadList.length > 0">
-				<list-card :item="item" v-for="item in downloadList" :key="item._id"></list-card>
+				<list-card :item="item" :download="true" v-for="item in downloadList" :key="item._id"></list-card>
 			</view>
 			<view v-if="downloadList.length === 0 && !loading" class="no-data">
 				暂无数据

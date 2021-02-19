@@ -6,3 +6,24 @@ export const get_subject_detail = (data) => {
 		data
 	})
 }
+
+export const pre_download = (data) => {
+	return $http({
+		url: 'pre_download',
+		data
+	})
+}
+
+export const confirm_download = (data) => {
+	return $http({
+		url: 'confirm_download',
+		data
+	})
+}
+
+export const get_recharge = (data) => {
+	return $http({
+		url: 'get_recharge',
+		data
+	})
+}

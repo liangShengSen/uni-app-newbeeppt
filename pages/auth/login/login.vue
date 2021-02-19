@@ -16,35 +16,70 @@
 			</view>
 		</view>
 		<view class="login-btn">
-			<button class="landing" type="primary" @click="login">登陆</button>
+			<button class="landing" type="primary" @click="login">账号登陆</button>
+			<!-- #ifdef MP-WEIXIN -->
+			<button class="wx-btn" type="primary" @click="getLoginCode">微信登陆</button>
+			<!-- #endif -->
 		</view>
 	</view>
 </template>
 
 <script>
-	import { PHONE, EMAIL } from '@/common/js/regx.js'
+	import {
+		PHONE,
+		EMAIL
+	} from '@/common/js/regx.js'
 	export default {
 		data() {
 			return {
 				username: '',
-				password: ''
+				password: '',
+				from: '',
+				id: ''
 			}
 		},
-		onLoad() {
-
+		onLoad(query) {
+			this.from = query.from || ''
+			this.id = query.id || ''
 		},
 		methods: {
-			go_register(){
+			go_register() {
 				uni.navigateTo({
 					url: '/pages/auth/register/register'
 				})
 			},
+			fallBack() {
+				switch (this.from) {
+					case 'tabs':
+						uni.$emit('subjectChange') // 更新tab学科信息
+						this.$utils.toast('登录成功', () => {
+							uni.switchTab({
+								url: '../../tabBar/home/home'
+							})
+						})
+						break
+					case 'detail':
+						this.$utils.toast('登录成功', () => {
+							uni.navigateTo({
+								url: `../../detail/detail?_id=${this.id}`
+							})
+						})
+						break
+					case 'my':
+						this.$utils.toast('登录成功', () => {
+							uni.switchTab({
+								url: '../../tabBar/my/my'
+							})
+						})
+						break
+				}
+			},
 			login() {
-				if(!this.username) {
+				if (!this.username) {
 					this.$utils.toast('请输入账号')
 					return false;
 				}
-				if(!(PHONE.test(this.username) || EMAIL.test(this.username))) {
+				if (!(PHONE.test(this.username) || EMAIL.test(this.username))) {
 					this.$utils.toast('账号格式错误')
 					return false;
 				}
@@ -60,18 +95,42 @@
 					uni.hideLoading()
 					if (res.code === 0) {
 						uni.setStorageSync('uni_id_token', res.token)
-						uni.$emit('subjectChange') // 更新tab学科信息
-						this.$utils.toast('登录成功', () => {
-							uni.switchTab({
-								url: '../../tabBar/home/home'
-							})
-						})
+						this.fallBack()
 					} else {
 						this.$utils.toast(res.msg)
 					}
 				}).catch((err) => {
 					uni.hideLoading()
 					this.$utils.toast(err.msg)
+				})
+			},
+			getLoginCode() {
+				uni.showLoading({
+					title: "微信登录中"
+				})
+				uni.login({
+					provider: 'weixin',
+					success: (result) => {
+						let {
+							code
+						} = result
+						if (code) {
+							this.$api.loginByWeixin({
+								code
+							}).then(res => {
+								uni.hideLoading()
+								if (res.code === 0) {
+									uni.setStorageSync('uni_id_token', res.token)
+									this.fallBack()
+								}
+							}).catch(() => {
+								uni.hideLoading()
+							})
+						}
+					},
+					fail: () => {
+						uni.hideLoading()
+					}
 				})
 			}
 		}
@@ -82,32 +141,46 @@
 	.login {
 		width: 100%;
 	}
-	.landing{
+
+	.landing {
 		height: 40px;
 		line-height: 40px;
 		border-radius: 40px;
 		font-size: 16px;
 		@include base-bg;
 	}
-	.login-btn{
+
+	.wx-btn {
+		height: 40px;
+		line-height: 40px;
+		border-radius: 40px;
+		font-size: 16px;
+		margin-top: 15px;
+	}
+
+	.login-btn {
 		padding: 5px 10px;
 		margin-top: 175px;
 	}
-	.login-function{
+
+	.login-function {
 		overflow: auto;
 		padding: 10px 10px 15px 10px;
 	}
-	.login-forget{
+
+	.login-forget {
 		float: left;
 		font-size: 12px;
 		color: #999;
 	}
-	.login-register{
+
+	.login-register {
 		color: #666;
 		float: right;
 		font-size: 12px;
 	}
-	.login-input input{
+
+	.login-input input {
 		background: #f2f5f6;
 		font-size: 14px;
 		padding: 5px 12px;
@@ -115,25 +188,30 @@
 		line-height: 30px;
 		border-radius: 4px;
 	}
-	.login-margin-b{
+
+	.login-margin-b {
 		margin-bottom: 12px;
 	}
-	.login-input{
+
+	.login-input {
 		padding: 5px 10px;
 	}
-	.login-head{
+
+	.login-head {
 		font-size: 16px;
 		text-align: center;
 		padding: 12px 5px 22px 5px;
 	}
-	.login-card{
+
+	.login-card {
 		background: #fff;
 		border-radius: 6px;
 		padding: 5px 12px;
-		box-shadow: 0 3px 9px rgba(0,0,0,0.12);
+		box-shadow: 0 3px 9px rgba(0, 0, 0, 0.12);
 		position: relative;
 		margin-top: 30px;
 	}
+
 	.login-bg {
 		position: relative;
 		height: 150px;

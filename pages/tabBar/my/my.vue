@@ -5,13 +5,13 @@
 				<view class="my-header_logo-box">
 					<image :src="`${userInfo.avatar ? userInfo.avatar : '../../../static/images/no_login.png'}`" mode="aspectFill"></image>
 				</view>
-				<text class="my-header_name" v-if="userInfo._id">{{userInfo.nickname ? userInfo.nickname : userInfo.username}}</text>
+				<text class="my-header_name" v-if="userInfo._id">{{userInfo.nickname || userInfo.username || userInfo._id}}</text>
 				<text class="my-header_name" v-else @click="toLogin">登录/注册</text>
 			</view>
 			<view class="my-header_info">
 				<view class="my-header_info-box">
 					<view class="my-header_info-item">
-						<text class="count">{{userInfo.download_ids && userInfo.download_ids.length || 0}}</text>
+						<text class="count">{{userInfo.download_docs && userInfo.download_docs.length || 0}}</text>
 						<text class="text">我的下载</text>
 					</view>
 					<view class="my-header_info-item">
@@ -19,7 +19,7 @@
 						<text class="text">我的收藏</text>
 					</view>
 					<view class="my-header_info-item">
-						<text class="count">{{userInfo.coins || 0}}</text>
+						<text class="count">{{userInfo.balance || 0}}</text>
 						<text class="text">我的P豆</text>
 					</view>
 				</view>
@@ -44,6 +44,13 @@
 				<view class="my-content_list-title">
 					<uni-icons class="icon" type="chatbubble" size="18"></uni-icons>
 					<text>我的信息</text>
+				</view>
+				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
+			</view>
+			<view class="my-content_list" @click="toCollectedAndDownload('rechargeOrders')">
+				<view class="my-content_list-title">
+					<uni-icons class="icon" type="chatboxes" size="18"></uni-icons>
+					<text>充值记录</text>
 				</view>
 				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
 			</view>
@@ -74,7 +81,7 @@
 		methods: {
 			toLogin() {
 				uni.navigateTo({
-					url: '../../auth/login/login'
+					url: '../../auth/login/login?from=my'
 				})
 			},
 			toHelp() {
@@ -85,12 +92,14 @@
 			toCollectedAndDownload(type) {
 				let url = ''
 				if (!this.userInfo._id) {
-					url = '../../auth/login/login'
+					url = '../../auth/login/login?from=my'
 				} else {
 					if (type === 'collected') {
 						url = '../../personal/my_collected'
-					} else {
+					} else if(type === 'download') {
 						url = '../../personal/my_download'
+					} else if(type === 'rechargeOrders') {
+						url = '../../personal/my_recharge_records'
 					}
 				}
 				uni.navigateTo({
@@ -133,7 +142,6 @@
 									uni.removeStorageSync('uni_id_token')
 									uni.$emit('subjectChange') // 更新tab学科信息
 									this.$utils.toast('退出成功',() => {
-										console.log(2323);
 										uni.switchTab({
 											url: '../home/home'
 										})

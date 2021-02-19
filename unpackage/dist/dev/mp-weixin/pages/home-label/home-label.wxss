@@ -67,7 +67,8 @@ page {
   position: relative;
   padding: 2px 5px;
   margin: 12px 10px 0 0;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
   border: 1px solid #666;
   font-size: 14px;
   color: #666;
@@ -77,6 +78,7 @@ page {
   right: -8px;
   top: -8px;
   background-color: #fff;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
 }
 

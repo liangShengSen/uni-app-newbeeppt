@@ -8,22 +8,34 @@
 			<view class="listcard-content">
 				<view class="listcard-content_title">
 					<text>{{item.title}}</text>
-					<collect :item="item" :collect="collect"></collect>
+					<collect :item="item" :collect="collect" v-if="!download"></collect>
 				</view>
 				<view class="listcard-content_des">
 					<view class="listcard-content_des-label">
 						<view class="listcard-content_des-label-item">{{item.type_label}}</view>
 					</view>
 					<view class="listcard-content_des-info">
-						<view class="listcard-content_des-info-item">
-							{{item.created_at}}
-						</view>
-						<view class="listcard-content_des-info-item">
-							{{item.download_num}}次下载
-						</view>
-						<view class="listcard-content_des-info-item">
-							{{item.price}}豆
-						</view>
+						<block v-if="!download">
+							<view class="listcard-content_des-info-item">
+								{{item.created_at}}
+							</view>
+							<view class="listcard-content_des-info-item">
+								{{item.download_num}}次下载
+							</view>
+							<view class="listcard-content_des-info-item" v-if="item.price > 0">
+								{{item.price}}P豆
+							</view>	
+							<view class="listcard-content_des-info-item free" v-else>免费</view>	
+						</block>
+						<!-- 下载列表 -->
+						<block v-else>
+							<view class="listcard-content_des-info-item">
+								支付：{{ item.price }} P豆
+							</view>
+							<view class="listcard-content_des-info-item">
+								下载时间：{{item.down_at}}
+							</view>
+						</block>
 					</view>
 				</view>
 			</view>
@@ -99,6 +111,10 @@
 				}
 			},
 			collect: {
+				type: Boolean,
+				default: false
+			},
+			download: {
 				type: Boolean,
 				default: false
 			}
@@ -195,6 +211,9 @@
 
 						&:first-child {
 							margin-left: 0;
+						}
+						&.free {
+							color: #30b33a;
 						}
 					}
 				}

@@ -7,7 +7,7 @@ exports.main = async function(event, context) {
 	}
 	const userRes = await uniID.getUserInfo({
 		uid: payload.uid,
-		field: ['is_completed','coins']
+		field: ['is_completed','balance']
 	})
 	const { nickname, gender, mobile, email } = event
 	let data = {
@@ -25,7 +25,7 @@ exports.main = async function(event, context) {
 	}
 	if(userRes.code === 0 && !userRes.userInfo.is_completed) { // 首次完善信息赠送20P币
 		data['is_completed'] = 1
-		data['coins'] = (userRes.userInfo.coins || 0) + 20
+		data['balance'] = (userRes.userInfo.balance || 0) + 20
 	}
 	const res = await uniID.updateUser(data)
 	return res

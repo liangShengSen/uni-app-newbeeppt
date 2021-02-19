@@ -7,7 +7,7 @@ exports.main = async (event, context) => {
 	}
 	const res = await uniID.getUserInfo({
 		uid: payload.uid,
-		field: ['username','nickname','collected_ids','download_ids','gender','email','mobile','avatar','coins']
+		field: ['username','nickname','gender','email','mobile','avatar','balance']
 	})
 	return res
 };

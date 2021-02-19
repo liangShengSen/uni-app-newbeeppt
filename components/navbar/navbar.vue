@@ -2,8 +2,8 @@
 	<view class="navbar">
 		<view :class="['navbar-fixed',type === 'auth' ? 'bg-none':'']">
 			<view :style="{height: `${statusBarHeight}px`}"></view>
-			<view class="navbar-content" :class="type === 'search' ? 'is-search':`${type === 'auth'?'is-auth':''}`" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}" @click.stop="open">
-				<view class="navbar-content_search-icons" v-if="type === 'search' || type === 'auth'" @click="back">
+			<view class="navbar-content" :class="type === 'search' ? 'is-search':`${(type === 'auth' || type === 'recharge') ? 'is-auth' : ''}`" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}" @click.stop="open">
+				<view class="navbar-content_search-icons" v-if="type === 'search' || type === 'auth' || type === 'recharge'" @click="back">
 					<uni-icons type="back" size="24" color="#fff"></uni-icons>
 				</view>
 				<view v-if="type === 'home'" class="navbar-search">
@@ -15,8 +15,8 @@
 				<view v-if="type === 'search'" class="navbar-search">
 					<input class="navbar-search_text" type="text" v-model="val" placeholder="请输入您要搜索的内容" @input="inputChange"/>
 				</view>
-				<view v-if="type === 'auth'" class="auth-box">
-					<text class="auth-title">{{authTitle}}</text>
+				<view v-if="type === 'auth' || type === 'recharge'" class="auth-box">
+					<text class="auth-title">{{title}}</text>
 				</view>
 			</view>
 		</view>
@@ -35,7 +35,7 @@
 				type: String,
 				default: 'home'
 			},
-			authTitle: {
+			title: {
 				type: String,
 				default: '登录'
 			}

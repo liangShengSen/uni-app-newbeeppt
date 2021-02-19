@@ -29,7 +29,8 @@
   -webkit-flex: 1;
           flex: 1;
   overflow: hidden;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 100%;
 }
 .scroll .list-scroll {

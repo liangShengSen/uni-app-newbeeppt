@@ -7,7 +7,7 @@ exports.main = async (event, context) => {
 	const payload = await uniID.checkToken(uniIdToken)
 	let collected_ids = []
 	if(payload.code === 0) {
-		collected_ids = payload.userInfo.collected_ids
+		collected_ids = payload.userInfo.collected_ids || []
 	}
 	let document = await db.collection('subject_documents').aggregate()
 	.addFields({

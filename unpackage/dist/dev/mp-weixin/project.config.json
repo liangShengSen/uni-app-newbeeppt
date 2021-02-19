@@ -5,12 +5,13 @@
   },
   "setting": {
     "urlCheck": false,
-    "postcss": false,
-    "minified": false
+    "postcss": true,
+    "minified": true,
+    "es6": true
   },
   "compileType": "miniprogram",
   "libVersion": "",
-  "appid": "touristappid",
+  "appid": "wxa0b4c230be5c5add",
   "projectname": "uni-app-newbeeppt",
   "condition": {
     "search": {

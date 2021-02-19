@@ -18,21 +18,24 @@
 		methods: {
 			timeout(delay) {
 				return new Promise((resolve, reject) => {
-				  setTimeout(() => {
-				    try {
-				      resolve(1)
-				    } catch (e) {
-				      reject(0)
-				    }
-				  }, delay);
-				}) 
+					setTimeout(() => {
+						try {
+							resolve(1)
+						} catch (e) {
+							reject(0)
+						}
+					}, delay);
+				})
 			},
 			async uploadImgs() {
 				let data = jsonData
 				for (let i = 0; i < data.length; i++) {
-					// if(i == 0) {
+					let fileSize = data[i]['file_size'].split(' ')[0],
+						size = data[i]['file_size'].split(' ')[0]
+					if (!(size === 'MB' && parseInt(fileSize) >= 100)) {
 						let priviewImg = data[i]['cover_img'],
-							downLink = data[i]['priview_imgs'][0];
+							downLink = data[i]['priview_imgs'][0],
+							downloadUrl = data[i]['download_url'];
 						let [error1, res1] = await uni.downloadFile({
 							url: priviewImg,
 						});
@@ -41,8 +44,13 @@
 							url: downLink,
 						});
 						await this.timeout(500)
+						let [error3, res3] = await uni.downloadFile({
+							url: downloadUrl,
+						});
+						await this.timeout(1000)
 						console.log(`res1:${JSON.stringify(error1)}`);
 						console.log(`res2:${JSON.stringify(error2)}`);
+						console.log(`res3:${JSON.stringify(error3)}`);
 						if (res1.statusCode === 200) {
 							let fileExtension = priviewImg.substring(priviewImg.lastIndexOf('.') + 1);
 							let result = await uniCloud.uploadFile({
@@ -59,17 +67,25 @@
 							});
 							data[i]['priview_imgs'] = [result.fileID]
 						}
-						await this.timeout(500)
+						if (res3.statusCode === 200) {
+							let fileExtension = downloadUrl.substring(downloadUrl.lastIndexOf('.') + 1);
+							let result = await uniCloud.uploadFile({
+								filePath: res3.tempFilePath,
+								cloudPath: `${data[i]['title']}.${fileExtension}`,
+							});
+							data[i]['download_url'] = result.fileID
+						}
+						await this.timeout(1000)
 						let res = await uniCloud.callFunction({
 							name: 'add',
 							data: data[i],
 						});
-						if(res.success) {
+						if (res.success) {
 							console.log(`第${i}条数据: ${data[i]['title']}: 插入成功`);
-						}else{
+						} else {
 							console.log("%c " + `${data[i]['title']}: 插入失败`, "color:" + 'red');
 						}
-					// }
+					}
 				}
 			}
 		}

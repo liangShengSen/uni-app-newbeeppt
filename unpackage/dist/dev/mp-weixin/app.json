@@ -8,7 +8,13 @@
     "pages/detail/detail",
     "pages/auth/login/login",
     "pages/auth/register/register",
-    "pages/auth/forget/forget"
+    "pages/auth/forget/forget",
+    "pages/personal/personal",
+    "pages/personal/help",
+    "pages/personal/my_collected",
+    "pages/personal/my_download",
+    "pages/personal/my_recharge_records",
+    "pages/recharge/recharge"
   ],
   "subPackages": [],
   "window": {
@@ -43,5 +49,6 @@
     ]
   },
   "permission": {},
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap93.json"
 }
