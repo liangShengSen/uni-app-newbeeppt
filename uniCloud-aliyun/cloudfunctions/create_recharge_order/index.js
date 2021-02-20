@@ -3,12 +3,12 @@ const uniID = require('uni-id')
 const db = uniCloud.database()
 exports.main = async (event, context) => {
 	let {
-		uniIdToken,
+		token,
 		id,
 		price,
 		date,
-	} = event
-	const payload = await uniID.checkToken(uniIdToken)
+	} = event.queryStringParameters
+	const payload = await uniID.checkToken(token)
 	if (payload.code) {
 		return payload
 	}

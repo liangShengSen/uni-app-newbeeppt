@@ -72,6 +72,11 @@
 							})
 						})
 						break
+					default:
+						uni.switchTab({
+							url: '../../tabBar/home/home'
+						})
+						break
 				}
 			},
 			login() {

@@ -8,7 +8,8 @@
 			</view>
 		</view>
 		<view class="recharge-list">
-			<view class="recharge-item" :class="index === active ? 'active' : ''" v-for="(item,index) in rechargeList" :key="item.price" @click="toggleRecharge(index)">{{item.price}}元</view>
+			<view class="recharge-item" :class="index === active ? 'active' : ''" v-for="(item,index) in rechargeList" :key="item.price"
+			 @click="toggleRecharge(index)">{{item.price}}元</view>
 		</view>
 		<view class="tips">
 			<view class="title">充值提示</view>
@@ -18,21 +19,20 @@
 		<view class="recharge-btn">
 			<button class="landing" type="primary" @click="showPayQrcode">立即支付</button>
 		</view>
-		<uni-popup ref="popup" type="center" @change="popupChange">
+		<uni-popup ref="popup" type="center" :maskClick="false">
 			<view class="modal-content">
 				<view class="pay-info">充值金额：{{payInfo.price}} 元</view>
 				<view class="pay-info">可得 P 豆：{{payInfo.coins}} 豆</view>
 				<view class="qrcode-wrap">
 					<image :src="payInfo.qrcode" mode="aspectFill"></image>
 				</view>
-				<view class="btn" @click="cancelPay">取消</view>
+				<view class="btn" @click="cancelPay">确认支付</view>
 			</view>
 		</uni-popup>
 	</view>
 </template>
 
 <script>
-	let timer = null
 	export default {
 		data() {
 			return {
@@ -52,7 +52,7 @@
 				uni.showLoading()
 				this.$api.get_recharge().then(res => {
 					uni.hideLoading()
-					if(res.code === 0) {
+					if (res.code === 0) {
 						this.rechargeList = res.data.recharges
 						this.balance = res.data.balance
 					}
@@ -63,48 +63,30 @@
 			toggleRecharge(i) {
 				this.active = i
 			},
-			createRechargeRecord() {
-				this.$api.createRechargeRecord({
-					id: this.$utils.UUIDGenerator(),
-					price: this.rechargeList[this.active].price,
-					date: this.$utils.getNowDate()
-				}).then(res => {
-					console.log(res)
-				})
-			},
-			popupChange(e) {
-				if(e.show) { // 弹出层打开, 轮训是否P豆增加了
-					this.payInfo = this.rechargeList[this.active]
-					clearInterval(timer)
-					timer = null
-					timer = setInterval(async () => {
-						let res = await this.$api.getUserInfo()
-						console.log(res);
-						if(res.code === 0) {
-							let balance = res.userInfo.balance || 0
-							if(balance > this.balance) {
-								clearInterval(timer)
-								timer = null
-								this.$refs.popup.close()
-								this.$utils.toast('充值成功',() => {
-									this.createRechargeRecord()
-									uni.navigateTo({
-										url: `../detail/detail?_id=${this.id}`
-									})
-								})
-							}
-						}
-					},2000)
-				}else{ // 关闭弹出层，停止轮训
-					clearInterval(timer)
-					timer = null
-				}
-			},
 			showPayQrcode() {
+				this.payInfo = this.rechargeList[this.active]
 				this.$refs.popup.open()
 			},
 			cancelPay() {
 				this.$refs.popup.close()
+				uni.showLoading()
+				this.$api.recharge_pay_cb({
+					id: this.$utils.UUIDGenerator(),
+					price: this.payInfo.price,
+					coins: this.payInfo.coins,
+					date: this.$utils.getNowDate()
+				}).then(res => {
+					uni.hideLoading()
+					if(res.code === 0) {
+						this.$utils.toast('充值成功', () => {
+							uni.navigateTo({
+								url: `../detail/detail?_id=${this.id}`
+							})
+						})						
+					}
+				}).catch(() => {
+					uni.hideLoading()
+				})
 			}
 		}
 	}
@@ -114,6 +96,7 @@
 	page {
 		height: 100%;
 	}
+
 	.modal-content {
 		background-color: #fff;
 		border-radius: 4px;
@@ -121,12 +104,14 @@
 		margin: 0 auto;
 		padding: 20px;
 		box-sizing: border-box;
+
 		.pay-info {
 			margin-bottom: 10px;
 			text-align: center;
 			color: #333;
 			font-size: 14px;
 		}
+
 		.btn {
 			height: 36px;
 			line-height: 36px;
@@ -137,6 +122,7 @@
 			margin-top: 30px;
 			@include base-bg;
 		}
+
 		.qrcode-wrap {
 			width: 180px;
 			height: 180px;
@@ -145,24 +131,28 @@
 			border-radius: 2px;
 			margin: 25px auto 0;
 			overflow: hidden;
+
 			image {
 				width: 100%;
 				height: 100%;
 			}
 		}
 	}
+
 	.recharge {
 		position: relative;
 		width: 100%;
 		height: 100%;
 	}
-	.landing{
+
+	.landing {
 		height: 40px;
 		line-height: 40px;
 		border-radius: 40px;
 		font-size: 16px;
 		@include base-bg;
 	}
+
 	.recharge-btn {
 		position: absolute;
 		bottom: 20px;
@@ -170,6 +160,7 @@
 		box-sizing: border-box;
 		padding: 5px 10px;
 	}
+
 	.recharge-list {
 		width: 100%;
 		box-sizing: border-box;
@@ -177,6 +168,7 @@
 		padding: 0 15px;
 		display: flex;
 		flex-wrap: wrap;
+
 		.recharge-item {
 			flex-grow: 1;
 			flex-shrink: 0;
@@ -190,9 +182,11 @@
 			margin-right: 10px;
 			margin-bottom: 10px;
 			font-size: 16px;
+
 			&:nth-child(3n) {
 				margin-right: 0;
 			}
+
 			&.active {
 				color: #fff;
 				border-color: #ffbb69;
@@ -200,36 +194,43 @@
 			}
 		}
 	}
+
 	.tips {
 		width: 100%;
 		box-sizing: border-box;
 		padding: 0 15px;
+
 		.title {
 			font-size: 16px;
 			color: #333;
 			margin-bottom: 10px;
 		}
+
 		.tips-item {
 			font-size: 14px;
 			color: #999;
 			margin-bottom: 5px;
 		}
 	}
+
 	.login-bg {
 		position: relative;
 		height: 180px;
 		padding: 12px;
 		border-radius: 0 0 10px 10px;
 		@include base-bg;
+
 		.user-balance {
 			display: flex;
 			align-items: center;
 			flex-direction: column;
 			margin-top: 10px;
+
 			.count {
 				color: #fff;
 				font-size: 45px;
 			}
+
 			.label {
 				font-size: 14px;
 				color: #fff;
@@ -237,4 +238,3 @@
 		}
 	}
 </style>
-

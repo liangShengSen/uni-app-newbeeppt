@@ -27,3 +27,10 @@ export const get_recharge = (data) => {
 		data
 	})
 }
+
+export const recharge_pay_cb = (data) => {
+	return $http({
+		url: 'recharge_pay_callback',
+		data
+	})
+}

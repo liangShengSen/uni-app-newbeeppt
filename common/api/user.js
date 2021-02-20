@@ -54,13 +54,6 @@ export const getDownloadAndCollected = (data) => {
 	})
 }
 
-export const createRechargeRecord = (data) => {
-	return $http({
-		url: 'create_recharge_order',
-		data
-	})
-}
-
 export const getRechargeOrders = () => {
 	return $http({
 		url: 'get_recharge_records'
