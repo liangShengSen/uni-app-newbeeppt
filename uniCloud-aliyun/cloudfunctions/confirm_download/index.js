@@ -7,6 +7,7 @@ exports.main = async (event, context) => {
 		uniIdToken,
 		id,
 		coins,
+		is_free,
 		date
 	} = event
 	const payload = await uniID.checkToken(uniIdToken)
@@ -14,17 +15,13 @@ exports.main = async (event, context) => {
 		return payload
 	}
 	let data = {}
-	// 扣费,添加下载记录
-	let balance = payload.userInfo.balance
-	balance = balance - coins
-	let download_docs = payload.userInfo.download_docs || []
-	download_docs.push({
-		id,
-		down_at: date
-	})
+	// 扣费，添加下载记录
 	await db.collection('uni-id-users').doc(payload.uid).update({
-		balance,
-		download_docs
+		balance: dbCmd.inc(is_free ? 0 : -(parseInt(coins))),
+		download_docs: dbCmd.unshift({
+			id,
+			down_at: date
+		})
 	})
 	// 更新文档的下载次数
 	await db.collection('subject_documents').where({

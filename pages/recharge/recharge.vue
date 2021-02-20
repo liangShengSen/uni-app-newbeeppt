@@ -19,13 +19,15 @@
 		<view class="recharge-btn">
 			<button class="landing" type="primary" @click="showPayQrcode">立即支付</button>
 		</view>
-		<uni-popup ref="popup" type="center" :maskClick="false">
+		<uni-popup ref="popup" type="center">
 			<view class="modal-content">
+				<uni-icons type="closeempty" color="#999" size="20" class="close-icon" @click="cancelPay(1)"></uni-icons>
 				<view class="pay-info">充值金额：{{payInfo.price}} 元</view>
 				<view class="pay-info">可得 P 豆：{{payInfo.coins}} 豆</view>
 				<view class="qrcode-wrap">
 					<image :src="payInfo.qrcode" mode="aspectFill"></image>
 				</view>
+				<view class="recharge-tips">长按-识别图中二维码-付款<view>即可完成充值操作</view></view>
 				<view class="btn" @click="cancelPay">确认支付</view>
 			</view>
 		</uni-popup>
@@ -67,8 +69,9 @@
 				this.payInfo = this.rechargeList[this.active]
 				this.$refs.popup.open()
 			},
-			cancelPay() {
+			cancelPay(flag) {
 				this.$refs.popup.close()
+				if(flag === 1) return
 				uni.showLoading()
 				this.$api.recharge_pay_cb({
 					id: this.$utils.UUIDGenerator(),
@@ -98,13 +101,18 @@
 	}
 
 	.modal-content {
+		position: relative;
 		background-color: #fff;
 		border-radius: 4px;
 		width: 90%;
 		margin: 0 auto;
-		padding: 20px;
+		padding: 30px 20px 20px 20px;
 		box-sizing: border-box;
-
+		.close-icon {
+			position: absolute;
+			right: 10px;
+			top: 5px;
+		}
 		.pay-info {
 			margin-bottom: 10px;
 			text-align: center;
@@ -113,14 +121,22 @@
 		}
 
 		.btn {
+			width: 150px;
 			height: 36px;
 			line-height: 36px;
 			font-size: 16px;
 			text-align: center;
 			color: #fff;
 			border-radius: 36px;
-			margin-top: 30px;
+			margin: 30px auto 0;
 			@include base-bg;
+		}
+		
+		.recharge-tips {
+			color: #999;
+			font-size: 14px;
+			margin-top: 10px;
+			text-align: center;
 		}
 
 		.qrcode-wrap {

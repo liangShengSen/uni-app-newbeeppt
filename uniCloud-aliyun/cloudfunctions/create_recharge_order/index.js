@@ -1,29 +1,25 @@
 'use strict';
-const uniID = require('uni-id')
 const db = uniCloud.database()
+const dbCmd = db.command
 exports.main = async (event, context) => {
 	let {
-		token,
+		uid,
 		id,
 		price,
+		coins,
 		date,
 	} = event.queryStringParameters
-	const payload = await uniID.checkToken(token)
-	if (payload.code) {
-		return payload
-	}
-	let recharge_orders = payload.userInfo.recharge_orders || []
-	recharge_orders.unshift({
-		id,
-		price,
-		date
+	await db.collection('uni-id-users').doc(uid).update({
+		recharge_orders: dbCmd.unshift({
+			id,
+			price,
+			date
+		}),
+		balance: dbCmd.inc(Number(coins))
 	})
-	await db.collection('uni-id-users').doc(payload.userInfo._id).update({
-		recharge_orders
-	})
-	
+
 	return {
 		code: 0,
-		msg: 'success'
+		msg: '确认充值',
 	}
 };

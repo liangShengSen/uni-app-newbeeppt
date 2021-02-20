@@ -1,7 +1,20 @@
 'use strict';
 const uniID = require('uni-id')
+const getNowDate = () => {
+	let now = new Date()
+	let yy = now.getFullYear(),
+		mm = (now.getMonth() + 1),
+		dd = now.getDate()
+	return `${yy}-${mm < 10 ? `0${mm}` : mm}-${dd < 10 ? `0${dd}` : dd}`
+}
 exports.main = async (event, context) => {
-	const { uniIdToken, price, coins, id, date } = event
+	const {
+		uniIdToken,
+		price,
+		coins,
+		id,
+		date
+	} = event
 	const payload = await uniID.checkToken(uniIdToken)
 	if (payload.code) {
 		return payload
@@ -14,17 +27,11 @@ exports.main = async (event, context) => {
 			msgtype: 'actionCard',
 			actionCard: {
 				title: "转账充值",
-				text: `充值金额: ${price}&emsp;&emsp;&emsp;&emsp;&emsp;可得P豆: ${coins}`,
-				btns: [
-					{
-						title: "确认支付",
-						actionURL: `https://7d64ea77-4eba-4652-9fb5-6cbebc534629.bspapp.com/http/create_recharge_order?token=${uniIdToken}&id=${id}&price=${price}&date=${date}`
-					},
-					{
-						title: "未支付",
-						actionURL: ""
-					}
-				]
+				text: `充值金额: ${price}&emsp;&emsp;&emsp;&emsp;&emsp;可得P豆: ${coins}&emsp;充值日期：${getNowDate()}`,
+				btns: [{
+					title: "确认支付",
+					actionURL: `https://7d64ea77-4eba-4652-9fb5-6cbebc534629.bspapp.com/http/create_recharge_order?uid=${payload.uid}&id=${id}&price=${price}&coins=${coins}&date=${date}`
+				}]
 			}
 		},
 		contentType: 'json',

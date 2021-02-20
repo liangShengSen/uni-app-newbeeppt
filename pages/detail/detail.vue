@@ -166,23 +166,21 @@
 				uni.$emit('update_doc_status') // 更新列表下载次数
 			},
 			confirmDownload() {
-				// 如果该次下载免费
 				this.$refs.popup.close()
-				if(this.preDownData.is_free) {
-					this.downloadFunc(this.preDownData.download_url)
-				}else {
-					uni.showLoading()
-					this.$api.confirm_download({
-						id: this._id,
-						coins: this.detailData.price,
-						date: this.$utils.getNowDate()
-					}).then(res => {
-						if(res.code === 0) {
-							uni.hideLoading()
-							this.downloadFunc(res.data.download_url)
-						}
-					})
-				}
+				uni.showLoading()
+				this.$api.confirm_download({
+					id: this._id,
+					coins: this.detailData.price,
+					is_free: this.preDownData.is_free,
+					date: this.$utils.getNowDate()
+				}).then(res => {
+					if(res.code === 0) {
+						uni.hideLoading()
+						this.downloadFunc(res.data.download_url)
+					}
+				}).catch(() => {
+					uni.hideLoading()
+				})
 			}
 		},
 	};
