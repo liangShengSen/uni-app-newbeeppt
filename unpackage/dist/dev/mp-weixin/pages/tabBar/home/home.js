@@ -96,13 +96,13 @@ var components
 try {
   components = {
     navbar: function() {
-      return __webpack_require__.e(/*! import() | components/navbar/navbar */ "components/navbar/navbar").then(__webpack_require__.bind(null, /*! @/components/navbar/navbar.vue */ 144))
+      return __webpack_require__.e(/*! import() | components/navbar/navbar */ "components/navbar/navbar").then(__webpack_require__.bind(null, /*! @/components/navbar/navbar.vue */ 146))
     },
     tabs: function() {
-      return __webpack_require__.e(/*! import() | components/tabs/tabs */ "components/tabs/tabs").then(__webpack_require__.bind(null, /*! @/components/tabs/tabs.vue */ 151))
+      return __webpack_require__.e(/*! import() | components/tabs/tabs */ "components/tabs/tabs").then(__webpack_require__.bind(null, /*! @/components/tabs/tabs.vue */ 153))
     },
     list: function() {
-      return __webpack_require__.e(/*! import() | components/list/list */ "components/list/list").then(__webpack_require__.bind(null, /*! @/components/list/list.vue */ 158))
+      return __webpack_require__.e(/*! import() | components/list/list */ "components/list/list").then(__webpack_require__.bind(null, /*! @/components/list/list.vue */ 160))
     }
   }
 } catch (e) {

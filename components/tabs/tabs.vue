@@ -48,7 +48,7 @@
 			open() {
 				let url = ''
 				if(!uni.getStorageSync('uni_id_token')) {
-					url = '/pages/auth/login/login?from=tabs'
+					url = '/pages/auth/login/login'
 				}else{
 					url = "/pages/home-label/home-label"
 				}

@@ -1,22 +1,28 @@
 <template>
 	<view class="navbar">
-		<view :class="['navbar-fixed',type === 'auth' ? 'bg-none':'']">
+		<view :class="['navbar-fixed',type === 'auth' ? 'bg-none': `${type === 'category' ? 'bg-white' :''}`]">
 			<view :style="{height: `${statusBarHeight}px`}"></view>
-			<view class="navbar-content" :class="type === 'search' ? 'is-search':`${(type === 'auth' || type === 'recharge') ? 'is-auth' : ''}`" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}" @click.stop="open">
-				<view class="navbar-content_search-icons" v-if="type === 'search' || type === 'auth' || type === 'recharge'" @click="back">
+			<view class="navbar-content" :class="type === 'search' ? 'is-search':`${(type === 'auth' || type === 'recharge') ? 'is-auth' : `${type === 'category' ? 'is-category' : ''}`}`" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}" @click.stop="open">
+				<view class="navbar-content_search-icons" v-if="type === 'search' || type === 'auth' || type === 'recharge'" @click.stop="back">
 					<uni-icons type="back" size="24" color="#fff"></uni-icons>
+				</view>
+				<view class="navbar-content_search-icons" v-if="type === 'category'" @click.stop="open">
+					<uni-icons type="search" size="22" color="#ccc"></uni-icons>
 				</view>
 				<view v-if="type === 'home'" class="navbar-search">
 					<view class="navbar-search_icon">
 						<uni-icons type="search" size="16" color="#999"></uni-icons>
 					</view>
-					<view class="navbar-search_text">PPT课件</view>
+					<view class="navbar-search_text">请输入搜索关键词</view>
 				</view>	
 				<view v-if="type === 'search'" class="navbar-search">
 					<input class="navbar-search_text" type="text" v-model="val" placeholder="请输入您要搜索的内容" @input="inputChange"/>
 				</view>
 				<view v-if="type === 'auth' || type === 'recharge'" class="auth-box">
 					<text class="auth-title">{{title}}</text>
+				</view>
+				<view v-if="type === 'category'" class="category-box">
+					<text class="category-title">{{title}}</text>
 				</view>
 			</view>
 		</view>
@@ -79,15 +85,9 @@
 				this.$emit('input',value)
 			},
 			back() {
-				if(this.type === 'search') {
-					uni.switchTab({
-						url: '../../pages/tabBar/home/home'
-					})	
-				}else {
-					uni.navigateBack({
-						delta:1
-					})
-				}
+				uni.navigateBack({
+					delta:1
+				})
 			}
 		}
 	}
@@ -104,6 +104,10 @@
 			@include base-bg;
 			&.bg-none {
 				background-color: transparent;
+			}
+			&.bg-white {
+				background: #fff;
+				color: #333;
 			}
 			.navbar-content {
 				display: flex;
@@ -144,6 +148,20 @@
 						text-align: center;
 						.auth-title {
 							color: #fff;
+							font-size: 15px;
+							/*  #ifdef  MP-WEIXIN  */
+							padding-left: 90px; // 胶囊的宽度
+							/*  #endif  */
+						}
+					}
+				}
+				&.is-category {
+					justify-content: flex-start;
+					.category-box {
+						width: calc(100% - 50px);
+						text-align: center;
+						.category-title {
+							color: #333;
 							font-size: 15px;
 							/*  #ifdef  MP-WEIXIN  */
 							padding-left: 90px; // 胶囊的宽度

@@ -34,12 +34,10 @@
 			return {
 				username: '',
 				password: '',
-				from: '',
 				id: ''
 			}
 		},
 		onLoad(query) {
-			this.from = query.from || ''
 			this.id = query.id || ''
 		},
 		methods: {
@@ -47,37 +45,6 @@
 				uni.navigateTo({
 					url: '/pages/auth/register/register'
 				})
-			},
-			fallBack() {
-				switch (this.from) {
-					case 'tabs':
-						uni.$emit('subjectChange') // 更新tab学科信息
-						this.$utils.toast('登录成功', () => {
-							uni.switchTab({
-								url: '../../tabBar/home/home'
-							})
-						})
-						break
-					case 'detail':
-						this.$utils.toast('登录成功', () => {
-							uni.navigateTo({
-								url: `../../detail/detail?_id=${this.id}`
-							})
-						})
-						break
-					case 'my':
-						this.$utils.toast('登录成功', () => {
-							uni.switchTab({
-								url: '../../tabBar/my/my'
-							})
-						})
-						break
-					default:
-						uni.switchTab({
-							url: '../../tabBar/home/home'
-						})
-						break
-				}
 			},
 			login() {
 				if (!this.username) {
@@ -100,7 +67,12 @@
 					uni.hideLoading()
 					if (res.code === 0) {
 						uni.setStorageSync('uni_id_token', res.token)
-						this.fallBack()
+						
+						this.$utils.toast('登录成功', () => {
+							uni.navigateBack({
+								delta:1
+							})
+						})
 					} else {
 						this.$utils.toast(res.msg)
 					}
@@ -126,7 +98,12 @@
 								uni.hideLoading()
 								if (res.code === 0) {
 									uni.setStorageSync('uni_id_token', res.token)
-									this.fallBack()
+									uni.$emit('subjectChange') // 更新tab学科信息
+									this.$utils.toast('登录成功', () => {
+										uni.navigateBack({
+											delta:1
+										})
+									})
 								}
 							}).catch(() => {
 								uni.hideLoading()

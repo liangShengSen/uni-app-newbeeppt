@@ -1,5 +1,9 @@
 {
-  "navigationBarTitleText": "资料筛选",
+  "navigationBarTitleText": "分类",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationStyle": "custom",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "navbar": "/components/navbar/navbar"
+  }
 }

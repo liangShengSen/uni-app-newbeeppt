@@ -18,7 +18,9 @@
 	    {
             "path" : "pages/tabBar/category/category",
             "style" :{
-                "navigationBarTitleText": "资料筛选",
+                "navigationBarTitleText": "分类",
+				"navigationBarBackgroundColor": "#fff",
+				"navigationStyle":"custom",
                 "enablePullDownRefresh": false
             }
             

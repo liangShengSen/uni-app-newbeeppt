@@ -34,3 +34,10 @@ export const update_subject = (data) => {
 		data
 	})
 }
+
+export const documentFilters = (data) => {
+	return $http({
+		url: 'document_filters',
+		data
+	})
+}

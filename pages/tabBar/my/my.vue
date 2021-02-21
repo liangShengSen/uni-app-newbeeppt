@@ -81,7 +81,7 @@
 		methods: {
 			toLogin() {
 				uni.navigateTo({
-					url: '../../auth/login/login?from=my'
+					url: '../../auth/login/login'
 				})
 			},
 			toHelp() {
@@ -92,7 +92,7 @@
 			toCollectedAndDownload(type) {
 				let url = ''
 				if (!this.userInfo._id) {
-					url = '../../auth/login/login?from=my'
+					url = '../../auth/login/login'
 				} else {
 					if (type === 'collected') {
 						url = '../../personal/my_collected'

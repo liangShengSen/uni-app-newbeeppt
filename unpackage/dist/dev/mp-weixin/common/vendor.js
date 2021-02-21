@@ -2150,7 +2150,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 170:
+/***/ 172:
 /*!*************************************************************************************!*\
   !*** /Users/liangshengsen/Projects/uni-app-newbeeppt/components/uni-icons/icons.js ***!
   \*************************************************************************************/
@@ -9092,7 +9092,7 @@ internalMixin(Vue);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.update_subject = exports.get_search = exports.collect_documents = exports.get_documents = exports.get_subjects = void 0;var _http = _interopRequireDefault(__webpack_require__(/*! ../js/http.js */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.documentFilters = exports.update_subject = exports.get_search = exports.collect_documents = exports.get_documents = exports.get_subjects = void 0;var _http = _interopRequireDefault(__webpack_require__(/*! ../js/http.js */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var get_subjects = function get_subjects(data) {
   return (0, _http.default)({
@@ -9129,9 +9129,16 @@ var update_subject = function update_subject(data) {
 
 };exports.update_subject = update_subject;
 
+var documentFilters = function documentFilters(data) {
+  return (0, _http.default)({
+    url: 'document_filters',
+    data: data });
+
+};exports.documentFilters = documentFilters;
+
 /***/ }),
 
-/***/ 206:
+/***/ 208:
 /*!***********************************************************************************************************!*\
   !*** /Users/liangshengsen/Projects/uni-app-newbeeppt/uni_modules/uni-popup/components/uni-popup/popup.js ***!
   \***********************************************************************************************************/
@@ -9139,7 +9146,7 @@ var update_subject = function update_subject(data) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 207));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 209));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 // 定义 type 类型:弹出类型：top/bottom/center
 var config = {
   // 顶部弹出
@@ -9192,7 +9199,7 @@ var config = {
 
 /***/ }),
 
-/***/ 207:
+/***/ 209:
 /*!*************************************************************************************************************!*\
   !*** /Users/liangshengsen/Projects/uni-app-newbeeppt/uni_modules/uni-popup/components/uni-popup/message.js ***!
   \*************************************************************************************************************/
@@ -10555,7 +10562,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 77:
+/***/ 79:
 /*!*************************************************************************!*\
   !*** /Users/liangshengsen/Projects/uni-app-newbeeppt/common/js/regx.js ***!
   \*************************************************************************/

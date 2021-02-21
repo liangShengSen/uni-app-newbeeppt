@@ -37,6 +37,10 @@
 .navbar .navbar-fixed.bg-none {
   background-color: transparent;
 }
+.navbar .navbar-fixed.bg-white {
+  background: #fff;
+  color: #333;
+}
 .navbar .navbar-fixed .navbar-content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -94,6 +98,20 @@
 }
 .navbar .navbar-fixed .navbar-content.is-auth .auth-box .auth-title {
   color: #fff;
+  font-size: 15px;
+  padding-left: 90px;
+}
+.navbar .navbar-fixed .navbar-content.is-category {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+}
+.navbar .navbar-fixed .navbar-content.is-category .category-box {
+  width: calc(100% - 50px);
+  text-align: center;
+}
+.navbar .navbar-fixed .navbar-content.is-category .category-box .category-title {
+  color: #333;
   font-size: 15px;
   padding-left: 90px;
 }

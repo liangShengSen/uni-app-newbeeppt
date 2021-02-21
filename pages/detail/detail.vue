@@ -115,7 +115,7 @@
 				if(!uniIdToken) {
 					return this.$utils.toast('请先登录',() => {
 						uni.navigateTo({
-							url: `../auth/login/login?from=detail&id=${this._id}`
+							url: `../auth/login/login?id=${this._id}`
 						})
 					})
 				}
