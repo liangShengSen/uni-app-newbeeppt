@@ -38,6 +38,7 @@ page {
   -webkit-align-items: center;
           align-items: center;
   padding: 0 15px;
+  height: 30px;
 }
 .category .stages .stage-item {
   position: relative;
@@ -66,24 +67,30 @@ page {
   background-color: #f07373;
 }
 .category .category-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
   margin-top: 5px;
   height: calc(100% - 79px);
   height: calc(100% - 99px);
 }
 .category .category-content .category-content_left {
   height: 100%;
+  width: 100px;
 }
 .category .category-content .category-content_left .subjects {
-  width: 80px;
-  height: 100%;
+  width: 100%;
+  min-height: 100%;
   text-align: center;
   background-color: #f7f7f7;
 }
 .category .category-content .category-content_left .subjects .subject-item {
-  height: 32px;
-  line-height: 32px;
+  height: 36px;
+  line-height: 36px;
   font-size: 12px;
   color: #333;
+  -webkit-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
 }
 .category .category-content .category-content_left .subjects .subject-item.active {
   color: #f07373;

@@ -2,7 +2,7 @@
 	<view class="category">
 		<navbar type="category" title="分类"></navbar>
 		<view class="stages">
-			<view v-for="(item,i) in stages.slice(0,3)" :key="item.id" :class="['stage-item', stage_id === item.id ? 'active' : '']" @click="toggle('stage_id',item.id)">{{item.name}}</view>
+			<view v-for="(item,i) in stages" :key="item.id" :class="['stage-item', stage_id === item.id ? 'active' : '']" @click="toggle('stage_id',item.id)">{{item.name}}</view>
 		</view>
 		<view class="category-content">
 			<scroll-view scroll-y class="category-content_left">
@@ -38,7 +38,7 @@
 				uni.showLoading()
 				this.$api.documentFilters({
 					_keys: 'stage,subject,version,book,chapter',
-					stage: '1',
+					stage: '2',
 					subject: '2',
 					version: '1000',
 					book: '10001'
@@ -67,6 +67,7 @@
 			display: flex;
 			align-items: center;
 			padding: 0 15px;
+			height: 30px;
 			.stage-item {
 				position: relative;
 				margin-right: 35px;
@@ -94,6 +95,7 @@
 			}
 		}
 		.category-content {
+			display: flex;
 			margin-top: 5px;
 			height: calc(100% - 79px);
 			/*  #ifdef  MP-WEIXIN  */
@@ -101,16 +103,18 @@
 			/*  #endif  */
 			.category-content_left {
 				height: 100%;
+				width: 100px;
 				.subjects {
-					width: 80px;
-					height: 100%;
+					width: 100%;
+					min-height: 100%;
 					text-align: center;
 					background-color: #f7f7f7;
 					.subject-item {
-						height: 32px;
-						line-height: 32px;
+						height: 36px;
+						line-height: 36px;
 						font-size: 12px;
 						color: #333;
+						transition: all ease-in-out .2s;
 						&.active {
 							color: $base-color;
 							background-color: #fff;
