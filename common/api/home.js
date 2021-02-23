@@ -41,3 +41,10 @@ export const documentFilters = (data) => {
 		data
 	})
 }
+
+export const getBanners = (data) => {
+	return $http({
+		url: 'get_banners',
+		data
+	})
+}

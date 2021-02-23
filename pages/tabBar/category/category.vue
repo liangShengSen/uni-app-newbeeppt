@@ -12,24 +12,38 @@
 				</view>
 			</scroll-view>
 			<scroll-view scroll-y="true" class="category-content_right">
+				<view class="banner-box">
+					<swiper class="swiper" :indicator-dots="true" :autoplay="true" :duration="1000" indicator-color="rgba(255, 255, 255, .8)" indicator-active-color="#ffbb69">
+						<swiper-item v-for="banner in banners" :key="banner._id">
+							<image :src="banner.img" mode="aspectFill" class="image"></image>
+						</swiper-item>
+					</swiper>
+				</view>
 				<view class="version-box">
 					<view class="version-item" v-for="item in versions" :key="item.id">
 						<view class="name">{{item.name}}</view>
 						<view class="item-box">
-							<view v-for="(book,i) in item.books" :key="book.id" :class="['item', item.book_id === book.id ? 'active' : '']" @click="toggleBook(item,book,i)">
-								<view class="text">{{book.name}}</view>
-							</view>
+							<block v-if="item.books.length">
+								<view v-for="(book,i) in item.books" :key="book.id" :class="['item', item.book_id === book.id ? 'active' : '']"
+								 @click="toggleBook(item,book,i)">
+									<view class="text">{{book.name}}</view>
+								</view>
+							</block>
+							<view v-else class="empty">暂无版本</view>
 						</view>
 						<view class="name label">章节</view>
-						<view class="chapter-box" v-if="item.chapters.length">
-							<view class="chapter" v-for="chapter in  item.chapters[item.index].data" :key="chapter.id">
-								<view class="main-chapter">{{chapter.name}}</view>
-								<view class="sub-chapters-box">
-									<view class="sub-chapter" v-for="sub_chapter in chapter.allChildren" :key="sub_chapter.id">{{sub_chapter.name}}</view>
+						<view class="chapter-box">
+							<block v-if="item.chapters[item.index].data.length">
+								<view class="chapter" v-for="chapter in item.chapters[item.index].data" :key="chapter.id">
+									<view class="main-chapter">{{chapter.name}}</view>
+									<view class="sub-chapters-box">
+										<view class="sub-chapter" v-for="sub_chapter in chapter.allChildren" :key="sub_chapter.id">{{sub_chapter.name}}</view>
+									</view>
 								</view>
-							</view>
+							</block>
+							<view v-else class="empty">暂无章节</view>
 						</view>
-					</view>
+					</view>						
 				</view>
 			</scroll-view>
 		</view>
@@ -44,17 +58,23 @@
 				subject_id: "",
 				stages: [],
 				subjects: [],
-				versions: []
+				versions: [],
+				banners: []
 			}
 		},
 		onLoad() {
 			this.getFilters()
+			this.getBanners()
 		},
 		methods: {
 			toggle(type, id) {
 				this[type] = id
+				if (type === 'stage_id') {
+					this.subject_id = '2'
+				}
+				this.getFilters()
 			},
-			toggleBook(item,book,i) {
+			toggleBook(item, book, i) {
 				item.book_id = book.id
 				item.index = i
 			},
@@ -83,14 +103,17 @@
 				return arr
 			},
 			getFilters() {
-				uni.showLoading()
-				this.$api.documentFilters({
+				let data = {
 					_keys: 'stage,subject,version',
-				}).then(res => {
+					stage: this.stage_id,
+					subject: this.subject_id
+				}
+				uni.showLoading()
+				this.$api.documentFilters(data).then(res => {
 					uni.hideLoading()
 					if (res.code === 0) {
 						res.data.forEach(item => {
-							if(item.key === 'version') {
+							if (item.key === 'version') {
 								item.options.forEach(version => {
 									version.index = 0
 									version.chapters.forEach(chapter => {
@@ -104,6 +127,15 @@
 					}
 				}).catch(err => {
 					uni.hideLoading()
+				})
+			},
+			getBanners() {
+				this.$api.getBanners({
+					position: 'category'
+				}).then(res => {
+					if (res.code === 0) {
+						this.banners = res.data
+					}
 				})
 			}
 		}
@@ -188,8 +220,30 @@
 			}
 
 			.category-content_right {
+				.banner-box {
+					border-radius: 6px;
+					margin: 0 15px 17px;
+					overflow: hidden;
+					height: calc((2000vw - 1980px)/64);
+					.swiper {
+						height: 100%;
+					}
+					.image {
+						height: calc((2000vw - 1980px)/64);
+						width: 100%;
+						border-radius: 6px;
+					}
+				}
+
 				.version-box {
 					padding: 0 15px;
+					
+					.empty {
+						color: #ddd;
+						font-size: 12px;
+						text-align: center;
+						line-height: 24px;
+					}
 
 					.version-item {
 						box-shadow: -5px 0 5px rgba(0, 0, 0, .01), 0 -5px 5px rgba(0, 0, 0, .01), 5px 0 5px rgba(0, 0, 0, .01), 0 5px 5px rgba(0, 0, 0, .01);
@@ -202,6 +256,7 @@
 							font-size: 13px;
 							color: #000;
 							font-weight: 500;
+
 							&.label {
 								font-weight: normal;
 								margin-bottom: 5px;
@@ -236,9 +291,11 @@
 								}
 							}
 						}
+
 						.chapter-box {
 							.chapter {
 								background-color: #fff;
+
 								.main-chapter {
 									background-color: #f9f9f9;
 									font-size: 12px;
@@ -246,8 +303,10 @@
 									padding: 6px 8px;
 									border-radius: 3px;
 								}
+
 								.sub-chapters-box {
 									padding: 8px 5px;
+
 									.sub-chapter {
 										display: inline-block;
 										font-size: 12px;

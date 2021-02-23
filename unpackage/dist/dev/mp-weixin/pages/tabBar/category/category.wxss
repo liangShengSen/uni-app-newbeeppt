@@ -96,8 +96,30 @@ page {
   color: #f07373;
   background-color: #fff;
 }
+.category .category-content .category-content_right .banner-box {
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  margin: 0 15px 17px;
+  overflow: hidden;
+  height: calc((2000vw - 1980px)/64);
+}
+.category .category-content .category-content_right .banner-box .swiper {
+  height: 100%;
+}
+.category .category-content .category-content_right .banner-box .image {
+  height: calc((2000vw - 1980px)/64);
+  width: 100%;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+}
 .category .category-content .category-content_right .version-box {
   padding: 0 15px;
+}
+.category .category-content .category-content_right .version-box .empty {
+  color: #ddd;
+  font-size: 12px;
+  text-align: center;
+  line-height: 24px;
 }
 .category .category-content .category-content_right .version-box .version-item {
   -webkit-box-shadow: -5px 0 5px rgba(0, 0, 0, 0.01), 0 -5px 5px rgba(0, 0, 0, 0.01), 5px 0 5px rgba(0, 0, 0, 0.01), 0 5px 5px rgba(0, 0, 0, 0.01);
