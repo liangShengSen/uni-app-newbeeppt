@@ -16,7 +16,7 @@
 			</view>
 		</view>
 		<view class="login-btn">
-			<button class="landing" type="primary" @click="login">账号登陆</button>
+			<button class="landing" type="primary" @click="login">登陆</button>
 			<!-- #ifdef MP-WEIXIN -->
 			<button class="wx-btn" type="primary" @click="getLoginCode">微信登陆</button>
 			<!-- #endif -->

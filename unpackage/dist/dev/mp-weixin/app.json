@@ -8,7 +8,6 @@
     "pages/detail/detail",
     "pages/auth/login/login",
     "pages/auth/register/register",
-    "pages/auth/forget/forget",
     "pages/personal/personal",
     "pages/personal/help",
     "pages/personal/my_collected",
@@ -49,5 +48,6 @@
     ]
   },
   "permission": {},
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap28.json"
 }

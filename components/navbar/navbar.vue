@@ -1,13 +1,13 @@
 <template>
 	<view class="navbar">
-		<view :class="['navbar-fixed',type === 'auth' ? 'bg-none': `${type === 'category' ? 'bg-white' :''}`]">
+		<view :class="['navbar-fixed',type === 'auth' ? 'bg-none': '']">
 			<view :style="{height: `${statusBarHeight}px`}"></view>
 			<view class="navbar-content" :class="type === 'search' ? 'is-search':`${(type === 'auth' || type === 'recharge') ? 'is-auth' : `${type === 'category' ? 'is-category' : ''}`}`" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}" @click.stop="open">
 				<view class="navbar-content_search-icons" v-if="type === 'search' || type === 'auth' || type === 'recharge'" @click.stop="back">
 					<uni-icons type="back" size="24" color="#fff"></uni-icons>
 				</view>
 				<view class="navbar-content_search-icons" v-if="type === 'category'" @click.stop="open">
-					<uni-icons type="search" size="22" color="#ccc"></uni-icons>
+					<uni-icons type="search" size="22" color="#fff"></uni-icons>
 				</view>
 				<view v-if="type === 'home'" class="navbar-search">
 					<view class="navbar-search_icon">
@@ -105,10 +105,6 @@
 			&.bg-none {
 				background-color: transparent;
 			}
-			&.bg-white {
-				background: #fff;
-				color: #333;
-			}
 			.navbar-content {
 				display: flex;
 				align-items: center;
@@ -161,8 +157,9 @@
 						width: calc(100% - 50px);
 						text-align: center;
 						.category-title {
-							color: #333;
-							font-size: 15px;
+							color: #fff;
+							font-weight: 700;
+							font-size: 16px;
 							/*  #ifdef  MP-WEIXIN  */
 							padding-left: 90px; // 胶囊的宽度
 							/*  #endif  */

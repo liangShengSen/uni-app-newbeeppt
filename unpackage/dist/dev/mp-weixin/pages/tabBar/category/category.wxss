@@ -110,8 +110,12 @@ page {
 .category .category-content .category-content_right .version-box .version-item .name {
   padding: 5px 0;
   font-size: 13px;
-  color: #999;
-  font-weight: 400;
+  color: #000;
+  font-weight: 500;
+}
+.category .category-content .category-content_right .version-box .version-item .name.label {
+  font-weight: normal;
+  margin-bottom: 5px;
 }
 .category .category-content .category-content_right .version-box .version-item .item-box {
   font-size: 0;
@@ -127,21 +131,37 @@ page {
   text-overflow: ellipsis;
   white-space: nowrap;
   text-align: center;
-  border-top: 0;
-  border-left: 0;
 }
 .category .category-content .category-content_right .version-box .version-item .item-box .item.active .text {
   color: #f07373;
-}
-.category .category-content .category-content_right .version-box .version-item .item-box .item.chapter {
-  width: auto;
-  margin-right: 15px;
 }
 .category .category-content .category-content_right .version-box .version-item .item-box .item .text {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #333;
+  color: #666;
+}
+.category .category-content .category-content_right .version-box .version-item .chapter-box .chapter {
+  background-color: #fff;
+}
+.category .category-content .category-content_right .version-box .version-item .chapter-box .chapter .main-chapter {
+  background-color: #f9f9f9;
+  font-size: 12px;
+  color: #666;
+  padding: 6px 8px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+}
+.category .category-content .category-content_right .version-box .version-item .chapter-box .chapter .sub-chapters-box {
+  padding: 8px 5px;
+}
+.category .category-content .category-content_right .version-box .version-item .chapter-box .chapter .sub-chapters-box .sub-chapter {
+  display: inline-block;
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  margin-right: 15px;
+  color: #666;
 }
 

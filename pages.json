@@ -19,7 +19,6 @@
             "path" : "pages/tabBar/category/category",
             "style" :{
                 "navigationBarTitleText": "分类",
-				"navigationBarBackgroundColor": "#fff",
 				"navigationStyle":"custom",
                 "enablePullDownRefresh": false
             }
@@ -74,16 +73,6 @@
         }
         ,{
             "path" : "pages/auth/register/register",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-				"navigationStyle":"custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/auth/forget/forget",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

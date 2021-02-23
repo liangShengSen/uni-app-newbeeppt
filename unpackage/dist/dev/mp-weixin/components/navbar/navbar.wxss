@@ -37,10 +37,6 @@
 .navbar .navbar-fixed.bg-none {
   background-color: transparent;
 }
-.navbar .navbar-fixed.bg-white {
-  background: #fff;
-  color: #333;
-}
 .navbar .navbar-fixed .navbar-content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -111,8 +107,9 @@
   text-align: center;
 }
 .navbar .navbar-fixed .navbar-content.is-category .category-box .category-title {
-  color: #333;
-  font-size: 15px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
   padding-left: 90px;
 }
 
