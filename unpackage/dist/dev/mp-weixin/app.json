@@ -13,7 +13,8 @@
     "pages/personal/my_collected",
     "pages/personal/my_download",
     "pages/personal/my_recharge_records",
-    "pages/recharge/recharge"
+    "pages/recharge/recharge",
+    "pages/list/list"
   ],
   "subPackages": [],
   "window": {
@@ -49,5 +50,5 @@
   },
   "permission": {},
   "usingComponents": {},
-  "sitemapLocation": "sitemap79.json"
+  "sitemapLocation": "sitemap18.json"
 }

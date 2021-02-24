@@ -35,9 +35,9 @@
 						<view class="chapter-box">
 							<block v-if="item.chapters[item.index].data.length">
 								<view class="chapter" v-for="chapter in item.chapters[item.index].data" :key="chapter.id">
-									<view class="main-chapter">{{chapter.name}}</view>
+									<navigator :url="`/pages/list/list?stage_id=${item.stage.id}&subject_id=${item.subject.id}&version_id=${item.id}&chapter_id=${chapter.id}`" class="main-chapter">{{chapter.name}}</navigator>
 									<view class="sub-chapters-box">
-										<view class="sub-chapter" v-for="sub_chapter in chapter.allChildren" :key="sub_chapter.id">{{sub_chapter.name}}</view>
+										<navigator class="sub-chapter" v-for="sub_chapter in chapter.allChildren" :key="sub_chapter.id" :url="`/pages/list/list?stage_id=${item.stage.id}&subject_id=${item.subject.id}&version_id=${item.id}&chapter_id=${sub_chapter.id}`">{{sub_chapter.name}}</navigator>
 									</view>
 								</view>
 							</block>
@@ -314,6 +314,7 @@
 										line-height: 28px;
 										margin-right: 15px;
 										color: #666;
+										padding: 0 5px;
 									}
 								}
 							}
