@@ -15,6 +15,13 @@
 		<view class="detail-attrs">
 			<view class="attr-tit">资料属性</view>
 			<view class="attr-list">
+				<block v-if="detailData.stage">
+					<view class="attr-list_item">学段： {{ detailData.stage.name }}</view>
+					<view class="attr-list_item">学科： {{ detailData.subject.name }}</view>
+					<view class="attr-list_item">版本： {{ detailData.version.name }}</view>
+					<view class="attr-list_item">册别： {{ detailData.book.name }}</view>
+					<view class="attr-list_item">所属章节： {{ detailData.chapter.name }}</view>					
+				</block>
 				<view class="attr-list_item">资料作者： {{ detailData.author.name }}</view>
 				<view class="attr-list_item">适用地区： 全国</view>
 				<view class="attr-list_item">文件大小：{{ detailData.file_size }}</view>
@@ -68,6 +75,7 @@
 		data() {
 			return {
 				_id: "",
+				type: '',
 				detailData: null,
 				preDownData: {}
 			};
@@ -77,6 +85,7 @@
 		},
 		onLoad(query) {
 			this._id = query._id;
+			this.type = query.type
 			this.detailData = this.doc_detail;
 			this.getDetail();
 		},
@@ -96,10 +105,14 @@
 		},
 		methods: {
 			getDetail() {
+				let data = {
+					_id: this._id
+				}
+				if(this.type) {
+					data.type = this.type
+				}
 				this.$api
-					.get_subject_detail({
-						_id: this._id,
-					})
+					.get_subject_detail(data)
 					.then((res) => {
 						const {
 							data

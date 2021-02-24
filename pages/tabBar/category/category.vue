@@ -33,11 +33,11 @@
 						</view>
 						<view class="name label">章节</view>
 						<view class="chapter-box">
-							<block v-if="item.chapters[item.index].data.length">
+							<block v-if="item.chapters[item.index] && item.chapters[item.index].data.length">
 								<view class="chapter" v-for="chapter in item.chapters[item.index].data" :key="chapter.id">
-									<navigator :url="`/pages/list/list?stage_id=${item.stage.id}&subject_id=${item.subject.id}&version_id=${item.id}&chapter_id=${chapter.id}`" class="main-chapter">{{chapter.name}}</navigator>
+									<view class="main-chapter">{{chapter.name}}</view>
 									<view class="sub-chapters-box">
-										<navigator class="sub-chapter" v-for="sub_chapter in chapter.allChildren" :key="sub_chapter.id" :url="`/pages/list/list?stage_id=${item.stage.id}&subject_id=${item.subject.id}&version_id=${item.id}&chapter_id=${sub_chapter.id}`">{{sub_chapter.name}}</navigator>
+										<navigator class="sub-chapter" v-for="sub_chapter in chapter.allChildren" :key="sub_chapter.id" :url="`/pages/list/list?stage=${JSON.stringify(item.stage)}&subject=${JSON.stringify(item.subject)}&chapter=${JSON.stringify(sub_chapter)}`">{{sub_chapter.name}}</navigator>
 									</view>
 								</view>
 							</block>
@@ -146,23 +146,19 @@
 	page {
 		height: 100%;
 	}
-
 	.category {
 		height: 100%;
-
 		.stages {
 			display: flex;
 			align-items: center;
 			padding: 0 15px;
 			height: 30px;
-
 			.stage-item {
 				position: relative;
 				margin-right: 35px;
 				color: #666;
 				font-size: 13px;
 				line-height: 30px;
-
 				&::after {
 					position: absolute;
 					bottom: 0px;
@@ -174,43 +170,36 @@
 					border-radius: 2px;
 					background-color: transparent;
 				}
-
 				&.active {
 					color: #333;
 					font-size: 15px;
-
 					&::after {
 						background-color: $base-color;
 					}
 				}
 			}
 		}
-
 		.category-content {
 			display: flex;
 			margin-top: 5px;
 			height: calc(100% - 79px);
 			/*  #ifdef  MP-WEIXIN  */
 			height: calc(100% - 99px);
-
 			/*  #endif  */
 			.category-content_left {
 				height: 100%;
 				width: 100px;
-
 				.subjects {
 					width: 100%;
 					min-height: 100%;
 					text-align: center;
 					background-color: #f7f7f7;
-
 					.subject-item {
 						height: 36px;
 						line-height: 36px;
 						font-size: 12px;
 						color: #333;
 						transition: all ease-in-out .2s;
-
 						&.active {
 							color: $base-color;
 							background-color: #fff;
@@ -218,7 +207,6 @@
 					}
 				}
 			}
-
 			.category-content_right {
 				.banner-box {
 					border-radius: 6px;
@@ -234,7 +222,6 @@
 						border-radius: 6px;
 					}
 				}
-
 				.version-box {
 					padding: 0 15px;
 					
@@ -244,29 +231,24 @@
 						text-align: center;
 						line-height: 24px;
 					}
-
 					.version-item {
 						box-shadow: -5px 0 5px rgba(0, 0, 0, .01), 0 -5px 5px rgba(0, 0, 0, .01), 5px 0 5px rgba(0, 0, 0, .01), 0 5px 5px rgba(0, 0, 0, .01);
 						padding: 5px 10px;
 						margin: 10px auto;
 						border-radius: 4px;
-
 						.name {
 							padding: 5px 0;
 							font-size: 13px;
 							color: #000;
 							font-weight: 500;
-
 							&.label {
 								font-weight: normal;
 								margin-bottom: 5px;
 							}
 						}
-
 						.item-box {
 							font-size: 0;
 							letter-spacing: 0;
-
 							.item {
 								display: inline-block;
 								font-size: 12px;
@@ -277,11 +259,9 @@
 								text-overflow: ellipsis;
 								white-space: nowrap;
 								text-align: center;
-
 								&.active .text {
 									color: $base-color;
 								}
-
 								.text {
 									width: 100%;
 									white-space: nowrap;
@@ -291,11 +271,9 @@
 								}
 							}
 						}
-
 						.chapter-box {
 							.chapter {
 								background-color: #fff;
-
 								.main-chapter {
 									background-color: #f9f9f9;
 									font-size: 12px;
@@ -303,10 +281,8 @@
 									padding: 6px 8px;
 									border-radius: 3px;
 								}
-
 								.sub-chapters-box {
 									padding: 8px 5px;
-
 									.sub-chapter {
 										display: inline-block;
 										font-size: 12px;

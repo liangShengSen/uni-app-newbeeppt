@@ -140,7 +140,7 @@
             "path" : "pages/list/list",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "列表",
                 "enablePullDownRefresh": false
             }
             

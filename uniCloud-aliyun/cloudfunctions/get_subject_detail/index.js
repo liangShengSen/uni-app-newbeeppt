@@ -3,13 +3,14 @@ const db = uniCloud.database()
 const $ = db.command.aggregate
 const uniID = require('uni-id')
 exports.main = async (event, context) => {
-	const { _id, uniIdToken } = event
+	const { _id, type, uniIdToken } = event
 	const payload = await uniID.checkToken(uniIdToken)
 	let collected_ids = []
 	if(payload.code === 0) {
 		collected_ids = payload.userInfo.collected_ids || []
 	}
-	let document = await db.collection('subject_documents').aggregate()
+	let dbStr = type ? 'documents' : 'subject_documents'
+	let res = await db.collection(dbStr).aggregate()
 	.addFields({
 		is_collect:$.in(['$_id', collected_ids])
 	})
@@ -20,6 +21,6 @@ exports.main = async (event, context) => {
 	return {
 		code: 0,
 		msg: 'success',
-		data: document.data[0]
+		data: res.data[0]
 	}
 };

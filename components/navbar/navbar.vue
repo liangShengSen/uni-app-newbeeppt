@@ -1,15 +1,15 @@
 <template>
 	<view class="navbar">
-		<view :class="['navbar-fixed',type === 'auth' ? 'bg-none': '']">
+		<view :class="['navbar-fixed']">
 			<view :style="{height: `${statusBarHeight}px`}"></view>
-			<view class="navbar-content" :class="type === 'search' ? 'is-search':`${(type === 'auth' || type === 'recharge') ? 'is-auth' : `${type === 'category' ? 'is-category' : ''}`}`" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}" @click.stop="open">
-				<view class="navbar-content_search-icons" v-if="type === 'search' || type === 'auth' || type === 'recharge'" @click.stop="back">
-					<uni-icons type="back" size="24" color="#fff"></uni-icons>
+			<view class="navbar-content" :class="type === 'search' ? 'is-search':`${(type === 'auth' || type === 'recharge') ? 'is-auth' : `${type === 'category' ? 'is-category' : ''}`}`" :style="{height: `${navbarHeight}px`,width: `${windowWidth}px`}">
+				<view class="navbar-content_search-icons" v-if="type === 'search' || type === 'auth' || type === 'recharge'" @click="back">
+					<uni-icons type="arrowleft" size="22" color="#fff"></uni-icons>
 				</view>
-				<view class="navbar-content_search-icons" v-if="type === 'category'" @click.stop="open">
+				<view class="navbar-content_search-icons" v-if="type === 'category'" @click="open">
 					<uni-icons type="search" size="22" color="#fff"></uni-icons>
 				</view>
-				<view v-if="type === 'home'" class="navbar-search">
+				<view v-if="type === 'home'" class="navbar-search" @click="open">
 					<view class="navbar-search_icon">
 						<uni-icons type="search" size="16" color="#999"></uni-icons>
 					</view>
@@ -102,9 +102,6 @@
 			z-index: 99;
 			width: 100%;
 			@include base-bg;
-			&.bg-none {
-				background-color: transparent;
-			}
 			.navbar-content {
 				display: flex;
 				align-items: center;
@@ -144,7 +141,7 @@
 						text-align: center;
 						.auth-title {
 							color: #fff;
-							font-size: 15px;
+							font-size: 16px;
 							/*  #ifdef  MP-WEIXIN  */
 							padding-left: 90px; // 胶囊的宽度
 							/*  #endif  */

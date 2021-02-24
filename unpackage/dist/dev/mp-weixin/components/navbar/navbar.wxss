@@ -34,9 +34,6 @@
   background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
   background: linear-gradient(left, #ff978d, #ffbb69);
 }
-.navbar .navbar-fixed.bg-none {
-  background-color: transparent;
-}
 .navbar .navbar-fixed .navbar-content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -94,7 +91,7 @@
 }
 .navbar .navbar-fixed .navbar-content.is-auth .auth-box .auth-title {
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   padding-left: 90px;
 }
 .navbar .navbar-fixed .navbar-content.is-category {

@@ -48,3 +48,10 @@ export const getBanners = (data) => {
 		data
 	})
 }
+
+export const getFilterDocuments = (data) => {
+	return $http({
+		url: 'get_filter_documents',
+		data
+	})
+}
