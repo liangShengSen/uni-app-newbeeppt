@@ -1,35 +1,18 @@
 <template>
 	<view class="content">
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
-		<button type="default" @click="uploadImgs">上传图片</button>
+		<button type="primary" @click="upload">添加文件</button>
 	</view>
 </template>
 
 <script>
-	let jsonData = require('@/puppeteer/json/detail_bak.json');
 	export default {
 		data() {
 			return {
-				title: 'Hello',
+				
 			}
 		},
-		onLoad() {
-	
-		},
+
 		methods: {
-			timeout(delay) {
-				return new Promise((resolve, reject) => {
-				  setTimeout(() => {
-				    try {
-				      resolve(1)
-				    } catch (e) {
-				      reject(0)
-				    }
-				  }, delay);
-				})
-			},
 			async uploadImgs() {
 				let { data } = jsonData
 				let arr = [];

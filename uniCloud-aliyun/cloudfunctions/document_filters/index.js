@@ -3,7 +3,7 @@ const db = uniCloud.database()
 const dbCmd = db.command
 const $ = db.command.aggregate
 exports.main = async (event, context) => {
-	let { _keys,stage,subject,version,book,chapter } = event
+	let { _keys,stage,subject,version,book,chapter,grade } = event
 	if(!_keys) {
 		return {
 			code: 1,
@@ -103,6 +103,14 @@ exports.main = async (event, context) => {
 				}).get()).data[0].chapters
 				chapter = chapter || obj.options[0].id
 				obj.value = chapter
+				break
+			case 'grade':
+				obj.name = '年级'
+				obj.options = (await db.collection('grades').where({
+					'stage.id': stage,
+				}).get()).data
+				grade = grade || obj.options[0].id
+				obj.value = grade
 				break
 		}
 		data.push(obj)
