@@ -8,6 +8,7 @@ exports.main = async (event, context) => {
 		id,
 		coins,
 		is_free,
+		type,
 		date
 	} = event
 	const payload = await uniID.checkToken(uniIdToken)
@@ -24,7 +25,8 @@ exports.main = async (event, context) => {
 		})
 	})
 	// 更新文档的下载次数
-	await db.collection('subject_documents').where({
+	let dbName = type ? 'documents' : 'subject_documents'
+	await db.collection(dbName).where({
 		_id: id
 	}).update({
 		download_num: dbCmd.inc(1)

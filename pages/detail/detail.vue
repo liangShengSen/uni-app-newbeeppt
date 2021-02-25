@@ -181,12 +181,16 @@
 			confirmDownload() {
 				this.$refs.popup.close()
 				uni.showLoading()
-				this.$api.confirm_download({
+				let data = {
 					id: this._id,
 					coins: this.detailData.price,
 					is_free: this.preDownData.is_free,
 					date: this.$utils.getNowDate()
-				}).then(res => {
+				}
+				if(this.type) {
+					data.type = this.type
+				}
+				this.$api.confirm_download(data).then(res => {
 					if(res.code === 0) {
 						uni.hideLoading()
 						this.downloadFunc(res.data.download_url)

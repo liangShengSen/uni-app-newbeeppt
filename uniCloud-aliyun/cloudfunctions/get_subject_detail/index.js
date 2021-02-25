@@ -9,8 +9,8 @@ exports.main = async (event, context) => {
 	if(payload.code === 0) {
 		collected_ids = payload.userInfo.collected_ids || []
 	}
-	let dbStr = type ? 'documents' : 'subject_documents'
-	let res = await db.collection(dbStr).aggregate()
+	let dbName = type ? 'documents' : 'subject_documents'
+	let res = await db.collection(dbName).aggregate()
 	.addFields({
 		is_collect:$.in(['$_id', collected_ids])
 	})

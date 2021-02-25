@@ -5,7 +5,7 @@
 				<text class="text">筛选</text>
 				<uni-icons type="gear" size="18" color="#f7931e"></uni-icons>
 			</view>
-			<view class="current-filter-text">- {{stage.name}}{{grade.name ? `·${grade.name}`: ''}}{{subject.name && `·${subject.name}`}}{{rank_id ? rank_id === '0' ? '·普通' : '·精品' : ''}}{{chapter.name ? `·${chapter.name}` : ''}}
+			<view class="current-filter-text">- {{stage.name}}{{grade.name ? `·${grade.name}`: ''}}{{subject.name && `·${subject.name}`}}{{rank.name ? `·${rank.name}`: ''}}{{chapter.name ? `·${chapter.name}` : ''}}
 				-</view>
 		</view>
 		<view class="list-content">
@@ -20,24 +20,24 @@
 				<list-scroll class="list-scroll">
 					<view class="title-text">学段</view>
 					<view class="item-box">
-						<view v-for="item in stages" :key="item._id" :class="['item', item.id === stage.id ? 'active' : '']">{{item.name}}</view>
+						<view v-for="item in stages" :key="item._id" :class="['item', item.id === stage.id ? 'active' : '']" @click="toggleFilter('stage',item)">{{item.name}}</view>
 					</view>
 					<view class="title-text">年级</view>
 					<view class="item-box">
-						<view v-for="item in grades" :key="item._id" :class="['item', item.id === grade.id ? 'active' : '']">{{item.name}}</view>
+						<view v-for="item in grades" :key="item._id" :class="['item', item.id === grade.id ? 'active' : '']" @click="toggleFilter('grade',item)">{{item.name}}</view>
 					</view>
 					<view class="title-text">学科</view>
 					<view class="item-box">
-						<view v-for="item in subjects" :key="item._id" :class="['item', item.id === subject.id ? 'active' : '']">{{item.name}}</view>
+						<view v-for="item in subjects" :key="item._id" :class="['item', item.id === subject.id ? 'active' : '']" @click="toggleFilter('subject',item)">{{item.name}}</view>
 					</view>
 					<view class="title-text">等级</view>
 					<view class="item-box">
-						<view v-for="item in ranks" :key="item.id" :class="['item', item.id === rank_id ? 'active' : '']">{{item.name}}</view>
+						<view v-for="item in ranks" :key="item.id" :class="['item', item.id === rank.id ? 'active' : '']" @click="toggleFilter('rank',item)">{{item.name}}</view>
 					</view>					
 				</list-scroll>
 				<view class="btn-box">
 					<view class="btn cancel" @click="closeModal">取消</view>
-					<view class="btn submit">确定</view>
+					<view class="btn submit" @click="confirm">确定</view>
 				</view>
 			</view>
 		</uni-popup>
@@ -65,33 +65,48 @@
 						name: "精品"
 					}
 				],
-				rank_id: '0',
+				rank: {},
 				documents: [],
 				load: 'loading'
 			}
+		},
+		created() {
+			uni.$on('update_doc_status', () => {
+				this.documents = []
+				this.getFilterDocuments()
+			})	
 		},
 		onLoad(query) {
 			this.stage = JSON.parse(query.stage)
 			this.subject = JSON.parse(query.subject)
 			this.chapter = JSON.parse(query.chapter)
 			this.getFilterDocuments()
-			this.getFilters()
+			this.getFilters('stage,subject,grade')
 		},
 		methods: {
-			getFilters() {
+			getFilters(_keys,flag) {
 				let data = {
-					_keys: 'stage,subject,grade',
 					stage: this.stage.id,
-					subject: this.subject.id
+					subject: this.subject.id,
+					_keys
 				}
 				this.$api.documentFilters(data).then(res => {
 					if (res.code === 0) {
 						res.data.forEach(item => {
 							this[`${item.key}s`] = item.options
 							this[`${item.key}`]['id'] = item.value
+							if(flag && item.key === 'grade') {
+								this[`${item.key}`] = item.options[0]
+							}
 						})
 					}
 				})
+			},
+			toggleFilter(type,item) {
+				this[type] = item
+				if(type === 'stage') {
+					this.getFilters('subject,grade', 1)
+				}
 			},
 			getFilterDocuments() {
 				let data = {
@@ -100,7 +115,10 @@
 				if (this.chapter && this.chapter.id) {
 					data.chapter_id = this.chapter.id
 				} else {
-
+					data.stage_id = this.stage.id
+					data.subject_id = this.subject.id
+					data.grade_id = this.grade.id
+					data.rank_id = this.rank.id
 				}
 				this.load = 'loading'
 				this.$api.getFilterDocuments(data).then(res => {
@@ -130,6 +148,13 @@
 			closeModal() {
 				this.$refs.popup.close()
 			},
+			confirm() {
+				this.page = 1
+				this.chapter = {}
+				this.documents = []
+				this.getFilterDocuments()
+				this.closeModal()
+			}
 		}
 	}
 </script>
@@ -145,14 +170,10 @@
 		background-color: #fff;
 		border-radius: 4px;
 		width: 90%;
-		height: 100%;
 		margin: 0 auto;
 		box-sizing: border-box;
 		overflow: hidden;
-		padding-top: 20px;
-		.list-scroll {
-			height: 88%;
-		}
+		padding-top: 30px;
 
 		.close-icon {
 			position: absolute;

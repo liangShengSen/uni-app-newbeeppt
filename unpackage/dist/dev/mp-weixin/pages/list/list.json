@@ -5,6 +5,7 @@
     "uni-icons": "/components/uni-icons/uni-icons",
     "list-scroll": "/components/list-scroll/list-scroll",
     "list-card": "/components/list-card/list-card",
-    "uni-load-more": "/components/uni-load-more/uni-load-more"
+    "uni-load-more": "/components/uni-load-more/uni-load-more",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup"
   }
 }

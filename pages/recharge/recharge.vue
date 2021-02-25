@@ -82,8 +82,8 @@
 					uni.hideLoading()
 					if(res.code === 0) {
 						this.$utils.toast('充值成功', () => {
-							uni.navigateTo({
-								url: `../detail/detail?_id=${this.id}`
+							uni.navigateBack({
+								delta:1
 							})
 						})						
 					}
