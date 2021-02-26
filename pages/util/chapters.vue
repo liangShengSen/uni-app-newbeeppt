@@ -9,7 +9,7 @@
 </template>
 
 <script>
-	let jsonData = require("@/puppeteer/json/temp.json");
+	let jsonData = require("@/puppeteer/json/chapters.json");
 	export default {
 		data() {
 			return {
@@ -17,96 +17,42 @@
 			};
 		},
 		methods: {
-			timeout(delay) {
-				return new Promise((resolve, reject) => {
-					setTimeout(() => {
-						try {
-							resolve(1)
-						} catch (e) {
-							reject(0)
-						}
-					}, delay);
-				})
-			},
-			solveName() {
-				jsonData.forEach(item => {
-					let str = item.name,
-						re = /《([^》]*)》/ig;
-					if (re.exec(str))
-						item.name = RegExp.$1
-					return RegExp.$1
-				})
-				console.log(jsonData);
-			},
-			getById(Data, name) {
-				var Deep, T, F
-				for (F = Data.length; F;) {
-					T = Data[--F]
-					if (T['name'].includes(name)) return T
-					if (T.children.length) {
-						Deep = this.getById(T['children'], name)
-						if (Deep) return Deep
-					}
-				}
-			},
 			async uploadImgs() {
 				let self = this
 				uniCloud.callFunction({
 					name: 'chapters',
+					data: {
+						stage_id: '6038483da112ea00011a4ef7',
+						subject_id: '60384e51b4be6b6576f90f8e',
+						version_id: '60388ca88bb1992f1752bfe5',
+					},
 					success: async (res) => {
+						let books = res.result
 						let arr = []
-						let chapters = res.result[0].chapters;
-						for (let i = 0; i < jsonData.length; i++) {
-							let item = self.getById(chapters, jsonData[i].name);
-							if (item) {
-								jsonData[i].data.chapter.id = item.id;
-								jsonData[i].data.chapter.name = item.name;
-								let priviewImg = jsonData[i].data.cover_img,
-									downLink = jsonData[i].data.priview_imgs[0];
-								let [error1, res1] = await uni.downloadFile({
-									url: priviewImg,
-								});
-								await this.timeout(500)
-								let [error2, res2] = await uni.downloadFile({
-									url: downLink,
-								});
-								await this.timeout(500)
-								console.log(`res1:${JSON.stringify(error1)}`);
-								console.log(`res2:${JSON.stringify(error2)}`);
-								if (res1.statusCode === 200) {
-									let fileExtension = priviewImg.substring(priviewImg.lastIndexOf('.') + 1);
-									let result = await uniCloud.uploadFile({
-										filePath: res1.tempFilePath,
-										cloudPath: `${jsonData[i]['data']['title']}.${fileExtension}`,
-									});
-									jsonData[i]['data']['cover_img'] = result.fileID
+						books.forEach(item => {
+							jsonData.forEach(item1 => {
+								if (item.name === item1.book_name) {
+									let book = {
+										_id: item._id,
+										name: item.name
+									}
+									let obj = {
+										stage: item.stage,
+										subject: item.subject,
+										version: item.version,
+										book,
+										chapters: item1.data
+									}
+									arr.push(obj)
 								}
-								if (res2.statusCode === 200) {
-									let fileExtension = downLink.substring(downLink.lastIndexOf('.') + 1);
-									let result = await uniCloud.uploadFile({
-										filePath: res2.tempFilePath,
-										cloudPath: `${jsonData[i]['data']['title']}.${fileExtension}`,
-									});
-									jsonData[i]['data']['priview_imgs'] = [result.fileID]
-								}
-								await this.timeout(500)
-								let res = await uniCloud.callFunction({
-									name: 'add',
-									data: jsonData[i]['data'],
-								});
-								if (res.success) {
-									console.log(`第${i}条数据: ${jsonData[i]['data']['title']}: 插入成功`);
-								} else {
-									arr.push(jsonData[i].name)
-									console.log("%c " + `${jsonData[i]['data']['title']}: 插入失败`, "color:" + 'red');
-								}
-							}else{
-								arr.push(jsonData[i].name)
-							}
-							if(i === (jsonData.length - 1)) {
-								console.log(`插入数据失败的记录：${arr.length ? arr : '0'}`);
-							}
-						}
+							})
+						})
+						console.log(arr);
+						let result = await uniCloud.callFunction({
+							name: 'add',
+							data: arr
+						});
+						console.log(res);
 					}
 				})
 			},
