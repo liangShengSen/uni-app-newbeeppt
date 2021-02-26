@@ -3,13 +3,13 @@
 		<view class="text-area">
 			<text class="title">{{ title }}</text>
 		</view>
-		<!-- <button type="default" @click="solveName">处理格式</button> -->
+		<button type="default" @click="uploadDocuments">上传文档</button>
 		<button type="default" @click="uploadImgs">click me</button>
 	</view>
 </template>
 
 <script>
-	let jsonData = require("@/puppeteer/json/chapters.json");
+	let jsonData = require("@/puppeteer/json/temp.json");
 	export default {
 		data() {
 			return {
@@ -17,6 +17,13 @@
 			};
 		},
 		methods: {
+			async uploadDocuments() {
+				let result = await uniCloud.callFunction({
+					name: 'add',
+					data: jsonData.slice(1001,2000)
+				});
+				console.log(result)
+			},
 			async uploadImgs() {
 				let self = this
 				uniCloud.callFunction({

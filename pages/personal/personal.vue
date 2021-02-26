@@ -176,13 +176,13 @@
 					success: async (res) => {
 						let fileExtension = res.tempFilePaths[0].substring(res.tempFilePaths[0].lastIndexOf('.') + 1);
 						const filePath = res.tempFilePaths[0],
-							  fileName = res.tempFiles[0].name || (new Date().getTime() + '.' +fileExtension)
+							fileName = res.tempFiles[0].name || (new Date().getTime() + '.' + fileExtension)
 						uni.showLoading()
 						const result = await uniCloud.uploadFile({
 							filePath: filePath,
 							cloudPath: fileName
 						});
-						if(result.success) {
+						if (result.success) {
 							this.$api.setUserAvatar({
 								avatar: result.fileID
 							}).then(res => {

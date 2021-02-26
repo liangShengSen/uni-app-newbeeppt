@@ -27,7 +27,8 @@
 				<view class="qrcode-wrap">
 					<image :src="payInfo.qrcode" mode="aspectFill"></image>
 				</view>
-				<view class="recharge-tips">长按-识别图中二维码-付款<view>即可完成充值操作</view></view>
+				<view class="recharge-tips">长按-识别图中二维码-付款<view>即可完成充值操作</view>
+				</view>
 				<view class="btn" @click="cancelPay">确认支付</view>
 			</view>
 		</uni-popup>
@@ -38,7 +39,6 @@
 	export default {
 		data() {
 			return {
-				id: '',
 				balance: 0,
 				active: 1,
 				rechargeList: [],
@@ -46,7 +46,6 @@
 			}
 		},
 		onLoad(query) {
-			this.id = query.id
 			this.getRechargeList()
 		},
 		methods: {
@@ -71,21 +70,21 @@
 			},
 			cancelPay(flag) {
 				this.$refs.popup.close()
-				if(flag === 1) return
+				if (flag === 1) return
 				uni.showLoading()
 				this.$api.recharge_pay_cb({
-					id: this.$utils.UUIDGenerator(),
+					_id: this.$utils.guid(),
 					price: this.payInfo.price,
 					coins: this.payInfo.coins,
 					date: this.$utils.getNowDate()
 				}).then(res => {
 					uni.hideLoading()
-					if(res.code === 0) {
+					if (res.code === 0) {
 						this.$utils.toast('充值成功', () => {
 							uni.navigateBack({
-								delta:1
+								delta: 1
 							})
-						})						
+						})
 					}
 				}).catch(() => {
 					uni.hideLoading()
@@ -108,11 +107,13 @@
 		margin: 0 auto;
 		padding: 30px 20px 20px 20px;
 		box-sizing: border-box;
+
 		.close-icon {
 			position: absolute;
 			right: 10px;
 			top: 5px;
 		}
+
 		.pay-info {
 			margin-bottom: 10px;
 			text-align: center;
@@ -131,7 +132,7 @@
 			margin: 30px auto 0;
 			@include base-bg;
 		}
-		
+
 		.recharge-tips {
 			color: #999;
 			font-size: 14px;

@@ -13,26 +13,16 @@ exports.main = async function(event, context) {
 		code,
 		type: 'register'
 	}
-	if(PHONE.test(username)) {
+	if (PHONE.test(username)) {
 		verifyData['mobile'] = username
-	}else{
+	} else {
 		verifyData['email'] = username
 	}
 	const checkRes = await uniID.verifyCode(verifyData)
-	if(checkRes.code !== 0) {
+	if (checkRes.code !== 0) {
 		return {
 			code: 1,
 			msg: checkRes.msg
-		}
-	}
-	// 查询是否注册
-	let userExist = await db.collection('users').where({
-		username
-	}).limit(1).get()
-	if (userExist.data.length > 0) {
-		return {
-			code: 1,
-			msg: "账号已注册"
 		}
 	}
 	// 注册

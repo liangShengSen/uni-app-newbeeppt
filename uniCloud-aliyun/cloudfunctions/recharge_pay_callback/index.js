@@ -12,7 +12,7 @@ exports.main = async (event, context) => {
 		uniIdToken,
 		price,
 		coins,
-		id,
+		_id,
 		date
 	} = event
 	const payload = await uniID.checkToken(uniIdToken)
@@ -30,7 +30,7 @@ exports.main = async (event, context) => {
 				text: `充值金额: ${price}&emsp;&emsp;&emsp;&emsp;&emsp;可得P豆: ${coins}&emsp;充值日期：${getNowDate()}`,
 				btns: [{
 					title: "确认支付",
-					actionURL: `https://7d64ea77-4eba-4652-9fb5-6cbebc534629.bspapp.com/http/create_recharge_order?uid=${payload.uid}&id=${id}&price=${price}&coins=${coins}&date=${date}`
+					actionURL: `https://7d64ea77-4eba-4652-9fb5-6cbebc534629.bspapp.com/http/create_recharge_order?uid=${payload.uid}&_id=${_id}&price=${price}&coins=${coins}&date=${date}`
 				}]
 			}
 		},

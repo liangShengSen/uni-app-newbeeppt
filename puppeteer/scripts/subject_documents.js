@@ -35,14 +35,15 @@ const dayjs = require('dayjs');
 			try {
 				await page.goto(list[n]['href']);
 				console.log(list[n]['href'])
+				let temp_url = list[n]['href'].split('.html')[0],
+					source_id = temp_url.substring(temp_url.lastIndexOf('/') + 1)
 				let info = {
 					title: await page.$eval('#main h1', (h) => h.innerHTML),
 					intro: await page.$eval('#soft-intro p:nth-child(4)', (p) => p.innerHTML),
 					file_size: await page.$eval('.ver-chose', (span) => span.innerHTML),
 					priview_imgs: await page.$eval('#soft-intro img', (img) => img.src),
 					cover_img: list[n].cover_img,
-					// download_url: await page.$eval('.scdown .blue', (a) => a.href),
-					download_url: '',
+					source_id,
 					author: {
 						id: "001",
 						name: "admin"

@@ -22,9 +22,9 @@
 		},
 		created() {
 			uni.$on('update_collected', (data) => {
-				this.collectedList.forEach((item,i) => {
-					if(item._id === data.id) {
-						this.collectedList.splice(i,1)
+				this.collectedList.forEach((item, i) => {
+					if (item._id === data._id) {
+						this.collectedList.splice(i, 1)
 					}
 				})
 			})
@@ -39,7 +39,7 @@
 					type: 'collected'
 				}).then(res => {
 					this.loading = false
-					if(res.code === 0) {
+					if (res.code === 0) {
 						this.collectedList = res.data
 					}
 				}).catch(() => {

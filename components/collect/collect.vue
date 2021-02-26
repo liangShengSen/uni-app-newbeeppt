@@ -6,10 +6,10 @@
 
 <script>
 	export default {
-		props:{
-			item:{
-				type:Object,
-				default() {
+		props: {
+			item: {
+				type: Object,
+				default () {
 					return {}
 				}
 			},
@@ -27,7 +27,7 @@
 				isCollect: false
 			};
 		},
-		watch:{
+		watch: {
 			item(val) {
 				this.isCollect = this.item.is_collect
 			}
@@ -35,35 +35,35 @@
 		created() {
 			this.isCollect = this.item.is_collect
 		},
-		methods:{
+		methods: {
 			collecting() {
 				uni.showLoading()
 				this.$api.collect_documents({
 					document_id: this.item._id
 				}).then(res => {
 					uni.hideLoading()
-					if(res.code === 0) {
+					if (res.code === 0) {
 						this.isCollect = !this.isCollect
 						uni.showToast({
 							title: this.isCollect ? '收藏成功' : '取消收藏',
 							icon: 'none'
 						})
 						// 更新列表收藏状态
-						if(this.isDetail) {
+						if (this.isDetail || this.collect) {
 							uni.$emit('update_doc_status')
 						}
 						// 更新收藏列表
-						if(this.collect) {
+						if (this.collect) {
 							uni.$emit('update_collected', {
-								id: this.item._id
-							})							
+								_id: this.item._id
+							})
 						}
 					}
 				}).catch(() => {
 					uni.hideLoading()
 				})
 			},
-			
+
 		}
 	}
 </script>

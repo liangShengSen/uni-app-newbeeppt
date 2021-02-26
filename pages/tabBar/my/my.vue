@@ -11,11 +11,11 @@
 			<view class="my-header_info">
 				<view class="my-header_info-box">
 					<view class="my-header_info-item">
-						<text class="count">{{userInfo.download_docs && userInfo.download_docs.length || 0}}</text>
+						<text class="count">{{userInfo.download_total || 0}}</text>
 						<text class="text">我的下载</text>
 					</view>
 					<view class="my-header_info-item">
-						<text class="count">{{userInfo.collected_ids && userInfo.collected_ids.length || 0}}</text>
+						<text class="count">{{userInfo.collected_total || 0}}</text>
 						<text class="text">我的收藏</text>
 					</view>
 					<view class="my-header_info-item">
@@ -76,7 +76,7 @@
 			}
 		},
 		onShow() {
-			this.getUserInfo()
+			this.getUserInfo()	
 		},
 		methods: {
 			toLogin() {

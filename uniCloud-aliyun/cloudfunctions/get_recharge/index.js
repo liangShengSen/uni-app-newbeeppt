@@ -6,7 +6,7 @@ exports.main = async (event, context) => {
 	if (payload.code) {
 		return payload
 	}
-	const res = await db.collection('recharge_rules').orderBy('price','asc').get()
+	const res = await db.collection('recharge_rules').orderBy('price', 'asc').get()
 	return {
 		code: 0,
 		msg: 'success',
@@ -14,6 +14,6 @@ exports.main = async (event, context) => {
 			recharges: res.data,
 			balance: payload.userInfo.balance
 		}
-		
+
 	}
 };

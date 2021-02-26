@@ -10,7 +10,7 @@
 			</view>
 		</view>
 		<view class="detail-content">
-			<image :src="detailData.priview_imgs[0]" mode="widthFix"></image>
+			<image :src="detailData.priview_imgs" mode="widthFix"></image>
 		</view>
 		<view class="detail-attrs">
 			<view class="attr-tit">资料属性</view>
@@ -57,6 +57,7 @@
 		</view>
 		<uni-popup ref="popup" type="center">
 			<view class="modal-content">
+				<uni-icons type="closeempty" color="#999" size="20" class="close-icon" @click="closeModal"></uni-icons>
 				<view class="down-info" v-if="preDownData.is_free || detailData.price === 0">本次下载：<text class="is-free">免费</text></view>
 				<view class="down-info" v-else>下载需要：<text class="need-pay">{{detailData.price}} P豆</text></view>
 				<view class="down-info">账户余额：{{preDownData.balance}} P豆</view>
@@ -85,7 +86,6 @@
 		},
 		onLoad(query) {
 			this._id = query._id;
-			this.type = query.type
 			this.detailData = this.doc_detail;
 			this.getDetail();
 		},
@@ -104,15 +104,17 @@
 			}
 		},
 		methods: {
+			closeModal(){
+				this.$refs.popup.close()
+			},
+			shareDetail() {
+				this.$utils.toast('请在微信小程序中进行分享操作')
+			},
 			getDetail() {
-				let data = {
-					_id: this._id
-				}
-				if(this.type) {
-					data.type = this.type
-				}
 				this.$api
-					.get_subject_detail(data)
+					.get_detail({
+						_id: this._id
+					})
 					.then((res) => {
 						const {
 							data
@@ -120,29 +122,26 @@
 						this.detailData = data;
 					});
 			},
-			shareDetail() {
-				this.$utils.toast('请在微信小程序中进行分享操作')
-			},
 			preDownload() {
 				let uniIdToken = uni.getStorageSync('uni_id_token') || null
 				if(!uniIdToken) {
 					return this.$utils.toast('请先登录',() => {
 						uni.navigateTo({
-							url: `../auth/login/login?id=${this._id}`
+							url: `../auth/login/login`
 						})
 					})
 				}
 				uni.showLoading()
 				this.$api.pre_download({
-					id: this._id,
+					_id: this._id,
 					date: this.$utils.getNowDate()
 				}).then(res => {
 					uni.hideLoading()
 					if(res.code === 0) {
-						if(res.data.balance < this.detailData.price) { // 不够钱，跳到充值页面
+						if(!res.data.is_free && res.data.balance < this.detailData.price) { // 不够钱，跳到充值页面
 							return this.$utils.toast('账户余额不足，请先充值',() => {
 								return uni.navigateTo({
-									url: `../recharge/recharge?id=${this._id}`
+									url: `../recharge/recharge`
 								})								
 							})
 						}
@@ -182,13 +181,10 @@
 				this.$refs.popup.close()
 				uni.showLoading()
 				let data = {
-					id: this._id,
+					_id: this._id,
 					coins: this.detailData.price,
 					is_free: this.preDownData.is_free,
 					date: this.$utils.getNowDate()
-				}
-				if(this.type) {
-					data.type = this.type
 				}
 				this.$api.confirm_download(data).then(res => {
 					if(res.code === 0) {
@@ -209,12 +205,18 @@
 	}
 	
 	.modal-content {
+		position: relative;
 		background-color: #fff;
 		border-radius: 4px;
 		width: 90%;
 		margin: 0 auto;
 		padding: 20px;
 		box-sizing: border-box;
+		.close-icon {
+			position: absolute;
+			right: 10px;
+			top: 5px;
+		}
 		.down-info {
 			margin-bottom: 10px;
 			text-align: center;

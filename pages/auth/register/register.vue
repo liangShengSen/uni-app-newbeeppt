@@ -140,7 +140,7 @@
 									if (res.type === 'register') { // 第一次为注册，其他则是登录
 										this.registerSuccess()
 									} else {
-										this.$utils.toast('该账号已注册',() => {
+										this.$utils.toast('该账号已注册', () => {
 											uni.switchTab({
 												url: '../../tabBar/my/my'
 											})

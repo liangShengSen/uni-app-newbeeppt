@@ -13,7 +13,7 @@ const getDays = (d1, d2) => {
 exports.main = async (event, context) => {
 	const {
 		uniIdToken,
-		id,
+		_id,
 		date
 	} = event
 	const payload = await uniID.checkToken(uniIdToken)
@@ -26,8 +26,8 @@ exports.main = async (event, context) => {
 		is_free: false
 	}
 	const docs = payload.userInfo.download_docs || []
-	for(let i = 0;i < docs.length;i++) {
-		if (docs[i].id === id && getDays(date,docs[i].down_at) <= 15) {
+	for (let i = 0; i < docs.length; i++) {
+		if (docs[i]._id === _id && getDays(date, docs[i].down_at) <= 15) {
 			data.is_free = true
 			break
 		}

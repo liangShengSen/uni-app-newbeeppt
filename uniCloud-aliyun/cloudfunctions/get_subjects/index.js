@@ -14,18 +14,20 @@ exports.main = async (event, context) => {
 			userInfo
 		} = payload
 		let match = {}
-		if(type !== 'all') {
+		if (type !== 'all') {
 			match.current = true
 		}
 		res = await db.collection('subjects')
 			.aggregate()
 			.addFields({
-				current: $.in(['$id', $.ifNull([userInfo.subject_ids, []])])
-			}).match(match).end()
-	}else {
-		res = await db.collection('subjects').get()
+				current: $.in(['$_id', $.ifNull([userInfo.subject_ids, []])])
+			}).match(match).sort({
+				order: 1,
+			}).end()
+	} else {
+		res = await db.collection('subjects').orderBy('order', 'asc').get()
 	}
-	
+
 	return {
 		code: 0,
 		msg: 'success',

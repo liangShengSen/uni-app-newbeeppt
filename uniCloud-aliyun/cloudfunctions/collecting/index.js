@@ -12,14 +12,18 @@ exports.main = async (event, context) => {
 		return payload
 	}
 	let dbCmdFuns = null,
+		num = 0,
 		collected_ids = payload.userInfo.collected_ids || []
-	if(collected_ids.includes(document_id)) {
+	if (collected_ids.includes(document_id)) {
 		dbCmdFuns = dbCmd.pull(document_id)
-	}else{
+		num = -1
+	} else {
 		dbCmdFuns = dbCmd.addToSet(document_id)
+		num = 1
 	}
 	await db.collection('uni-id-users').doc(payload.uid).update({
-		collected_ids: dbCmdFuns
+		collected_ids: dbCmdFuns,
+		collected_total: dbCmd.inc(num)
 	})
 
 	return {

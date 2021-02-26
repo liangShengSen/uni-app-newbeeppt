@@ -4,14 +4,14 @@ const dbCmd = db.command
 exports.main = async (event, context) => {
 	let {
 		uid,
-		id,
+		_id,
 		price,
 		coins,
 		date,
 	} = event.queryStringParameters
 	await db.collection('uni-id-users').doc(uid).update({
 		recharge_orders: dbCmd.unshift({
-			id,
+			_id,
 			price,
 			date
 		}),

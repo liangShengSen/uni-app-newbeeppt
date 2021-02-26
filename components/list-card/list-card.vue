@@ -1,7 +1,7 @@
 <template>
 	<view @click="open">
 		<!-- 基础卡片 -->
-		<view class="listcard" v-if="item.type === 'ppt'">
+		<view class="listcard">
 			<view class="listcard-image">
 				<image :src="`${item.cover_img}`" mode="aspectFill"></image>
 			</view>
@@ -11,88 +11,28 @@
 					<collect :item="item" :collect="collect" v-if="!download"></collect>
 				</view>
 				<view class="listcard-content_des">
-					<view class="listcard-content_des-label">
-						<view class="listcard-content_des-label-item">{{item.type_label}}</view>
+					<view class="listcard-content_des-label" v-if="!download">
+						<view class="listcard-content_des-label-item">{{item.label}}</view>
 					</view>
-					<view class="listcard-content_des-info">
-						<block v-if="!download">
-							<view class="listcard-content_des-info-item">
-								{{item.created_at}}
-							</view>
-							<view class="listcard-content_des-info-item">
-								{{item.download_num}}次下载
-							</view>
-							<view class="listcard-content_des-info-item" v-if="item.price > 0">
-								{{item.price}}P豆
-							</view>	
-							<view class="listcard-content_des-info-item free" v-else>免费</view>	
-						</block>
-						<!-- 下载列表 -->
-						<block v-else>
-							<view class="listcard-content_des-info-item">
-								支付：{{ item.price }} P豆
-							</view>
-							<view class="listcard-content_des-info-item">
-								下载时间：{{item.down_at}}
-							</view>
-						</block>
-					</view>
-				</view>
-			</view>
-		</view>
-		<!-- 多图卡片 -->
-		<view class="listcard mode-column" v-if="item.type !== 'ppt'">
-			<view class="listcard-content">
-				<view class="listcard-content_title">
-					<text>{{item.title}} </text>
-					<collect :item="item" :collect="collect"></collect>
-				</view>
-				<view class="listcard-image">
-					<view v-for="(img,index) in item.priview_imgs" :key="index" class="listcard-image_item">
-						<image :src="img" mode="aspectFill"></image>
-					</view>
-				</view>
-				<view class="listcard-content_des">
-					<view class="listcard-content_des-label">
-						<view class="listcard-content_des-label-item">课件</view>
-					</view>
-					<view class="listcard-content_des-info">
+					<view class="listcard-content_des-info" v-if="!download">
 						<view class="listcard-content_des-info-item">
 							{{item.created_at}}
 						</view>
 						<view class="listcard-content_des-info-item">
 							{{item.download_num}}次下载
 						</view>
-						<view class="listcard-content_des-info-item">
-							{{item.price}}豆
+						<view class="listcard-content_des-info-item" v-if="item.price > 0">
+							{{item.price}}P豆
 						</view>
+						<view class="listcard-content_des-info-item free" v-else>免费</view>
 					</view>
-				</view>
-			</view>
-		</view>
-		<!-- 大图模式 -->
-		<view class="listcard mode-image" v-if="item.type !== 'ppt'">
-			<view class="listcard-image">
-				<image :src="`${item.priview_imgs[0]}`" mode="aspectFill"></image>
-			</view>
-			<view class="listcard-content">
-				<view class="listcard-content_title">
-					<text>{{item.title}} </text>
-					<collect :item="item" :collect="collect"></collect>
-				</view>
-				<view class="listcard-content_des">
-					<view class="listcard-content_des-label">
-						<view class="listcard-content_des-label-item">课件</view>
-					</view>
-					<view class="listcard-content_des-info">
+					<!-- 下载列表 -->
+					<view class="down-info-box" v-else>
 						<view class="listcard-content_des-info-item">
-							{{item.created_at}}
+							支付：{{ item.price }} P豆
 						</view>
 						<view class="listcard-content_des-info-item">
-							{{item.download_num}}次下载
-						</view>
-						<view class="listcard-content_des-info-item">
-							{{item.price}}豆
+							下载时间：{{item.down_at}}
 						</view>
 					</view>
 				</view>
@@ -128,12 +68,12 @@
 
 			};
 		},
-		methods:{
-			open(){
+		methods: {
+			open() {
 				this.$emit('click', this.item) // 触发搜索页的保存搜索记录
-				this.$store.dispatch('set_detail',this.item) // 首页的列表数据保存传到详情页
+				this.$store.dispatch('set_detail', this.item) // 首页的列表数据保存传到详情页
 				uni.navigateTo({
-					url: `/pages/detail/detail?_id=${this.item._id}${this.type ? `&type=${this.type}` : ''}`
+					url: `/pages/detail/detail?_id=${this.item._id}`
 				})
 			}
 		}
@@ -204,21 +144,29 @@
 					}
 				}
 
+				.down-info-box {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+				}
+
 				.listcard-content_des-info {
 					display: flex;
 					align-items: center;
+				}
 
-					.listcard-content_des-info-item {
-						color: #999;
-						line-height: 1.5;
-						margin-left: 10px;
+				.listcard-content_des-info-item {
+					color: #999;
+					line-height: 1.5;
+					margin-left: 10px;
 
-						&:first-child {
-							margin-left: 0;
-						}
-						&.free {
-							color: #30b33a;
-						}
+					&:first-child {
+						margin-left: 0;
+					}
+
+					&.free {
+						color: #30b33a;
 					}
 				}
 

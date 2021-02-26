@@ -5,10 +5,9 @@ const dbCmd = db.command
 exports.main = async (event, context) => {
 	let {
 		uniIdToken,
-		id,
+		_id,
 		coins,
 		is_free,
-		type,
 		date
 	} = event
 	const payload = await uniID.checkToken(uniIdToken)
@@ -20,19 +19,19 @@ exports.main = async (event, context) => {
 	await db.collection('uni-id-users').doc(payload.uid).update({
 		balance: dbCmd.inc(is_free ? 0 : -(parseInt(coins))),
 		download_docs: dbCmd.unshift({
-			id,
+			_id,
 			down_at: date
-		})
+		}),
+		download_total: dbCmd.inc(1)
 	})
 	// 更新文档的下载次数
-	let dbName = type ? 'documents' : 'subject_documents'
-	await db.collection(dbName).where({
-		_id: id
+	await db.collection('test_documents').where({
+		_id
 	}).update({
 		download_num: dbCmd.inc(1)
 	})
 	// 获取下载地址
-	data.download_url = payload.userInfo.download_url ||
+	data.download_url =
 		'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-k9gnc4vsx5e167449b/c971bd61-99dc-42f0-9b23-a58919d3596b.pptx'
 
 	return {

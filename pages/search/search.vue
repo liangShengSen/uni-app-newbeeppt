@@ -42,12 +42,12 @@
 				loading: false,
 			}
 		},
-		computed:{
+		computed: {
 			...mapState(['historyList'])
 		},
 		methods: {
 			setHistory() {
-				this.$store.dispatch('set_history',{
+				this.$store.dispatch('set_history', {
 					name: this.value
 				})
 			},
@@ -62,22 +62,22 @@
 				})
 			},
 			change(value) {
-				if(!value) {
+				if (!value) {
 					clearTimeout(this.timer)
 					this.mark = false
 					this.getSearch(value)
 					return
 				}
-				if(!this.mark) {
+				if (!this.mark) {
 					this.mark = true
 					this.timer = setTimeout(() => {
 						this.mark = false
 						this.getSearch(value)
-					},1000)
+					}, 1000)
 				}
 			},
 			getSearch(value) {
-				if(!value) {
+				if (!value) {
 					this.searchList = []
 					this.is_history = true
 					return
@@ -87,7 +87,9 @@
 				this.$api.get_search({
 					value
 				}).then(res => {
-					let { data } = res
+					let {
+						data
+					} = res
 					this.loading = false
 					this.searchList = data
 				}).catch(() => {
@@ -150,6 +152,7 @@
 				}
 			}
 		}
+
 		.no-data {
 			width: 100%;
 			height: 100px;

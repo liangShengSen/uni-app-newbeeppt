@@ -15,21 +15,21 @@ exports.main = async function(event, context) {
 		expiresIn: 300, // 有效时长5mins
 	}
 	let params = {}
-	if(mobile) {
+	if (mobile) {
 		data['mobile'] = mobile
 		params['mobile'] = mobile
-	}else{
+	} else {
 		data['email'] = email
 		params['email'] = email
 	}
 	const res = await uniID.setVerifyCode(data)
-	if(res.code === 0) {
-		const res = await db.collection('opendb-verify-codes').where(params).orderBy("created_at","desc").get()
+	if (res.code === 0) {
+		const res = await db.collection('opendb-verify-codes').where(params).orderBy("created_at", "desc").get()
 		return {
 			code: 0,
 			msg: "success",
 			data: res.data[0] // 最新一条
 		}
-		
+
 	}
 }

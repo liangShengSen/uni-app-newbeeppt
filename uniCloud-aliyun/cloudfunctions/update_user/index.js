@@ -7,23 +7,28 @@ exports.main = async function(event, context) {
 	}
 	const userRes = await uniID.getUserInfo({
 		uid: payload.uid,
-		field: ['is_completed','balance']
+		field: ['is_completed', 'balance']
 	})
-	const { nickname, gender, mobile, email } = event
+	const {
+		nickname,
+		gender,
+		mobile,
+		email
+	} = event
 	let data = {
 		uid: payload.uid,
 		gender
 	}
-	if(nickname) {
+	if (nickname) {
 		data['nickname'] = nickname
 	}
-	if(mobile) {
-		data['mobile'] =  mobile
+	if (mobile) {
+		data['mobile'] = mobile
 	}
-	if(email) {
+	if (email) {
 		data['email'] = email
 	}
-	if(userRes.code === 0 && !userRes.userInfo.is_completed) { // 首次完善信息赠送20P币
+	if (userRes.code === 0 && !userRes.userInfo.is_completed) { // 首次完善信息赠送20P币
 		data['is_completed'] = 1
 		data['balance'] = (userRes.userInfo.balance || 0) + 20
 	}

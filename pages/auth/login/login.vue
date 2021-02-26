@@ -67,10 +67,10 @@
 					uni.hideLoading()
 					if (res.code === 0) {
 						uni.setStorageSync('uni_id_token', res.token)
-						
+
 						this.$utils.toast('登录成功', () => {
 							uni.navigateBack({
-								delta:1
+								delta: 1
 							})
 						})
 					} else {
@@ -101,7 +101,7 @@
 									uni.$emit('subjectChange') // 更新tab学科信息
 									this.$utils.toast('登录成功', () => {
 										uni.navigateBack({
-											delta:1
+											delta: 1
 										})
 									})
 								}

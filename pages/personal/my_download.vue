@@ -30,7 +30,7 @@
 					type: 'download'
 				}).then(res => {
 					this.loading = false
-					if(res.code === 0) {
+					if (res.code === 0) {
 						this.downloadList = res.data
 					}
 				}).catch(() => {

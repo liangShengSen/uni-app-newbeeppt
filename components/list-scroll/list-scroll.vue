@@ -15,7 +15,7 @@
 
 			};
 		},
-		methods:{
+		methods: {
 			loadmore() {
 				this.$emit('loadmore')
 			}

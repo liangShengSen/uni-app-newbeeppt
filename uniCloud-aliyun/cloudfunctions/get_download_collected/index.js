@@ -17,24 +17,24 @@ exports.main = async (event, context) => {
 	if (type === 'download') {
 		arr = payload.userInfo.download_docs || []
 		let ids = arr.map(item => {
-			return item.id
+			return item._id
 		})
-		let docs = await db.collection('subject_documents').aggregate().match({
+		let docs = await db.collection('test_documents').aggregate().match({
 			_id: dbCmd.in(ids)
 		}).sort({
 			_id: -1
 		}).end()
 		arr.forEach(item => {
 			docs.data.forEach(doc => {
-				if (item.id === doc._id) {
-					item = Object.assign(item,doc)
+				if (item._id === doc._id) {
+					item = Object.assign(item, doc)
 				}
 			})
 		})
 		res.data = arr
 	} else if (type === 'collected') {
 		arr = payload.userInfo.collected_ids || []
-		res = await db.collection('subject_documents').aggregate().addFields({
+		res = await db.collection('test_documents').aggregate().addFields({
 			is_collect: $.in(['$_id', payload.userInfo.collected_ids])
 		}).match({
 			_id: dbCmd.in(arr)
