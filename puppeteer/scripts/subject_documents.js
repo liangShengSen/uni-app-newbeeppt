@@ -3,7 +3,7 @@ const fs = require('fs');
 const dayjs = require('dayjs');
 
 (async () => {
-	let pageUrl = 'http://www.pptok.com/kejian/yuwenkejianppt/'
+	let pageUrl = 'http://www.pptok.com/pptku/jiachanghuippt/'
 	const browser = await puppeteer.launch({
 		headless: true,
 	});
@@ -48,7 +48,7 @@ const dayjs = require('dayjs');
 						id: "001",
 						name: "admin"
 					},
-					subject: "语文",
+					subject: "家长会",
 					rank: '0',
 					price: 10,
 					download_num: 0,
