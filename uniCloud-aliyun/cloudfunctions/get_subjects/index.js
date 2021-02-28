@@ -13,7 +13,9 @@ exports.main = async (event, context) => {
 		let {
 			userInfo
 		} = payload
-		let match = {}
+		let match = {
+			status: 1
+		}
 		if (type !== 'all') {
 			match.current = true
 		}
@@ -25,7 +27,9 @@ exports.main = async (event, context) => {
 				order: 1,
 			}).end()
 	} else {
-		res = await db.collection('subjects').orderBy('order', 'asc').get()
+		res = await db.collection('subjects').where({
+			status: 1
+		}).orderBy('order', 'asc').get()
 	}
 
 	return {

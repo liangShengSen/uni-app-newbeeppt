@@ -20,15 +20,15 @@
 				<list-scroll class="list-scroll">
 					<view class="title-text">学段</view>
 					<view class="item-box">
-						<view v-for="item in stages" :key="item._id" :class="['item', item.id === stage.id ? 'active' : '']" @click="toggleFilter('stage',item)">{{item.name}}</view>
+						<view v-for="item in stages" :key="item._id" :class="['item', item._id === stage._id ? 'active' : '']" @click="toggleFilter('stage',item)">{{item.name}}</view>
 					</view>
 					<view class="title-text">年级</view>
 					<view class="item-box">
-						<view v-for="item in grades" :key="item._id" :class="['item', item.id === grade.id ? 'active' : '']" @click="toggleFilter('grade',item)">{{item.name}}</view>
+						<view v-for="item in grades" :key="item._id" :class="['item', item._id === grade._id ? 'active' : '']" @click="toggleFilter('grade',item)">{{item.name}}</view>
 					</view>
 					<view class="title-text">学科</view>
 					<view class="item-box">
-						<view v-for="item in subjects" :key="item._id" :class="['item', item.id === subject.id ? 'active' : '']" @click="toggleFilter('subject',item)">{{item.name}}</view>
+						<view v-for="item in subjects" :key="item._id" :class="['item', item._id === subject._id ? 'active' : '']" @click="toggleFilter('subject',item)">{{item.name}}</view>
 					</view>
 					<view class="title-text">等级</view>
 					<view class="item-box">
@@ -86,15 +86,15 @@
 		methods: {
 			getFilters(_keys,flag) {
 				let data = {
-					stage: this.stage.id,
-					subject: this.subject.id,
+					stage: this.stage._id,
+					subject: this.subject._id,
 					_keys
 				}
 				this.$api.documentFilters(data).then(res => {
 					if (res.code === 0) {
 						res.data.forEach(item => {
 							this[`${item.key}s`] = item.options
-							this[`${item.key}`]['id'] = item.value
+							this[`${item.key}`]['_id'] = item.value
 							if(flag && item.key === 'grade') {
 								this[`${item.key}`] = item.options[0]
 							}
@@ -112,12 +112,12 @@
 				let data = {
 					page: this.page
 				}
-				if (this.chapter && this.chapter.id) {
-					data.chapter_id = this.chapter.id
+				if (this.chapter && this.chapter.value) {
+					data.chapter_id = this.chapter.value
 				} else {
-					data.stage_id = this.stage.id
-					data.subject_id = this.subject.id
-					data.grade_id = this.grade.id
+					data.stage_id = this.stage._id
+					data.subject_id = this.subject._id
+					data.grade_id = this.grade._id
 					data.rank_id = this.rank.id
 				}
 				this.load = 'loading'

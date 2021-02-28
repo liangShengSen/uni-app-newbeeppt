@@ -3,118 +3,83 @@ const db = uniCloud.database()
 const dbCmd = db.command
 const $ = db.command.aggregate
 exports.main = async (event, context) => {
-	let { _keys,stage,subject,version,book,chapter,grade } = event
-	if(!_keys) {
+	let {
+		_keys,
+		stage,
+		subject,
+		version,
+		grade
+	} = event
+	if (!_keys) {
 		return {
 			code: 1,
 			msg: '_keys不能为空'
 		}
 	}
-	let keys = _keys.split(','),data = []
-	for(let i = 0; i < keys.length; i++) {
-		let obj = {
-			key: keys[i]
-		}
-		switch(keys[i]) {
+	let keys = _keys.split(','),
+		data = [];
+	for (let i = 0; i < keys.length; i++) {
+		let res = null,
+			obj = {
+				key: keys[i]
+			}
+		switch (keys[i]) {
 			case 'stage':
-				obj.name = '学段'
-				obj.options = (await db.collection('stages').get()).data
-				stage = stage || obj.options[0].id
-				obj.value = stage
+				res = await db.collection('stages').get()
+				obj.options = res.data
+				obj.value = stage || obj.options[0]._id
+				stage = obj.value
 				break
 			case 'subject':
-				obj.name = '学科'
-				obj.options = (await db.collection('subjects').where({
-					stage_ids: stage
-				}).get()).data
-				subject = subject || obj.options[0].id
-				obj.value = subject
+				res = await db.collection('subjects').where({
+					stage_ids: stage,
+					status: 1
+				}).orderBy('order', 'asc').get()
+				obj.options = res.data
+				obj.value = subject || obj.options[0]._id
+				subject = obj.value
 				break
 			case 'version':
-				obj.name = '版本'
-				obj.options = (await db.collection('versions').where({
-					'stage.id': stage,
-					'subject.id': subject
-				}).get()).data
-				version = version || obj.options[0].id
-				obj.value = version
-				// 查找对应版本的册别和章节并挂载到版本上
-				let versionIds = obj.options.map(version =>{
-					return version.id
-				})
-				let bookRecords = await db.collection('books').aggregate().match({
-					'version.id': dbCmd.in(versionIds)
-				}).project({
-					id: 1,
-					name: 1,
-					version: 1
-				}).end()
-				let bookIds = bookRecords.data.map(book =>{
-					return book.id
-				})
-				let chapterRecords = await db.collection('chapters').aggregate().match({
-					'book.id': dbCmd.in(bookIds)
-				}).project({
-					chapters: 1,
-					version: 1,
-					book: 1
-				}).end()
-				obj.options.forEach(version => {
-					let tempBooks = []
-					bookRecords.data.forEach(item => {
-						if(version.id === item.version.id) {
-							tempBooks.push({
-								id: item.id,
-								name: item.name
-							})
+				res = await db.collection('versions').where({
+					'stage.value': stage,
+					'subject.value': subject
+				}).orderBy('order', 'asc').get()
+				obj.options = res.data
+				obj.value = version || (obj.options[0] && obj.options[0]._id)
+				version = obj.value
+				// 给版本添加对应章节
+				let allBooks = await db.collection('books').get(),
+					allChapters = await db.collection('chapters').get()
+				obj.options.forEach(v => {
+					v.books = []
+					v.chapters = []
+					v.index = 0
+					allBooks.data.forEach(b => {
+						if(v._id === b.version.value) {
+							v.books.push(b)
 						}
 					})
-					version.books = tempBooks
-					version.book_id = version.books.length ? version.books[0].id : ''
-					let tempChapters = []
-					chapterRecords.data.forEach(item => {
-						if(version.id === item.version.id) {
-							tempChapters.push({
-								book_id: item.book.id,
-								data: item.chapters
-							})
-						}
+					v.books.forEach(b => {
+						allChapters.data.forEach(c => {
+							if(b._id === c.book.value) {
+								v.chapters.push(c)
+							}
+						})
 					})
-					version.chapters = tempChapters
 				})
-				break
-			case 'book':
-				obj.name = '册别'
-				obj.options = (await db.collection('books').where({
-					'stage.id': stage,
-					'subject.id': subject,
-					'version.id': version
-				}).get()).data
-				book = book || obj.options[0].id
-				obj.value = book
-				break
-			case 'chapter':
-				obj.name = '章节'
-				obj.options = (await db.collection('chapters').where({
-					'stage.id': stage,
-					'subject.id': subject,
-					'version.id': version,
-					'book.id': book
-				}).get()).data[0].chapters
-				chapter = chapter || obj.options[0].id
-				obj.value = chapter
 				break
 			case 'grade':
-				obj.name = '年级'
-				obj.options = (await db.collection('grades').where({
-					'stage.id': stage,
-				}).get()).data
-				grade = grade || obj.options[0].id
-				obj.value = grade
+				res = await db.collection('grades').where({
+					'stage.value': stage
+				}).orderBy('order', 'asc').get()
+				obj.options = res.data
+				obj.value = grade || (obj.options[0] && obj.options[0]._id)
+				grade = obj.value
 				break
 		}
 		data.push(obj)
 	}
+
 	return {
 		code: 0,
 		msg: 'success',

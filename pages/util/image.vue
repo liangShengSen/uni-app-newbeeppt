@@ -4,18 +4,27 @@
 			<text class="title">{{title}}</text>
 		</view>
 		<button type="default" @click="uploadImgs">click me</button>
+		<button type="default" @click="editData">修改数据</button>
 	</view>
 </template>
 
 <script>
-	let jsonData = require('@/puppeteer/json/chapters.json');
+	let jsonData = require('@/puppeteer/json/temp2.json');
 	export default {
 		data() {
 			return {
 				title: 'Hello',
+				data: ''
 			}
 		},
 		methods: {
+			editData() {
+				jsonData.options.forEach(item => {
+					item.value = item._id.value
+					delete item._id
+				})
+				this.data = jsonData
+			},
 			timeout(delay) {
 				return new Promise((resolve, reject) => {
 					setTimeout(() => {

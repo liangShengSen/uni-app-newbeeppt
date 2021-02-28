@@ -20,7 +20,7 @@
 			async uploadDocuments() {
 				let result = await uniCloud.callFunction({
 					name: 'add',
-					data: jsonData.slice(1001,2000)
+					data: jsonData
 				});
 				console.log(result)
 			},

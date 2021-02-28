@@ -3,7 +3,7 @@ const fs = require('fs');
 const dayjs = require('dayjs');
 
 (async () => {
-	let pageUrl = 'http://www.pptok.com/pptku/jiachanghuippt/'
+	let pageUrl = 'http://www.pptok.com/pptmb/'
 	const browser = await puppeteer.launch({
 		headless: true,
 	});
@@ -48,12 +48,12 @@ const dayjs = require('dayjs');
 						id: "001",
 						name: "admin"
 					},
-					subject: "家长会",
+					subject: "免费",
 					rank: '0',
-					price: 10,
+					price: 0,
 					download_num: 0,
 					created_at: dayjs().format('YYYY-MM-DD'),
-					label: "课件"
+					label: "模板"
 				}
 				docsArr.push(info);
 				console.log(info)
