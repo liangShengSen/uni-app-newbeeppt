@@ -3,7 +3,7 @@
 		<view class="text-area">
 			<text class="title">{{ title }}</text>
 		</view>
-		<button type="default" @click="uploadDocuments">上传文档</button>
+		<button type="default" @click="uploadDocuments">upload</button>
 		<button type="default" @click="uploadImgs">click me</button>
 	</view>
 </template>
@@ -29,37 +29,27 @@
 				uniCloud.callFunction({
 					name: 'chapters',
 					data: {
-						stage_id: '6038483da112ea00011a4ef7',
-						subject_id: '60384e51b4be6b6576f90f8e',
-						version_id: '60388ca88bb1992f1752bfe5',
+						chapter_id: '603b86cffac28b0001d05831',
 					},
 					success: async (res) => {
-						let books = res.result
+						// console.log(res);
 						let arr = []
-						books.forEach(item => {
+						res.result[0].options.forEach(item => {
 							jsonData.forEach(item1 => {
-								if (item.name === item1.book_name) {
-									let book = {
-										_id: item._id,
-										name: item.name
-									}
-									let obj = {
-										stage: item.stage,
-										subject: item.subject,
-										version: item.version,
-										book,
-										chapters: item1.data
-									}
-									arr.push(obj)
+								if(item.name === item1.name) {
+									item1.data.chapter.name = item1.name
+									item1.data.chapter.value = item.value
+									arr.push(item1.data)
 								}
 							})
 						})
-						console.log(arr);
+						let arr1 = arr.slice(2000,2500)
+						console.log(arr1);
 						let result = await uniCloud.callFunction({
 							name: 'add',
-							data: arr
+							data: arr1
 						});
-						console.log(res);
+						console.log(result);
 					}
 				})
 			},

@@ -9,7 +9,7 @@ const dayjs = require('dayjs');
 	try {
 		const page = await browser.newPage();
 		await page.setDefaultNavigationTimeout(0);
-		await page.goto('http://www.pptok.com/kejian/mulu/213.html');
+		await page.goto('http://www.pptok.com/kejian/mulu/203.html');
 		let arr = await page.$$eval('#mulu .mldy h2 a', (a) =>
 			a.map((v) => {
 				return {
@@ -22,7 +22,7 @@ const dayjs = require('dayjs');
 		let docsArr = [];
 		for (let i = 0; i < arr.length; i++) {
 			console.log(i)
-			if(arr[i].url) {
+			if (arr[i].url) {
 				await page.goto(arr[i].url);
 				const pageEle = await page.$('.bigPage > a');
 				let list = [];
@@ -61,62 +61,62 @@ const dayjs = require('dayjs');
 					console.log(arr[i]['name'])
 					try {
 						await page.goto(arr[i]['list'][n]['href']);
+						let temp_url = list[n]['href'].split('.html')[0],
+							source_id = temp_url.substring(temp_url.lastIndexOf('/') + 1)
+							console.log(source_id)
 						let info = {
 							name: arr[i].name,
 							data: {
 								title: await page.$eval('#main h1', (h) => h.innerHTML),
 								intro: await page.$eval('#soft-intro p:nth-child(4)', (p) => p.innerHTML),
 								file_size: await page.$eval('.ver-chose', (span) => span.innerHTML),
-								priview_imgs: [await page.$eval('#soft-intro img', (img) => img.src)],
+								priview_imgs: await page.$eval('#soft-intro img', (img) => img.src),
 								cover_img: arr[i]['list'][n]['cover'],
+								source_id,
 								author: {
-								    "id": "001",
-								    "name": "Sam"
+									"id": "001",
+									"name": "admin"
 								},
-								stage: {
-									"id": "1",
-									"name": "小学"
+								"stage": {
+									"name": "小学",
+									"value": "6038483da112ea00011a4ef7"
 								},
-								subject: {
-									"id": "2",
-									"name": "语文"
+								"subject": {
+									"name": "语文",
+									"value": "5ffef5038cc87f0001b0d7a6"
 								},
-								version:{
-									"id":"1000",
-									"name":"人教部编版"
+								"version": {
+									"name": "部编版",
+									"value": "603b6e0ee028a50001c1fe43"
 								},
-								book:{
-									"id":"10011",
-									"name":"六年级下册"
+								"book": {
+									"name": "一年级下册",
+									"value": "603b79d904fa2d0001e8970f"
 								},
 								grade: {
-									"id": "6",
-									"name": "六年级"
+									"name": "一年级",
+									"value": "603b8a1eb68dad7fd627f70d"
 								},
-								chapter:{
-									"id":"",
-									"name": ""
+								chapter: {
+									"name": "",
+									"value": "",
 								},
-								term: "2",
-								year: '2021',
 								rank: '0',
-								price: 5,
-								status: '1',
+								price: 10,
 								download_num: 0,
 								created_at: dayjs().format('YYYY-MM-DD'),
-								type: "ppt",
-								type_label: "课件"
+								label: "课件"
 							},
 						};
 						docsArr.push(info);
-					}catch(err) {
+					} catch (err) {
 						console.log(`错误链接：${arr[i]['list'][n]['href']}`)
 						console.log(err)
 					}
 				}
 			}
 		}
-		fs.writeFileSync('./json/temp.json', JSON.stringify(docsArr));
+		fs.writeFileSync('../json/temp.json', JSON.stringify(docsArr));
 	} catch (e) {
 		console.log('err', e);
 	} finally {

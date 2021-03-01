@@ -7,6 +7,12 @@
 		// 	}
 		// },
 		{
+			"path": "pages/util/chapters",
+			"style": {
+				"navigationBarTitleText": "11"
+			}
+		},
+		{
 		    "path" : "pages/tabBar/home/home",
 		    "style" : {
 		        "navigationBarTitleText": "newbeeppt",
