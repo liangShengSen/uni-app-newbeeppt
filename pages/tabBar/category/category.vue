@@ -34,7 +34,7 @@
 						</view>
 						<view class="name label">章节</view>
 						<view class="chapter-box">
-							<block v-if="item.chapters.length">
+							<block v-if="item.chapters.length && item.chapters[item.index]">
 								<view class="chapter-item" v-for="chapter in item.chapters[item.index].options" :key="chapter._id">
 									<navigator class="sub-chapter" :url="`/pages/list/list?stage=${JSON.stringify(item.stage)}&subject=${JSON.stringify(item.subject)}&chapter=${JSON.stringify(chapter)}`">{{chapter.name}}</navigator>
 								</view>

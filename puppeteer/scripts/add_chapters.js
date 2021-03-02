@@ -9,12 +9,13 @@ void(async () => {
 	await page.goto('http://www.pptok.com/')
 	// 获取某个版本下所有册别链接
 	const bookLins = await page.evaluate(() => {
-		var items = $('.box-software').eq(0).find('a')
+		var items = $('.box-software').eq(1).find('a')
 		var links = []
 		items.each((index, item) => {
 			links.push({
 				name: $(item).text(),
-				href: `http://www.pptok.com${$(item).attr('href')}`
+				// href: `http://www.pptok.com${$(item).attr('href')}`
+				href: $(item).attr('href')
 			})
 		})
 		return links
