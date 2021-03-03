@@ -31,15 +31,41 @@ void(async () => {
 					return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
 				}
 				return {
-					_id: S4() + S4() + S4() + S4() + S4() + S4(),
-					name: v.innerText
+					name: v.innerText,
+					value: S4() + S4() + S4() + S4() + S4() + S4()
 				}
 			})
 		)
-		chapters.push({
-			book_name: bookLins[i].name,
-			data: chapter
-		})
+		let obj = {
+			name: bookLins[i].name,
+			order: (i + 1)
+		}
+		if(i <= 11) {
+			obj.stage = {
+				name: "小学",
+				value: "6038483da112ea00011a4ef7"
+			}
+		}else if(i > 11 & i <= 17) {
+			obj.stage = {
+				name: "初中",
+				value: "60384847de602f0001317e18"
+			}
+		}else {
+			obj.stage = {
+				name: "高中",
+				value: "6038484fe857bd000153f0f5"
+			}
+		}
+		obj.subject = {
+			name: "语文",
+			value: "5ffef5038cc87f0001b0d7a6"
+		}
+		obj.version = {
+			name: "人教版",
+			value: "603eddebedb62e0001e0edf2"
+		}
+		obj.data = chapter
+		chapters.push(obj)
 	}
 	console.log(chapters)
 	fs.writeFileSync('../json/chapters.json', JSON.stringify(chapters));

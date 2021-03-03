@@ -1,2275 +1,2652 @@
 [{
-	"book_name": "一年级上册",
+	"name": "一年级上册",
+	"order": 1,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "ef850241e1583e9337396c72",
-		"name": "第1课《我上学了》"
+		"name": "第1课《我上学了》",
+		"value": "65a5b223b0bb30d09a17d2bf"
 	}, {
-		"_id": "86d17be537c8153256aa5502",
-		"name": "第2课《天地人》"
+		"name": "第2课《天地人》",
+		"value": "cc542bd3376ad6964a6d661f"
 	}, {
-		"_id": "3e4254a1586a9aa1875afcb7",
-		"name": "第3课《金木水火土》"
+		"name": "第3课《金木水火土》",
+		"value": "85b8ae45006f7d7861b17a69"
 	}, {
-		"_id": "522d042eefa8bebc93e2cc3f",
-		"name": "第4课《口耳目》"
+		"name": "第4课《口耳目》",
+		"value": "721459ccd7edb849fc5a3261"
 	}, {
-		"_id": "94eb6279028faef1478c1646",
-		"name": "第5课《日月水火》"
+		"name": "第5课《日月水火》",
+		"value": "08ce652743cccdedd9407893"
 	}, {
-		"_id": "d9f234b15d78113e1a472a8c",
-		"name": "第6课《对韵歌》"
+		"name": "第6课《对韵歌》",
+		"value": "6797824cfae7cf3f3de13f55"
 	}, {
-		"_id": "3ff90ff3dea13ec33b1e7074",
-		"name": "第7课《aoe》"
+		"name": "第7课《aoe》",
+		"value": "0e54a50e0a0f7477308769ae"
 	}, {
-		"_id": "dd5cb6f3823e1b93a491c8e4",
-		"name": "第8课《iuüyw》"
+		"name": "第8课《iuüyw》",
+		"value": "eb5fd05051c293404c1a5be9"
 	}, {
-		"_id": "8bfb9d7d2b2be097592d3757",
-		"name": "第9课《bpmf》"
+		"name": "第9课《bpmf》",
+		"value": "1c502bfa695286146eac3b75"
 	}, {
-		"_id": "5b672e9b240277ee009b6e73",
-		"name": "第10课《dtnl》"
+		"name": "第10课《dtnl》",
+		"value": "ab2a0aaee0f90e0ca79a08ab"
 	}, {
-		"_id": "28b99bc1b95cb85a273dbe5f",
-		"name": "第11课《gkh》"
+		"name": "第11课《gkh》",
+		"value": "a0635189366d0f40f846ebe2"
 	}, {
-		"_id": "c1dd4b69acd0a82e979e5f3f",
-		"name": "第12课《jqx》"
+		"name": "第12课《jqx》",
+		"value": "48bf06e21e3e9c8dd03b48b3"
 	}, {
-		"_id": "5b7aa476dd2167b2a2d7de7f",
-		"name": "第13课《zcs》"
+		"name": "第13课《zcs》",
+		"value": "f940acf7f002353a8bb90160"
 	}, {
-		"_id": "70761bc5522372d8b090c226",
-		"name": "第14课《zhchshr》"
+		"name": "第14课《zhchshr》",
+		"value": "15f4a3dd6bc91ee4ff47049e"
 	}, {
-		"_id": "8f55fd17f10571177d44f0a1",
-		"name": "第15课《aieiui》"
+		"name": "第15课《aieiui》",
+		"value": "b28cd04f9efe4fa9ca3e611a"
 	}, {
-		"_id": "87c294e91f145b75e9623e6d",
-		"name": "第16课《aoouiu》"
+		"name": "第16课《aoouiu》",
+		"value": "cd90e55d205a507474745c34"
 	}, {
-		"_id": "9b9ba7f8709f80c39331110e",
-		"name": "第17课《ieüeer》"
+		"name": "第17课《ieüeer》",
+		"value": "cc6749ce5f1d97210c92dd49"
 	}, {
-		"_id": "729511c2e5642481044d651c",
-		"name": "第18课《aneninunün》"
+		"name": "第18课《aneninunün》",
+		"value": "72adbc123b0ca08246ad96fc"
 	}, {
-		"_id": "3a1ab5309373a713c65c47c6",
-		"name": "第19课《angengingong》"
+		"name": "第19课《angengingong》",
+		"value": "136912f8954ae470e8876dfe"
 	}, {
-		"_id": "9f2974c43455f65d36694aec",
-		"name": "第20课《秋天》"
+		"name": "第20课《秋天》",
+		"value": "312fabb76e64d568f7947c3a"
 	}, {
-		"_id": "f41c4d76a8ab11d16baa4f93",
-		"name": "第21课《小小的船》"
+		"name": "第21课《小小的船》",
+		"value": "7bd3e66a83873889e92f02a1"
 	}, {
-		"_id": "d692f1779d4fd36d1b150752",
-		"name": "第22课《江南》"
+		"name": "第22课《江南》",
+		"value": "b15759770d8b402f7a91da52"
 	}, {
-		"_id": "317a8e6f65d9b9b92015be44",
-		"name": "第23课《四季》"
+		"name": "第23课《四季》",
+		"value": "3841ec871d862d61160e826d"
 	}, {
-		"_id": "98f099625248604cad170ba2",
-		"name": "第24课《画》"
+		"name": "第24课《画》",
+		"value": "dda7ba3a24a2458fb9b9a905"
 	}, {
-		"_id": "0825d4c7074a6ec00179f7b4",
-		"name": "第25课《大小多少》"
+		"name": "第25课《大小多少》",
+		"value": "cead908641c56dff692cb4d8"
 	}, {
-		"_id": "6ea17720691dda0b0ae129b6",
-		"name": "第26课《小书包》"
+		"name": "第26课《小书包》",
+		"value": "a166b00e84e9bbd27b45a91b"
 	}, {
-		"_id": "9cfa2a80e3a09c7f8e83ce55",
-		"name": "第27课《日月明》"
+		"name": "第27课《日月明》",
+		"value": "cb70ca85bed1e41629c10c5f"
 	}, {
-		"_id": "53f29de4cd2009610a4b833b",
-		"name": "第28课《升国旗》"
+		"name": "第28课《升国旗》",
+		"value": "4b9d8905bbed60e98eff6f43"
 	}, {
-		"_id": "f1452e25bad797323e52ec30",
-		"name": "第29课《影子》"
+		"name": "第29课《影子》",
+		"value": "52057293161356d953f63d9d"
 	}, {
-		"_id": "81e401024355eb71e9e2d3dd",
-		"name": "第30课《比尾巴》"
+		"name": "第30课《比尾巴》",
+		"value": "3f46225c2baa417ddc319ccd"
 	}, {
-		"_id": "11c20e717462114a01b420ef",
-		"name": "第31课《青蛙写诗》"
+		"name": "第31课《青蛙写诗》",
+		"value": "e99f9cd3c1b938ed03211098"
 	}, {
-		"_id": "bbf01f6ba96b006318f16b0c",
-		"name": "第32课《雨点儿》"
+		"name": "第32课《雨点儿》",
+		"value": "fc401bf3214469a2f3d1917c"
 	}, {
-		"_id": "a1582db71a7ea3d6479008ee",
-		"name": "第33课《明天要远足》"
+		"name": "第33课《明天要远足》",
+		"value": "0cc2eda1e800a6907091d23a"
 	}, {
-		"_id": "8c1639eeee694d28a2cd2905",
-		"name": "第34课《大还是小》"
+		"name": "第34课《大还是小》",
+		"value": "7398f1e9b01bb110d9c26267"
 	}, {
-		"_id": "3f2979b0857039b0a4583b25",
-		"name": "第34课《项链》"
+		"name": "第34课《项链》",
+		"value": "75cfaa255e8d5e46ec77da81"
 	}, {
-		"_id": "ac9d9136a58c9d287720d7a7",
-		"name": "第36课《雪地里的小画家》"
+		"name": "第36课《雪地里的小画家》",
+		"value": "01673be8ea4e4ffe50615e14"
 	}, {
-		"_id": "f0e5f3c07a8a35f990585605",
-		"name": "第34课《乌鸦喝水》"
+		"name": "第34课《乌鸦喝水》",
+		"value": "2d455a10c5e1a94ce2d39619"
 	}, {
-		"_id": "8b5bcb13405dae662c16f7df",
-		"name": "第34课《小蜗牛》"
+		"name": "第34课《小蜗牛》",
+		"value": "1e099e6198434118da08b4be"
 	}, {
-		"_id": "925de10e03b2697e7b0a0ccb",
-		"name": "第39课《语文园地一》"
+		"name": "第39课《语文园地一》",
+		"value": "7a20dfe7f7823eec75a1f7d6"
 	}, {
-		"_id": "0feb44d2b2930a2e313ac98d",
-		"name": "第40课《口语交际》"
+		"name": "第40课《口语交际》",
+		"value": "4c6cbf8875c89bf1045582b6"
 	}]
 }, {
-	"book_name": "一年级下册",
+	"name": "一年级下册",
+	"order": 2,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "bfe0c6b3dccc0f756e50ee11",
-		"name": "第1课《柳树醒了》"
+		"name": "第1课《柳树醒了》",
+		"value": "cbc05bf1bb8ccec1eeec2806"
 	}, {
-		"_id": "5e4dfed134d63c7970ac003d",
-		"name": "第2课《春雨的色彩》"
+		"name": "第2课《春雨的色彩》",
+		"value": "b7bcc0694b38dbee45e763cb"
 	}, {
-		"_id": "8d99b53244a8429dc7bfddba",
-		"name": "第3课《爷爷植树》"
+		"name": "第3课《爷爷植树》",
+		"value": "df1a1aaef59a7f8b8a02469d"
 	}, {
-		"_id": "387b99de3a15a555871ef18d",
-		"name": "第4课《古诗两首》"
+		"name": "第4课《古诗两首》",
+		"value": "9dc75a547ea370354099e8ab"
 	}, {
-		"_id": "2af5739f8e75573c710bb209",
-		"name": "第5课《看电视》"
+		"name": "第5课《看电视》",
+		"value": "fd139afed7d86ec66ef36457"
 	}, {
-		"_id": "4637b1319747e02ae88bb722",
-		"name": "第6课《胖乎乎的小手》"
+		"name": "第6课《胖乎乎的小手》",
+		"value": "80e2f4879a0f864761d9b67e"
 	}, {
-		"_id": "080b17dad104b5094acbfd31",
-		"name": "第7课《棉鞋里的阳光》"
+		"name": "第7课《棉鞋里的阳光》",
+		"value": "a16a0013156f1a5ecd94ccf4"
 	}, {
-		"_id": "b5cd3a382fc4d95d26f5dd84",
-		"name": "第8课《月亮的心愿》"
+		"name": "第8课《月亮的心愿》",
+		"value": "f44795893f0e3c2b163a5ef5"
 	}, {
-		"_id": "1991bc52a71564d74343335e",
-		"name": "第9课《两只鸟蛋》"
+		"name": "第9课《两只鸟蛋》",
+		"value": "e6fd81e48b96b8c72b40b943"
 	}, {
-		"_id": "9542836a2aeaaa5c4218e56d",
-		"name": "第10课《松鼠和松果》"
+		"name": "第10课《松鼠和松果》",
+		"value": "7061d0d3ba3590caa16d2895"
 	}, {
-		"_id": "b7db488c6e415e56dea1eb38",
-		"name": "第11课《美丽的小路》"
+		"name": "第11课《美丽的小路》",
+		"value": "6f95ae1bda724140cd6f8ed8"
 	}, {
-		"_id": "084584697554c643531e8403",
-		"name": "第12课《失物招领》"
+		"name": "第12课《失物招领》",
+		"value": "24aeb1d173c273e09d286e56"
 	}, {
-		"_id": "996d3d46b2980e21c994581e",
-		"name": "第13课《古诗两首》"
+		"name": "第13课《古诗两首》",
+		"value": "9a3b605e3fce7a10128f1974"
 	}, {
-		"_id": "38e54f6bd495ecd200dc1246",
-		"name": "第14课《荷叶圆圆》"
+		"name": "第14课《荷叶圆圆》",
+		"value": "873e9d8dbfeb0c73de6721bb"
 	}, {
-		"_id": "7d2739b9125d9020605e1d66",
-		"name": "第15课《夏夜多美》"
+		"name": "第15课《夏夜多美》",
+		"value": "33f20bf28f1eff4c3c57bb1a"
 	}, {
-		"_id": "4d0aae977ecd7c412bb356af",
-		"name": "第16课《要下雨了》"
+		"name": "第16课《要下雨了》",
+		"value": "f36da373903d4bb8c9b1809f"
 	}, {
-		"_id": "1e68c683de1c9e71285b9806",
-		"name": "第17课《小壁虎借尾巴》"
+		"name": "第17课《小壁虎借尾巴》",
+		"value": "9d23c754ddb662941c1a1023"
 	}, {
-		"_id": "41738bc7e1c9934a25438a51",
-		"name": "第18课《四个太阳》"
+		"name": "第18课《四个太阳》",
+		"value": "1f41260665b97ea215ff088c"
 	}, {
-		"_id": "60a21b6eb25a169aff4e133b",
-		"name": "第19课《乌鸦喝水》"
+		"name": "第19课《乌鸦喝水》",
+		"value": "5188ac4964b3d10be2418a0b"
 	}, {
-		"_id": "5a3acf3c6f982d6df15aede9",
-		"name": "第20课《司马光》"
+		"name": "第20课《司马光》",
+		"value": "f188ec82bce8bdc4ba0bd42f"
 	}, {
-		"_id": "45bc78ef8988e25640e3e768",
-		"name": "第21课《称象》"
+		"name": "第21课《称象》",
+		"value": "f60a8e3f57e33d4d4628e63f"
 	}, {
-		"_id": "975cd19d83aafee300c536c6",
-		"name": "第22课《吃水不忘挖井人》"
+		"name": "第22课《吃水不忘挖井人》",
+		"value": "a9135fdfacbf17f99f834182"
 	}, {
-		"_id": "8b5427f1cfc6db64f0b8a2cc",
-		"name": "第23课《小二》"
+		"name": "第23课《小二》",
+		"value": "971400ede859da13da7ce6cd"
 	}, {
-		"_id": "4b5c88358919c89f73d27a7a",
-		"name": "第24课《画家乡》"
+		"name": "第24课《画家乡》",
+		"value": "e8e887377cd2439442fb3ee2"
 	}, {
-		"_id": "6e6bd099e9584fe062d420a3",
-		"name": "第25课《快乐的节日》"
+		"name": "第25课《快乐的节日》",
+		"value": "ff3ef7d538cd05d3ab14b7e8"
 	}, {
-		"_id": "4dabd146a30ded5734b0613b",
-		"name": "第26课《小白兔和小灰兔》"
+		"name": "第26课《小白兔和小灰兔》",
+		"value": "2343c6279952c457e40b446e"
 	}, {
-		"_id": "cfc2e1a9f8efac093a02a13b",
-		"name": "第27课《两只小狮子》"
+		"name": "第27课《两只小狮子》",
+		"value": "1d62a8f54167b815faad9e3d"
 	}, {
-		"_id": "bee4927fe38db9679cc2b08c",
-		"name": "第28课《小伙伴》"
+		"name": "第28课《小伙伴》",
+		"value": "48651865f750bc8513d3c84d"
 	}, {
-		"_id": "cf9e31636e43ff6e0d6b454f",
-		"name": "第29课《手捧空花盆的孩子》"
+		"name": "第29课《手捧空花盆的孩子》",
+		"value": "01e370bc8929b68e375665b5"
 	}, {
-		"_id": "2d8c42935b544df3d0830300",
-		"name": "第30课《棉花姑娘》"
+		"name": "第30课《棉花姑娘》",
+		"value": "7fae13f27e9afd3c1ff0e279"
 	}, {
-		"_id": "e2e2de921fa259d23e1dc3e6",
-		"name": "第31课《地球爷爷的手》"
+		"name": "第31课《地球爷爷的手》",
+		"value": "fc9450b891d8a91bf51bbfdf"
 	}, {
-		"_id": "6434de6c0208da64caa56472",
-		"name": "第32课《兰兰过桥》"
+		"name": "第32课《兰兰过桥》",
+		"value": "b4ad25af6f8a561e969c2fcb"
 	}, {
-		"_id": "16b274e1b9dea8f2190a9b32",
-		"name": "第33课《火车的故事》"
+		"name": "第33课《火车的故事》",
+		"value": "4ebb6dfa40b286f99e2af6a2"
 	}, {
-		"_id": "60605928fc119990f49ab65c",
-		"name": "第34课《小蝌蚪找妈妈》"
+		"name": "第34课《小蝌蚪找妈妈》",
+		"value": "8336c60200f657900390ee63"
 	}]
 }, {
-	"book_name": "二年级上册",
+	"name": "二年级上册",
+	"order": 3,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "043eda9b36286896de7ce621",
-		"name": "第1课《秋天的图画》"
+		"name": "第1课《秋天的图画》",
+		"value": "9b8814ebcb4f4cce72144c72"
 	}, {
-		"_id": "7ec153f0aab5e8aa9a7b8034",
-		"name": "第2课《黄山奇石》"
+		"name": "第2课《黄山奇石》",
+		"value": "6f092f2acfcaab666c299a3d"
 	}, {
-		"_id": "b33b738d8bc8af9d6af1024e",
-		"name": "第3课《植物妈妈有办法》"
+		"name": "第3课《植物妈妈有办法》",
+		"value": "85d1608f1eb5a5af51c262b3"
 	}, {
-		"_id": "23aa889083fb8a2fd6c4599f",
-		"name": "第4课《古诗两首》"
+		"name": "第4课《古诗两首》",
+		"value": "828972e4ea93990938e6a34d"
 	}, {
-		"_id": "64417e73fd6654c443d6f642",
-		"name": "第5课《一株紫丁香》"
+		"name": "第5课《一株紫丁香》",
+		"value": "246473eb4e1a0a9502b7f237"
 	}, {
-		"_id": "4e5c912e4be717ad2b590a5f",
-		"name": "第6课《我选我》"
+		"name": "第6课《我选我》",
+		"value": "d7f95e43f9105ba2a342a428"
 	}, {
-		"_id": "347ef5af722a30335339c9be",
-		"name": "第7课《一分钟》"
+		"name": "第7课《一分钟》",
+		"value": "3241f5f5dde919ab4533ccf7"
 	}, {
-		"_id": "e07a9c4438f10d2387aa9bee",
-		"name": "第8课《难忘的一天》"
+		"name": "第8课《难忘的一天》",
+		"value": "fbafa4fdc24cae86ddae6ff7"
 	}, {
-		"_id": "57f0a4bc4bc37c3fefc79ca7",
-		"name": "第9课《欢庆》"
+		"name": "第9课《欢庆》",
+		"value": "90cf0d8c3574f49acc479409"
 	}, {
-		"_id": "dc47955d92a2086b49e57f04",
-		"name": "第10课《北京》"
+		"name": "第10课《北京》",
+		"value": "75a2feaa14f1289c812a03af"
 	}, {
-		"_id": "890c61c1571f885597dcb9ca",
-		"name": "第11课《我们成功了》"
+		"name": "第11课《我们成功了》",
+		"value": "ac27d6c01c3d226e719a8cda"
 	}, {
-		"_id": "3e8eea443ed3506221b67a8c",
-		"name": "第12课《看雪》"
+		"name": "第12课《看雪》",
+		"value": "346350ad2824f9890d8533c3"
 	}, {
-		"_id": "6cd94187f841ae29439aa70a",
-		"name": "第13课《坐井观天》"
+		"name": "第13课《坐井观天》",
+		"value": "350efdfb8aeea8fc2061bee3"
 	}, {
-		"_id": "163f82952a9011fa167616ec",
-		"name": "第14课《我要的是葫芦》"
+		"name": "第14课《我要的是葫芦》",
+		"value": "c3112446498668c32ac7ea90"
 	}, {
-		"_id": "42fd52a01d2b82d2baeea8db",
-		"name": "第15课《小柳树和小枣树》"
+		"name": "第15课《小柳树和小枣树》",
+		"value": "8aadc99450ec906d4499b7cf"
 	}, {
-		"_id": "85e9f58d6380d76ffb55234d",
-		"name": "第16课《风娃娃》"
+		"name": "第16课《风娃娃》",
+		"value": "5d3b0f923559a93bd4294214"
 	}, {
-		"_id": "575e76c8da150ef48fd783cc",
-		"name": "第17课《酸的和甜的》"
+		"name": "第17课《酸的和甜的》",
+		"value": "3d0da925dea0501c8f4fe549"
 	}, {
-		"_id": "2464c723953eafb5cd61f2a1",
-		"name": "第18课《称赞》"
+		"name": "第18课《称赞》",
+		"value": "a92c473704aa0dac06047b19"
 	}, {
-		"_id": "c46c6fecb65dfcf233d0a48a",
-		"name": "第19课《蓝色的树叶》"
+		"name": "第19课《蓝色的树叶》",
+		"value": "f369cf7342ce3b63414859db"
 	}, {
-		"_id": "94423239fb979916ccfe072a",
-		"name": "第20课《纸船和风筝》"
+		"name": "第20课《纸船和风筝》",
+		"value": "85fe1b10240cdf8ec6911dc7"
 	}, {
-		"_id": "c92af0fea3c24a2c05e3ff17",
-		"name": "第21课《从现在开始》"
+		"name": "第21课《从现在开始》",
+		"value": "d5bd246046c1ac05eca1bed6"
 	}, {
-		"_id": "7587e9a20025c06f57ea9331",
-		"name": "第22课《窗前的气球》"
+		"name": "第22课《窗前的气球》",
+		"value": "f05413e4ba6f209d4f7e15fe"
 	}, {
-		"_id": "c658bd1047873916166bc097",
-		"name": "第23课《假如》"
+		"name": "第23课《假如》",
+		"value": "f88d4d5a511d1ad3f73dd3d9"
 	}, {
-		"_id": "86adbc97698d44d1e203da80",
-		"name": "第24课《日记两则》"
+		"name": "第24课《日记两则》",
+		"value": "c1801ab14353d5f14129d1b0"
 	}, {
-		"_id": "af7ccf3d5ce0a7122e5e9fb3",
-		"name": "第25课《古诗两首》"
+		"name": "第25课《古诗两首》",
+		"value": "6091e97c374300664be21373"
 	}, {
-		"_id": "339ca79e706c2080fa3cf59b",
-		"name": "第26课《“红领巾”真好》"
+		"name": "第26课《“红领巾”真好》",
+		"value": "d8ad8b63ffa3b9e1ae2eb11d"
 	}, {
-		"_id": "10ea8fe0d971ed15a887ff7f",
-		"name": "第27课《清澈的湖水》"
+		"name": "第27课《清澈的湖水》",
+		"value": "076d297a0eb6498ed00958e1"
 	}, {
-		"_id": "32eb7f6b6b156396247ae9d3",
-		"name": "第28课《浅水洼里的小鱼》"
+		"name": "第28课《浅水洼里的小鱼》",
+		"value": "78ea941d335a7ee32d097032"
 	}, {
-		"_id": "993da4e100c75e42d5595c5a",
-		"name": "第29课《父亲和鸟》"
+		"name": "第29课《父亲和鸟》",
+		"value": "505d6dbae3658bab8324cdb2"
 	}, {
-		"_id": "6d23a2099a330cce3fb9bcb3",
-		"name": "第30课《我是什么》"
+		"name": "第30课《我是什么》",
+		"value": "7b7485d7b93cbd4b0889e7f0"
 	}, {
-		"_id": "5502044ccd2350555745686c",
-		"name": "第31课《回声》"
+		"name": "第31课《回声》",
+		"value": "4f3516b094b31fb0473ee277"
 	}, {
-		"_id": "9918e1e23bb1a168b9d5ca77",
-		"name": "第32课《太空生活趣事多》"
+		"name": "第32课《太空生活趣事多》",
+		"value": "2ac6f0e6e2b6e27add1c1c84"
 	}, {
-		"_id": "809257dc73e81ab5b09258f0",
-		"name": "第33课《活化石》"
+		"name": "第33课《活化石》",
+		"value": "4b96b38baa4b26df0bcfa9b7"
 	}, {
-		"_id": "75f4c855e82317bf6cba330c",
-		"name": "第34课《农业的变化真大》"
+		"name": "第34课《农业的变化真大》",
+		"value": "176f3e5ad480605de96cbeb0"
 	}]
 }, {
-	"book_name": "二年级下册",
+	"name": "二年级下册",
+	"order": 4,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "65037f16cefdf1463524db21",
-		"name": "第1课《找春天》"
+		"name": "第1课《找春天》",
+		"value": "7993d1fde25b34c2d05bc6d2"
 	}, {
-		"_id": "7a1690612dc8ea3a4b9e3ad6",
-		"name": "第2课《古诗两首》"
+		"name": "第2课《古诗两首》",
+		"value": "19b8f1e7714f463571c53340"
 	}, {
-		"_id": "4e69ff4fd51aae6b08df0d5f",
-		"name": "第3课《笋芽儿》"
+		"name": "第3课《笋芽儿》",
+		"value": "7c7a6630f4fa139a86551c5c"
 	}, {
-		"_id": "b7b8dc7625a0971e7619ac73",
-		"name": "第4课《小鹿的玫瑰花》"
+		"name": "第4课《小鹿的玫瑰花》",
+		"value": "89b4900318ac9cc2f028bfca"
 	}, {
-		"_id": "52a6becf087d3ca19fa289d7",
-		"name": "第5课《泉水》"
+		"name": "第5课《泉水》",
+		"value": "e46d62fde3879fcc9e745682"
 	}, {
-		"_id": "0d665f35cbf6addcce14d4b0",
-		"name": "第6课《雷锋叔叔，你在哪里》"
+		"name": "第6课《雷锋叔叔，你在哪里》",
+		"value": "3a227a63fe4153d026b2a32f"
 	}, {
-		"_id": "a4acfa125621756a4e2beea5",
-		"name": "第7课《我不是最弱小的》"
+		"name": "第7课《我不是最弱小的》",
+		"value": "37b4937e8c319875410bd817"
 	}, {
-		"_id": "3ed9a4b90647ff9b8dda2eea",
-		"name": "第8课《卡罗尔和她的小猫》"
+		"name": "第8课《卡罗尔和她的小猫》",
+		"value": "6c21bbc01c0f373b252dea1f"
 	}, {
-		"_id": "1a68e2b1367bec150d6adcad",
-		"name": "第9课《日月潭》"
+		"name": "第9课《日月潭》",
+		"value": "b0a4036d65814555c4f93b0a"
 	}, {
-		"_id": "1d84dd2d2765166699de4a33",
-		"name": "第10课《葡萄沟》"
+		"name": "第10课《葡萄沟》",
+		"value": "634ab1e0eaba6792d6e0f96a"
 	}, {
-		"_id": "dc9135fa32083190ba877eee",
-		"name": "第11课《难忘的泼水节》"
+		"name": "第11课《难忘的泼水节》",
+		"value": "218b2093caa30b2f985a91d7"
 	}, {
-		"_id": "4014749882556d4a6b4e6021",
-		"name": "第12课《北京亮起来了》"
+		"name": "第12课《北京亮起来了》",
+		"value": "4d1b5518989f1a9fb73812cb"
 	}, {
-		"_id": "ea2baea734131cec63faca7b",
-		"name": "第13课《动手做做看》"
+		"name": "第13课《动手做做看》",
+		"value": "db67304b0dec88a3ea942f17"
 	}, {
-		"_id": "1c258348c47c2d1f9e5e07a7",
-		"name": "第14课《邮票齿孔的故事》"
+		"name": "第14课《邮票齿孔的故事》",
+		"value": "a495d54262eadc9a2a81e791"
 	}, {
-		"_id": "3268aceaa71da1f3769e67e6",
-		"name": "第15课《画风》"
+		"name": "第15课《画风》",
+		"value": "f1770853705c012b9f8cd127"
 	}, {
-		"_id": "ad934dcc5afc5a19acfe4274",
-		"name": "第16课《充气雨衣》"
+		"name": "第16课《充气雨衣》",
+		"value": "16deb0ed0b3622cae23380b5"
 	}, {
-		"_id": "ca1eea838dc1327af875e7fa",
-		"name": "第17课《古诗两首》"
+		"name": "第17课《古诗两首》",
+		"value": "c3687f4840e082b48bdf4a2f"
 	}, {
-		"_id": "ba98fb3c149dd0b95551960b",
-		"name": "第18课《雷雨》"
+		"name": "第18课《雷雨》",
+		"value": "a4744a8d0528d20f10062420"
 	}, {
-		"_id": "9078bbd67588c36ca98c7aee",
-		"name": "第19课《最大的“书”》"
+		"name": "第19课《最大的“书”》",
+		"value": "52b6b2492d48e47d35be5595"
 	}, {
-		"_id": "2d79ff2a70d54e0bddc158c2",
-		"name": "第20课《要是你在野外迷了路》"
+		"name": "第20课《要是你在野外迷了路》",
+		"value": "82db9792ea9a0e0737adb50c"
 	}, {
-		"_id": "771432142f8b5b2eac38ee84",
-		"name": "第21课《画家和牧童》"
+		"name": "第21课《画家和牧童》",
+		"value": "188818999ebb2baf67c2ec82"
 	}, {
-		"_id": "24112bdbca0856fb70584a7d",
-		"name": "第22课《我为你骄傲》"
+		"name": "第22课《我为你骄傲》",
+		"value": "42e6d67a115dc5c19c996e60"
 	}, {
-		"_id": "936159aa70bc83f7a9067b1b",
-		"name": "第23课《三个儿子》"
+		"name": "第23课《三个儿子》",
+		"value": "58191a0f1bc09221dc1b57da"
 	}, {
-		"_id": "dcb66fd5849fda79dfa14366",
-		"name": "第24课《玩具柜台前的孩子》"
+		"name": "第24课《玩具柜台前的孩子》",
+		"value": "68db09920cc3511b1bb2041e"
 	}, {
-		"_id": "ae835d0fa540b8794396e627",
-		"name": "第25课《玲玲的画》"
+		"name": "第25课《玲玲的画》",
+		"value": "5ea65e4a32b0125045bd1dac"
 	}, {
-		"_id": "2578a935c00dfcd37ad25649",
-		"name": "第26课《蜜蜂引路》"
+		"name": "第26课《蜜蜂引路》",
+		"value": "77fb1a379c8e41fc096fa080"
 	}, {
-		"_id": "4969ffa58e6b15229e6c3d42",
-		"name": "第27课《寓言两则》"
+		"name": "第27课《寓言两则》",
+		"value": "9a2d72d99692c743d4846630"
 	}, {
-		"_id": "f7e4a0364d3b0cd56e19718f",
-		"name": "第28课《丑小鸭》"
+		"name": "第28课《丑小鸭》",
+		"value": "deba96b32c09681123418f0f"
 	}, {
-		"_id": "c429c9113741c8ad36e1801f",
-		"name": "第29课《数星星的孩子》"
+		"name": "第29课《数星星的孩子》",
+		"value": "bbaae57b9d9676b208af5ba4"
 	}, {
-		"_id": "4767fffbfd9cd60a44101f05",
-		"name": "第30课《爱迪生救妈妈》"
+		"name": "第30课《爱迪生救妈妈》",
+		"value": "dacd884b7d1c01bd82e74b63"
 	}, {
-		"_id": "91d4a7cb584fb2726e75aedd",
-		"name": "第31课《恐龙的灭绝》"
+		"name": "第31课《恐龙的灭绝》",
+		"value": "21b048dda0cefd96d983a5b5"
 	}, {
-		"_id": "a94f7df11b8f1d37ed53125b",
-		"name": "第32课《阿德的梦》"
+		"name": "第32课《阿德的梦》",
+		"value": "db75449730a97a81232b36b7"
 	}]
 }, {
-	"book_name": "三年级上册",
+	"name": "三年级上册",
+	"order": 5,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "c0ef4c7aa17c80485622782b",
-		"name": "第1课《我们的民族小学》"
+		"name": "第1课《我们的民族小学》",
+		"value": "752816853faa09c3021d9799"
 	}, {
-		"_id": "27e3a9b8009befbc4d912bf0",
-		"name": "第2课《金色的草地》"
+		"name": "第2课《金色的草地》",
+		"value": "a895c387bc20669a00dae2c7"
 	}, {
-		"_id": "a88884dac521f2b6316e7690",
-		"name": "第3课《爬天都峰》"
+		"name": "第3课《爬天都峰》",
+		"value": "281754d2181b6f078ac87d0d"
 	}, {
-		"_id": "d4f6e570cec77e1ed927c6d3",
-		"name": "第4课《槐乡的孩子》"
+		"name": "第4课《槐乡的孩子》",
+		"value": "df88187a78af5b9da1a44037"
 	}, {
-		"_id": "3fc91e8f39a8d43d84a56f82",
-		"name": "第5课《灰雀》"
+		"name": "第5课《灰雀》",
+		"value": "c975cc6097e010649ae70930"
 	}, {
-		"_id": "f546fc14b6a2ee0a4dc73423",
-		"name": "第6课《小摄影师》"
+		"name": "第6课《小摄影师》",
+		"value": "cbdb6017a14f2ba83cf67db7"
 	}, {
-		"_id": "5e338ad0e43d07cf2baff64b",
-		"name": "第7课《奇怪的大石头》"
+		"name": "第7课《奇怪的大石头》",
+		"value": "6a318be4bd7249e4ccbc6118"
 	}, {
-		"_id": "5f4e7c6bfd7f2190feedc7cb",
-		"name": "第8课《我不能失信》"
+		"name": "第8课《我不能失信》",
+		"value": "29ccda60774f18790045918b"
 	}, {
-		"_id": "d0ee15e552e23f87b980a497",
-		"name": "第9课《古诗两首》"
+		"name": "第9课《古诗两首》",
+		"value": "9260ff63a43c54927b8b708e"
 	}, {
-		"_id": "0eb1637869f2dbf4de70822e",
-		"name": "第10课《风筝》"
+		"name": "第10课《风筝》",
+		"value": "336cc9039fe648a46fc370b1"
 	}, {
-		"_id": "8259e1cb113fb3f553497445",
-		"name": "第11课《秋天的雨》"
+		"name": "第11课《秋天的雨》",
+		"value": "301d7825edc730eb51d6e00c"
 	}, {
-		"_id": "801a570f63dd3130bf9a94f3",
-		"name": "第12课《听听，秋的声音》"
+		"name": "第12课《听听，秋的声音》",
+		"value": "3163a5feca00ed4c7dcf71b3"
 	}, {
-		"_id": "05acdbdc22a07586ae5f7bf0",
-		"name": "第13课《花钟》"
+		"name": "第13课《花钟》",
+		"value": "4748f6be53394f07667a8412"
 	}, {
-		"_id": "90de41d17c0354b7ad0f5393",
-		"name": "第14课《蜜蜂》"
+		"name": "第14课《蜜蜂》",
+		"value": "dd0308d57accce94da3d5c55"
 	}, {
-		"_id": "0f59650eea9ddaed73c93d4a",
-		"name": "第15课《玩出了名堂》"
+		"name": "第15课《玩出了名堂》",
+		"value": "83db13a9c823963fb21c2985"
 	}, {
-		"_id": "dc6005cb92171ef070551ad0",
-		"name": "第16课《找骆驼》"
+		"name": "第16课《找骆驼》",
+		"value": "90777dc65a867734c73eda99"
 	}, {
-		"_id": "17c3303defb2931a5f88c039",
-		"name": "第17课《孔子拜师》"
+		"name": "第17课《孔子拜师》",
+		"value": "08aebda00d1b23e8e2d9b3e2"
 	}, {
-		"_id": "e9d8f21e59907ac20eb44f10",
-		"name": "第18课《盘古开天地》"
+		"name": "第18课《盘古开天地》",
+		"value": "24227dfbbee3c82c188a13aa"
 	}, {
-		"_id": "13b64ada7145c213d6a672c2",
-		"name": "第19课《赵州桥》"
+		"name": "第19课《赵州桥》",
+		"value": "32e41fe1b7065a9632fbadc7"
 	}, {
-		"_id": "1bdbd5239d06018f8904c545",
-		"name": "第20课《一幅名扬中外的画》"
+		"name": "第20课《一幅名扬中外的画》",
+		"value": "98247accaebd32652bbafaf7"
 	}, {
-		"_id": "f7f974017a14a3a1210a900e",
-		"name": "第21课《古诗两首》"
+		"name": "第21课《古诗两首》",
+		"value": "811aeb0b3ac8e2f1adacb663"
 	}, {
-		"_id": "9646cdfa407896b0fea0eb5a",
-		"name": "第22课《富饶的西沙群岛》"
+		"name": "第22课《富饶的西沙群岛》",
+		"value": "fd5700343c69b1bf6cefb8d1"
 	}, {
-		"_id": "f7babf078e4cff055713948d",
-		"name": "第23课《美丽的小兴安岭》"
+		"name": "第23课《美丽的小兴安岭》",
+		"value": "f6cb57968a5cf2f00394346c"
 	}, {
-		"_id": "893f4159858eb7efb4a1c116",
-		"name": "第24课《香港，璀璨的明珠》"
+		"name": "第24课《香港，璀璨的明珠》",
+		"value": "608c9e0cacf2b88f813ccf05"
 	}, {
-		"_id": "c82472905619fccd5981c85e",
-		"name": "第25课《矛和盾的集合》"
+		"name": "第25课《矛和盾的集合》",
+		"value": "a617a64bc4888df3b59d3c4e"
 	}, {
-		"_id": "74db134c9c7954e75972673f",
-		"name": "第26课《科里亚的木匣》"
+		"name": "第26课《科里亚的木匣》",
+		"value": "06d407cddac8ed5c4080c902"
 	}, {
-		"_id": "127f5bc893ada748c9b9b554",
-		"name": "第27课《陶罐和铁罐》"
+		"name": "第27课《陶罐和铁罐》",
+		"value": "0ae84f51372a1078f151dd5d"
 	}, {
-		"_id": "6f607c0c7cd1aa940925be0b",
-		"name": "第28课《狮子和鹿》"
+		"name": "第28课《狮子和鹿》",
+		"value": "8aeeaaf5361879312aef5e98"
 	}, {
-		"_id": "7e3c34869ba32a7eeb94c5e8",
-		"name": "第29课《掌声》"
+		"name": "第29课《掌声》",
+		"value": "03f2212a367a5a36f2dc4361"
 	}, {
-		"_id": "ab75eb66100a75bd2f72b791",
-		"name": "第30课《一次成功的实验》"
+		"name": "第30课《一次成功的实验》",
+		"value": "1017591866c66db3b2bb74ce"
 	}, {
-		"_id": "4c5750b2b7ca96c409a3a2a8",
-		"name": "第31课《给予树》"
+		"name": "第31课《给予树》",
+		"value": "64097da102636e01a77793fb"
 	}, {
-		"_id": "c040ff0291c10a2d3a599023",
-		"name": "第32课《好汉查理》"
+		"name": "第32课《好汉查理》",
+		"value": "dec2943a9838f7a184dbff77"
 	}]
 }, {
-	"book_name": "三年级下册",
+	"name": "三年级下册",
+	"order": 6,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "ff0f587cea55b3b278ef9bfc",
-		"name": "第1课《燕子》"
+		"name": "第1课《燕子》",
+		"value": "83a1e736dd5bb678fc89431c"
 	}, {
-		"_id": "add19fae98cd02d636ee2aad",
-		"name": "第2课《古诗两首》"
+		"name": "第2课《古诗两首》",
+		"value": "9a095bb29e1d658785e45bcb"
 	}, {
-		"_id": "701d6e092f6e0a9c2a555cce",
-		"name": "第3课《荷花》"
+		"name": "第3课《荷花》",
+		"value": "d7ddabf8e885a516c4fc8c22"
 	}, {
-		"_id": "b3e373f913de4c017f039110",
-		"name": "第4课《珍珠泉》"
+		"name": "第4课《珍珠泉》",
+		"value": "16204af3c843d09fd5f5ef05"
 	}, {
-		"_id": "c2522fc3cae9490b8b7cdfaa",
-		"name": "第5课《翠鸟》"
+		"name": "第5课《翠鸟》",
+		"value": "f031ee62bd3ee8685bdca12d"
 	}, {
-		"_id": "804f194f8012750f46229fb6",
-		"name": "第6课《燕子专列》"
+		"name": "第6课《燕子专列》",
+		"value": "21145cbb1abe680774e47dc3"
 	}, {
-		"_id": "609d85c98581d59a3f8c1f78",
-		"name": "第7课《一个小村庄的故事》"
+		"name": "第7课《一个小村庄的故事》",
+		"value": "9155e4be7526f61df4ac7b2f"
 	}, {
-		"_id": "1623ebe8ee4685d40a6ad593",
-		"name": "第8课《路旁的橡树》"
+		"name": "第8课《路旁的橡树》",
+		"value": "bfce5f7a1bd760f04d003c19"
 	}, {
-		"_id": "19f7fe0137b55bffe87dd78a",
-		"name": "第9课《寓言两则》"
+		"name": "第9课《寓言两则》",
+		"value": "4f5111c53e241edd7524c791"
 	}, {
-		"_id": "0333cc11dabc687a83ab696b",
-		"name": "第10课《惊弓之鸟》"
+		"name": "第10课《惊弓之鸟》",
+		"value": "2ec9c69265a43d48022034e3"
 	}, {
-		"_id": "626dedfc1e2199dff34ec1a0",
-		"name": "第11课《画杨桃》"
+		"name": "第11课《画杨桃》",
+		"value": "e7b8e3f1669b072094eaa2bf"
 	}, {
-		"_id": "7c849fd6a7d0428bebdfe020",
-		"name": "第12课《想别人没想到的》"
+		"name": "第12课《想别人没想到的》",
+		"value": "c823129f46389fa60ee186d7"
 	}, {
-		"_id": "b5af70f3f1b5e6d9efcb3657",
-		"name": "第13课《和时间赛跑》"
+		"name": "第13课《和时间赛跑》",
+		"value": "111eb7743989088b7f9851d5"
 	}, {
-		"_id": "28c63df01b5b59e66d6b3c74",
-		"name": "第14课《检阅》"
+		"name": "第14课《检阅》",
+		"value": "e5e6603cca362fc6f9cdf9f9"
 	}, {
-		"_id": "6f61073ad3472cf6afc90ec8",
-		"name": "第15课《争吵》"
+		"name": "第15课《争吵》",
+		"value": "5ba9d9ab875cc4cdea7d12a8"
 	}, {
-		"_id": "0aa68d654a38a6cf2eb97387",
-		"name": "第16课《绝招》"
+		"name": "第16课《绝招》",
+		"value": "718b3dffcc0c677d8f504e74"
 	}, {
-		"_id": "c1b7cb66d848b18371ef71a0",
-		"name": "第17课《可贵的沉默》"
+		"name": "第17课《可贵的沉默》",
+		"value": "561d66f641fb6f2d5e27f521"
 	}, {
-		"_id": "3e42ea11f35ccba8ba68fbbb",
-		"name": "第18课《她是我的朋友》"
+		"name": "第18课《她是我的朋友》",
+		"value": "eb952bd25c835d00e50bfc8e"
 	}, {
-		"_id": "803c9f666c44932b0e436dd2",
-		"name": "第19课《七颗钻石》"
+		"name": "第19课《七颗钻石》",
+		"value": "98e040a96101e39d6275530d"
 	}, {
-		"_id": "1627c6fc31078038f339da57",
-		"name": "第20课《妈妈的账单》"
+		"name": "第20课《妈妈的账单》",
+		"value": "dc38ee282cddec2314779283"
 	}, {
-		"_id": "787bc8c7e76c99387f38a69b",
-		"name": "第21课《太阳》"
+		"name": "第21课《太阳》",
+		"value": "7ebd1fbfa96c6fe6e71a4c10"
 	}, {
-		"_id": "7c9af4cd10ee748d0e2640bd",
-		"name": "第22课《月球之谜》"
+		"name": "第22课《月球之谜》",
+		"value": "7605ab706eb1b3f3883b505f"
 	}, {
-		"_id": "229cc848e3859b338d670a47",
-		"name": "第23课《我家跨上了“信息高速路”》"
+		"name": "第23课《我家跨上了“信息高速路”》",
+		"value": "f6bed55a93624f050abcf0a4"
 	}, {
-		"_id": "ad0ab45d5ccb823e115a0453",
-		"name": "第24课《果园机器人》"
+		"name": "第24课《果园机器人》",
+		"value": "d8e3612e33ae3ba1aee0306b"
 	}, {
-		"_id": "e9e3b26cce4d3976617ff50c",
-		"name": "第25课《太阳是大家的》"
+		"name": "第25课《太阳是大家的》",
+		"value": "6cbd3f926e2537bfe851b173"
 	}, {
-		"_id": "8680a51dfea4023fb227eb44",
-		"name": "第26课《一面五星红旗》"
+		"name": "第26课《一面五星红旗》",
+		"value": "7761936f636cac206df7551b"
 	}, {
-		"_id": "c0a3d882d5c0a65321324930",
-		"name": "第27课《卖木雕的少年》"
+		"name": "第27课《卖木雕的少年》",
+		"value": "df0d52fce813c6a77cdfd0e4"
 	}, {
-		"_id": "da5f1cd61368dfc27e1c068f",
-		"name": "第28课《中国国际救援队，真棒！》"
+		"name": "第28课《中国国际救援队，真棒！》",
+		"value": "826146afc75b8623b2cf3cf3"
 	}, {
-		"_id": "fb777ddd7c138a031192cd2c",
-		"name": "第29课《古诗两首》"
+		"name": "第29课《古诗两首》",
+		"value": "16fb949e5f226f088f668fa3"
 	}, {
-		"_id": "e36f7f30e67405b605d1b5e6",
-		"name": "第30课《西门豹》"
+		"name": "第30课《西门豹》",
+		"value": "274d36440951d3b77e3d8c7a"
 	}, {
-		"_id": "1d615e0f332f1da468af6088",
-		"name": "第31课《女娲补天》"
+		"name": "第31课《女娲补天》",
+		"value": "9e49f990de6ba0e3ae538113"
 	}, {
-		"_id": "4252e2f8a4d578583c838122",
-		"name": "第32课《夸父追日》"
+		"name": "第32课《夸父追日》",
+		"value": "2fea79d65701a78f2533db1e"
 	}]
 }, {
-	"book_name": "四年级上册",
+	"name": "四年级上册",
+	"order": 7,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "c8e289b22a7513c719413e3a",
-		"name": "第1课《观潮》"
+		"name": "第1课《观潮》",
+		"value": "02712e8e67029c3f42021067"
 	}, {
-		"_id": "6dc0de5ffa5e923128289ef6",
-		"name": "第2课《雅鲁藏布大峡谷》"
+		"name": "第2课《雅鲁藏布大峡谷》",
+		"value": "7088ca92188ab563328b54a6"
 	}, {
-		"_id": "436219568f46eaab6d0d3236",
-		"name": "第3课《鸟的天堂》"
+		"name": "第3课《鸟的天堂》",
+		"value": "09f8ae9a449db94d32d6a1de"
 	}, {
-		"_id": "237e47824fc65340b29300ce",
-		"name": "第4课《火烧云》"
+		"name": "第4课《火烧云》",
+		"value": "9293ae4746a41b0d46be561f"
 	}, {
-		"_id": "260bb5387b3e043552ce2c23",
-		"name": "第5课《古诗二首》"
+		"name": "第5课《古诗二首》",
+		"value": "dadd4bc5b22436030170c5c1"
 	}, {
-		"_id": "8c4b1dbebd5605175f380d57",
-		"name": "第6课《爬山虎的脚》"
+		"name": "第6课《爬山虎的脚》",
+		"value": "d6a7728920fde745ab572982"
 	}, {
-		"_id": "e522c3e06650496f42779042",
-		"name": "第7课《蟋蟀的住宅》"
+		"name": "第7课《蟋蟀的住宅》",
+		"value": "541bfb53aa10f1ccecebe830"
 	}, {
-		"_id": "4ccb33ad9bc1422eec375a1d",
-		"name": "第8课《世界地图引出的发现》"
+		"name": "第8课《世界地图引出的发现》",
+		"value": "64f9ea5d8a7cd3e3f56fb016"
 	}, {
-		"_id": "5a40511ed171f1648a848885",
-		"name": "第9课《巨人的花园》"
+		"name": "第9课《巨人的花园》",
+		"value": "746625d71cfcd80afefa9a2f"
 	}, {
-		"_id": "684decc09a4b10e9f42c6d3f",
-		"name": "第10课《幸福是什么》"
+		"name": "第10课《幸福是什么》",
+		"value": "1414471c810024242aefb6a5"
 	}, {
-		"_id": "ccf010b24be323f9df07ced4",
-		"name": "第11课《去年的树》"
+		"name": "第11课《去年的树》",
+		"value": "12ecac16ec61806eeaf96d08"
 	}, {
-		"_id": "12d77fe76563a3931d83c250",
-		"name": "第12课《小木偶的故事》"
+		"name": "第12课《小木偶的故事》",
+		"value": "e8c2a6af856035158feb9639"
 	}, {
-		"_id": "ae82b73a0d578606aed7c1a8",
-		"name": "第13课《白鹅》"
+		"name": "第13课《白鹅》",
+		"value": "7ec256602e743d1145dc199c"
 	}, {
-		"_id": "43bb72276274a9a8df8bb0be",
-		"name": "第14课《白公鹅》"
+		"name": "第14课《白公鹅》",
+		"value": "0084bc66b385a68a0307c3a9"
 	}, {
-		"_id": "51f2fc33997172cf7032f2db",
-		"name": "第15课《猫》"
+		"name": "第15课《猫》",
+		"value": "435df9dbc9dc1e290a3e4cf9"
 	}, {
-		"_id": "64e2c264a5160341e9eb3d10",
-		"name": "第16课《母鸡》"
+		"name": "第16课《母鸡》",
+		"value": "fe93f6cb13e749c6453486ee"
 	}, {
-		"_id": "271b83ceb484fad9442277a5",
-		"name": "第17课《长城》"
+		"name": "第17课《长城》",
+		"value": "d6f00e52285da7d2896b4057"
 	}, {
-		"_id": "09e51480d3b9417d607e1dd5",
-		"name": "第18课《颐和园》"
+		"name": "第18课《颐和园》",
+		"value": "f9a710a86232e406bb876abb"
 	}, {
-		"_id": "5e3e197daadadc4ed4a10e67",
-		"name": "第19课《秦兵马俑》"
+		"name": "第19课《秦兵马俑》",
+		"value": "dc1b7fdc1c27aefe806594c7"
 	}, {
-		"_id": "42299e984f5d098da60d123a",
-		"name": "第20课《古诗两首》"
+		"name": "第20课《古诗两首》",
+		"value": "bed309c03ae632541f627f8a"
 	}, {
-		"_id": "6fac850825d33ac4d3362a61",
-		"name": "第21课《搭石》"
+		"name": "第21课《搭石》",
+		"value": "23d89a9574dc9176043e5b65"
 	}, {
-		"_id": "1dee9a0d2eb5cb300383f38f",
-		"name": "第22课《跨越海峡的生命桥》"
+		"name": "第22课《跨越海峡的生命桥》",
+		"value": "72a5054b120a3c25b7e39769"
 	}, {
-		"_id": "2ca7d6382021b2c897c9aac9",
-		"name": "第23课《卡罗纳》"
+		"name": "第23课《卡罗纳》",
+		"value": "ac5eb9075a76f9057f030206"
 	}, {
-		"_id": "7e8859d8889d2eaecc0e1c98",
-		"name": "第24课《给予是快乐的》"
+		"name": "第24课《给予是快乐的》",
+		"value": "43e48b21297fae8036953701"
 	}, {
-		"_id": "7728783fde024322922233e8",
-		"name": "第25课《为中华之崛起而读书》"
+		"name": "第25课《为中华之崛起而读书》",
+		"value": "2f454b3493a92a182ae5000f"
 	}, {
-		"_id": "6c3b4d6fce8a1bb7bc1295ad",
-		"name": "第26课《那片绿绿的爬山虎》"
+		"name": "第26课《那片绿绿的爬山虎》",
+		"value": "2eba53030008799e64699736"
 	}, {
-		"_id": "9e026f09aed92e24a617ed13",
-		"name": "第27课《乌塔》"
+		"name": "第27课《乌塔》",
+		"value": "305265c331faed50946b96d4"
 	}, {
-		"_id": "9b9e3a431038b8dd3dc4a88f",
-		"name": "第28课《尺有所短寸有所长》"
+		"name": "第28课《尺有所短寸有所长》",
+		"value": "cc97b7e4788b37c604e37e7f"
 	}, {
-		"_id": "ee7b81cf4e7c4e2461713ad1",
-		"name": "第29课《呼风唤雨的世纪》"
+		"name": "第29课《呼风唤雨的世纪》",
+		"value": "ce0b78d1c8635034e15e96d0"
 	}, {
-		"_id": "e23554f6dc0b493f091a3341",
-		"name": "第30课《电脑住宅》"
+		"name": "第30课《电脑住宅》",
+		"value": "af24a9db34f8333dafadb4db"
 	}, {
-		"_id": "61d8d247391fdcfe6417c44f",
-		"name": "第31课《飞向蓝天的恐龙》"
+		"name": "第31课《飞向蓝天的恐龙》",
+		"value": "a68c9244f05843905477d98f"
 	}, {
-		"_id": "33312f52725d7b133b7c93f1",
-		"name": "第32课《飞船上的特殊乘客》"
+		"name": "第32课《飞船上的特殊乘客》",
+		"value": "2eef612745588763e46b9b0f"
 	}]
 }, {
-	"book_name": "四年级下册",
+	"name": "四年级下册",
+	"order": 8,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "605f6fa62d0e2a35d3ec8595",
-		"name": "第1课《古诗词三首》"
+		"name": "第1课《古诗词三首》",
+		"value": "805efbf350aca7b21546cb1e"
 	}, {
-		"_id": "d33eab29e02c3eb7ea6a5cef",
-		"name": "第2课《桂林山水》"
+		"name": "第2课《桂林山水》",
+		"value": "22ae0ce0973329b3dcb01e1a"
 	}, {
-		"_id": "23831cc37b0dbb0b06bf7979",
-		"name": "第3课《记金华的双龙洞》"
+		"name": "第3课《记金华的双龙洞》",
+		"value": "616ac163b850f00abd8c3103"
 	}, {
-		"_id": "184a46fdd83b98c982223094",
-		"name": "第4课《七月的天山》"
+		"name": "第4课《七月的天山》",
+		"value": "75dff8e6525d600685cf010b"
 	}, {
-		"_id": "fd91b083879828aa477d2a07",
-		"name": "第5课《中彩那天》"
+		"name": "第5课《中彩那天》",
+		"value": "8c54b4406951f51d69ea507f"
 	}, {
-		"_id": "56720043b23bd0b357be5164",
-		"name": "第6课《万年牢》"
+		"name": "第6课《万年牢》",
+		"value": "6985b32baab5e81e5e9a545b"
 	}, {
-		"_id": "be0bd53e7e8650fca4f2b97f",
-		"name": "第7课《尊严》"
+		"name": "第7课《尊严》",
+		"value": "f57acc53434139bb3695e8fb"
 	}, {
-		"_id": "d3b87c7e63b90803c0c50739",
-		"name": "第8课《将心比心》"
+		"name": "第8课《将心比心》",
+		"value": "8eede62ad20bb0b0f64f87d1"
 	}, {
-		"_id": "34db049fc9dae478632f946d",
-		"name": "第9课《自然之道》"
+		"name": "第9课《自然之道》",
+		"value": "68c4f35138db748f7e339843"
 	}, {
-		"_id": "e9d7c2a21870ee9d7741024f",
-		"name": "第10课《黄河是怎样变化的》"
+		"name": "第10课《黄河是怎样变化的》",
+		"value": "bd7d0c18ef5f9ebec0455bd2"
 	}, {
-		"_id": "7e13d5f43a1bb689a932f3d3",
-		"name": "第11课《蝙蝠和雷达》"
+		"name": "第11课《蝙蝠和雷达》",
+		"value": "d5bee16ae3152c9d52b3c5dc"
 	}, {
-		"_id": "44256f645c42e3051b90ff51",
-		"name": "第12课《大自然的启示》"
+		"name": "第12课《大自然的启示》",
+		"value": "e0bf805878582e41b1b897af"
 	}, {
-		"_id": "5db3f8491cb3302fa7b3639c",
-		"name": "第13课《夜莺的歌声》"
+		"name": "第13课《夜莺的歌声》",
+		"value": "97bfc9ca731bd019b00e3e56"
 	}, {
-		"_id": "fefe2b072d5a9f32acc07ff0",
-		"name": "第14课《小英雄雨来》"
+		"name": "第14课《小英雄雨来》",
+		"value": "8ea6ddb35166cb9c66fba7bf"
 	}, {
-		"_id": "64b42a6966514132c942fe4b",
-		"name": "第15课《一个中国孩子的呼声》"
+		"name": "第15课《一个中国孩子的呼声》",
+		"value": "cd269da4add5f43e9f884471"
 	}, {
-		"_id": "b570a1607661e8dc6639b0d1",
-		"name": "第16课《和我们一样享受春天》"
+		"name": "第16课《和我们一样享受春天》",
+		"value": "97dbc756705e0bae82f32dc8"
 	}, {
-		"_id": "24c33e8d827595ac0263d5d6",
-		"name": "第17课《触摸春天》"
+		"name": "第17课《触摸春天》",
+		"value": "ae0b1a75f907d01302c34c15"
 	}, {
-		"_id": "a80e7fa0afa3162eb5235872",
-		"name": "第18课《永生的眼睛》"
+		"name": "第18课《永生的眼睛》",
+		"value": "c47a7a2e65d5eccecbd83f69"
 	}, {
-		"_id": "c8cd9f0d2b09955d00c55490",
-		"name": "第19课《生命生命》"
+		"name": "第19课《生命生命》",
+		"value": "e24890193e11cb67178307c4"
 	}, {
-		"_id": "4d6b6344c239fb8e4c349d1a",
-		"name": "第20课《花的勇气》"
+		"name": "第20课《花的勇气》",
+		"value": "d5744270cb45a4fd543f85ef"
 	}, {
-		"_id": "02707239e2a0fd413c7f9e97",
-		"name": "第21课《乡下人家》"
+		"name": "第21课《乡下人家》",
+		"value": "def7a97234fed553e546d87b"
 	}, {
-		"_id": "aa937e64fb6198f7ec5588c5",
-		"name": "第22课《牧场之国》"
+		"name": "第22课《牧场之国》",
+		"value": "c499923d7a9227445a9ff0c9"
 	}, {
-		"_id": "4bebf35fa3227ab70e52cb98",
-		"name": "第23课《古诗词三首》"
+		"name": "第23课《古诗词三首》",
+		"value": "ed1484924e04e0b57a3c4959"
 	}, {
-		"_id": "3f252130c38ef310ced7b84d",
-		"name": "第24课《麦哨》"
+		"name": "第24课《麦哨》",
+		"value": "71beb8152a98c962e6d665c9"
 	}, {
-		"_id": "dd3556f16676c7ec9f1e0a90",
-		"name": "第25课《两个铁球同时着地》"
+		"name": "第25课《两个铁球同时着地》",
+		"value": "746da3420b4c8e09895ee83e"
 	}, {
-		"_id": "dce9e253bf9f20efb9797661",
-		"name": "第26课《全神贯注》"
+		"name": "第26课《全神贯注》",
+		"value": "5c12f17891368ec0abbda268"
 	}, {
-		"_id": "5143d61e1f5bfccb0a072670",
-		"name": "第27课《鱼游到了纸上》"
+		"name": "第27课《鱼游到了纸上》",
+		"value": "41e93f6ccd3ea27f59d68b75"
 	}, {
-		"_id": "bf220aa322e7bf514931772d",
-		"name": "第28课《父亲的菜园》"
+		"name": "第28课《父亲的菜园》",
+		"value": "d3e520aefe204d89019140e4"
 	}, {
-		"_id": "2c881b3847d40772d20f8f0f",
-		"name": "第29课《寓言两则》"
+		"name": "第29课《寓言两则》",
+		"value": "4297d1a3c825009db5b6c2e2"
 	}, {
-		"_id": "830ca83bf53da62a595061f6",
-		"name": "第30课《文成公主进藏》"
+		"name": "第30课《文成公主进藏》",
+		"value": "88c8a71508bc0b69baecf464"
 	}, {
-		"_id": "208827cd5bb17de27c866b6d",
-		"name": "第31课《普罗米修斯》"
+		"name": "第31课《普罗米修斯》",
+		"value": "10f4470e8d03948a4260e6e4"
 	}, {
-		"_id": "eb3bd66ecbc20805b0d3daa4",
-		"name": "第32课《渔夫的故事》"
+		"name": "第32课《渔夫的故事》",
+		"value": "ad2891ff0a4d47c56682e265"
 	}]
 }, {
-	"book_name": "五年级上册",
+	"name": "五年级上册",
+	"order": 9,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "ee0cc6e98c68c122f911bfbc",
-		"name": "第1课《窃读记》"
+		"name": "第1课《窃读记》",
+		"value": "41f346e861d3b45b469e46b0"
 	}, {
-		"_id": "338234ea296ce0661d9a92ce",
-		"name": "第2课《小苗与大树的对话》"
+		"name": "第2课《小苗与大树的对话》",
+		"value": "63d5e00b3277babba7ad6851"
 	}, {
-		"_id": "4c28072c6cdfa7dd9d945d69",
-		"name": "第3课《走遍天下书为侣》"
+		"name": "第3课《走遍天下书为侣》",
+		"value": "f37425871f3d2d2b65a0fadb"
 	}, {
-		"_id": "48226c02f40755d6c3263a6c",
-		"name": "第4课《我的长生果》"
+		"name": "第4课《我的长生果》",
+		"value": "8a4f0c961d23614ca3952f52"
 	}, {
-		"_id": "bbb1a8dc4bb782a1a56e1aef",
-		"name": "第5课《古诗三首》"
+		"name": "第5课《古诗三首》",
+		"value": "2da231a9bc09303187245746"
 	}, {
-		"_id": "207c7a1f66dbd0bf7405ed30",
-		"name": "第6课《梅花魂》"
+		"name": "第6课《梅花魂》",
+		"value": "e3caf1773fae2a036e7a0d57"
 	}, {
-		"_id": "f3c4c2f574f5e21031552904",
-		"name": "第7课《桂花雨》"
+		"name": "第7课《桂花雨》",
+		"value": "07c1531cc1ca25bc5593061f"
 	}, {
-		"_id": "894c45c1ad7c8bb930f2a8d5",
-		"name": "第8课《小桥流水人家》"
+		"name": "第8课《小桥流水人家》",
+		"value": "c18c3dd61279240cb2ffc0d9"
 	}, {
-		"_id": "31dfcd45e7ffd08d2905b730",
-		"name": "第9课《鲸》"
+		"name": "第9课《鲸》",
+		"value": "9b204156347d8bbef156564e"
 	}, {
-		"_id": "f6eae58157ea57d53849bc4b",
-		"name": "第10课《松鼠》"
+		"name": "第10课《松鼠》",
+		"value": "94b4df020fa9b5a3408f1772"
 	}, {
-		"_id": "37d6bcfe2abd972a40cdb93c",
-		"name": "第11课《新型玻璃》"
+		"name": "第11课《新型玻璃》",
+		"value": "e1e0672665bcd14999efea0f"
 	}, {
-		"_id": "783d5f77463b368a9e5ee23b",
-		"name": "第12课《假如没有灰尘》"
+		"name": "第12课《假如没有灰尘》",
+		"value": "a07b35874ceda40ba9a83fee"
 	}, {
-		"_id": "f2df064e363be3961d9d8ae5",
-		"name": "第13课《钓鱼的启示》"
+		"name": "第13课《钓鱼的启示》",
+		"value": "9b22b8255978384674a15228"
 	}, {
-		"_id": "43939a260c5fad2e5765f750",
-		"name": "第14课《通往广场的路不止一条》"
+		"name": "第14课《通往广场的路不止一条》",
+		"value": "e0be5dcb16ff26a03ebb3a82"
 	}, {
-		"_id": "00457c41a547dd490165b7c9",
-		"name": "第15课《落花生》"
+		"name": "第15课《落花生》",
+		"value": "6f0133cb81431531ecd33f46"
 	}, {
-		"_id": "ebcf259fcfedae2163f12bce",
-		"name": "第16课《珍珠鸟》"
+		"name": "第16课《珍珠鸟》",
+		"value": "5ad969a3ee82c2bfdb801742"
 	}, {
-		"_id": "44f8e41643e52d252954f17c",
-		"name": "第17课《地震中的父与子》"
+		"name": "第17课《地震中的父与子》",
+		"value": "74906d723ea175500fb131fe"
 	}, {
-		"_id": "397dc88d90f167b2934fcad7",
-		"name": "第18课《慈母情深》"
+		"name": "第18课《慈母情深》",
+		"value": "aece6a4ca531ca65c7330f37"
 	}, {
-		"_id": "8ea1b34db2dfb0ddd014f4f9",
-		"name": "第19课《精彩极了和糟糕透了》"
+		"name": "第19课《精彩极了和糟糕透了》",
+		"value": "db665f03d15ab92265d645d2"
 	}, {
-		"_id": "6b8b0304194c79829fb55f3e",
-		"name": "第20课《学会看病》"
+		"name": "第20课《学会看病》",
+		"value": "98d096aaae3efc15d2617ee8"
 	}, {
-		"_id": "4e50f2b2a0536e71cdb803e1",
-		"name": "第21课《圆明园的毁灭》"
+		"name": "第21课《圆明园的毁灭》",
+		"value": "296e222c022cbff00ebb8800"
 	}, {
-		"_id": "c6a7a3c1b522cfde976bc8d9",
-		"name": "第22课《狼牙山五壮士》"
+		"name": "第22课《狼牙山五壮士》",
+		"value": "2edcbc17b88101dd5e65325e"
 	}, {
-		"_id": "ce537e55b156f6eee12bece1",
-		"name": "第23课《难忘的一课》"
+		"name": "第23课《难忘的一课》",
+		"value": "2e67d2ab693b37fdd29828ab"
 	}, {
-		"_id": "6283f340d427b483eb82fa64",
-		"name": "第24课《最后一分钟》"
+		"name": "第24课《最后一分钟》",
+		"value": "39e559ce5eea526b3081fcdf"
 	}, {
-		"_id": "e109b9b5e19dda74345aa123",
-		"name": "第25课《七律长征》"
+		"name": "第25课《七律长征》",
+		"value": "442ae06ebd68dd214d04d45d"
 	}, {
-		"_id": "35e1f293b2bc4ebf2c5ab933",
-		"name": "第26课《开国大典》"
+		"name": "第26课《开国大典》",
+		"value": "70418d2841b260cde4dede1e"
 	}, {
-		"_id": "4d7b820b71f6a5409546f40d",
-		"name": "第27课《青山处处埋忠骨》"
+		"name": "第27课《青山处处埋忠骨》",
+		"value": "b24b91e50d7aad18872a3505"
 	}, {
-		"_id": "22c429a1d07fa954d3093650",
-		"name": "第28课《毛主席在花山》"
+		"name": "第28课《毛主席在花山》",
+		"value": "c2fd6909be1126a5ca2084e6"
 	}]
 }, {
-	"book_name": "五年级下册",
+	"name": "五年级下册",
+	"order": 10,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "a7152d54cb9608012e3b4881",
-		"name": "第1课《草原》"
+		"name": "第1课《草原》",
+		"value": "5986085f1d8898f77cf9be80"
 	}, {
-		"_id": "2147cd80da31768c1e6ad6df",
-		"name": "第2课《丝绸之路》"
+		"name": "第2课《丝绸之路》",
+		"value": "b4147b2c3eb6794c25949c53"
 	}, {
-		"_id": "e0967e1da99cb481d6a44d1d",
-		"name": "第3课《白杨》"
+		"name": "第3课《白杨》",
+		"value": "53b4bafd8c392c090fa7d80c"
 	}, {
-		"_id": "bee94b61c28c58eaa1bc52c9",
-		"name": "第4课《把铁路修到拉萨去》"
+		"name": "第4课《把铁路修到拉萨去》",
+		"value": "6587ad4e696a0a5803415bf3"
 	}, {
-		"_id": "5ab0d3a578340e9dc81647c1",
-		"name": "第5课《古诗词三首》"
+		"name": "第5课《古诗词三首》",
+		"value": "ecb093812648c8b6a9fc9751"
 	}, {
-		"_id": "66c8430fb562afe47b174b3d",
-		"name": "第6课《冬阳童年骆驼队》"
+		"name": "第6课《冬阳童年骆驼队》",
+		"value": "2a9ded85908ec10d68b479b8"
 	}, {
-		"_id": "9f8e155825097534e195e809",
-		"name": "第7课《祖父的园子》"
+		"name": "第7课《祖父的园子》",
+		"value": "137c9641935067a6322de2e6"
 	}, {
-		"_id": "55d1e7e0dcb5e95077319d64",
-		"name": "第8课《童年的发现》"
+		"name": "第8课《童年的发现》",
+		"value": "0b7c67ff9d369070c199420c"
 	}, {
-		"_id": "d9e2d4fb6b18468b99e33aa9",
-		"name": "第9课《儿童诗两首》"
+		"name": "第9课《儿童诗两首》",
+		"value": "ddc95e1705f8bb227edb6789"
 	}, {
-		"_id": "68d4792bfedf21563bb34bef",
-		"name": "第10课《杨氏父子》"
+		"name": "第10课《杨氏父子》",
+		"value": "cb9807355978873f4c99aba8"
 	}, {
-		"_id": "0c5adadac9e219436945a5c3",
-		"name": "第11课《晏子使楚》"
+		"name": "第11课《晏子使楚》",
+		"value": "90d7c3c6dad76f3ffef4fa84"
 	}, {
-		"_id": "c7e85253a5d17ed4451592b8",
-		"name": "第12课《半截蜡烛》"
+		"name": "第12课《半截蜡烛》",
+		"value": "f4ed6da5af0e695ee685ab77"
 	}, {
-		"_id": "3990404643abebe5a0681305",
-		"name": "第13课《打电话》"
+		"name": "第13课《打电话》",
+		"value": "a05c3b5606310d8599e532d3"
 	}, {
-		"_id": "61baff0636162e03621d5f85",
-		"name": "第14课《再见了亲人》"
+		"name": "第14课《再见了亲人》",
+		"value": "318e8646cb3e1a3f1d6795d7"
 	}, {
-		"_id": "11f6a71563b21c315e8321de",
-		"name": "第15课《金色的鱼钩》"
+		"name": "第15课《金色的鱼钩》",
+		"value": "b5c451ec752f7eb4468f546d"
 	}, {
-		"_id": "14c75dd0d1ee0b2658127505",
-		"name": "第16课《桥》"
+		"name": "第16课《桥》",
+		"value": "60ec17449aca1e2d79de47d9"
 	}, {
-		"_id": "84431e921c46a59871e749e9",
-		"name": "第17课《梦想的力量》"
+		"name": "第17课《梦想的力量》",
+		"value": "0478431e31a03b787895316f"
 	}, {
-		"_id": "df84ac1ebd578fe47b2c6593",
-		"name": "第18课《将相和》"
+		"name": "第18课《将相和》",
+		"value": "e3ee6e2537e3459fa014ddfe"
 	}, {
-		"_id": "2899a322f9e4e79c64eed6e5",
-		"name": "第19课《草船借箭》"
+		"name": "第19课《草船借箭》",
+		"value": "9342bba60855476227f74019"
 	}, {
-		"_id": "d80dc4390a9cf1b0ad06ec80",
-		"name": "第20课《景阳冈》"
+		"name": "第20课《景阳冈》",
+		"value": "a34f2e2ae5aec63239b656b9"
 	}, {
-		"_id": "025e2a6f87e94a99267c9cfe",
-		"name": "第21课《猴王出世》"
+		"name": "第21课《猴王出世》",
+		"value": "58a36e25a7bc9c9c613cd2b6"
 	}, {
-		"_id": "f8fdea936c0a8a9e091ceaa1",
-		"name": "第22课《人物描写一组》"
+		"name": "第22课《人物描写一组》",
+		"value": "c629848be8e68675fc29e64d"
 	}, {
-		"_id": "7d499ab705a8aff2c6751c12",
-		"name": "第23课《刷子李》"
+		"name": "第23课《刷子李》",
+		"value": "db61110a87b2b3b1bf7c6097"
 	}, {
-		"_id": "e1621c65344fbc94a9ee839c",
-		"name": "第24课《金钱的魔力》"
+		"name": "第24课《金钱的魔力》",
+		"value": "4eabf5996965467ac525dbb9"
 	}, {
-		"_id": "104ad700c1cf7f7ce5e0965e",
-		"name": "第25课《自己的花是让别人看的》"
+		"name": "第25课《自己的花是让别人看的》",
+		"value": "d3bd7f1ea5edab0643ef6f46"
 	}, {
-		"_id": "7cc79ffc395e96a5fc9d0b27",
-		"name": "第26课《威尼斯的小艇》"
+		"name": "第26课《威尼斯的小艇》",
+		"value": "ae895009f6a4561698a9df9c"
 	}, {
-		"_id": "cb27ad12b0881f8b43ed6d19",
-		"name": "第27课《与象共舞》"
+		"name": "第27课《与象共舞》",
+		"value": "3078ef15f99a7eba484a13a6"
 	}, {
-		"_id": "f2e0c2c41e4f58a3d3636842",
-		"name": "第28课《彩色的非洲》"
+		"name": "第28课《彩色的非洲》",
+		"value": "6b0d1f2cc00a3f3bf86ef7c2"
 	}]
 }, {
-	"book_name": "六年级上册",
+	"name": "六年级上册",
+	"order": 11,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "3dd5a6fc9f56bf44e0dc13b4",
-		"name": "第1课《山中访友》"
+		"name": "第1课《山中访友》",
+		"value": "eed73f1186ee3c6bcaa98aa2"
 	}, {
-		"_id": "a94cfa59c5606f3564337c7a",
-		"name": "第2课《山雨》"
+		"name": "第2课《山雨》",
+		"value": "6e12a0c500899131165760cb"
 	}, {
-		"_id": "7f39cc862981a6ed2c5a50f3",
-		"name": "第3课《草虫的村落》"
+		"name": "第3课《草虫的村落》",
+		"value": "95e565031439003ecd43130b"
 	}, {
-		"_id": "df19c1ef3123afc2d25a94e3",
-		"name": "第4课《索溪谷的“野”》"
+		"name": "第4课《索溪谷的“野”》",
+		"value": "5147c1d0978a90ea8206492d"
 	}, {
-		"_id": "b5a4cb3d21896f402445d64a",
-		"name": "第5课《詹天佑》"
+		"name": "第5课《詹天佑》",
+		"value": "f9e7485fc668c1f5517328ff"
 	}, {
-		"_id": "cf93a3245ebe69d8ff9cc395",
-		"name": "第6课《怀念母亲》"
+		"name": "第6课《怀念母亲》",
+		"value": "f552b2b17dd53e00bd570ffd"
 	}, {
-		"_id": "6645b693322c6307e644bbce",
-		"name": "第7课《彩色的翅膀》"
+		"name": "第7课《彩色的翅膀》",
+		"value": "efb96ac11de15797fe6a2174"
 	}, {
-		"_id": "507cf7675eb6481f983a9dfc",
-		"name": "第8课《中华少年》"
+		"name": "第8课《中华少年》",
+		"value": "79bcb0bb2a3e3d8de657a417"
 	}, {
-		"_id": "51ace5f938fd167d67d4f9af",
-		"name": "第9课《穷人》"
+		"name": "第9课《穷人》",
+		"value": "f40da38299cc1149654da662"
 	}, {
-		"_id": "0de75a91f7462c23fb9b4c4c",
-		"name": "第10课《别饿坏了那匹马》"
+		"name": "第10课《别饿坏了那匹马》",
+		"value": "cc327b81b942f0a128f65277"
 	}, {
-		"_id": "13e809661b699e08cbb7e3b9",
-		"name": "第11课《唯一的听众》"
+		"name": "第11课《唯一的听众》",
+		"value": "4655873713ab7aeb72c01372"
 	}, {
-		"_id": "708c9ac0c598a15dca298315",
-		"name": "第12课《用心灵去倾听》"
+		"name": "第12课《用心灵去倾听》",
+		"value": "330f5dc095ef389cdb9326cd"
 	}, {
-		"_id": "18e581a34d3c0eca7a16bc7b",
-		"name": "第13课《只有一个地球》"
+		"name": "第13课《只有一个地球》",
+		"value": "22f70ad538dec8c3e9d37619"
 	}, {
-		"_id": "d2d9779a481f3a8262c1ead8",
-		"name": "第14课《鹿和狼的故事》"
+		"name": "第14课《鹿和狼的故事》",
+		"value": "8c3713503da3a642c824a9aa"
 	}, {
-		"_id": "56f9a06ddc526592ee8c7f38",
-		"name": "第15课《这片土地是神圣的》"
+		"name": "第15课《这片土地是神圣的》",
+		"value": "ff8a46dbb1c36430da8532bc"
 	}, {
-		"_id": "b6f30751356434177fd7f65b",
-		"name": "第16课《青山不老》"
+		"name": "第16课《青山不老》",
+		"value": "0813982d7fb57870dd550eb5"
 	}, {
-		"_id": "cf37541d24f2fb00fdd4892d",
-		"name": "第17课《少年闰土》"
+		"name": "第17课《少年闰土》",
+		"value": "503efe9d9566508e70921419"
 	}, {
-		"_id": "1f30d877b9d67500b75ac9a5",
-		"name": "第18课《我的伯父鲁迅先生》"
+		"name": "第18课《我的伯父鲁迅先生》",
+		"value": "bf653792e9c9246ca9766bd8"
 	}, {
-		"_id": "a71f847b206deb6b2a3d7726",
-		"name": "第19课《一面》"
+		"name": "第19课《一面》",
+		"value": "7ffcb99c728dcf2182b08818"
 	}, {
-		"_id": "197498d883759c9f5a0beec7",
-		"name": "第20课《有的人》"
+		"name": "第20课《有的人》",
+		"value": "8f76b076294eeaf73cfd5328"
 	}, {
-		"_id": "45b646e41fd40fe4e75b7c94",
-		"name": "第21课《老人与海鸥》"
+		"name": "第21课《老人与海鸥》",
+		"value": "44e0c57395a2d6f6655b10a2"
 	}, {
-		"_id": "89b67e4fbfc307ff14a5b318",
-		"name": "第22课《跑进家来的松鼠》"
+		"name": "第22课《跑进家来的松鼠》",
+		"value": "1e0766fd0e6825c9295b0c44"
 	}, {
-		"_id": "2530b6ffff5803fcea40d10b",
-		"name": "第23课《最后一头战象》"
+		"name": "第23课《最后一头战象》",
+		"value": "ca39414e31fde4b5a2dd8455"
 	}, {
-		"_id": "9b99a07b2f3ed7bd8e52e26f",
-		"name": "第24课《金色的脚印》"
+		"name": "第24课《金色的脚印》",
+		"value": "e2fb8e92dad2c6f3ec54e7d5"
 	}, {
-		"_id": "ef9c8d0479f5d340171d417c",
-		"name": "第25课《伯牙绝弦》"
+		"name": "第25课《伯牙绝弦》",
+		"value": "037c93692a6c0f9226e58052"
 	}, {
-		"_id": "287d39446361ef50491bff6f",
-		"name": "第26课《月光曲》"
+		"name": "第26课《月光曲》",
+		"value": "ab90487e6c0c4872c131fdbd"
 	}, {
-		"_id": "556be5f8082692189869cd5b",
-		"name": "第27课《蒙娜丽莎之约》"
+		"name": "第27课《蒙娜丽莎之约》",
+		"value": "1a18fa523ffda70445b85a9a"
 	}, {
-		"_id": "ac92c256ec30e5a5c0ce5d08",
-		"name": "第28课《我的舞台》"
+		"name": "第28课《我的舞台》",
+		"value": "6550874078d291c8eae69f50"
 	}]
 }, {
-	"book_name": "六年级下册",
+	"name": "六年级下册",
+	"order": 12,
+	"stage": {
+		"name": "小学",
+		"value": "6038483da112ea00011a4ef7"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "5678a680ae50892b1dcebbbf",
-		"name": "第1课《文言文两则》"
+		"name": "第1课《文言文两则》",
+		"value": "481f1b4ee6a5a8cfd18b99ef"
 	}, {
-		"_id": "e4f3becff9fd269a3b0c0743",
-		"name": "第2课《匆匆》"
+		"name": "第2课《匆匆》",
+		"value": "8da8728fccc59e0bbc4700b0"
 	}, {
-		"_id": "71e67c3f95622aa5e91e315e",
-		"name": "第3课《桃花心木》"
+		"name": "第3课《桃花心木》",
+		"value": "b4170ad0bf7daf0031874a81"
 	}, {
-		"_id": "3b7ce90aeacf5c94f252086f",
-		"name": "第4课《顶碗少年》"
+		"name": "第4课《顶碗少年》",
+		"value": "026579f8139da30117f5ffba"
 	}, {
-		"_id": "db002be59b580e39b26a7cc9",
-		"name": "第5课《手指》"
+		"name": "第5课《手指》",
+		"value": "23f26fba732ed5ecdaa48c28"
 	}, {
-		"_id": "742fb3e94dcb6b434603d923",
-		"name": "第6课《北京的春节》"
+		"name": "第6课《北京的春节》",
+		"value": "760bd09f166e0d83b41841c5"
 	}, {
-		"_id": "574770b895ea2da0ab026da0",
-		"name": "第7课《藏戏》"
+		"name": "第7课《藏戏》",
+		"value": "760664ce5c3c3c213ffd6259"
 	}, {
-		"_id": "0e4d6ac638c8bab5d78ce83e",
-		"name": "第8课《各具特色的民居》"
+		"name": "第8课《各具特色的民居》",
+		"value": "52d9e5f25597ff9f1c44690a"
 	}, {
-		"_id": "9197cb6ca1b30990e14e1dda",
-		"name": "第9课《和田的维吾尔人》"
+		"name": "第9课《和田的维吾尔人》",
+		"value": "058fb9448863d5b8606b57f0"
 	}, {
-		"_id": "ef4a939cf9c25d2bd3f15c4c",
-		"name": "第10课《十六年前的回忆》"
+		"name": "第10课《十六年前的回忆》",
+		"value": "d9a0a68da326e97e2b86a751"
 	}, {
-		"_id": "1a0d31bb9a43d9fd4b9c3714",
-		"name": "第11课《灯光》"
+		"name": "第11课《灯光》",
+		"value": "5885ff28a6551a664d52baa1"
 	}, {
-		"_id": "b5a1ecc7184089bcb6abedd2",
-		"name": "第12课《为人民服务》"
+		"name": "第12课《为人民服务》",
+		"value": "47e5cc59c51c402cbff8b9c8"
 	}, {
-		"_id": "68f3dc67a7c94a7b9f8cd17c",
-		"name": "第13课《一夜的工作》"
+		"name": "第13课《一夜的工作》",
+		"value": "b5a59badbdeee25e472d1226"
 	}, {
-		"_id": "8bc12dc9b2ffb733a71a49bc",
-		"name": "第14课《卖火柴的小女孩》"
+		"name": "第14课《卖火柴的小女孩》",
+		"value": "79905259d17cdca9a90c68bf"
 	}, {
-		"_id": "f034a788720e8152cc4195a4",
-		"name": "第15课《凡卡》"
+		"name": "第15课《凡卡》",
+		"value": "e84168716eba339a0b750016"
 	}, {
-		"_id": "dc146f1fe0e6a7d2aa8727fb",
-		"name": "第16课《鲁滨孙漂流记》"
+		"name": "第16课《鲁滨孙漂流记》",
+		"value": "ac3fff9dddc8f4f6ad190558"
 	}, {
-		"_id": "4d39c7ab5770fc02bdbc04a1",
-		"name": "第17课《汤姆索亚历险记》"
+		"name": "第17课《汤姆索亚历险记》",
+		"value": "b8e6712f673aaa3869c5210b"
 	}, {
-		"_id": "816ad3a8892aeee7a817cfd9",
-		"name": "第18课《跨越百年的美丽》"
+		"name": "第18课《跨越百年的美丽》",
+		"value": "a6e5ead117c986ac61aa7428"
 	}, {
-		"_id": "03cef3c97ba16b167a8811a6",
-		"name": "第19课《千年梦圆在今朝》"
+		"name": "第19课《千年梦圆在今朝》",
+		"value": "1f92fbf116d9be7fe8f79076"
 	}, {
-		"_id": "439bba5b847b7f27ff49bab9",
-		"name": "第20课《秋天》"
+		"name": "第20课《秋天》",
+		"value": "14814bb36bf8aa2b96447db3"
 	}, {
-		"_id": "e933ab758f3f706ef1c49951",
-		"name": "第21课《真理诞生于一百个问号之后》"
+		"name": "第21课《真理诞生于一百个问号之后》",
+		"value": "183339c3f3158490a0ab1286"
 	}, {
-		"_id": "3db52beca8672bac24df9fd9",
-		"name": "第22课《我最好的老师》"
+		"name": "第22课《我最好的老师》",
+		"value": "733cc1993ef9ba31d140f0f7"
 	}]
 }, {
-	"book_name": "七年级上册",
+	"name": "七年级上册",
+	"order": 13,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "98a3c454af08a028d296e8be",
-		"name": "第1课《春》"
+		"name": "第1课《春》",
+		"value": "48bf6311c6b09dc435827b9b"
 	}, {
-		"_id": "5d2c42c7836b3c78b6d5a2bd",
-		"name": "第2课《济南的冬天》"
+		"name": "第2课《济南的冬天》",
+		"value": "85c08c095af1e692c7cd470a"
 	}, {
-		"_id": "31029a6691928b12fc8b8ae7",
-		"name": "第3课《雨的四季》"
+		"name": "第3课《雨的四季》",
+		"value": "0912f11577a9e0cae17a7bf6"
 	}, {
-		"_id": "fbd334da5a76a74cbcc4b2ea",
-		"name": "第4课《古代诗歌四首》"
+		"name": "第4课《古代诗歌四首》",
+		"value": "58cd2829e126ecad80ba99a9"
 	}, {
-		"_id": "2a5333e1a283effa7d9e245a",
-		"name": "第5课《秋天的怀念》"
+		"name": "第5课《秋天的怀念》",
+		"value": "5c68e21bd78fdc6eb7fc3369"
 	}, {
-		"_id": "d6b24072676653f58739a2ff",
-		"name": "第6课《散步》"
+		"name": "第6课《散步》",
+		"value": "7cf7f3a02c489bc8bacdb316"
 	}, {
-		"_id": "bae1a73e1628098e07eda0d5",
-		"name": "第7课《散文诗两首》"
+		"name": "第7课《散文诗两首》",
+		"value": "2e25086545ffa33bbd42f7d8"
 	}, {
-		"_id": "b43416fc114973facf49caa3",
-		"name": "第8课《世说新语两则》"
+		"name": "第8课《世说新语两则》",
+		"value": "ca6b35c96dc8a0e70fb7cfdc"
 	}, {
-		"_id": "6278c2550d9b1b176b4e6c24",
-		"name": "第9课《从百草园到三味书屋》"
+		"name": "第9课《从百草园到三味书屋》",
+		"value": "1cd7160814ab525e2af9e718"
 	}, {
-		"_id": "5f2e812eb26687db1e0d5ae8",
-		"name": "第10课《再塑生命的人》"
+		"name": "第10课《再塑生命的人》",
+		"value": "f872d45564cacef41d61fefe"
 	}, {
-		"_id": "1ab8f5791d119c8098315ad6",
-		"name": "第11课《窃读记》"
+		"name": "第11课《窃读记》",
+		"value": "da5515177425b59bee71a89c"
 	}, {
-		"_id": "67820eb93f27c50dad40f1ab",
-		"name": "第12课《论语十二章》"
+		"name": "第12课《论语十二章》",
+		"value": "4243c5aab7b616540963ca52"
 	}, {
-		"_id": "2f94b9da754ab86dad34b84a",
-		"name": "第13课《纪念白求恩》"
+		"name": "第13课《纪念白求恩》",
+		"value": "3df0e7ef84549e4b372d9076"
 	}, {
-		"_id": "fe8d9db0908b85ea715372a7",
-		"name": "第14课《植树的牧羊人》"
+		"name": "第14课《植树的牧羊人》",
+		"value": "2b7913fa5b268c7b81f7ce78"
 	}, {
-		"_id": "804d31657d5de28946f13f77",
-		"name": "第15课《走一步，再走一步》"
+		"name": "第15课《走一步，再走一步》",
+		"value": "de65b04eb0c4a2c0afd8bb4a"
 	}, {
-		"_id": "dcc0c6a9c304fb2cf0c5a583",
-		"name": "第16课《诫子书》"
+		"name": "第16课《诫子书》",
+		"value": "42d05f09d7bcb74ccfe741c3"
 	}, {
-		"_id": "67705c2401c776d4bcc21813",
-		"name": "第17课《猫》"
+		"name": "第17课《猫》",
+		"value": "8978f953c9d60f659786fa43"
 	}, {
-		"_id": "88dc1157e544dfcfa90e8adb",
-		"name": "第18课《鸟》"
+		"name": "第18课《鸟》",
+		"value": "68f619680f8d58d8fbc01e88"
 	}, {
-		"_id": "01946979a1922dae8a050cc1",
-		"name": "第19课《动物笑谈》"
+		"name": "第19课《动物笑谈》",
+		"value": "2dfd17203fd68065e5d893a4"
 	}, {
-		"_id": "a739f6214ef82af3f8715292",
-		"name": "第20课《狼》"
+		"name": "第20课《狼》",
+		"value": "91f6b5d965c93268bc6fadcf"
 	}, {
-		"_id": "c94e8a2196103c726116d862",
-		"name": "第21课《皇帝的新装》"
+		"name": "第21课《皇帝的新装》",
+		"value": "732635a0a9de496c16c76643"
 	}, {
-		"_id": "c6780354064887626766e837",
-		"name": "第22课《诗两首》"
+		"name": "第22课《诗两首》",
+		"value": "a7db1af3a783c4ca3e711b0a"
 	}, {
-		"_id": "7ed611c21df57635167f6238",
-		"name": "第23课《女娲造人》"
+		"name": "第23课《女娲造人》",
+		"value": "820274a02a00c52363a9440a"
 	}, {
-		"_id": "1b9fe5a168a4acc9e48d7f2d",
-		"name": "第24课《寓言四则》"
+		"name": "第24课《寓言四则》",
+		"value": "4deb8f41d4d1185cc9cd6a4f"
 	}]
 }, {
-	"book_name": "七年级下册",
+	"name": "七年级下册",
+	"order": 14,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "9892a789c743a7f5fa2ec855",
-		"name": "第1课《邓稼先》"
+		"name": "第1课《邓稼先》",
+		"value": "93da06bda0a3c44962d61386"
 	}, {
-		"_id": "cd224691004559d2f29c4bb2",
-		"name": "第2课《说和做》"
+		"name": "第2课《说和做》",
+		"value": "f7eee0ade8a608bc7fe6a839"
 	}, {
-		"_id": "4c358ce8ea3e93fe77f00468",
-		"name": "第3课《回忆鲁迅先生》"
+		"name": "第3课《回忆鲁迅先生》",
+		"value": "6c415e536a7d20772fd7b17b"
 	}, {
-		"_id": "d860e0f5c743e053d97e3449",
-		"name": "第4课《孙权劝学》"
+		"name": "第4课《孙权劝学》",
+		"value": "ea79ebe41040738c58e745f7"
 	}, {
-		"_id": "9fe82d23a21ae25075463008",
-		"name": "第5课《黄河颂》"
+		"name": "第5课《黄河颂》",
+		"value": "f97df317c2370f25df05bb8f"
 	}, {
-		"_id": "8be286cdf6579b2eba7b5893",
-		"name": "第6课《最后一课》"
+		"name": "第6课《最后一课》",
+		"value": "8d39207424ca51f1a75961b3"
 	}, {
-		"_id": "60d52a443b4069a311c86dc6",
-		"name": "第7课《土地的誓言》"
+		"name": "第7课《土地的誓言》",
+		"value": "3ed293be31bdcf470c1d00d9"
 	}, {
-		"_id": "6bc74bc2779feec9c963b12a",
-		"name": "第8课《木兰诗》"
+		"name": "第8课《木兰诗》",
+		"value": "4a9dfa437ab34ad7892f53aa"
 	}, {
-		"_id": "aa4315f1b77212ac0cfd5778",
-		"name": "第9课《阿长与山海经》"
+		"name": "第9课《阿长与山海经》",
+		"value": "0a7d4680c95aa234e9b6d72e"
 	}, {
-		"_id": "b54b297609700d052d05f52c",
-		"name": "第10课《老王》"
+		"name": "第10课《老王》",
+		"value": "67c1cd4bdb716aec3650578e"
 	}, {
-		"_id": "d5ccd2202921a73dfc337f99",
-		"name": "第11课《台阶》"
+		"name": "第11课《台阶》",
+		"value": "4f10dcd7bf6fd1930f484c0a"
 	}, {
-		"_id": "4ec4e68065550539085e6e52",
-		"name": "第12课《卖油翁》"
+		"name": "第12课《卖油翁》",
+		"value": "e18177e634691183c38cf913"
 	}, {
-		"_id": "ff06c0b80e851fcba7f0b97f",
-		"name": "第13课《叶圣陶先生二三事》"
+		"name": "第13课《叶圣陶先生二三事》",
+		"value": "42e64dd054c22645f2341a6e"
 	}, {
-		"_id": "eb5372a6766031958dfc31dc",
-		"name": "第14课《驿路梨花》"
+		"name": "第14课《驿路梨花》",
+		"value": "6d9ee0d048e343abd6e6a55f"
 	}, {
-		"_id": "78a21a64b3c4a0426ad1f9a5",
-		"name": "第15课《最苦与最乐》"
+		"name": "第15课《最苦与最乐》",
+		"value": "7f4fbcce4042a0d1fe48e8ef"
 	}, {
-		"_id": "96acbd2d4e06d97e97544143",
-		"name": "第16课《短文两篇》"
+		"name": "第16课《短文两篇》",
+		"value": "1523b57bd9440556a26697f5"
 	}, {
-		"_id": "2e09d4f653fff7c9228d6dde",
-		"name": "第17课《紫藤萝瀑布》"
+		"name": "第17课《紫藤萝瀑布》",
+		"value": "98d68253045ff8d3c4daf39a"
 	}, {
-		"_id": "93ea23bfa6f80115b7c9583a",
-		"name": "第18课《一棵小桃树》"
+		"name": "第18课《一棵小桃树》",
+		"value": "4ffcb748eacec26d87dd2a9d"
 	}, {
-		"_id": "fbf321b738019900891367d5",
-		"name": "第19课《外国诗两首》"
+		"name": "第19课《外国诗两首》",
+		"value": "8bcf0e1fd174e930cf64410c"
 	}, {
-		"_id": "ba98ac484dae6b814c6ea8ff",
-		"name": "第20课《古代诗歌五首》"
+		"name": "第20课《古代诗歌五首》",
+		"value": "29ba51f15cee0c1f0411b36d"
 	}, {
-		"_id": "89924107a6087532795ea026",
-		"name": "第21课《伟大的悲剧》"
+		"name": "第21课《伟大的悲剧》",
+		"value": "b9844e9b1b93b56c80cb8ddd"
 	}, {
-		"_id": "00387e54597033042bd19ada",
-		"name": "第22课《太空一日》"
+		"name": "第22课《太空一日》",
+		"value": "bd7941b123bddbe3ea6dc247"
 	}, {
-		"_id": "92879579cd921ff11ff1a2c6",
-		"name": "第23课《带上她的眼睛》"
+		"name": "第23课《带上她的眼睛》",
+		"value": "d20adefe3cd4fbe0be54e0a0"
 	}, {
-		"_id": "b3ec238a614c52665e2854a7",
-		"name": "第24课《河中石兽》"
+		"name": "第24课《河中石兽》",
+		"value": "74b44068ebc53e871519a835"
 	}]
 }, {
-	"book_name": "八年级上册",
+	"name": "八年级上册",
+	"order": 15,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "83d6155a706bbc9b9a6ffdda",
-		"name": "第1课《新闻两则》"
+		"name": "第1课《新闻两则》",
+		"value": "499fbd2d10940418f60b8567"
 	}, {
-		"_id": "cdfcd38d8833e7bc5ff7af5a",
-		"name": "第2课《芦花荡》"
+		"name": "第2课《芦花荡》",
+		"value": "f63358f078adcb1d7e876f7d"
 	}, {
-		"_id": "7a5f744c81adf5608319bbb9",
-		"name": "第3课《蜡烛》"
+		"name": "第3课《蜡烛》",
+		"value": "3c67ce0dcfd1357abb17026f"
 	}, {
-		"_id": "96217b174851c2064929b264",
-		"name": "第4课《就英法联军远征中国给巴特勒上尉的信》"
+		"name": "第4课《就英法联军远征中国给巴特勒上尉的信》",
+		"value": "3a83f6915b0d915a6b19eb2f"
 	}, {
-		"_id": "faae1738bd153df9d1acf654",
-		"name": "第5课《亲爱的爸爸妈妈》"
+		"name": "第5课《亲爱的爸爸妈妈》",
+		"value": "c6ddf97288f545e9d443b100"
 	}, {
-		"_id": "d86f779b13c79af464c0f351",
-		"name": "第6课《阿长与山海经》"
+		"name": "第6课《阿长与山海经》",
+		"value": "da05dd2c950d8c264ffca062"
 	}, {
-		"_id": "e10cfa09e5cfb892873158bf",
-		"name": "第7课《背影》"
+		"name": "第7课《背影》",
+		"value": "041eefd7b475b78a97bbecc2"
 	}, {
-		"_id": "568597f45b875900470b7006",
-		"name": "第8课《台阶》"
+		"name": "第8课《台阶》",
+		"value": "e32e90f0dc7c736ee06fe406"
 	}, {
-		"_id": "51f98687e362811705201d7d",
-		"name": "第9课《老王》"
+		"name": "第9课《老王》",
+		"value": "1f22653dfe6de88b8b68288d"
 	}, {
-		"_id": "fd255efbd96fb0c05ca0c072",
-		"name": "第10课《信客》"
+		"name": "第10课《信客》",
+		"value": "eee2be60bfa4737b5853a80d"
 	}, {
-		"_id": "d31cae4389c3d6b5b8db2b72",
-		"name": "第11课《中国石拱桥》"
+		"name": "第11课《中国石拱桥》",
+		"value": "ae567d1d0fe60a81edf6166b"
 	}, {
-		"_id": "2dd05ee3e1d05fdce21de3c8",
-		"name": "第12课《桥之美》"
+		"name": "第12课《桥之美》",
+		"value": "8efda3592e98266ccb5e2a3a"
 	}, {
-		"_id": "080cbc6a6ca63d90a9ce420b",
-		"name": "第13课《苏州园林》"
+		"name": "第13课《苏州园林》",
+		"value": "9eb17e46db52dd8317c36441"
 	}, {
-		"_id": "c2625d5f94ed4c1066e6c3c5",
-		"name": "第14课《故宫博物院》"
+		"name": "第14课《故宫博物院》",
+		"value": "3a7db0e46883a1dfa704f04e"
 	}, {
-		"_id": "b5908501036b8b6ce2bbff77",
-		"name": "第15课《说屏》"
+		"name": "第15课《说屏》",
+		"value": "bf79a006a3fece3ee50e6303"
 	}, {
-		"_id": "71c244fda019d7944826cd35",
-		"name": "第16课《大自然的语言》"
+		"name": "第16课《大自然的语言》",
+		"value": "53067d7168db52bd3a38c222"
 	}, {
-		"_id": "db65ecd8c3689aa247704c2e",
-		"name": "第17课《奇妙的克隆》"
+		"name": "第17课《奇妙的克隆》",
+		"value": "85920ebbbf4beb71e8ba4736"
 	}, {
-		"_id": "812d3bf4ad5b8de1b164a48e",
-		"name": "第18课《阿西莫夫短文两篇》"
+		"name": "第18课《阿西莫夫短文两篇》",
+		"value": "be6d0f50541ea37f24df64ad"
 	}, {
-		"_id": "1fce492958d280b8f475c6d4",
-		"name": "第19课《生物入侵者》"
+		"name": "第19课《生物入侵者》",
+		"value": "390871c939ef0c1932e7e5ad"
 	}, {
-		"_id": "b18cf1f3d9395294b572372f",
-		"name": "第20课《落日的幻觉》"
+		"name": "第20课《落日的幻觉》",
+		"value": "a1e0e77973cc28f2fcd6c3bc"
 	}, {
-		"_id": "6f65ba7edebc400597a8c5d2",
-		"name": "第21课《桃花源记》"
+		"name": "第21课《桃花源记》",
+		"value": "1e790504b410f441c9366c13"
 	}, {
-		"_id": "93fbeeecfdcc94e427f05b80",
-		"name": "第22课《短文两篇》"
+		"name": "第22课《短文两篇》",
+		"value": "398fcb8b94f9fba657506c13"
 	}, {
-		"_id": "8bcbdfbfd85a7afd13a4bc0f",
-		"name": "第23课《核舟记》"
+		"name": "第23课《核舟记》",
+		"value": "b74d0dad0cc79464fff8d3ec"
 	}, {
-		"_id": "ad599c061da0b9cc491776dd",
-		"name": "第24课《大道之行也》"
+		"name": "第24课《大道之行也》",
+		"value": "01950076d25e220f23284e65"
 	}, {
-		"_id": "a5d2179053892dc0b5152d59",
-		"name": "第25课《杜甫诗三首》"
+		"name": "第25课《杜甫诗三首》",
+		"value": "cdd39efb3b558c18692fcc18"
 	}, {
-		"_id": "112ad912ae26556e1dec6b88",
-		"name": "第26课《三峡》"
+		"name": "第26课《三峡》",
+		"value": "6989708275ccfe28faa6db5b"
 	}, {
-		"_id": "a05a03af3d1a0e6eaedae3a7",
-		"name": "第27课《短文两篇》"
+		"name": "第27课《短文两篇》",
+		"value": "5b1d90fe939d0d755b575371"
 	}, {
-		"_id": "a2dcf902e49b7c06bbe66aff",
-		"name": "第28课《观潮》"
+		"name": "第28课《观潮》",
+		"value": "259559b3351cfdce03ee1ba0"
 	}, {
-		"_id": "473c4cad40c3ed220e2876a7",
-		"name": "第29课《湖心亭看雪》"
+		"name": "第29课《湖心亭看雪》",
+		"value": "422da173d48a9fefcb62c390"
 	}, {
-		"_id": "ba45483acbc8a97c3cd65f78",
-		"name": "第30课《诗四首》"
+		"name": "第30课《诗四首》",
+		"value": "01627a957eca2c64f798f853"
 	}]
 }, {
-	"book_name": "八年级下册",
+	"name": "八年级下册",
+	"order": 16,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "f885e2d811dd25a1b0cd7054",
-		"name": "第1课《藤野先生》"
+		"name": "第1课《藤野先生》",
+		"value": "0e1267fc196587c46d952a7e"
 	}, {
-		"_id": "12d99a00ff9d17d7d46c7db6",
-		"name": "第2课《我的母亲》"
+		"name": "第2课《我的母亲》",
+		"value": "abf665d105689e640a56d31a"
 	}, {
-		"_id": "aa67b3fc6aa36614d0c9d958",
-		"name": "第3课《我的第一本书》"
+		"name": "第3课《我的第一本书》",
+		"value": "13a464c1d58646f9b57e5c8c"
 	}, {
-		"_id": "b96929253d6d7a6cfed25fb6",
-		"name": "第4课《列夫托尔斯泰》"
+		"name": "第4课《列夫托尔斯泰》",
+		"value": "20951fc67c2dd903c8e9ef06"
 	}, {
-		"_id": "8257e39898ef84954f80a65b",
-		"name": "第5课《再塑生命》"
+		"name": "第5课《再塑生命》",
+		"value": "e4e9161bc6fdef0f63abfe7e"
 	}, {
-		"_id": "23ede73c1f34a1e1113af343",
-		"name": "第6课《雪》"
+		"name": "第6课《雪》",
+		"value": "ae6b91b9a8febb4172586639"
 	}, {
-		"_id": "d07a41ad3be67fb536933c7c",
-		"name": "第7课《雷电颂》"
+		"name": "第7课《雷电颂》",
+		"value": "a05c1c4fd08a47b2751c2a0a"
 	}, {
-		"_id": "68cae4ae79f87624227d6348",
-		"name": "第8课《短文两篇》"
+		"name": "第8课《短文两篇》",
+		"value": "89745cbbdb07f075b741b07e"
 	}, {
-		"_id": "fe8fac716fa669c0eb42a2b8",
-		"name": "第9课《海燕》"
+		"name": "第9课《海燕》",
+		"value": "c5a38a429b691f98d9ca3e4e"
 	}, {
-		"_id": "ac5eeeb65d4533224ad9923c",
-		"name": "第10课《组歌》"
+		"name": "第10课《组歌》",
+		"value": "1b508bbf76e05ca85d9fc746"
 	}, {
-		"_id": "7a66a67b8ea6cf8ce1046b42",
-		"name": "第11课《敬畏自然》"
+		"name": "第11课《敬畏自然》",
+		"value": "0ac2a84352f9649f9cc109ed"
 	}, {
-		"_id": "2e996a939c3ffa05ea194dc6",
-		"name": "第12课《罗布泊，消逝的仙湖》"
+		"name": "第12课《罗布泊，消逝的仙湖》",
+		"value": "6c0f0c499473aa7a52207327"
 	}, {
-		"_id": "a4ec52c5b70e0d678413f42f",
-		"name": "第13课《旅鼠之谜》"
+		"name": "第13课《旅鼠之谜》",
+		"value": "d857b35091505c3134edc35a"
 	}, {
-		"_id": "e35840c6846421f9ef09ecef",
-		"name": "第14课《大雁归来》"
+		"name": "第14课《大雁归来》",
+		"value": "9cb002f23a7de120a9cccf81"
 	}, {
-		"_id": "67033374fdf0740f98bc9f2a",
-		"name": "第15课《喂—出来》"
+		"name": "第15课《喂—出来》",
+		"value": "feab32d84268c6100e320dbc"
 	}, {
-		"_id": "4cd0570de236e7955579243e",
-		"name": "第16课《云南的歌会》"
+		"name": "第16课《云南的歌会》",
+		"value": "e66fd7f12b4a254a3528f60d"
 	}, {
-		"_id": "e45ea7132edefba45940f227",
-		"name": "第17课《端午的鸭蛋》"
+		"name": "第17课《端午的鸭蛋》",
+		"value": "4c6d6d9c6d701fe802c461b7"
 	}, {
-		"_id": "4183df6b425bfc8edda261c6",
-		"name": "第18课《吆喝》"
+		"name": "第18课《吆喝》",
+		"value": "6c6385f57050b3ed117bce77"
 	}, {
-		"_id": "a6e38ea72e800fb396b3ccb6",
-		"name": "第19课《春酒》"
+		"name": "第19课《春酒》",
+		"value": "0523425627f63b6ed807ca0d"
 	}, {
-		"_id": "74935b05e7cf95379c2d4a1d",
-		"name": "第20课《俗世奇人》"
+		"name": "第20课《俗世奇人》",
+		"value": "8f9185497b4c9ca9dde670ec"
 	}, {
-		"_id": "860a05658a4cd0a0ae17873e",
-		"name": "第21课《与朱元思书》"
+		"name": "第21课《与朱元思书》",
+		"value": "64a03f014a6bfdf117dd92ee"
 	}, {
-		"_id": "544abb15cdab4c1e242bcab4",
-		"name": "第22课《五柳先生传》"
+		"name": "第22课《五柳先生传》",
+		"value": "0444018c05f5748576999a35"
 	}, {
-		"_id": "245fa6f739782d2190841c48",
-		"name": "第23课《马说》"
+		"name": "第23课《马说》",
+		"value": "1a5e2492aa1e2e4b8e58034f"
 	}, {
-		"_id": "5eb62cbccc82ece3ff1d49e9",
-		"name": "第24课《送东阳马生序》"
+		"name": "第24课《送东阳马生序》",
+		"value": "55191e167b9a9c8df0be09f4"
 	}, {
-		"_id": "151853291e821bfec79e3054",
-		"name": "第25课《诗词曲五首》"
+		"name": "第25课《诗词曲五首》",
+		"value": "326bacad856bd4b09a0965c9"
 	}, {
-		"_id": "eabf8202989f1b3fbfbda296",
-		"name": "第26课《小石潭记》"
+		"name": "第26课《小石潭记》",
+		"value": "0808a9bcd9563948a34c4e9a"
 	}, {
-		"_id": "b30ac1a5f04d0d28a8a3b41d",
-		"name": "第27课《岳阳楼记》"
+		"name": "第27课《岳阳楼记》",
+		"value": "a4b7e6f408e380ec363fba10"
 	}, {
-		"_id": "8c9dbe2b86bce46ee33e89a7",
-		"name": "第28课《醉翁亭记》"
+		"name": "第28课《醉翁亭记》",
+		"value": "15fcc1685614c68de1ab35b7"
 	}, {
-		"_id": "633bad3147aa0fa7ec518ba2",
-		"name": "第29课《满井游记》"
+		"name": "第29课《满井游记》",
+		"value": "61c0668de72624365af814b5"
 	}, {
-		"_id": "27f320f2b48dac93a59887be",
-		"name": "第30课《诗五首》"
+		"name": "第30课《诗五首》",
+		"value": "45c2c00da1af744fb1e3c73b"
 	}]
 }, {
-	"book_name": "九年级上册",
+	"name": "九年级上册",
+	"order": 17,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "0d797851de7bedb970984108",
-		"name": "第1课《沁园春雪》"
+		"name": "第1课《沁园春雪》",
+		"value": "17e5e335ea4ecbe056a0edfd"
 	}, {
-		"_id": "df24f397e6957c8045d1483f",
-		"name": "第2课《雨说》"
+		"name": "第2课《雨说》",
+		"value": "ebcd0d2d4436263dffc5c0c5"
 	}, {
-		"_id": "95ed82585092fc5450b98dfe",
-		"name": "第3课《星星变奏曲》"
+		"name": "第3课《星星变奏曲》",
+		"value": "ee3f0e1138d52ab521424545"
 	}, {
-		"_id": "93e7349531a1cf3ce88c25b7",
-		"name": "第4课《外国诗两首》"
+		"name": "第4课《外国诗两首》",
+		"value": "bab1958fc25cb1fa0670ac42"
 	}, {
-		"_id": "1d5422555197e6d33bf21d23",
-		"name": "第5课《敬业与乐业》"
+		"name": "第5课《敬业与乐业》",
+		"value": "1ebaf2fcbc3b470d25c45d81"
 	}, {
-		"_id": "bcd64ac691127ac37871e5ec",
-		"name": "第6课《纪念伏尔泰逝世一百周年的演说》"
+		"name": "第6课《纪念伏尔泰逝世一百周年的演说》",
+		"value": "61f054f01f61d56a4c50e9fb"
 	}, {
-		"_id": "1a69f62a3eab45afcbb936bc",
-		"name": "第7课《傅雷家书两则》"
+		"name": "第7课《傅雷家书两则》",
+		"value": "de089e94a87719e3a8c33c85"
 	}, {
-		"_id": "f4c4ff64c405281d22962071",
-		"name": "第8课《致女儿的信》"
+		"name": "第8课《致女儿的信》",
+		"value": "429259947d00ab1cf018370a"
 	}, {
-		"_id": "35a9649dead0374d9c6e3163",
-		"name": "第9课《故乡》"
+		"name": "第9课《故乡》",
+		"value": "d6aebbcd587b1280655b0096"
 	}, {
-		"_id": "47a7244f64cfbc99e4e6291e",
-		"name": "第10课《孤独之旅》"
+		"name": "第10课《孤独之旅》",
+		"value": "868bad6f269f7da625a192c0"
 	}, {
-		"_id": "880f9a38fb410267687ca5a9",
-		"name": "第11课《我的叔叔于勒》"
+		"name": "第11课《我的叔叔于勒》",
+		"value": "acea5a19139d5daeee2235d8"
 	}, {
-		"_id": "284b45880922aa1cd1fa5688",
-		"name": "第12课《心声》"
+		"name": "第12课《心声》",
+		"value": "7426b673cfc0ccd39a2f2692"
 	}, {
-		"_id": "8457e99755de1ced647472e9",
-		"name": "第13课《事物的正确答案不止一个》"
+		"name": "第13课《事物的正确答案不止一个》",
+		"value": "6ce84cdb5ffce3f9b0527bc9"
 	}, {
-		"_id": "005a43cfd03e5212b05e9514",
-		"name": "第14课《应有格物致知精神》"
+		"name": "第14课《应有格物致知精神》",
+		"value": "7c4ae50480baa330d7284039"
 	}, {
-		"_id": "e2b5c57713069cb01c8a54f7",
-		"name": "第15课《短文两篇》"
+		"name": "第15课《短文两篇》",
+		"value": "cdbe46296fa9ab0fc9ff4984"
 	}, {
-		"_id": "de5c15097e442634ecb0514c",
-		"name": "第16课《中国人失掉自信力了吗》"
+		"name": "第16课《中国人失掉自信力了吗》",
+		"value": "168d98bd1b9b7e5df8faee75"
 	}, {
-		"_id": "7152b6968dd3c35ae0eb970b",
-		"name": "第17课《智取生辰纲》"
+		"name": "第17课《智取生辰纲》",
+		"value": "315addf969faefd257cb4383"
 	}, {
-		"_id": "a13c094f6e3ae7ae01e72af8",
-		"name": "第18课《杨修之死》"
+		"name": "第18课《杨修之死》",
+		"value": "75680b66956d406822903b8d"
 	}, {
-		"_id": "0b9107fb54e8c36edae940f4",
-		"name": "第19课《范进中举》"
+		"name": "第19课《范进中举》",
+		"value": "443e2c264a77a5d9d5538c7c"
 	}, {
-		"_id": "72f4aeca85bd18a4f6865c6b",
-		"name": "第20课《香菱学诗》"
+		"name": "第20课《香菱学诗》",
+		"value": "9ca6aa969b8e463aa6bb82ce"
 	}, {
-		"_id": "e233430ac71676f11638af10",
-		"name": "第21课《陈涉世家》"
+		"name": "第21课《陈涉世家》",
+		"value": "d3730959998ca37dd6c92f4b"
 	}, {
-		"_id": "de7257f07cb1de80711876c2",
-		"name": "第22课《唐雎不辱使命》"
+		"name": "第22课《唐雎不辱使命》",
+		"value": "983e68392b804f3f346e7533"
 	}, {
-		"_id": "1ecf0bff05b6a60d4e9d389b",
-		"name": "第23课《隆中对》"
+		"name": "第23课《隆中对》",
+		"value": "bdfb4a53e069ebd8c2434fc2"
 	}, {
-		"_id": "cb411892d56fe76bd770dade",
-		"name": "第24课《出师表》"
+		"name": "第24课《出师表》",
+		"value": "11ecfed22d3078ee61023371"
 	}, {
-		"_id": "525af9a495d5c37a7c2c2081",
-		"name": "第25课《词五首》"
+		"name": "第25课《词五首》",
+		"value": "a5f4ab6f42701ed6f605ad09"
 	}]
 }, {
-	"book_name": "九年级下册",
+	"name": "九年级下册",
+	"order": 18,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "089cd513171485c1c6bb2d41",
-		"name": "第1课《诗两首》"
+		"name": "第1课《诗两首》",
+		"value": "de48a3409c6652c9dd5c8742"
 	}, {
-		"_id": "b9444a0df5c4f329324dacfb",
-		"name": "第2课《我用残损的手掌》"
+		"name": "第2课《我用残损的手掌》",
+		"value": "5b8cce08b3596ceb3540a16b"
 	}, {
-		"_id": "6b4db936afabe5e9a249dc4a",
-		"name": "第3课《祖国啊，我亲爱的祖国》"
+		"name": "第3课《祖国啊，我亲爱的祖国》",
+		"value": "41a92b4c3acda51bd6964600"
 	}, {
-		"_id": "f3bc9c16a6199fb38b1a03e7",
-		"name": "第4课《外国诗两首》"
+		"name": "第4课《外国诗两首》",
+		"value": "3ca1e775e98c1a67aefda966"
 	}, {
-		"_id": "f085c8d7d18a68608ec69f5a",
-		"name": "第5课《孔乙己》"
+		"name": "第5课《孔乙己》",
+		"value": "dcd34a36133151e60d51f1de"
 	}, {
-		"_id": "db3d47f0c5cafec9e6306fef",
-		"name": "第6课《蒲柳人家》"
+		"name": "第6课《蒲柳人家》",
+		"value": "abaee5e812856cc9d8c2a7d7"
 	}, {
-		"_id": "00fa51a822757f43bec4b2cb",
-		"name": "第7课《变色龙》"
+		"name": "第7课《变色龙》",
+		"value": "8f22c6e7f9c49719ab1cd360"
 	}, {
-		"_id": "50922a129f116e94087debc5",
-		"name": "第8课《热爱生命》"
+		"name": "第8课《热爱生命》",
+		"value": "fb747e874ae5b8095d9971d7"
 	}, {
-		"_id": "65f372d379dbf910557e65d7",
-		"name": "第9课《谈生命》"
+		"name": "第9课《谈生命》",
+		"value": "443560f63cfa75487bf3b760"
 	}, {
-		"_id": "9afeca772dcb6d99ef993d34",
-		"name": "第10课《那树》"
+		"name": "第10课《那树》",
+		"value": "29619cfc7a8d031d6438640b"
 	}, {
-		"_id": "140031dfc972caa729eb2894",
-		"name": "第11课《地下森林断想》"
+		"name": "第11课《地下森林断想》",
+		"value": "0ed21fba01d952f8ac48c5f5"
 	}, {
-		"_id": "521f2ac93c8c3b09366547c2",
-		"name": "第12课《人生》"
+		"name": "第12课《人生》",
+		"value": "f170ff8b4a7a81203c58a080"
 	}, {
-		"_id": "6ae075c322afbc41397599c4",
-		"name": "第13课《威尼斯商人》"
+		"name": "第13课《威尼斯商人》",
+		"value": "6cf334e6ee064e383c92da28"
 	}, {
-		"_id": "8cc0ae70731828259e6ab3e0",
-		"name": "第14课《变脸》"
+		"name": "第14课《变脸》",
+		"value": "95cb6628bad31d5ee16299a8"
 	}, {
-		"_id": "89471a5d4cd24388e3fbd21c",
-		"name": "第15课《枣儿》"
+		"name": "第15课《枣儿》",
+		"value": "bd7f36a9f992e52e61d2bede"
 	}, {
-		"_id": "61178d320816eca1a09739ff",
-		"name": "第16课《音乐之声》"
+		"name": "第16课《音乐之声》",
+		"value": "2a3f8c04569ca5ab4beb32bd"
 	}, {
-		"_id": "b7ddaf8c1bc70e27c3472606",
-		"name": "第17课《公输》"
+		"name": "第17课《公输》",
+		"value": "2f0da16bc5638ee161d0a69a"
 	}, {
-		"_id": "90928d9b69c60eb0908c65da",
-		"name": "第18课《孟子两章》"
+		"name": "第18课《孟子两章》",
+		"value": "9744a5f64bb2c8c1d396ed3a"
 	}, {
-		"_id": "db82b91d4fc37ceb34f1a3b8",
-		"name": "第19课《鱼我所欲也》"
+		"name": "第19课《鱼我所欲也》",
+		"value": "deb8f992b7f53907de3be0f0"
 	}, {
-		"_id": "17f823cb364643ccc7452e00",
-		"name": "第20课《庄子故事两则》"
+		"name": "第20课《庄子故事两则》",
+		"value": "e38685cf97c41b85c0e48ed9"
 	}, {
-		"_id": "b1acfbda84dd0cff2b936a46",
-		"name": "第21课《曹刿论战》"
+		"name": "第21课《曹刿论战》",
+		"value": "13223135b030bcda3c68b2c2"
 	}, {
-		"_id": "ee295adc53e7bbb28ed8e1e6",
-		"name": "第22课《邹忌讽齐王纳谏》"
+		"name": "第22课《邹忌讽齐王纳谏》",
+		"value": "469ac126112d83242f10baaa"
 	}, {
-		"_id": "61f2c08fb89585c0fd25d542",
-		"name": "第23课《愚公移山》"
+		"name": "第23课《愚公移山》",
+		"value": "cb8ec28854198614d4e36ffb"
 	}, {
-		"_id": "ae878753505d27e1995c6be7",
-		"name": "第24课《诗经两首》"
+		"name": "第24课《诗经两首》",
+		"value": "59f8c880d4a9029a54936bed"
 	}]
 }, {
-	"book_name": "高一必修一",
+	"name": "高一必修一",
+	"order": 19,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "bf97a8a6da5f5fb3e9e28009",
-		"name": "第1课《沁园春长沙》"
+		"name": "第1课《沁园春长沙》",
+		"value": "f051d4f5cc55c3e16d09d2bc"
 	}, {
-		"_id": "732d3edcf48125f4a13a64ed",
-		"name": "第2课《诗两首》"
+		"name": "第2课《诗两首》",
+		"value": "fed0b99ae28db28da7afb1da"
 	}, {
-		"_id": "9e4141b5387bc6a3505d9b06",
-		"name": "第3课《大堰河我的保姆》"
+		"name": "第3课《大堰河我的保姆》",
+		"value": "b1973f93e305528dcc44de77"
 	}, {
-		"_id": "ca75680901fe235525a5553e",
-		"name": "第4课《烛之武退秦师》"
+		"name": "第4课《烛之武退秦师》",
+		"value": "4e55cafb734df8b2999090f1"
 	}, {
-		"_id": "a8059a7dd7630bba630704f0",
-		"name": "第5课《荆轲刺秦王》"
+		"name": "第5课《荆轲刺秦王》",
+		"value": "93d67f90dd7b7c7f04d31653"
 	}, {
-		"_id": "0a7ba6cf2fb5ffc03dbd6c97",
-		"name": "第6课《鸿门宴》"
+		"name": "第6课《鸿门宴》",
+		"value": "b0dead4a7711da0e03e71c81"
 	}, {
-		"_id": "9bf4a53c1e1d61de8433f4a3",
-		"name": "第7课《记念刘和珍君》"
+		"name": "第7课《记念刘和珍君》",
+		"value": "58a6f3d0799fc4a6bfed4b42"
 	}, {
-		"_id": "015ce435b585b1b6d497eef2",
-		"name": "第8课《小狗包弟》"
+		"name": "第8课《小狗包弟》",
+		"value": "083f4a0c71555db47df9989b"
 	}, {
-		"_id": "f9c419d2f4e1193fbb5f0946",
-		"name": "第9课《记梁任公先生的一次演讲》"
+		"name": "第9课《记梁任公先生的一次演讲》",
+		"value": "a7cee15bcf71f9a684b4d5b9"
 	}, {
-		"_id": "80e6b1358e8d631d4c8385db",
-		"name": "第10课《短新闻两篇》"
+		"name": "第10课《短新闻两篇》",
+		"value": "b5c024f995333a1dc4c0e4f3"
 	}, {
-		"_id": "bd8855ff5c4a963af6a5fae9",
-		"name": "第11课《包身工》"
+		"name": "第11课《包身工》",
+		"value": "4a4697fd8cebd25c857c8675"
 	}, {
-		"_id": "113b21431cbdc523691b1bd5",
-		"name": "第12课《飞向太空的航程》"
+		"name": "第12课《飞向太空的航程》",
+		"value": "a0a04c569e63239392bd38e5"
 	}]
 }, {
-	"book_name": "高一必修二",
+	"name": "高一必修二",
+	"order": 20,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "bf7312d81f95e6886bc5a6fe",
-		"name": "第1课《荷塘月色》"
+		"name": "第1课《荷塘月色》",
+		"value": "af5dbcdf27684d99a67b8716"
 	}, {
-		"_id": "ea2fab576f31f15f7a4d8534",
-		"name": "第2课《故都的秋》"
+		"name": "第2课《故都的秋》",
+		"value": "f1e4e0e5724fb6292bbd5eef"
 	}, {
-		"_id": "c02ede1741f5e4b3497d2510",
-		"name": "第3课《囚绿记》"
+		"name": "第3课《囚绿记》",
+		"value": "a8fccc81027495de43d2a33c"
 	}, {
-		"_id": "65fa508e780433d9a4ae8520",
-		"name": "第4课《诗经两首》"
+		"name": "第4课《诗经两首》",
+		"value": "a8b3965600da9262df4b9d2f"
 	}, {
-		"_id": "c359a17129be4766ba85bbdb",
-		"name": "第5课《离骚》"
+		"name": "第5课《离骚》",
+		"value": "bad9cd4d4123bae14c65e846"
 	}, {
-		"_id": "e296799ca0a966a67c4c2a5a",
-		"name": "第6课《孔雀东南飞》"
+		"name": "第6课《孔雀东南飞》",
+		"value": "5fc351063f04c6224175f611"
 	}, {
-		"_id": "4ece5dc9ca2be402de28c971",
-		"name": "第7课《诗三首》"
+		"name": "第7课《诗三首》",
+		"value": "8cce197bea615e52f7f5c107"
 	}, {
-		"_id": "e1a632fead4d212b6ebf94e7",
-		"name": "第8课《兰亭集序》"
+		"name": "第8课《兰亭集序》",
+		"value": "8caa738afb3932ccd7f5e42d"
 	}, {
-		"_id": "2641a282981ba0c3ff570b4b",
-		"name": "第9课《赤壁赋》"
+		"name": "第9课《赤壁赋》",
+		"value": "a9b7707f359bbeb03c7fd48a"
 	}, {
-		"_id": "7e1f4411b98a6bb7c01e30e1",
-		"name": "第10课《游褒禅山记》"
+		"name": "第10课《游褒禅山记》",
+		"value": "cce293e1040baec8b9452094"
 	}, {
-		"_id": "dd2547c5369b1ba88766e644",
-		"name": "第11课《就任北京大学校长之演说》"
+		"name": "第11课《就任北京大学校长之演说》",
+		"value": "5787ef05b15b9360c4beeb96"
 	}, {
-		"_id": "f9d55ea76b78861fb478991f",
-		"name": "第12课《我有一个梦想》"
+		"name": "第12课《我有一个梦想》",
+		"value": "de53a60aaf1670edabd38139"
 	}, {
-		"_id": "0c7af6e12ab1644a43a9f15e",
-		"name": "第13课《在马克思墓前的讲话》"
+		"name": "第13课《在马克思墓前的讲话》",
+		"value": "cdf6fe12f532cc5e7ad8ba52"
 	}]
 }, {
-	"book_name": "高二必修三",
+	"name": "高二必修三",
+	"order": 21,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "0f7600d0fac1aefac4534178",
-		"name": "第1课《林黛玉进贾府》"
+		"name": "第1课《林黛玉进贾府》",
+		"value": "75f9f5377e6f9f37531d5036"
 	}, {
-		"_id": "33a9468837bc3830f0cfa4f1",
-		"name": "第2课《祝福》"
+		"name": "第2课《祝福》",
+		"value": "f9a228a1e4dd3dd3f4ee4ef8"
 	}, {
-		"_id": "69f1011a94c30bebe4171f35",
-		"name": "第3课《老人与海》"
+		"name": "第3课《老人与海》",
+		"value": "323d8c6bfe886100b55a5b79"
 	}, {
-		"_id": "4beab611503ca28f61f6937c",
-		"name": "第4课《蜀道难》"
+		"name": "第4课《蜀道难》",
+		"value": "0298ab2b6fdf625885d5ed02"
 	}, {
-		"_id": "d43b80243e5a98bf1a077210",
-		"name": "第5课《杜甫诗三首》"
+		"name": "第5课《杜甫诗三首》",
+		"value": "b782a113727c2e46bea9f86c"
 	}, {
-		"_id": "79130db462c84cf689b57d36",
-		"name": "第6课《琵琶行并序》"
+		"name": "第6课《琵琶行并序》",
+		"value": "d112f9b506c0e8e168514240"
 	}, {
-		"_id": "382e56dd2b3c553ef422fe9c",
-		"name": "第7课《李商隐诗两首》"
+		"name": "第7课《李商隐诗两首》",
+		"value": "68ffea2622667949a4627837"
 	}, {
-		"_id": "715d64bc10bcc2ec73565047",
-		"name": "第8课《寡人之于国也》"
+		"name": "第8课《寡人之于国也》",
+		"value": "328abb2ae538e5f77cea88bc"
 	}, {
-		"_id": "18e51f2c512a7d9823ca256f",
-		"name": "第9课《劝学》"
+		"name": "第9课《劝学》",
+		"value": "4759c75ca18dabdf296585df"
 	}, {
-		"_id": "6f1bbf93e1fa375d81359d3d",
-		"name": "第10课《过秦论》"
+		"name": "第10课《过秦论》",
+		"value": "a22ac712de7630a15f904562"
 	}, {
-		"_id": "2b3bae759d9dad9ea4a7118a",
-		"name": "第11课《师说》"
+		"name": "第11课《师说》",
+		"value": "45c7435472d7bfb2c12be8a9"
 	}, {
-		"_id": "ed078543afb959ad28122e03",
-		"name": "第12课《动物游戏之迷》"
+		"name": "第12课《动物游戏之迷》",
+		"value": "9ffcc1a222a4117c523523ee"
 	}, {
-		"_id": "5b13eb81aa92c6798658f4b9",
-		"name": "第13课《宇宙的边疆》"
+		"name": "第13课《宇宙的边疆》",
+		"value": "479cc9cb4654650363113b3b"
 	}, {
-		"_id": "53ed4896c153457e880c8703",
-		"name": "第14课《一名物理学家的教育历程》"
+		"name": "第14课《一名物理学家的教育历程》",
+		"value": "a33640047a8ff04be7f5b7d7"
 	}]
 }, {
-	"book_name": "高二必修四",
+	"name": "高二必修四",
+	"order": 22,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "56a3397d8e1cdfbf9e73448c",
-		"name": "第1课《窦娥冤》"
+		"name": "第1课《窦娥冤》",
+		"value": "6b9ed0cbfdfaf4e8d45a3328"
 	}, {
-		"_id": "eb9be3ff4184f5b487e30a3d",
-		"name": "第2课《雷雨》"
+		"name": "第2课《雷雨》",
+		"value": "cea9f8d987bd92a9586edb39"
 	}, {
-		"_id": "86966440fc7d7bbe3fe72c68",
-		"name": "第3课《哈姆莱特》"
+		"name": "第3课《哈姆莱特》",
+		"value": "d06aecc4ccfe72a6a731082e"
 	}, {
-		"_id": "ad41d6369be15d257b4481eb",
-		"name": "第4课《柳永词两首》"
+		"name": "第4课《柳永词两首》",
+		"value": "70852e0c3a557aab2dad2429"
 	}, {
-		"_id": "b5eb227fbc8c9d673fc32551",
-		"name": "第5课《苏轼词两首》"
+		"name": "第5课《苏轼词两首》",
+		"value": "ebc81d0d2f7e1bf729dda5dd"
 	}, {
-		"_id": "c0283c4410e78976b2c65e64",
-		"name": "第6课《辛弃疾词两首》"
+		"name": "第6课《辛弃疾词两首》",
+		"value": "2aa7885bd5c1a48fe6da9060"
 	}, {
-		"_id": "154e631818a9886279ae4d2a",
-		"name": "第7课《李清照词两首》"
+		"name": "第7课《李清照词两首》",
+		"value": "712468e99ab0882da55ff9a2"
 	}, {
-		"_id": "7e6085be90d05e6c5cfc534e",
-		"name": "第8课《拿来主义》"
+		"name": "第8课《拿来主义》",
+		"value": "1ff1cf64852a99cc8d0400d7"
 	}, {
-		"_id": "2dcff3531400ed1188176446",
-		"name": "第9课《父母与孩子之间的爱》"
+		"name": "第9课《父母与孩子之间的爱》",
+		"value": "f6db8eac92f5519ac5e0afc3"
 	}, {
-		"_id": "4e0c358f71e2ffbbf2b9e262",
-		"name": "第10课《短文三篇》"
+		"name": "第10课《短文三篇》",
+		"value": "4a6e3a33f815cc45dfd430c7"
 	}, {
-		"_id": "b8cb7e78a9bf04e01bab87b1",
-		"name": "第11课《廉颇蔺相如列传》"
+		"name": "第11课《廉颇蔺相如列传》",
+		"value": "c40f7d390b5ab8ae64b7e565"
 	}, {
-		"_id": "561a1e3ff784304f013cb25f",
-		"name": "第12课《苏武传》"
+		"name": "第12课《苏武传》",
+		"value": "20d1d8cad7458a1d22da5b92"
 	}, {
-		"_id": "c84a7fb9c90022538ccd102d",
-		"name": "第13课《张衡传》"
+		"name": "第13课《张衡传》",
+		"value": "b913eab06a35f33e22041c79"
 	}]
 }, {
-	"book_name": "高三必修五",
+	"name": "高三必修五",
+	"order": 23,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "2e17c73000ba3cd7376e4f22",
-		"name": "第1课《林教头风雪山神庙》"
+		"name": "第1课《林教头风雪山神庙》",
+		"value": "1f62ca4c5bb9fbb9e829a61c"
 	}, {
-		"_id": "ca222e5689304ddf8f346c9a",
-		"name": "第2课《装在套子里的人》"
+		"name": "第2课《装在套子里的人》",
+		"value": "2e28a0f9dfe33a58d087f54e"
 	}, {
-		"_id": "21b9352b58f462c739e50bac",
-		"name": "第3课《边城》"
+		"name": "第3课《边城》",
+		"value": "3dd837bd8f8966598b7d54a8"
 	}, {
-		"_id": "54200c6ad12c9a249cabc6d1",
-		"name": "第4课《归去来兮辞》"
+		"name": "第4课《归去来兮辞》",
+		"value": "650f4256b33d5af73158455a"
 	}, {
-		"_id": "ff4fa37c4ced229059d53907",
-		"name": "第5课《滕王阁序》"
+		"name": "第5课《滕王阁序》",
+		"value": "bb96020056a96b35c3ed9b8f"
 	}, {
-		"_id": "cf7bed139911c3dfb73bceca",
-		"name": "第6课《逍遥游》"
+		"name": "第6课《逍遥游》",
+		"value": "db86a22e3282fc0bbf57d794"
 	}, {
-		"_id": "e0a55be22ae73bc430243e99",
-		"name": "第7课《陈情表》"
+		"name": "第7课《陈情表》",
+		"value": "7d40b30d4ef1c227c1149ea2"
 	}, {
-		"_id": "7ec01541a6c72cc39d4f7081",
-		"name": "第8课《咬文嚼字》"
+		"name": "第8课《咬文嚼字》",
+		"value": "67d0a6fd17db69ebdcc31687"
 	}, {
-		"_id": "1ec7e0493ee58087e7aef8e8",
-		"name": "第9课《说木叶》"
+		"name": "第9课《说木叶》",
+		"value": "08363cd9693e03b8805b8251"
 	}, {
-		"_id": "ef67d9ab518a0b045f12702f",
-		"name": "第10课《谈中国诗》"
+		"name": "第10课《谈中国诗》",
+		"value": "a264790812849bc5be387da0"
 	}, {
-		"_id": "dbc8ff6bb43eebddf314ed08",
-		"name": "第11课《中国建筑的特征》"
+		"name": "第11课《中国建筑的特征》",
+		"value": "7694fa56ad88f8ad781d116f"
 	}, {
-		"_id": "6c2c5e432653cc9d4596162c",
-		"name": "第12课《作为生物的社会》"
+		"name": "第12课《作为生物的社会》",
+		"value": "658fa4e9048589a7e324feb7"
 	}, {
-		"_id": "942ecf51359e3d46a2ebf68a",
-		"name": "第13课《宇宙的未来》"
+		"name": "第13课《宇宙的未来》",
+		"value": "ddde0e34c41a151803d2bae2"
 	}]
 }, {
-	"book_name": "高一第一册",
+	"name": "高一第一册",
+	"order": 24,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "62bd3c658e34a6b59002244a",
-		"name": "第1课《沁园春长沙》"
+		"name": "第1课《沁园春长沙》",
+		"value": "c9318defa653ebb09b64be8d"
 	}, {
-		"_id": "7c1323093fc8bd4e88635554",
-		"name": "第2课《中国现代诗三首》"
+		"name": "第2课《中国现代诗三首》",
+		"value": "dcc2b574279cb2dd271dbeea"
 	}, {
-		"_id": "8d9bc39dc930414292f30afe",
-		"name": "第3课《中国当代诗三首》"
+		"name": "第3课《中国当代诗三首》",
+		"value": "e9f9633a0228c3a2e08c3cde"
 	}, {
-		"_id": "6e608311a4255074d45563b9",
-		"name": "第4课《外国诗三首》"
+		"name": "第4课《外国诗三首》",
+		"value": "f09472b1657f1fcadd1f854c"
 	}, {
-		"_id": "e5e26ea3f989d2ff7fb44d3f",
-		"name": "第5课《荷塘月色》"
+		"name": "第5课《荷塘月色》",
+		"value": "05500f31942ddceba9c577ad"
 	}, {
-		"_id": "85bd6dda505b023d09cf52b8",
-		"name": "第6课《我的空中楼阁》"
+		"name": "第6课《我的空中楼阁》",
+		"value": "df98c31710ae4607f10d2117"
 	}, {
-		"_id": "f8f4e5c3fc9091cdd59eb69f",
-		"name": "第7课《我与地坛（节选）》"
+		"name": "第7课《我与地坛（节选）》",
+		"value": "be9c911b94cecc3550fd977b"
 	}, {
-		"_id": "982229eaf25c7b63b9d50ee0",
-		"name": "第8课《花未眠》"
+		"name": "第8课《花未眠》",
+		"value": "0d522812e0e2fbffff33f0ff"
 	}, {
-		"_id": "20f97b490c903fed1581955a",
-		"name": "第9课《在马克思墓前的讲话》"
+		"name": "第9课《在马克思墓前的讲话》",
+		"value": "a142e67f071177fe18eaa0dc"
 	}, {
-		"_id": "a0564a023ef15711d8a9671f",
-		"name": "第10课《我有一个梦想》"
+		"name": "第10课《我有一个梦想》",
+		"value": "d87a6a3227be1f0021287fb5"
 	}, {
-		"_id": "f13641b193e0093ab9f65c46",
-		"name": "第11课《在庆祝北京大学建校一百周年大会上的讲话》"
+		"name": "第11课《在庆祝北京大学建校一百周年大会上的讲话》",
+		"value": "1e1f572243ad84b32ac6eb1b"
 	}, {
-		"_id": "03078f8b331c4d2b5aff0f3b",
-		"name": "第12课《我的呼吁》"
+		"name": "第12课《我的呼吁》",
+		"value": "282e66e3246c5cf0532eccfb"
 	}, {
-		"_id": "36803f0f0599c33111c76dd4",
-		"name": "第13课《呐喊自序》"
+		"name": "第13课《呐喊自序》",
+		"value": "040d3e17d17192edcf461bad"
 	}, {
-		"_id": "136c2058239d6cd9dd22ba34",
-		"name": "第14课《胡同文化》"
+		"name": "第14课《胡同文化》",
+		"value": "397196bb5631ea3172462e10"
 	}, {
-		"_id": "d2b85f44937e641387ec7583",
-		"name": "第15课《宽容序言》"
+		"name": "第15课《宽容序言》",
+		"value": "506f9213d70c5fcffe00d143"
 	}, {
-		"_id": "67833159b7d479372b93be02",
-		"name": "第16课《名人传序》"
+		"name": "第16课《名人传序》",
+		"value": "9372c7fa6e235968c6d051ae"
 	}, {
-		"_id": "1a0425470402954ff96f5400",
-		"name": "第17课《烛之武退秦师》"
+		"name": "第17课《烛之武退秦师》",
+		"value": "bd14b97c3ad71b03e7229b6e"
 	}, {
-		"_id": "011b27b9fc57138410b0f8c2",
-		"name": "第18课《勾践灭吴》"
+		"name": "第18课《勾践灭吴》",
+		"value": "3ca9c9e13d65952d8dee2c17"
 	}, {
-		"_id": "010ecc10344f06cc8599f7b5",
-		"name": "第19课《邹忌讽齐王纳谏》"
+		"name": "第19课《邹忌讽齐王纳谏》",
+		"value": "9591e4487cbd8ebb317a01e0"
 	}, {
-		"_id": "2eebcfc750319a98c3ce3db2",
-		"name": "第20课《触龙说赵太后》"
+		"name": "第20课《触龙说赵太后》",
+		"value": "3909e35baa15b68539581550"
 	}, {
-		"_id": "67728aa3108d908902fbf9ea",
-		"name": "第21课《子路、曾皙、冉有、公西华侍坐》"
+		"name": "第21课《子路、曾皙、冉有、公西华侍坐》",
+		"value": "9014d246eca1413903e1056c"
 	}, {
-		"_id": "90760712e665c2df05eb8c8b",
-		"name": "第22课《寡人之于国也》"
+		"name": "第22课《寡人之于国也》",
+		"value": "c0b2b1229cf49d4286dc03ed"
 	}, {
-		"_id": "b75a7442342b14a7074ae9f5",
-		"name": "第23课《劝学》"
+		"name": "第23课《劝学》",
+		"value": "64fd83d1b3a4cb52d619c463"
 	}, {
-		"_id": "819769d74164e3ce7e7caae6",
-		"name": "第24课《秋水》"
+		"name": "第24课《秋水》",
+		"value": "6f5d35a5e6bd65c23be31083"
 	}]
 }, {
-	"book_name": "高一第二册",
+	"name": "高一第二册",
+	"order": 25,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "e3946ca8c9e7a3a0d22d3911",
-		"name": "第1课《祝福》"
+		"name": "第1课《祝福》",
+		"value": "fb597f3ebc9dcf8543b20504"
 	}, {
-		"_id": "9f5ac72e0b461a1b1b498afe",
-		"name": "第2课《边城（节选）》"
+		"name": "第2课《边城（节选）》",
+		"value": "8cee8e19324619dd0e305856"
 	}, {
-		"_id": "6eadb513845d6b60cfe21722",
-		"name": "第3课《荷花淀》"
+		"name": "第3课《荷花淀》",
+		"value": "a27ec33e8f79f6b55d0d81ec"
 	}, {
-		"_id": "9f42fe51650775fa0963d32f",
-		"name": "第4课《装在套子里的人》"
+		"name": "第4课《装在套子里的人》",
+		"value": "eea4c89befe02ceed3da8226"
 	}, {
-		"_id": "b0a018fb004419025d7dcabe",
-		"name": "第5课《拿来主义》"
+		"name": "第5课《拿来主义》",
+		"value": "5649c2317466cf35f1a8ed12"
 	}, {
-		"_id": "94c433abebae1ff917f62232",
-		"name": "第6课《我若为王》"
+		"name": "第6课《我若为王》",
+		"value": "54f98ca2c766d5a26bed75f5"
 	}, {
-		"_id": "c646fa22bf2c6b358a343494",
-		"name": "第7课《庄周买水》"
+		"name": "第7课《庄周买水》",
+		"value": "f0264a87000ef005138e190b"
 	}, {
-		"_id": "a057dc9972fb26fe83887407",
-		"name": "第8课《剃光头发微》"
+		"name": "第8课《剃光头发微》",
+		"value": "e6249c2327d02cf5c1f9b391"
 	}, {
-		"_id": "952b973f09d1300a47b1cbaf",
-		"name": "第9课《南州六月荔枝丹》"
+		"name": "第9课《南州六月荔枝丹》",
+		"value": "1ee6cb62ab96eda72911297d"
 	}, {
-		"_id": "cec74ab63627a3de47723d3f",
-		"name": "第10课《物种起源导言》"
+		"name": "第10课《物种起源导言》",
+		"value": "31244fbd606e1d698add50d1"
 	}, {
-		"_id": "29128f80bb455582df3b3041",
-		"name": "第11课《神奇的极光》"
+		"name": "第11课《神奇的极光》",
+		"value": "56c8fe90274bcd71ec58fec7"
 	}, {
-		"_id": "4baf1d5bcf028c543df8ae08",
-		"name": "第12课《这个世界的音乐》"
+		"name": "第12课《这个世界的音乐》",
+		"value": "d3dec6a110d9a310fd6b9e0d"
 	}, {
-		"_id": "6b0d2629febfba75f9b41020",
-		"name": "第13课《咬文嚼字》"
+		"name": "第13课《咬文嚼字》",
+		"value": "16aaf50ba555efa54b2025f1"
 	}, {
-		"_id": "a9b9510c57caeed9d519d3cc",
-		"name": "第14课《读伊索寓言》"
+		"name": "第14课《读伊索寓言》",
+		"value": "b9f5cb9aefc5fac23f789816"
 	}, {
-		"_id": "27877ae5a2a5af5dc81a6d25",
-		"name": "第15课《说木叶》"
+		"name": "第15课《说木叶》",
+		"value": "7fe946d04e8424684f45cda1"
 	}, {
-		"_id": "6eb386f6c66dea0b328a500f",
-		"name": "第16课《米洛斯的维纳斯》"
+		"name": "第16课《米洛斯的维纳斯》",
+		"value": "54c915c00a23b05c7e82771e"
 	}, {
-		"_id": "c457938c0f6486cb554afbdb",
-		"name": "第17课《过秦论》"
+		"name": "第17课《过秦论》",
+		"value": "981fc466fa6818cc900db031"
 	}, {
-		"_id": "000d217357fc869b4c64550a",
-		"name": "第18课《鸿门宴》"
+		"name": "第18课《鸿门宴》",
+		"value": "9c84c8b4972656a1756a5221"
 	}, {
-		"_id": "56b6d5cd2c76efb2fdf1a260",
-		"name": "第19课《兰亭集序》"
+		"name": "第19课《兰亭集序》",
+		"value": "d8bfd149abfefe3cd0f9c4c4"
 	}, {
-		"_id": "416fb5c91893ee8bd3d5d1a6",
-		"name": "第20课《归去来兮辞》"
+		"name": "第20课《归去来兮辞》",
+		"value": "e546eeb083289e22ddffa0b9"
 	}, {
-		"_id": "79304c003fbb5d5ae5bedab5",
-		"name": "第21课《师说》"
+		"name": "第21课《师说》",
+		"value": "f100c9527f431ac7330088bf"
 	}, {
-		"_id": "157b694bf97aeba241398166",
-		"name": "第22课《阿房宫赋》"
+		"name": "第22课《阿房宫赋》",
+		"value": "8e6330ad567b4da5a7df6939"
 	}, {
-		"_id": "4432924d694d61f5f8eeebd4",
-		"name": "第23课《谏太宗十思疏》"
+		"name": "第23课《谏太宗十思疏》",
+		"value": "195316479f51d19276213cd1"
 	}, {
-		"_id": "a2b099e78541358a44a572f3",
-		"name": "第24课《种树郭橐驼传》"
+		"name": "第24课《种树郭橐驼传》",
+		"value": "06b2fddc403ce2ece0198b7d"
 	}]
 }, {
-	"book_name": "高二第三册",
+	"name": "高二第三册",
+	"order": 26,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "add937f13ee8bf8c57562cee",
-		"name": "第1课《诗经三首》"
+		"name": "第1课《诗经三首》",
+		"value": "199857fe234f744bea58ce58"
 	}, {
-		"_id": "c16a758be3cfb91b5f670b3b",
-		"name": "第2课《离骚》"
+		"name": "第2课《离骚》",
+		"value": "0d8e77785fac11039fdd9410"
 	}, {
-		"_id": "f8aa8c51a3414eb748433d42",
-		"name": "第3课《孔雀东南飞》"
+		"name": "第3课《孔雀东南飞》",
+		"value": "8ca74623227554580bb6a87f"
 	}, {
-		"_id": "d7a881e7e3a98ab9a21ce479",
-		"name": "第4课《汉魏晋诗三首》"
+		"name": "第4课《汉魏晋诗三首》",
+		"value": "01847752b4422a9f747f6466"
 	}, {
-		"_id": "6c5d49498cda9b8a4155bdcb",
-		"name": "第5课《梦游天姥吟留别》"
+		"name": "第5课《梦游天姥吟留别》",
+		"value": "8c203e01c8dfb7bcdd75e2a3"
 	}, {
-		"_id": "c93650a76f5d203908e2645f",
-		"name": "第6课《琵琶行并序》"
+		"name": "第6课《琵琶行并序》",
+		"value": "113bbdd816c4bd04dad3d86e"
 	}, {
-		"_id": "0ec38cbb8f8930dd9699eb87",
-		"name": "第7课《近体诗六首》"
+		"name": "第7课《近体诗六首》",
+		"value": "5d319872b170e130d0873696"
 	}, {
-		"_id": "a9d197393394dbe8055905cc",
-		"name": "第8课《词七首》"
+		"name": "第8课《词七首》",
+		"value": "db2b4f81761adf559c921bcd"
 	}, {
-		"_id": "f488deac03d07e9e76e56029",
-		"name": "第9课《记念刘和珍君》"
+		"name": "第9课《记念刘和珍君》",
+		"value": "b63de12aa48389b3a950ff8e"
 	}, {
-		"_id": "b4c44abf530db1999384584a",
-		"name": "第10课《故都的秋》"
+		"name": "第10课《故都的秋》",
+		"value": "b8487ac23a1b161c3db4860a"
 	}, {
-		"_id": "b6aa4b3365259a48daf5b4a7",
-		"name": "第11课《道士塔》"
+		"name": "第11课《道士塔》",
+		"value": "9b51cc4bd082d747edbdecf8"
 	}, {
-		"_id": "5ecfbc668df9e42a28f9db2f",
-		"name": "第12课《泪珠和珍珠》"
+		"name": "第12课《泪珠和珍珠》",
+		"value": "7b487ac35c784e8dd231cdd1"
 	}, {
-		"_id": "6db8478ce30dedfe80161d86",
-		"name": "第13课《灯下漫笔》"
+		"name": "第13课《灯下漫笔》",
+		"value": "0cd20295f0914d5b57242188"
 	}, {
-		"_id": "38db2b874f852b3cbd60fcea",
-		"name": "第14课《漫话清高》"
+		"name": "第14课《漫话清高》",
+		"value": "cc106f57fb43173aa05096ba"
 	}, {
-		"_id": "0d4f69c60c32594eb2ffef2e",
-		"name": "第15课《巴尔扎克葬词》"
+		"name": "第15课《巴尔扎克葬词》",
+		"value": "130cdb3015874a2511c9661a"
 	}, {
-		"_id": "7180a1cde729e6ab465074dd",
-		"name": "第16课《短文两篇》"
+		"name": "第16课《短文两篇》",
+		"value": "a88c14e173c3b52f512d41c2"
 	}, {
-		"_id": "d970243b2e42d005bc97dd19",
-		"name": "第17课《六国论》"
+		"name": "第17课《六国论》",
+		"value": "f755e6f800ec3c184e731a1d"
 	}, {
-		"_id": "5a037e8f8594812ba32ccf0e",
-		"name": "第18课《游褒禅山记》"
+		"name": "第18课《游褒禅山记》",
+		"value": "09c8975392dc2c219295c814"
 	}, {
-		"_id": "db5b03fd944d4278a09d34f0",
-		"name": "第19课《伶官传序》"
+		"name": "第19课《伶官传序》",
+		"value": "2ddbecee8a8f74ad012e9927"
 	}, {
-		"_id": "53ccd9d0999bde50322e7bbd",
-		"name": "第20课《石钟山记》"
+		"name": "第20课《石钟山记》",
+		"value": "b55047603e811eaf9eea0024"
 	}, {
-		"_id": "82c78e58b86315554a15381c",
-		"name": "第21课《项脊轩志》"
+		"name": "第21课《项脊轩志》",
+		"value": "a7fd7afb85127a44ee0a3bee"
 	}, {
-		"_id": "53043c97fbf98288e5e8fae5",
-		"name": "第22课《五人墓碑记》"
+		"name": "第22课《五人墓碑记》",
+		"value": "b78545e763fb1db25ceaf1aa"
 	}, {
-		"_id": "7fea527c80d16ad7b6d6fc1c",
-		"name": "第23课《登泰山记》"
+		"name": "第23课《登泰山记》",
+		"value": "11e73bb165e0c211549cc61e"
 	}, {
-		"_id": "1dede96446e962544b37464f",
-		"name": "第24课《病梅馆记》"
+		"name": "第24课《病梅馆记》",
+		"value": "721995f803ac1507431d639a"
 	}]
 }, {
-	"book_name": "高二第四册",
+	"name": "高二第四册",
+	"order": 27,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "4053c609983be8fd7810e820",
-		"name": "第1课《药》"
+		"name": "第1课《药》",
+		"value": "c7684b98e7ea9d7d5aef01ea"
 	}, {
-		"_id": "c29b0374d9cee2a7dd20fdd3",
-		"name": "第2课《项链》"
+		"name": "第2课《项链》",
+		"value": "6a9b9af4c8e975adf4eacbd0"
 	}, {
-		"_id": "08463565e5a4e35cc1a0d5f8",
-		"name": "第3课《陈奂生上城》"
+		"name": "第3课《陈奂生上城》",
+		"value": "ff6e6c3eb722b416e150cfdc"
 	}, {
-		"_id": "ccc16dc44c68e92ebd1b98e4",
-		"name": "第4课《守财奴》"
+		"name": "第4课《守财奴》",
+		"value": "950445b02a550bf624a2d78d"
 	}, {
-		"_id": "ab5f776774b85c962c400080",
-		"name": "第5课《林黛玉进府》"
+		"name": "第5课《林黛玉进府》",
+		"value": "48da31ab1e5e9f446cc005e5"
 	}, {
-		"_id": "25837fe30943d1d3a8ccd577",
-		"name": "第6课《林教头风雪山神庙》"
+		"name": "第6课《林教头风雪山神庙》",
+		"value": "d33dc947a70642007a44170e"
 	}, {
-		"_id": "e6c2f0232d824f667bc1444a",
-		"name": "第7课《失街亭》"
+		"name": "第7课《失街亭》",
+		"value": "d473de1fb06f5b6ec87e5955"
 	}, {
-		"_id": "89ee6fd0b7f38f8145d2aa1a",
-		"name": "第8课《杜十娘怒沉百宝箱》"
+		"name": "第8课《杜十娘怒沉百宝箱》",
+		"value": "7ede1a9980329c72d0cc3b64"
 	}, {
-		"_id": "5fd2709882ca29d56809b504",
-		"name": "第9课《雷雨》"
+		"name": "第9课《雷雨》",
+		"value": "70e69c196b463186c0111d41"
 	}, {
-		"_id": "c1696e2a904ebd2e25f4fc7f",
-		"name": "第10课《茶馆》"
+		"name": "第10课《茶馆》",
+		"value": "aec87ed8845611e2df906b63"
 	}, {
-		"_id": "9a1816cbef120c320c5312fa",
-		"name": "第11课《罗密欧与朱丽叶》"
+		"name": "第11课《罗密欧与朱丽叶》",
+		"value": "454395bc8b712cc108636fd9"
 	}, {
-		"_id": "5d026787907d0cc06e539197",
-		"name": "第12课《三块钱国币》"
+		"name": "第12课《三块钱国币》",
+		"value": "6686fc3ad5db8f1982f5c93c"
 	}, {
-		"_id": "880aefaa5251d921a4e4be60",
-		"name": "第13课《窦娥冤》"
+		"name": "第13课《窦娥冤》",
+		"value": "e5897a184af761b829071c5f"
 	}, {
-		"_id": "7ecda394f7d4453b0151b09d",
-		"name": "第14课《长亭送别》"
+		"name": "第14课《长亭送别》",
+		"value": "2b6962bb043bc7e8d390b9a8"
 	}, {
-		"_id": "eb2691867dafe4d8bfeb1917",
-		"name": "第15课《闺塾》"
+		"name": "第15课《闺塾》",
+		"value": "16bdc9d1fb812b177e1ff5a0"
 	}, {
-		"_id": "61582481daff1e9f47ce2504",
-		"name": "第16课《哀江南》"
+		"name": "第16课《哀江南》",
+		"value": "b6d466bcdab15b556edf2508"
 	}, {
-		"_id": "7d0532df28f9a9f4ee45fd3d",
-		"name": "第17课《陈情表》"
+		"name": "第17课《陈情表》",
+		"value": "d41d3c45f910c4683d347102"
 	}, {
-		"_id": "fef8e48b0af5608176f0f261",
-		"name": "第18课《祭十二郎文》"
+		"name": "第18课《祭十二郎文》",
+		"value": "961cbb16c967b2942945376b"
 	}, {
-		"_id": "64f5b437eb7fa151dd7cd876",
-		"name": "第19课《愚溪诗序》"
+		"name": "第19课《愚溪诗序》",
+		"value": "dc0720e47e03389e5f449377"
 	}, {
-		"_id": "c03ca16347ebacfcd41d99f3",
-		"name": "第20课《赤壁赋》"
+		"name": "第20课《赤壁赋》",
+		"value": "79548792cfdbd2ea1104f66c"
 	}, {
-		"_id": "94f317ccaa298629437cec19",
-		"name": "第21课《逍遥游》"
+		"name": "第21课《逍遥游》",
+		"value": "83c08b7f1e087d1c42ad4e09"
 	}, {
-		"_id": "b0c5839820e52e4d967a2327",
-		"name": "第22课《滕王阁序》"
+		"name": "第22课《滕王阁序》",
+		"value": "8b3cb109c3f70d4bde8166e4"
 	}, {
-		"_id": "7834790f8a8a4fe8796b7e9a",
-		"name": "第23课《柳毅传》"
+		"name": "第23课《柳毅传》",
+		"value": "50ff0961a38ce427cb3ba975"
 	}, {
-		"_id": "551a189b16d727cf06fad172",
-		"name": "第24课《促织》"
+		"name": "第24课《促织》",
+		"value": "1abd43d4201a76e8c40054e0"
 	}]
 }, {
-	"book_name": "高三第五册",
+	"name": "高三第五册",
+	"order": 28,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "1726a5c414bf0077f5d46cee",
-		"name": "第1课《人生的境界》"
+		"name": "第1课《人生的境界》",
+		"value": "1379eecd7e99590365a739c8"
 	}, {
-		"_id": "189eb7485229dec8bad60a10",
-		"name": "第2课《人是什么》"
+		"name": "第2课《人是什么》",
+		"value": "6f395dd87abe71c0d00dc486"
 	}, {
-		"_id": "29d67490141d0d309ee9e02d",
-		"name": "第3课《庄子在我们无路可走的时候》"
+		"name": "第3课《庄子在我们无路可走的时候》",
+		"value": "590442f500ee8f12cceb60b9"
 	}, {
-		"_id": "36317c77e7af5ab7e00df667",
-		"name": "第4课《孔孟》"
+		"name": "第4课《孔孟》",
+		"value": "31c9b6845b2430e3147ac1e8"
 	}, {
-		"_id": "b1df80da735067e2043fc5cf",
-		"name": "第5课《我国古代小说的发展及其规律》"
+		"name": "第5课《我国古代小说的发展及其规律》",
+		"value": "7666944fa9e6286b5159a5c7"
 	}, {
-		"_id": "9274e04e91675059f0e574e3",
-		"name": "第6课《中国艺术表现里的虚和实》"
+		"name": "第6课《中国艺术表现里的虚和实》",
+		"value": "c62539113b1d5a878787a583"
 	}, {
-		"_id": "5e72b13e42fb168a88a46f28",
-		"name": "第7课《谈中国诗》"
+		"name": "第7课《谈中国诗》",
+		"value": "4a4bbe7c7d1a295b2adfcf5b"
 	}, {
-		"_id": "840dcab6d0ad52425d95d6be",
-		"name": "第8课《重新创造的艺术天地》"
+		"name": "第8课《重新创造的艺术天地》",
+		"value": "48c9c778d3713016e7f3d12e"
 	}, {
-		"_id": "647c0614a59285ef32711787",
-		"name": "第9课《阿Q正传》"
+		"name": "第9课《阿Q正传》",
+		"value": "9eea3566448c69b0af5d6ee5"
 	}, {
-		"_id": "2a4416a981fb032b5e34e5b5",
-		"name": "第10课《变形记》"
+		"name": "第10课《变形记》",
+		"value": "f824702326cce946f7cc230b"
 	}, {
-		"_id": "786843347467acc609c2089b",
-		"name": "第11课《墙上的斑点》"
+		"name": "第11课《墙上的斑点》",
+		"value": "84548b7ffd4619cfba86a007"
 	}, {
-		"_id": "e39e1d9710dc080ef38b67f6",
-		"name": "第12课《等待戈多》"
+		"name": "第12课《等待戈多》",
+		"value": "6ec3b0e33cfff58f7c738b33"
 	}, {
-		"_id": "dbfe7a830ab400ef3346c078",
-		"name": "第13课《百年孤独》"
+		"name": "第13课《百年孤独》",
+		"value": "dbb33029778e2f7c39652e17"
 	}, {
-		"_id": "a5d7fcca67c1512d143acfb9",
-		"name": "第14课《蜀道难》"
+		"name": "第14课《蜀道难》",
+		"value": "dffecc27655b4212f61c1c3e"
 	}, {
-		"_id": "ebf3b52c30f563580092f83e",
-		"name": "第15课《将进酒》"
+		"name": "第15课《将进酒》",
+		"value": "2cc78eb762d54fe1fd7c783a"
 	}, {
-		"_id": "606f518b560586462d52adb1",
-		"name": "第16课《兵车行》"
+		"name": "第16课《兵车行》",
+		"value": "df41828ab4fda200e752a9ad"
 	}, {
-		"_id": "4af0e650e6cf04d8da8f1c17",
-		"name": "第17课《李杜诗五首》"
+		"name": "第17课《李杜诗五首》",
+		"value": "e131537ec1a84e05f99796a3"
 	}, {
-		"_id": "ffa17347f05f7862f66f200e",
-		"name": "第18课《齐桓晋文之事》"
+		"name": "第18课《齐桓晋文之事》",
+		"value": "100f12bc4a9c573103764afa"
 	}, {
-		"_id": "0b2f7cf190e9d4693da74229",
-		"name": "第19课《庄暴见孟子》"
+		"name": "第19课《庄暴见孟子》",
+		"value": "068c653dc23cb2c8aa65e47a"
 	}, {
-		"_id": "52bb152f312fe42ba6d1398e",
-		"name": "第20课《孟子见梁襄王》"
+		"name": "第20课《孟子见梁襄王》",
+		"value": "050dfd45a130883254c12ec4"
 	}, {
-		"_id": "2208f226c192628e214a9813",
-		"name": "第21课《短文两篇》"
+		"name": "第21课《短文两篇》",
+		"value": "d953566b2fd995d4337873f9"
 	}]
 }, {
-	"book_name": "高三第六册",
+	"name": "高三第六册",
+	"order": 29,
+	"stage": {
+		"name": "高中",
+		"value": "6038484fe857bd000153f0f5"
+	},
+	"subject": {
+		"name": "语文",
+		"value": "5ffef5038cc87f0001b0d7a6"
+	},
+	"version": {
+		"name": "人教版",
+		"value": "603eddebedb62e0001e0edf2"
+	},
 	"data": [{
-		"_id": "564aca158a390cf03402d5bd",
-		"name": "第1课《数学与文化》"
+		"name": "第1课《数学与文化》",
+		"value": "0e5163281759d12354ea88d8"
 	}, {
-		"_id": "1783da5e64b648c473aec4df",
-		"name": "第2课《熵：一种新的世界观（节选）》"
+		"name": "第2课《熵：一种新的世界观（节选）》",
+		"value": "7ba9530a9458657f978e1821"
 	}, {
-		"_id": "3fe3ab528f278e1a93741c02",
-		"name": "第3课《千篇一律与千变万化》"
+		"name": "第3课《千篇一律与千变万化》",
+		"value": "4ceb94a2e889082ac8623306"
 	}, {
-		"_id": "c1005dbbdf72ecd1826c2098",
-		"name": "第4课《宇宙的未来》"
+		"name": "第4课《宇宙的未来》",
+		"value": "1228ba6b654c40e13282b9fe"
 	}, {
-		"_id": "98cf620e7ad29dff04ba38dd",
-		"name": "第5课《语言与文学》"
+		"name": "第5课《语言与文学》",
+		"value": "19dc5680bdea9543f8736395"
 	}, {
-		"_id": "e265ae2920cc2e2b1ad3f769",
-		"name": "第6课《语言的演变》"
+		"name": "第6课《语言的演变》",
+		"value": "ccb6ce39891899119c29b01b"
 	}, {
-		"_id": "608a482af03c4e7e91dd81f0",
-		"name": "第7课《修辞是一个选择过程》"
+		"name": "第7课《修辞是一个选择过程》",
+		"value": "c0191b3bce82a6cea273fcbf"
 	}, {
-		"_id": "bd66de25cb802a8430ed763a",
-		"name": "第8课《语言是人类最重要的交际工具》"
+		"name": "第8课《语言是人类最重要的交际工具》",
+		"value": "21f4071c2bcbe964cc843db3"
 	}, {
-		"_id": "336640fb8d0341f96eeae21b",
-		"name": "第9课《诉肺腑》"
+		"name": "第9课《诉肺腑》",
+		"value": "0e3753b9b87e216df715c73b"
 	}, {
-		"_id": "7b7f46ebba1f96744b689593",
-		"name": "第10课《宝玉挨打》"
+		"name": "第10课《宝玉挨打》",
+		"value": "ed8ea68629c45b3e1033bcc6"
 	}, {
-		"_id": "3802321b48b9ed2ef65bd3ad",
-		"name": "第11课《香菱学诗》"
+		"name": "第11课《香菱学诗》",
+		"value": "ca82c8946dec2da3132a22dd"
 	}, {
-		"_id": "efcf9d2f461e1243237729cc",
-		"name": "第12课《抄检大观园》"
+		"name": "第12课《抄检大观园》",
+		"value": "ce8502bea84213ad4b9c28c3"
 	}, {
-		"_id": "9a57a9b7193330dc6fead379",
-		"name": "第13课《报任安书（节选）》"
+		"name": "第13课《报任安书（节选）》",
+		"value": "c6aeac28d787868a65649777"
 	}, {
-		"_id": "5847a574a94bf80dea537d81",
-		"name": "第14课《廉颇蔺相如列传（节选）》"
+		"name": "第14课《廉颇蔺相如列传（节选）》",
+		"value": "fe41fe4b6af83a1863b0da8d"
 	}, {
-		"_id": "d1659d522701647abbeaacb8",
-		"name": "第15课《屈原列传（节选）》"
+		"name": "第15课《屈原列传（节选）》",
+		"value": "807b5a48d00a038c724f9569"
 	}, {
-		"_id": "8a9daa871bfcc4de7df5de85",
-		"name": "第16课《信陵君窃符救赵（节选）》"
+		"name": "第16课《信陵君窃符救赵（节选）》",
+		"value": "c336b30e8105ac0c23211508"
 	}]
 }]

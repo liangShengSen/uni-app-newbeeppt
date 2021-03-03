@@ -3,13 +3,15 @@
 		<view class="text-area">
 			<text class="title">{{ title }}</text>
 		</view>
-		<button type="default" @click="uploadDocuments">upload</button>
+		<!-- <button type="default" @click="uploadDocuments">upload</button> -->
+		<!-- <button type="default" @click="addBookAndChapter">add_b_c</button> -->
 		<button type="default" @click="uploadImgs">click me</button>
 	</view>
 </template>
 
 <script>
 	let jsonData = require("@/puppeteer/json/temp.json");
+	let chaptersData = require("@/puppeteer/json/chapters.json");
 	export default {
 		data() {
 			return {
@@ -17,6 +19,13 @@
 			};
 		},
 		methods: {
+			async addBookAndChapter() {
+				let result = await uniCloud.callFunction({
+					name: 'edit',
+					data: chaptersData
+				});
+				console.log(result);
+			},
 			async uploadDocuments() {
 				let result = await uniCloud.callFunction({
 					name: 'add',
@@ -29,7 +38,7 @@
 				uniCloud.callFunction({
 					name: 'chapters',
 					data: {
-						chapter_id: '603db513d6547d0001b10678',
+						chapter_id: '603f13c3b6ce210001e1012d',
 					},
 					success: async (res) => {
 						// console.log(res);
@@ -43,7 +52,7 @@
 								}
 							})
 						})
-						let arr1 = arr.slice(500,1000)
+						let arr1 = arr.slice(1500,2100)
 						console.log(arr1);
 						let result = await uniCloud.callFunction({
 							name: 'add',
