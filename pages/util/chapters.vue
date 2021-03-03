@@ -38,7 +38,7 @@
 				uniCloud.callFunction({
 					name: 'chapters',
 					data: {
-						chapter_id: '603f13c3b6ce210001e1012d',
+						chapter_id: '603f13c46a3ec80001bbf595',
 					},
 					success: async (res) => {
 						// console.log(res);
@@ -52,7 +52,7 @@
 								}
 							})
 						})
-						let arr1 = arr.slice(1500,2100)
+						let arr1 = arr.slice(1000,1500)
 						console.log(arr1);
 						let result = await uniCloud.callFunction({
 							name: 'add',
