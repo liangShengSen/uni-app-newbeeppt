@@ -9,7 +9,7 @@ void(async () => {
 	await page.goto('http://www.pptok.com/')
 	// 获取某个版本下所有册别链接
 	const bookLins = await page.evaluate(() => {
-		var items = $('.box-software').eq(1).find('a')
+		var items = $('.box-software').eq(3).find('a')
 		var links = []
 		items.each((index, item) => {
 			links.push({
@@ -45,24 +45,32 @@ void(async () => {
 				name: "小学",
 				value: "6038483da112ea00011a4ef7"
 			}
+			obj.version = {
+				name: "北师大版",
+				value: "6040bcac714a8c00015d7b4e"
+			}
 		}else if(i > 11 & i <= 17) {
 			obj.stage = {
 				name: "初中",
 				value: "60384847de602f0001317e18"
+			}
+			obj.version = {
+				name: "北师大版",
+				value: "6040bce4d465ff0001ae60ca"
 			}
 		}else {
 			obj.stage = {
 				name: "高中",
 				value: "6038484fe857bd000153f0f5"
 			}
+			obj.version = {
+				name: "北师大版",
+				value: "6040bd0fb510d00001e59d0d"
+			}
 		}
 		obj.subject = {
 			name: "语文",
 			value: "5ffef5038cc87f0001b0d7a6"
-		}
-		obj.version = {
-			name: "人教版",
-			value: "603eddebedb62e0001e0edf2"
 		}
 		obj.data = chapter
 		chapters.push(obj)
