@@ -6,46 +6,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《数一数》",
-		"value": "ab4cbdc0b46fa3aa19755619"
+		"name": "第1课《Module 1 Unit 1 Hello!》",
+		"value": "bdfa3b89509f2414f8bbf326"
 	}, {
-		"name": "第2课《比一比》",
-		"value": "389a3fb822fb24a28b91c81c"
+		"name": "第2课《Module 1 Unit 2 How are you?》",
+		"value": "f53f9a652119c9d1751acd42"
 	}, {
-		"name": "第3课《分一分》",
-		"value": "1e70376fb488114b71adf886"
+		"name": "第3课《Module 2 Unit 1 What's your name?》",
+		"value": "8696ddf94c3c6c8acd8045f0"
 	}, {
-		"name": "第4课《认位置》",
-		"value": "d6d653e69e6c5f6580c62470"
+		"name": "第4课《Module 2 Unit 2 I'm a boy.》",
+		"value": "b267eca2f5a8aa5d2d35ea52"
 	}, {
-		"name": "第5课《认识10以内的数》",
-		"value": "140121afa6504c2d9f1a849e"
+		"name": "第5课《Module 3 Unit 1 Sit down!》",
+		"value": "b2de5cdfd5a4b1eec28ad471"
 	}, {
-		"name": "第6课《认识图形》",
-		"value": "fb567f471196e88e618caa48"
+		"name": "第6课《Module 3 Unit 2 Point to the window!》",
+		"value": "32c388f088040a8eadf13b40"
 	}, {
-		"name": "第7课《分与合》",
-		"value": "1b80e63b75b1a6282e42f5a2"
+		"name": "第7课《Module 4 Unit 1 It's red!》",
+		"value": "abcd0545d79452f2d677731d"
 	}, {
-		"name": "第8课《10以内的加法和减法》",
-		"value": "2f11bbcab3231d4aaef09049"
+		"name": "第8课《Module 4 Unit 2 It's a red dog.》",
+		"value": "dbc78c5ec109a07454adcc72"
 	}, {
-		"name": "第9课《认识11-20各数》",
-		"value": "ad45a92acb9ce673399cf19c"
+		"name": "第9课《Module 5 Unit 1 This is our teacher.》",
+		"value": "8339bdd931b14a76cb8955ed"
 	}, {
-		"name": "第10课《20以内的进位加法》",
-		"value": "b81b189bd7dab7923f477e94"
+		"name": "第10课《Module 5 Unit 2 That is a yellow cat.》",
+		"value": "a3de2efe10c034eac8ba9ec9"
 	}, {
-		"name": "第11课《期末复习》",
-		"value": "2733b85f4047c103155181f7"
+		"name": "第11课《Module 6 Unit 1 What's this?》",
+		"value": "2f108b5c912ac18af4e435d5"
+	}, {
+		"name": "第12课《Module 6 Unit 2 It's my ruler.》",
+		"value": "c93da2dbdf0c2f2300101fd8"
+	}, {
+		"name": "第13课《Module 7 Unit 1 Is it a dog?》",
+		"value": "eff9bcf007629217f267db5a"
+	}, {
+		"name": "第14课《Module 7 Unit 2 It's a yellow cat.》",
+		"value": "d847eb3bdcd2d1edeba87134"
+	}, {
+		"name": "第15课《Module 8 Unit 1 How many?》",
+		"value": "b5f62b92e292d9f1be210c1c"
+	}, {
+		"name": "第16课《Module 8 Unit 2 How many pink balls?》",
+		"value": "b6d0d29c3bc41591eb1ee34f"
+	}, {
+		"name": "第17课《Module 9 Unit 1 How old are you?》",
+		"value": "1511b61439efc9b8a83f1ed4"
+	}, {
+		"name": "第18课《Module 9 Unit 2 Happy birthday!》",
+		"value": "150e55bb4890259d5fc01513"
+	}, {
+		"name": "第19课《Module 10 Unit 1 That is my father.》",
+		"value": "6454d0b2691f6e98f38632b1"
+	}, {
+		"name": "第20课《Module 10 Unit 2 That is his car.》",
+		"value": "20db02512f85c0c38d4111d0"
 	}]
 }, {
 	"name": "一年级下册",
@@ -55,34 +82,70 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《20以内的退位减法》",
-		"value": "e9800d4a415c4d6f25114235"
+		"name": "第1课《Module 1 Unit 1 He's a doctor.》",
+		"value": "b836fa4f3e10b79c37512b5b"
 	}, {
-		"name": "第2课《认识图形》",
-		"value": "3d6e0e610635af81d02416c6"
+		"name": "第2课《Module 1 Unit 2 She's a nurse.》",
+		"value": "63c4941b4766a313c7ff763d"
 	}, {
-		"name": "第3课《认识100以内的数》",
-		"value": "f2d7006ce6ae999af1fcdb13"
+		"name": "第3课《Module 2 Unit 1 Where's the bird?》",
+		"value": "7205fcd30d06058661c80808"
 	}, {
-		"name": "第4课《100以内的加法和减法》",
-		"value": "933a011e605121550419ccc4"
+		"name": "第4课《Module 2 Unit 2 The toy car is under the bed.》",
+		"value": "485d6a8d9b7ab53ad7ab2495"
 	}, {
-		"name": "第5课《元、角、分》",
-		"value": "445a6181902bd83df9f72c66"
+		"name": "第5课《Module 3 Unit 1 Where's the orange cat?》",
+		"value": "9e2582b1786434b607145ead"
 	}, {
-		"name": "第6课《100以内的加法和减法》",
-		"value": "81951a92fb262b852a62db8a"
+		"name": "第6课《Module 3 Unit 2 How many green birds?》",
+		"value": "9721f5ce1983e48a15f552fe"
 	}, {
-		"name": "第7课《期末复习》",
-		"value": "7508dd5437b127c004561934"
+		"name": "第7课《Module 4 Unit 1 This is my head.》",
+		"value": "3b532d0bc951c85a19fa1560"
+	}, {
+		"name": "第8课《Module 4 Unit 2 These are your eyes.》",
+		"value": "ab1e2302252e72d44ca210fa"
+	}, {
+		"name": "第9课《Module 5 Unit 1 They're cows.》",
+		"value": "83abca8a4f0885076d222f26"
+	}, {
+		"name": "第10课《Module 5 Unit 2 It's thin.》",
+		"value": "de83f2c4ffd9c9dee29116cb"
+	}, {
+		"name": "第11课《Module 6 Unit 1 These snakes are short.》",
+		"value": "c4608bff8e5e01fcf36fe823"
+	}, {
+		"name": "第12课《Module 6 Unit 2 They're little and cute.》",
+		"value": "cf8de3a82fafd88b6a962ab2"
+	}, {
+		"name": "第13课《Module 7 Unit 1 There is a cat in the tree.》",
+		"value": "46c18cc4a0856fe203f78565"
+	}, {
+		"name": "第14课《Module 8 Unit 1 There's a pair of shorts under that duck.》",
+		"value": "4fe86c948c80c121381ee19c"
+	}, {
+		"name": "第15课《Module 8 Unit 2 There are two footballs under my desk.》",
+		"value": "a0dfa54294d284a36ebab3ed"
+	}, {
+		"name": "第16课《Module 9 Unit 1 I like football.》",
+		"value": "98ee9508b442a78d2347c3da"
+	}, {
+		"name": "第17课《Module 9 Unit 2 What's your favourite sport?》",
+		"value": "445221d856ee8361ac42057c"
+	}, {
+		"name": "第18课《Module 10 Unit 1 Let's play football!》",
+		"value": "0221b7f086d83ae6db0e0720"
+	}, {
+		"name": "第19课《Module 10 Unit 2 Let's sing!》",
+		"value": "56fb7e486fe2a3a184ac2913"
 	}]
 }, {
 	"name": "二年级上册",
@@ -92,37 +155,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《100以内的加法和减法》",
-		"value": "dc53f0b3dff70c8fe56772ac"
+		"name": "第1课《Module 1 Unit 1 I like the ABC song.》",
+		"value": "54553a7afa87766229c40bc1"
 	}, {
-		"name": "第2课《平行四边形的初步认识》",
-		"value": "9d3981258a3329baec7b1cdc"
+		"name": "第2课《Module 1 Unit 2 I like football.》",
+		"value": "144d1f6cd1543d68ed5fb0b9"
 	}, {
-		"name": "第3课《表内乘法》",
-		"value": "f6b5f8a509eea09b74f66468"
+		"name": "第3课《Module 2 Unit 1 I don't like meat.》",
+		"value": "8db4d8abd07385474db78958"
 	}, {
-		"name": "第4课《表内除法》",
-		"value": "8f2a1942d7e0f17faca1d91b"
+		"name": "第4课《Module 2 Unit 2 I don't like ginger.》",
+		"value": "2c76e9427e58200d30b18195"
 	}, {
-		"name": "第5课《厘米和米》",
-		"value": "d1b68c243a06a003e04a4c52"
+		"name": "第5课《Module 3 Unit 1 Do you like bananas?》",
+		"value": "ed60d6dfc403939c977e6b90"
 	}, {
-		"name": "第6课《表内乘法和表内除法》",
-		"value": "324cfc2849769abab6aa17be"
+		"name": "第6课《Module 3 Unit 2 Do they like apples?》",
+		"value": "d4bcfd7e404450e388b91b6f"
 	}, {
-		"name": "第7课《观察物体》",
-		"value": "17037e5e756175ad0f22f4ff"
+		"name": "第7课《Module 4 Unit 1 Sam likes T-shirts.》",
+		"value": "50b47467086f21907ec3ffdb"
 	}, {
-		"name": "第8课《期末复习》",
-		"value": "bc033ad552efc5010f00b55b"
+		"name": "第8课《Module 4 Unit 2 He doesn't like these trousers.》",
+		"value": "a36193ffdfdd126db24697a4"
+	}, {
+		"name": "第9课《Module 5 Unit 1 At 7, I get up.》",
+		"value": "ab508101286be5c45b9d4691"
+	}, {
+		"name": "第10课《Module 5 Unit 2 I go home at 5.》",
+		"value": "b8edc0d47ab5928b9485e831"
+	}, {
+		"name": "第11课《Module 6 Unit 1 What do you do on Sundays?》",
+		"value": "8a58f99a75e3e60f5738e35c"
+	}, {
+		"name": "第12课《Module 6 Unit 2 Where do you live?》",
+		"value": "4dd298939b35594e89c74f79"
+	}, {
+		"name": "第13课《Module 7 Unit 1 How do you go to school?》",
+		"value": "19e8cebfa18e95f5830bea90"
+	}, {
+		"name": "第14课《Module 7 Unit 2 I go by train.》",
+		"value": "6fbba6ba75159b8a97ade63a"
+	}, {
+		"name": "第15课《Module 8 Unit 1 She goes swimming.》",
+		"value": "baf116550059b0ca0068f4cd"
+	}, {
+		"name": "第16课《Module 8 Unit 2 Does he play the piano?》",
+		"value": "5da903635d9d33b55caabafe"
+	}, {
+		"name": "第17课《Module 9 Unit 1 It's winter.》",
+		"value": "8e8747ba3489a97d4924526d"
+	}, {
+		"name": "第18课《Module 9 Unit 2 What does he do in summer?》",
+		"value": "325757876124473ab7b973ca"
+	}, {
+		"name": "第19课《Module 10 Unit 1 Happy New Year!》",
+		"value": "1deb88d994b91003f8c1aac7"
+	}, {
+		"name": "第20课《Module 10 Unit 2 We have Christmas.》",
+		"value": "f9f0ecfb16b35ea0a5e319d3"
 	}]
 }, {
 	"name": "二年级下册",
@@ -132,40 +231,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《有余数的除法》",
-		"value": "bb3bbc6a153c4b65f21a8d32"
+		"name": "第1课《Module 1 Unit 1 What's the weather like?》",
+		"value": "ebbe4269b76c326f67579499"
 	}, {
-		"name": "第2课《时、分、秒》",
-		"value": "efb1347d00651f77271866ba"
+		"name": "第2课《Module 1 Unit 2 I like swimming.》",
+		"value": "65ed7b89bf0dfa0a546ef683"
 	}, {
-		"name": "第3课《认识方向》",
-		"value": "f27830306354dd715fef50ac"
+		"name": "第3课《Module 2 Unit 1 She's listening to the radio.》",
+		"value": "b5398c615519e049235d4ac7"
 	}, {
-		"name": "第4课《认识万以内的数》",
-		"value": "bf2e8f1c350a2ac691073d3b"
+		"name": "第4课《Module 2 Unit 2 I'm drawing a picture.》",
+		"value": "24c8a52a7b646e9582a9e511"
 	}, {
-		"name": "第5课《分米和毫米》",
-		"value": "800328612c9d34539ca369bc"
+		"name": "第5课《Module 3 Unit 1 Sam isn't tidying his room.》",
+		"value": "66ad8bad0230e0e5f2c38168"
 	}, {
-		"name": "第6课《两、三位数的加法和减法》",
-		"value": "2131c16bb551d6e915ff6e40"
+		"name": "第6课《Module 3 Unit 2 Are you doing your homework?》",
+		"value": "3c48e9f3b1e0a805606c1724"
 	}, {
-		"name": "第7课《角的初步认识》",
-		"value": "d37f7a187c72655ecdd061fe"
+		"name": "第7课《Module 4 Unit 1 What are you doing?》",
+		"value": "f85cee6fa811b60245a8acd1"
 	}, {
-		"name": "第8课《数据的收集和整理》",
-		"value": "8d63de471c1a2301752f8bb8"
+		"name": "第8课《Module 4 Unit 2 What's he doing?》",
+		"value": "d33c7030001ff848d9bfdc6e"
 	}, {
-		"name": "第9课《期末复习》",
-		"value": "98a535347900d05c5fab5c6d"
+		"name": "第9课《Module 5 Unit 1 Linglingi is skipping.》",
+		"value": "5289d8c75dc3800bf88ed257"
+	}, {
+		"name": "第10课《Module 5 Unit 2 What are the kids playing?》",
+		"value": "f2aec639646d57a5b5e7f6ba"
+	}, {
+		"name": "第11课《Module 6 Unit 1 I usually play basketball.》",
+		"value": "3e1880ec4bad1b2b08ec5f8b"
+	}, {
+		"name": "第12课《Module 6 Unit 2 My grandma usually cooks.》",
+		"value": "f8ddf24f6d34d1c329245886"
+	}, {
+		"name": "第13课《Module 7 Unit 1 It's Children's Day today.》",
+		"value": "ee65ba93c4455fe2f0391b73"
+	}, {
+		"name": "第14课《Module 7 Unit 2 We're having a picnic.》",
+		"value": "84e2b48c1050db1e9ee5b9ec"
+	}, {
+		"name": "第15课《Module 8 Unit 1 The train is going up a hill.》",
+		"value": "0330c9721be5993d9a789514"
+	}, {
+		"name": "第16课《Module 8 Unit 2 The horse is turning around.》",
+		"value": "2f05c2507c461fece805327a"
+	}, {
+		"name": "第17课《Module 9 Unit 1 Turn left.》",
+		"value": "e057e0afb506f8d9f2c09bb9"
+	}, {
+		"name": "第18课《Module 9 Unit 2 Where do you live?》",
+		"value": "c8f1a66344489052d94fd1dd"
+	}, {
+		"name": "第19课《Module 10 Unit 1 It's next to the park.》",
+		"value": "2705c8365aa55c66080cea40"
+	}, {
+		"name": "第20课《Module 10 Unit 2 He's helping a child.》",
+		"value": "a6cbbc1bfec1f9974baab3a9"
 	}]
 }, {
 	"name": "三年级上册",
@@ -175,37 +307,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《两、三位数乘一位数》",
-		"value": "f687cac2c12b2eafbcac56f0"
+		"name": "第1课《Module 1 Unit 1 Do you use chopsticks in the UK?》",
+		"value": "2584aa97cace7bd07cc2ce9b"
 	}, {
-		"name": "第2课《千克和克》",
-		"value": "5404adbda7122c0eee7a9a8d"
+		"name": "第2课《Module 1 Unit 2 I'm eating hamburgers and chips.》",
+		"value": "36c31f728a2559ab71301c01"
 	}, {
-		"name": "第3课《长方形和正方形》",
-		"value": "c23a46caa8eb76d15d196474"
+		"name": "第3课《Module 2 Unit 1 We're making a cake.》",
+		"value": "3de5fa8b4faf447c4ad3e387"
 	}, {
-		"name": "第4课《两、三位数除以一位数》",
-		"value": "47a041605a7ac33cc09beac0"
+		"name": "第4课《Module 2 Unit 2 I'm watching TV.》",
+		"value": "fb41f2ecb726513429908fa6"
 	}, {
-		"name": "第5课《解决问题的策略》",
-		"value": "23b8221172e9ae62683233b4"
+		"name": "第5课《Module 3 Unit 1 These ducks are very naughty!》",
+		"value": "21cf1ca08ddd8fc65b24c8e0"
 	}, {
-		"name": "第6课《平移、旋转和轴对称》",
-		"value": "4a817dbdd2b50c9cf1c3ac1d"
+		"name": "第6课《Module 3 Unit 2 The ducks are playing in the rain.》",
+		"value": "996af6c730c46d9dda08932c"
 	}, {
-		"name": "第7课《分数的初步认识》",
-		"value": "755c3b6fe7a6a747c59a48ce"
+		"name": "第7课《Module 4 Unit 1 I can jump.》",
+		"value": "4d8f8396a4d383aeacc9ccaf"
 	}, {
-		"name": "第8课《期末复习》",
-		"value": "cb848b32fc68db54ac0f8e01"
+		"name": "第8课《Module 4 Unit 2 What can you see?》",
+		"value": "42a48955f849b9a1d4658e67"
+	}, {
+		"name": "第9课《Module 5 Unit 1 Can I have an ice cream?》",
+		"value": "01bd02f6278da3809095c364"
+	}, {
+		"name": "第10课《Module 5 Unit 2 Can I come in?》",
+		"value": "0944d096f6713ef01a5b0812"
+	}, {
+		"name": "第11课《Module 6 Unit 1 I've got new shorts and new shoes.》",
+		"value": "86b3ed987cf89231ca043313"
+	}, {
+		"name": "第12课《Module 6 Unit 2 He's got a new shirt.》",
+		"value": "ec8802e3f8b1c9b73031d646"
+	}, {
+		"name": "第13课《Module 7 Unit 1 Have you got a headache?》",
+		"value": "b423e5ae10832456bf4fc492"
+	}, {
+		"name": "第14课《Module 7 Unit 2 She's got a cold.》",
+		"value": "81b3523f7218a9c28930db77"
+	}, {
+		"name": "第15课《Module 8 Unit 1 This is Sam's book.》",
+		"value": "050de94835d250dca279a01a"
+	}, {
+		"name": "第16课《Module 8 Unit 2 Is this your grandma's umbrella?》",
+		"value": "e9318a2c204fecf1256d2a60"
+	}, {
+		"name": "第17课《Module 9 Unit 1 I'm going to do the long jump.》",
+		"value": "6c30edb7df73ee29f4438269"
+	}, {
+		"name": "第18课《Module 9 Unit 2 I'm going to be a driver.》",
+		"value": "df59e270b34d16d4e4682a58"
+	}, {
+		"name": "第19课《Module 10 Unit 1 Are you going to Hong Kong?》",
+		"value": "b2389f8b1ab4bfae99bc3758"
+	}, {
+		"name": "第20课《Module 10 Unit 2 What are you going to see?》",
+		"value": "9ce73775d68287aea1a8b4b6"
 	}]
 }, {
 	"name": "三年级下册",
@@ -215,43 +383,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《两位数乘两位数》",
-		"value": "97f399159468edf22b570186"
+		"name": "第1课《Module 1 Unit 1 She's very nice.》",
+		"value": "52b07f27f9440fd84279b5f3"
 	}, {
-		"name": "第2课《千米和吨》",
-		"value": "1680898a1659a2b880e55c01"
+		"name": "第2课《Module 1 Unit 2 I'm going to help her.》",
+		"value": "164de0d7a47ccb5e841c0ee7"
 	}, {
-		"name": "第3课《解决问题的策略》",
-		"value": "e36b26a403276f89c2be3884"
+		"name": "第3课《Module 2 Unit 1 It's very long.》",
+		"value": "5e6b8d9be945db91cffdc8f1"
 	}, {
-		"name": "第4课《混合运算》",
-		"value": "b24ec2b826be68cf60305d92"
+		"name": "第4课《Module 2 Unit 2 You'll see Tower Bridge.》",
+		"value": "472064db20a80bf493f19fcf"
 	}, {
-		"name": "第5课《年、月、日》",
-		"value": "e5dc262841000837a6f87061"
+		"name": "第5课《Module 3 Unit 1 We'll go to the zoo.》",
+		"value": "4049394d862479a4cfd7b056"
 	}, {
-		"name": "第6课《长方形和正方形的面积》",
-		"value": "83c3de19502e84d11822a0f1"
+		"name": "第6课《Module 3 Unit 2 Will we have breakfast at 7?》",
+		"value": "2ed55e6b2b1d86c24f7601ee"
 	}, {
-		"name": "第7课《分数的初步认识》",
-		"value": "e1f9bbcddea7b57e878f36c9"
+		"name": "第7课《Module 4 Unit 1 We'll pick fruit.》",
+		"value": "331f2f8222ec4528a8cd2db8"
 	}, {
-		"name": "第8课《小数的初步认识》",
-		"value": "86c95675b58f809daa8d3904"
+		"name": "第8课《Module 4 Unit 2 thirteen fourteen fifteen》",
+		"value": "ccf7fc6a29691047875558f8"
 	}, {
-		"name": "第9课《数据的收集和整理》",
-		"value": "187a3aa53bfb144269c5cee2"
+		"name": "第9课《Module 5 Unit 1 Will you take your ball tomorrow?》",
+		"value": "e4894d39a442cae35fd15a51"
 	}, {
-		"name": "第10课《期末复习》",
-		"value": "d2f97e49852d7ed001e9d979"
+		"name": "第10课《Module 5 Unit 2 On Monday,I'll go swimming.》",
+		"value": "8b1b29753043fb269744c3a7"
+	}, {
+		"name": "第11课《Module 6 Unit 1 Here are his hands.》",
+		"value": "9be956a0540eaa76104ef735"
+	}, {
+		"name": "第12课《Module 6 Unit 2 There is a small monster.》",
+		"value": "39d4d66ce519992168c30e07"
+	}, {
+		"name": "第13课《Module 7 Unit 1 Are there many children in your class?》",
+		"value": "816750c6b9d93f139ebbd41d"
+	}, {
+		"name": "第14课《Module 7 Unit 2 How many apples are there in the box?》",
+		"value": "9375b97fe220354992092bc0"
+	}, {
+		"name": "第15课《Module 8 Unit 1 He works hard.》",
+		"value": "f5c691379a0e4a141a81d49f"
+	}, {
+		"name": "第16课《Module 8 Unit 2 She's quite good at English.》",
+		"value": "31645a06cfcb2b9e1dcf0d5d"
+	}, {
+		"name": "第17课《Module 9 Unit 1 They were very young.》",
+		"value": "eaf77c700db3c5481ad085a2"
+	}, {
+		"name": "第18课《Module 9 Unit 2 He was in Hong Kong.》",
+		"value": "d1a1ced39173f2864fc43db9"
+	}, {
+		"name": "第19课《Module 10 Unit 1 Were you on the second floor?》",
+		"value": "090f5829a9cdbace19a484fc"
+	}, {
+		"name": "第20课《Module 10 Unit 2 It was there.》",
+		"value": "6ecf65a4a64fa01421e20b5c"
 	}]
 }, {
 	"name": "四年级上册",
@@ -261,40 +459,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《升和毫升》",
-		"value": "8cdcc8655c797cbd5cb948ad"
+		"name": "第1课《Module 1 Unit 1 It was my birthday on Saturday.》",
+		"value": "ff57ddce29b82a7c3358b61d"
 	}, {
-		"name": "第2课《两、三位数除以两位数》",
-		"value": "b8a4efa76e3095cbdb23d619"
+		"name": "第2课《Module 1 Unit 2 I've got a new friend.》",
+		"value": "1e9895840f8477894182b29b"
 	}, {
-		"name": "第3课《观察物体》",
-		"value": "0da19cec663a34d84772698a"
+		"name": "第3课《Module 2 Unit 1 I helped my mum.》",
+		"value": "4ca047ce13372399ceee88f5"
 	}, {
-		"name": "第4课《统计表和条形统计图》",
-		"value": "645c11982dda75d15cf467bf"
+		"name": "第4课《Module 2 Unit 2 Amy painted a picture.》",
+		"value": "710236ded75a3e450b366ce3"
 	}, {
-		"name": "第5课《解决问题的策略》",
-		"value": "c0018b62108b2832a973ee82"
+		"name": "第5课《Module 3 Unit 1 She didn't walk to school yesterday.》",
+		"value": "0647bb903a85ab0e7a778064"
 	}, {
-		"name": "第6课《可能性》",
-		"value": "e74ecf17f538cd268a751952"
+		"name": "第6课《Module 3 Unit 2 I didn't play football.》",
+		"value": "c0c4be66b9191a17cfea58df"
 	}, {
-		"name": "第7课《整数四则混合运算》",
-		"value": "e18904014643fe513fa8cec2"
+		"name": "第7课《Module 4 Unit 1 Chinese people invented paper.》",
+		"value": "cb82611589bd386c73a96cf3"
 	}, {
-		"name": "第8课《垂线与平行线》",
-		"value": "0caa34a04d1600a3f7f36f6a"
+		"name": "第8课《Module 4 Unit 2 He invented this bicycle.》",
+		"value": "57d538eaf9e5527b4a98e115"
 	}, {
-		"name": "第9课《整理与复习》",
-		"value": "9ec2c096cdc226fdd68c437a"
+		"name": "第9课《Module 5 Unit 1 We went to the Great Wall.》",
+		"value": "8d33864f95de96eb1d0ef138"
+	}, {
+		"name": "第10课《Module 5 Unit 2 I wore warm clothes.》",
+		"value": "625fc88cc6ff67555a78e090"
+	}, {
+		"name": "第11课《Module 6 Unit 1 It didn't become gold.》",
+		"value": "38fdac359dee8cccdda94588"
+	}, {
+		"name": "第12课《Module 6 Unit 2 He didn't come back.》",
+		"value": "86830cefd9a1698d7ee77c83"
+	}, {
+		"name": "第13课《Module 7 Unit 1 Did you take Amy's doll?》",
+		"value": "9099f0d9f10798169df952ee"
+	}, {
+		"name": "第14课《Module 7 Unit 2 Did you see it?》",
+		"value": "c5f94f7762a9703ff8e672ec"
+	}, {
+		"name": "第15课《Module 8 Unit 1 When did they come?》",
+		"value": "10fccb12de7a599504453d7e"
+	}, {
+		"name": "第16课《Module 8 Unit 2 Where did you go yesterday?》",
+		"value": "c6a3b7e281561156b55003cb"
+	}, {
+		"name": "第17课《Module 9 Unit 1 What happened to your head?》",
+		"value": "48b0f8c885be67ecf256acfe"
+	}, {
+		"name": "第18课《Module 9 Unit 2 I bumped my head.》",
+		"value": "5b0177ca9d65e8b87f291694"
+	}, {
+		"name": "第19课《Module 10 Unit 1 Go to bed early.》",
+		"value": "357755aff7112aa1a28d495f"
+	}, {
+		"name": "第20课《Module 10 Unit 2 Eat vegetables every day.》",
+		"value": "848a990f1f91e8f3303a93c2"
 	}]
 }, {
 	"name": "四年级下册",
@@ -304,40 +535,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《平移、 旋转和轴对称》",
-		"value": "aebd50c62114d89dbe5e7bc1"
+		"name": "第1课《Module 1 Unit 1 Do't touch the machines,please!》",
+		"value": "01bbce3578b8dd8b008046e8"
 	}, {
-		"name": "第2课《认识多位数》",
-		"value": "7df19316b501b9918a8e5037"
+		"name": "第2课《Module 1 Unit 2 Don't feed the fish!》",
+		"value": "e8741b786fa6c5c5c6fffd18"
 	}, {
-		"name": "第3课《三位数乘两位数》",
-		"value": "9a68b9dbd3dab5b1e204d25c"
+		"name": "第3课《Module 2 Unit 1 It's cheap.》",
+		"value": "37deb6dd24fa4c119563b952"
 	}, {
-		"name": "第4课《用计算器计算》",
-		"value": "b4ba5814c34ba2b4879e7b90"
+		"name": "第4课《Module 2 Unit 2 It costs one hundred and eighteen yuan.》",
+		"value": "c583f04471db75365f24aceb"
 	}, {
-		"name": "第5课《解决问题的策略》",
-		"value": "ac85c428edc1f49f4227451a"
+		"name": "第5课《Module 3 Unit 1 He shouted,'Wolf,wolf!'》",
+		"value": "199d87fcaea40b800b8c4e8e"
 	}, {
-		"name": "第6课《运算律》",
-		"value": "e0b6601637d3681c335690c2"
+		"name": "第6课《Module 3 Unit 2 She went into a shop.》",
+		"value": "046718d68d0ec3b64653c47e"
 	}, {
-		"name": "第7课《三角形、 平行四边形和梯形》",
-		"value": "9a50654e6fbfe9307b822a1d"
+		"name": "第7课《Module 4 Unit 1 Dad played the erhu.》",
+		"value": "4f04ecf57747ebe20b8c6c75"
 	}, {
-		"name": "第8课《确定位置》",
-		"value": "9a90647fd0bbd9e983451f3d"
+		"name": "第8课《Module 4 Unit 2 I was very nervous.》",
+		"value": "1719190016e43f41a09b6670"
 	}, {
-		"name": "第9课《整理与复习》",
-		"value": "4e19aa230bcd47ab23261f64"
+		"name": "第9课《Module 5 Unit 1 We're having a party.》",
+		"value": "feadbf963fb15a500afbaed5"
+	}, {
+		"name": "第10课《Module 5 Unit 2 He's drawing books and birds.》",
+		"value": "e312c52f3e4a7cbe44e72552"
+	}, {
+		"name": "第11课《Module 6 Unit 1 I'll draw the pictures.》",
+		"value": "e028978bfe4d774a02ed1c00"
+	}, {
+		"name": "第12课《Module 6 Unit 2 Let's have fun this Saturday!》",
+		"value": "4f23ae27825e56be303a46bf"
+	}, {
+		"name": "第13课《Module 7 Unit 1 What's the time?》",
+		"value": "b51cd4e17d0e175c67701d80"
+	}, {
+		"name": "第14课《Module 7 Unit 2 It's 6:30 am in New York.》",
+		"value": "c9b6acf9283e20865d43118c"
+	}, {
+		"name": "第15课《Module 8 Unit 1 He lives in the east of the US.》",
+		"value": "cbac083d69893c67b233fc95"
+	}, {
+		"name": "第16课《Module 8 Unit 2 It's in the north of China.》",
+		"value": "03041a07323a3d4688ae45d8"
+	}, {
+		"name": "第17课《Module 9 Unit 1 Why do you like Australia?》",
+		"value": "c201288e3b24fa5971df6cb9"
+	}, {
+		"name": "第18课《Module 9 Unit 2 Kangaroos live in Australia.》",
+		"value": "bdc20e7e782a4660c413be00"
+	}, {
+		"name": "第19课《Module 10 Unit 1 I'll send you a postcard.》",
+		"value": "247cdb1772e2937e472b2681"
+	}, {
+		"name": "第20课《Module 10 Unit 2 I'm going to visit London.》",
+		"value": "f7541472929137893558652f"
 	}]
 }, {
 	"name": "五年级上册",
@@ -347,40 +611,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《负数的初步认识》",
-		"value": "57ce4482af7f9764246d4541"
+		"name": "第1课《Module 1 Unit 1 There wasn't a clock here before.》",
+		"value": "13fde09456ebc7a556884480"
 	}, {
-		"name": "第2课《多边形的面积》",
-		"value": "ecfab36d4198ebe44882e926"
+		"name": "第2课《Module 1 Unit 2 There are tall trees now.》",
+		"value": "bc5926d12d3b6706f24a107e"
 	}, {
-		"name": "第3课《小数的意义和性质》",
-		"value": "db89e20480e7eee1db759a3b"
+		"name": "第3课《Module 2 Unit 1 This one is heavy.》",
+		"value": "80c96f690c3310bd3cf9a6bc"
 	}, {
-		"name": "第4课《小数加法和减法》",
-		"value": "36a8683384fcbe5c44c60b93"
+		"name": "第4课《Module 2 Unit 2 They sell many different things.》",
+		"value": "10173ecdf883674db76deba0"
 	}, {
-		"name": "第5课《小数乘法和除法》",
-		"value": "0eae808920e91ba0b743f63c"
+		"name": "第5课《Module 3 Unit 1 Today is Halloween.》",
+		"value": "22791e0b1fa8a882e08d08e0"
 	}, {
-		"name": "第6课《统计表和条形统计图》",
-		"value": "c24579302036885cdd8ece46"
+		"name": "第6课《Module 3 Unit 2 Easter is in spring in the UK.》",
+		"value": "ce4c3145563d6deb385638d0"
 	}, {
-		"name": "第7课《解决问题的策略》",
-		"value": "cbdb49ee3522212f4eca19f3"
+		"name": "第7课《Module 4 Unit 1 We're going to tell stories.》",
+		"value": "655e92620c654beab4cf315f"
 	}, {
-		"name": "第8课《用字母表示数》",
-		"value": "cba4d2371acf012e9a700ac8"
+		"name": "第8课《Module 4 Unit 2 I'm going to be elven.》",
+		"value": "2d4e307bdf8e676e676f0c80"
 	}, {
-		"name": "第9课《整理与复习》",
-		"value": "2f2577ef7fc9fe1636707860"
+		"name": "第9课《Module 5 Unit 1 It's mine!》",
+		"value": "87738fc673295647eea7e31d"
+	}, {
+		"name": "第10课《Module 5 Unit 2 Amy's blue dress is wet.》",
+		"value": "af58fb63bd23288001bf783c"
+	}, {
+		"name": "第11课《Module 6 Unit 1 You can play basketball well.》",
+		"value": "5d428516c4bb2a4ed1af2b5b"
+	}, {
+		"name": "第12课《Module 6 Unit 2 They got seventy points.》",
+		"value": "c3cfe014f483bfce4a64ce56"
+	}, {
+		"name": "第13课《Module 7 Unit 1 His dog can help him.》",
+		"value": "2f81fbddc3a67f1ba4914d66"
+	}, {
+		"name": "第14课《Module 7 Unit 2 It could find the people.》",
+		"value": "55b4ac7cb8763226e3b2333f"
+	}, {
+		"name": "第15课《Module 8 Unit 1 Children often sit around tables.》",
+		"value": "3502d67922fa248394986cc3"
+	}, {
+		"name": "第16课《Module 8 Unit 2 There are lots games.》",
+		"value": "92d2bb8241e68536a385534f"
+	}, {
+		"name": "第17课《Module 9 Unit 1 Are you sad?》",
+		"value": "6f09ea3852f0037bddbd3269"
+	}, {
+		"name": "第18课《Module 9 Unit 2 She was very happy.》",
+		"value": "a0c63dd500fdb9389306f0c4"
+	}, {
+		"name": "第19课《Module 10 Unit 1 You shouldn't tidy your toys.》",
+		"value": "9ba6c409dd3fe915eb9c39d7"
+	}, {
+		"name": "第20课《Module 10 Unit 2 You shouldn't be late.》",
+		"value": "d7c5bf0b4d0a8917dc1d16c6"
 	}]
 }, {
 	"name": "五年级下册",
@@ -390,37 +687,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《简易方程》",
-		"value": "ac9846f9bd911f9d37615f7d"
+		"name": "第1课《Module 1 Unit 1 She was a driver before.》",
+		"value": "a87e111442fd0915233af4aa"
 	}, {
-		"name": "第2课《折线统计图》",
-		"value": "9f1a534e9e5b630b6f2b89c8"
+		"name": "第2课《Module 1 Unit 2 He worked in an office.》",
+		"value": "6271de6080a84b4495902187"
 	}, {
-		"name": "第3课《倍数与因数》",
-		"value": "f59895582a140fd2c528bd6f"
+		"name": "第3课《Module 2 Unit 1 What did she have for lunch?》",
+		"value": "6ccb80efe8c33ab33c519956"
 	}, {
-		"name": "第4课《分数的意义和性质》",
-		"value": "8cbfb55de9bb8f875b3dfdba"
+		"name": "第4课《Module 2 Unit 2 Lunch is usually at half past twelve.》",
+		"value": "1662f3c262dec90f4b000f7f"
 	}, {
-		"name": "第5课《分数加法和减法》",
-		"value": "ff0fd517a72db307b0e26f98"
+		"name": "第5课《Module 3 Unit 1 Have you got the Harry Potter DVDs?》",
+		"value": "c96c605eae1b237eaaca7e90"
 	}, {
-		"name": "第6课《圆》",
-		"value": "0c3ca9632df7aa4a10dde6b2"
+		"name": "第6课《Module 3 Unit 2 You can use the computers.》",
+		"value": "a1595cedef7956845d9629a8"
 	}, {
-		"name": "第7课《解决问题的策略》",
-		"value": "05e7e3a7dde3c73f49a5fe4e"
+		"name": "第7课《Module 4 Unit 1 Did you read them?》",
+		"value": "c20e7becdee2a8afd8f275df"
 	}, {
-		"name": "第8课《整理与复习》",
-		"value": "dfc89085c713a4e9e552fcdf"
+		"name": "第8课《Module 4 Unit 2 My favourite season is spring.》",
+		"value": "fe6001b9373e1b8bd5be7ebd"
+	}, {
+		"name": "第9课《Module 5 Unit 1 Your bag is broken.》",
+		"value": "5ca26d5541cbd7e742f847f0"
+	}, {
+		"name": "第10课《Module 5 Unit 2 Mine is pink.》",
+		"value": "bb699714caf3601560e757e7"
+	}, {
+		"name": "第11课《Module 6 Unit 1 We'll see lots of very big stones.   》",
+		"value": "92899105b37fde929d699ac6"
+	}, {
+		"name": "第12课《Module 6 Unit 2 It was amazing.》",
+		"value": "e77353fe0c0ea5965b43cb68"
+	}, {
+		"name": "第13课《Module 7 Unit 1 My father goes to word at 8 o'clock every morning.》",
+		"value": "55ba30a6f74bbb3e51774eb0"
+	}, {
+		"name": "第14课《Module 7 Unit 2 I'll be home at 7 o'clock.》",
+		"value": "7c7999422679b4231087e02f"
+	}, {
+		"name": "第15课《Module 8 Unit 1 Will you help me?》",
+		"value": "994849130d6caf15bf44e771"
+	}, {
+		"name": "第16课《Module 8 Unit 2 I made a kite.》",
+		"value": "ffa686630f13787d65600230"
+	}, {
+		"name": "第17课《Module 9 Unit 1 We laughed a lot.》",
+		"value": "b11d63b290f74018973915b2"
+	}, {
+		"name": "第18课《Module 9 Unit 2 Mum bought new chopsticks for you.》",
+		"value": "9e877db7facaf5eaeff64f5a"
+	}, {
+		"name": "第19课《Module 10 Unit 1 What did you put in your bag?》",
+		"value": "ab71c5e490475b0f61a0cc2a"
+	}, {
+		"name": "第20课《Module 10 Unit 2 I played on the beach.》",
+		"value": "1c9003c1291a177eec7325b3"
 	}]
 }, {
 	"name": "六年级上册",
@@ -430,34 +763,73 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《长方体和正方体》",
-		"value": "b3c83afdbf110e0dd40ecaa9"
+		"name": "第1课《Module 1 Unit 1 How long is the Great Wall?》",
+		"value": "a1819fbe10c38b98d8dd5769"
 	}, {
-		"name": "第2课《分数乘法》",
-		"value": "02c3e400ecfa1f2dec041897"
+		"name": "第2课《Module 1 Unit 2 It's more than four hundred metres high!》",
+		"value": "73a68dadbcf4af427a4da211"
 	}, {
-		"name": "第3课《分数除法》",
-		"value": "d283869119fa2e6845aad75c"
+		"name": "第3课《Module 2 Unit 1 I went to Chinatown in New York yesterday.》",
+		"value": "0c4e7ed859842a66fde4c7ab"
 	}, {
-		"name": "第4课《解决问题的策略》",
-		"value": "3b5fadff8677e326dca16669"
+		"name": "第4课《Module 2 Unit 2 I went to a library yesterday.》",
+		"value": "d5441394ddef045b2070f310"
 	}, {
-		"name": "第5课《分数四则混合运算》",
-		"value": "68ff94a95f0862f728c243a0"
+		"name": "第5课《Module 3 Unit 1 Have you got any stamps from China?》",
+		"value": "8a1d856a1673556faa13be34"
 	}, {
-		"name": "第6课《百分数》",
-		"value": "ef701b93262e8bbc02bb8022"
+		"name": "第6课《Module 3 Unit 2 Collecting stamps is my hobby.》",
+		"value": "a61b55d1c58b3d6841d58512"
 	}, {
-		"name": "第7课《整理与复习》",
-		"value": "295be1af8507844cf9852015"
+		"name": "第7课《Module 4 Unit 1 Thanksgiving is very important in the US.》",
+		"value": "32f582da3ad51195f91a64ab"
+	}, {
+		"name": "第8课《Module 4 Unit 2 Can you tell me about Christmas?》",
+		"value": "9dffbc72070ea32d0d34879b"
+	}, {
+		"name": "第9课《Module 5 Unit 1 Can I write to her?》",
+		"value": "03f478d964774dbd94c71faa"
+	}, {
+		"name": "第10课《Module 5 Unit 2 I want a Chinese pen friend.》",
+		"value": "054f15623f0381ef384434c0"
+	}, {
+		"name": "第11课《Module 6 Unit 1 I've got some Chinese chopsticks.》",
+		"value": "f6a0420ad510318856e10cee"
+	}, {
+		"name": "第12课《Module 6 Unit 2 haven't got a book about the US.》",
+		"value": "777a2d8c01eb224389c8846d"
+	}, {
+		"name": "第13课《Module 7 Unit 1 Pandas love bamboo.》",
+		"value": "cd0a7dead7119c93a9b802fc"
+	}, {
+		"name": "第14课《Module 7 Unit 2 A child sleeps for ten hours a night.》",
+		"value": "be3e04d8cd1008abd76e4cb1"
+	}, {
+		"name": "第15课《Module 8 Unit 1 Do you often tidy your bed?》",
+		"value": "2de886085d2773555313f20f"
+	}, {
+		"name": "第16课《Module 8 Unit 2 I often read English books.》",
+		"value": "ba6de68fe19282f3ecefe63e"
+	}, {
+		"name": "第17课《Module 9 Unit 1 Do you want to visit the UN building?》",
+		"value": "9f0e8ece71602e41ec53445f"
+	}, {
+		"name": "第18课《Module 9 Unit 2 I want to go to Shanghai.》",
+		"value": "bcb76bba9062ac2861ba80f5"
+	}, {
+		"name": "第19课《Module 10 Unit 1 Only drink clean water!》",
+		"value": "c509b7cc6f11cc4370722da6"
+	}, {
+		"name": "第20课《Module 10 Unit 2 Go straight on.》",
+		"value": "309deeee23d2f01c21d8b79d"
 	}]
 }, {
 	"name": "六年级下册",
@@ -467,33 +839,402 @@
 		"value": "6038483da112ea00011a4ef7"
 	},
 	"version": {
-		"name": "苏教版",
-		"value": "6041d1b89e892800016453c6"
+		"name": "外研版",
+		"value": "6041e9b78a73750001a43081"
 	},
 	"subject": {
-		"name": "数学",
-		"value": "5ffef50cd06eec0001278c79"
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
 	},
 	"data": [{
-		"name": "第1课《扇形统计图》",
-		"value": "a6b4f13647c3b19e34e17dcc"
+		"name": "第1课《Module 1 Unit 1 I want a hot dog,please.》",
+		"value": "c29ef54b418dff60ebd3dff2"
 	}, {
-		"name": "第2课《圆柱和圆锥》",
-		"value": "e4b71068efe7ea010506ef8b"
+		"name": "第2课《Module 1 Unit 2 What do you want to eat?》",
+		"value": "31462354b323f414792b9751"
 	}, {
-		"name": "第3课《解决问题的策略》",
-		"value": "5385bfa07046c7e5fcdd9908"
+		"name": "第3课《Module 2 Unit 1 When are we going to eat?》",
+		"value": "2872942f70bff6cb3b1b0d58"
 	}, {
-		"name": "第4课《比例》",
-		"value": "4a14811b968199b82cb0e767"
+		"name": "第4课《Module 2 Unit 2 It will rain in Beijing.》",
+		"value": "d257e7c57df12cd35e52d497"
 	}, {
-		"name": "第5课《确定位置》",
-		"value": "5a62ac5b39a1376073971f3c"
+		"name": "第5课《Module 3 Unit 1 I took some photos.》",
+		"value": "7cb806a1a1ead4e321ab0a66"
 	}, {
-		"name": "第6课《正比例和反比例》",
-		"value": "beceaadce5790ba5912156e1"
+		"name": "第6课《Module 3 Unit 2 The sun is shining.》",
+		"value": "4622592f948d8a6d68eeebbb"
 	}, {
-		"name": "第7课《总复习》",
-		"value": "ff2d74e1abe24c441774c2a4"
+		"name": "第7课《Module 4 Unit 1 I can't carry all these things.》",
+		"value": "bce39827c9bc04fd0840e312"
+	}, {
+		"name": "第8课《Module 4 Unit 2 The apples are falling down the stairs!》",
+		"value": "9b7982f0c33c205d96660641"
+	}, {
+		"name": "第9课《Module 5 Unit 1 He is playing the ...》",
+		"value": "5a100fbba2328e21b76caad7"
+	}, {
+		"name": "第10课《Module 5 Unit 2 Some children are jumping in the water.》",
+		"value": "d3ca0673a08f8c697e7db94c"
+	}, {
+		"name": "第11课《Module 6 Unit 1 I've got some Chinese chopsticks.》",
+		"value": "e8a224f78ed5a7280d2cb5d1"
+	}, {
+		"name": "第12课《Module 6 Unit 2 haven't got a book about the US.》",
+		"value": "6c736b0b45cc92958cf3d8e9"
+	}, {
+		"name": "第13课《Module 7 Unit 1 Pandas love bamboo.》",
+		"value": "6271d2d4be7a77dce3c7cfe9"
+	}, {
+		"name": "第14课《Module 7 Unit 2 A child sleeps for ten hours a night.》",
+		"value": "f5537200349783a52bc62326"
+	}, {
+		"name": "第15课《Module 8 Unit 1 Do you often tidy your bed?》",
+		"value": "d927222e17e89142d1d0b3cb"
+	}, {
+		"name": "第16课《Module 8 Unit 2 I often read English books.》",
+		"value": "9b96fe96b865d7b7d7b84502"
+	}, {
+		"name": "第17课《Module 9 Unit 2 Do you want to visit the UN building?》",
+		"value": "313dbc0fd937a40c506fea5f"
+	}, {
+		"name": "第18课《Module 9 Unit 2 I want to go to Shanghai.》",
+		"value": "b6da6692833920f1b8470f0f"
+	}, {
+		"name": "第19课《Module 10 Unit 1 Only drink clean water!》",
+		"value": "2b94541944fe28e2e4e8e2e4"
+	}, {
+		"name": "第20课《Module 10 Unit 2 Go straight on.》",
+		"value": "aeafd727afa1bc6b69a076af"
+	}]
+}, {
+	"name": "七年级上册",
+	"order": 13,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"version": {
+		"name": "外研版",
+		"value": "6041e9de78b4c30001094980"
+	},
+	"subject": {
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
+	},
+	"data": [{
+		"name": "第1课《Module1 My classmates》",
+		"value": "9ab64d566ff603ccfda9b57b"
+	}, {
+		"name": "第2课《Module2 My family》",
+		"value": "4ade9168e9e30e67e068cacf"
+	}, {
+		"name": "第3课《Module3 My school》",
+		"value": "fb31bbee7df19559276919fa"
+	}, {
+		"name": "第4课《Module4 Healthy food》",
+		"value": "be955ce47eb190e247aa8b26"
+	}, {
+		"name": "第5课《Module 5 My school day》",
+		"value": "87a4bcbfa993d1cbc1a38526"
+	}, {
+		"name": "第6课《Module 6 A trip to the zoo》",
+		"value": "30ae4775d54372b2d09546c4"
+	}, {
+		"name": "第7课《Module 7 Computers》",
+		"value": "a2f96030d2191b9a6acca1ad"
+	}, {
+		"name": "第8课《Module 8 Choosing presents》",
+		"value": "463b428aa2d533cfe6e82de8"
+	}, {
+		"name": "第9课《Module 9 People and places》",
+		"value": "dee731b54b1114aa362389d5"
+	}, {
+		"name": "第10课《Module 10 Spring Festival》",
+		"value": "ded4903b9aa23ce00af897c4"
+	}]
+}, {
+	"name": "七年级下册",
+	"order": 14,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"version": {
+		"name": "外研版",
+		"value": "6041e9de78b4c30001094980"
+	},
+	"subject": {
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
+	},
+	"data": [{
+		"name": "第1课《Module 1 Lost and found》",
+		"value": "7ea03e9a641e96e89160c00f"
+	}, {
+		"name": "第2课《Module 2 What can you do?》",
+		"value": "85b5cebdce364cbe9fe5b28b"
+	}, {
+		"name": "第3课《Module 3 Making plans》",
+		"value": "04262951ce0727a9d08f0882"
+	}, {
+		"name": "第4课《Module 4 Life in the future》",
+		"value": "f0ab93caf4e9a3c5f5915deb"
+	}, {
+		"name": "第5课《Module 5 Shopping》",
+		"value": "3af64fd1c44bace9e331b108"
+	}, {
+		"name": "第6课《Module 6 Around town》",
+		"value": "f5f4913d583945b0d109b6be"
+	}, {
+		"name": "第7课《Module 7 My past life》",
+		"value": "91bf16a929a3cc12aac6d178"
+	}, {
+		"name": "第8课《Module 8 Story time》",
+		"value": "11f0ef3848d6b339ec21a004"
+	}, {
+		"name": "第9课《Module 9 Life history》",
+		"value": "5e61999103fb784cb529f66c"
+	}, {
+		"name": "第10课《Module 10 A holiday journey》",
+		"value": "edbb156d9a15130a00398d32"
+	}]
+}, {
+	"name": "八年级上册",
+	"order": 15,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"version": {
+		"name": "外研版",
+		"value": "6041e9de78b4c30001094980"
+	},
+	"subject": {
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
+	},
+	"data": [{
+		"name": "第1课《Module 1 How to learn English》",
+		"value": "13208ae348c1a5f73f9b9c3d"
+	}, {
+		"name": "第2课《Module 2 My hometown and my county》",
+		"value": "c7f2f8e4e2e88cc83ad83e63"
+	}, {
+		"name": "第3课《Module 3 Sports》",
+		"value": "0a3b3b83f7531ba338de6d7f"
+	}, {
+		"name": "第4课《Module 4 Planes,ships and trains》",
+		"value": "980f4d9b8ff4fe13c3dc3a86"
+	}, {
+		"name": "第5课《Module 5 Lao She Teahouse》",
+		"value": "8e71c2513330655cb177c17f"
+	}, {
+		"name": "第6课《Module 6 Animals in danger》",
+		"value": "22e933de64a058e6540f280b"
+	}, {
+		"name": "第7课《Module 7 A famous story》",
+		"value": "67a79c9c182dedbcdd853ac7"
+	}, {
+		"name": "第8课《Module 8 Accidents》",
+		"value": "f0bb8b5c8cb37cc1b3981476"
+	}, {
+		"name": "第9课《Module 9 Population》",
+		"value": "1b781e7f115f69bc48cb2067"
+	}, {
+		"name": "第10课《Module 10 The weather》",
+		"value": "cfaa2627fda70be619be3452"
+	}, {
+		"name": "第11课《Module 11 Way of life》",
+		"value": "41a58c4f9f41ba3f8597c2c1"
+	}, {
+		"name": "第12课《Module 12 Help》",
+		"value": "ad41b2263f374a87c45044af"
+	}]
+}, {
+	"name": "八年级下册",
+	"order": 16,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"version": {
+		"name": "外研版",
+		"value": "6041e9de78b4c30001094980"
+	},
+	"subject": {
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
+	},
+	"data": [{
+		"name": "第1课《Module 1 Feelings and impressions》",
+		"value": "dabe475b1e607d53541fec48"
+	}, {
+		"name": "第2课《Module 2 Experiences》",
+		"value": "7bf55092c5e432c7bdb25fcc"
+	}, {
+		"name": "第3课《Module 3 Journey to space》",
+		"value": "bdf210dd42b2163f00dd0d09"
+	}, {
+		"name": "第4课《Module 4 Seeing the doctor》",
+		"value": "b595ab4a5e5f1c2c49bd1dea"
+	}, {
+		"name": "第5课《Module 5 Cartoons》",
+		"value": "048dec024aa6c20773e48488"
+	}, {
+		"name": "第6课《Module 6 Hobbies》",
+		"value": "03bf70b082ccebf839fd2ba9"
+	}, {
+		"name": "第7课《Module 7 Summer in Los Angeles》",
+		"value": "46f3147fd164909f2a37e955"
+	}, {
+		"name": "第8课《Module 8 Time off》",
+		"value": "080fcdde790bdfb1c77c39cd"
+	}, {
+		"name": "第9课《Module 9 Friendship》",
+		"value": "5f0201165196126a9c22c03f"
+	}, {
+		"name": "第10课《Module 10 On the radio》",
+		"value": "7866e80d77deabbd656616b2"
+	}]
+}, {
+	"name": "九年级上册",
+	"order": 17,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"version": {
+		"name": "外研版",
+		"value": "6041e9de78b4c30001094980"
+	},
+	"subject": {
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
+	},
+	"data": [{
+		"name": "第1课《Module 1 Wonders of the world》",
+		"value": "a0942d86c91db5a5d7c16d04"
+	}, {
+		"name": "第2课《Module 2 Public holidays》",
+		"value": "eee5b5174cafc705b4b1db41"
+	}, {
+		"name": "第3课《Module 3 Heroes》",
+		"value": "343f1133e3b843db32bc38df"
+	}, {
+		"name": "第4课《Module 4 Home alone》",
+		"value": "867aa8c2f38af2edb3c12064"
+	}, {
+		"name": "第5课《Module 5 Museums》",
+		"value": "cf6456ca215e40f3d936c2d0"
+	}, {
+		"name": "第6课《Module 6 Problems》",
+		"value": "4ea8777d7e10264327c0938e"
+	}, {
+		"name": "第7课《Module 7 Great books》",
+		"value": "f885e40943a27165be8b02f7"
+	}, {
+		"name": "第8课《Module 8 Sports life》",
+		"value": "badbd68c07fca57eabfca510"
+	}, {
+		"name": "第9课《Module 9 Great inventions》",
+		"value": "4dd98b5809a66399655d2157"
+	}, {
+		"name": "第10课《Module 10 Australia》",
+		"value": "81bb814be566af34252bb6ff"
+	}, {
+		"name": "第11课《Module 11 Photos》",
+		"value": "856669e53d882469474d9623"
+	}, {
+		"name": "第12课《Module 12 Save our world》",
+		"value": "47b69c5dcc8f8847025c7c33"
+	}]
+}, {
+	"name": "九年级下册",
+	"order": 18,
+	"stage": {
+		"name": "初中",
+		"value": "60384847de602f0001317e18"
+	},
+	"version": {
+		"name": "外研版",
+		"value": "6041e9de78b4c30001094980"
+	},
+	"subject": {
+		"name": "英语",
+		"value": "5ffef518a811400001d783e5"
+	},
+	"data": [{
+		"name": "第1课《Unit 1 We toured the city by bus and by taxi》",
+		"value": "3453ad04018656852ac85c99"
+	}, {
+		"name": "第2课《Unit 2 It’s a long story.》",
+		"value": "c6d68d58e7a11879a9a0c315"
+	}, {
+		"name": "第3课《Unit 3 Language in use》",
+		"value": "5f52728412db309bc8ac51dd"
+	}, {
+		"name": "第4课《Unit 1 I hope we can have a match with them》",
+		"value": "5c0bf5c1070c495739c00def"
+	}, {
+		"name": "第5课《Unit 2 What do I like best about school?》",
+		"value": "96c87a502db2090ca5e4d618"
+	}, {
+		"name": "第6课《Unit 3 Language in use》",
+		"value": "af444df0778244b89933cedd"
+	}, {
+		"name": "第7课《Unit 1 Life is better today than in the past.》",
+		"value": "3c7f18c4f31406e473decab7"
+	}, {
+		"name": "第8课《Unit 2 I think life is better today.》",
+		"value": "466be0e447100e9b7760fcd9"
+	}, {
+		"name": "第9课《Unit 3 Language in use.》",
+		"value": "a198ce1f7e7666845b1c6211"
+	}, {
+		"name": "第10课《Unit 1 You must be careful of falling stones.》",
+		"value": "06b3507af191e828e2d5e923"
+	}, {
+		"name": "第11课《Unit 2 we must keep the camp clean.》",
+		"value": "055b4eeb10ddb0357e43f7f7"
+	}, {
+		"name": "第12课《Unit 3 Language in use.》",
+		"value": "d14e2b9222db7b6f6207d29b"
+	}, {
+		"name": "第13课《Unit 1 We’d better get you to hospital.》",
+		"value": "ecbed96306cb893fa8dc2353"
+	}, {
+		"name": "第14课《Unit 2 Get off the sofa!》",
+		"value": "9c40353fcb2ef2ca15ad16fc"
+	}, {
+		"name": "第15课《Unit 3 Language in use.》",
+		"value": "4cac25f934cf5db6e10ca57e"
+	}, {
+		"name": "第16课《Unit 1 When is the school-leavers’ party?》",
+		"value": "99d2a047d39811c8b7e6eae3"
+	}, {
+		"name": "第17课《Unit 2 Knives and forks are used for most Western food.》",
+		"value": "0066f481638b32052cafc651"
+	}, {
+		"name": "第18课《Unit 3 Language in use》",
+		"value": "76628e2f7a472ebc66ae993b"
+	}, {
+		"name": "第19课《Unit 1 Have you ever been to an English corner?》",
+		"value": "b6a8a22058f9141f80c9f438"
+	}, {
+		"name": "第20课《Unit 2 We all own English.》",
+		"value": "a35334df09e331edd83fce64"
+	}, {
+		"name": "第21课《Unit 3 Language in use》",
+		"value": "6deb2dda95cd3036eb9fa60c"
+	}, {
+		"name": "第22课《Unit 1 Here’s to our friendship and the future》",
+		"value": "82bfd699a88f187c59f32ba5"
+	}, {
+		"name": "第23课《Unit 2 You only really lose if you give up!》",
+		"value": "3afc1853f781bf603b9bbbad"
+	}, {
+		"name": "第24课《Unit 3 Language in use》",
+		"value": "50d23350714829a655d40586"
 	}]
 }]
