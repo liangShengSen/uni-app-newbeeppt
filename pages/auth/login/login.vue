@@ -5,10 +5,10 @@
 			<view class="login-card">
 				<view class="login-head">请输入你的账户</view>
 				<view class="login-input login-margin-b">
-					<input v-model="username" placeholder="手机号或者邮箱" />
+					<input v-model.trim="username" placeholder="手机号或者邮箱" />
 				</view>
 				<view class="login-input">
-					<input type="password" v-model="password" @confirm="login" placeholder="请输入密码(8-16位)" />
+					<input type="password" v-model.trim="password" @confirm="login" placeholder="请输入密码(8-16位)" />
 				</view>
 				<view class="login-function">
 					<view class="login-register" @click="go_register">快速注册</view>
@@ -18,7 +18,12 @@
 		<view class="login-btn">
 			<button class="landing" type="primary" @click="login">登陆</button>
 			<!-- #ifdef MP-WEIXIN -->
-			<button class="wx-btn" type="primary" @click="getLoginCode">微信登陆</button>
+			<view class="login-by-wx">
+				<view class="inner" @click="getLoginCode">
+					<view class="iconfont icon-weixindenglu"></view>
+					<text class="text">微信登陆</text>					
+				</view>
+			</view>
 			<!-- #endif -->
 		</view>
 	</view>
@@ -59,7 +64,7 @@
 					this.$utils.toast('请输入6-20位密码')
 					return false;
 				}
-				uni.showLoading()
+				this.$utils.showLoading('登录中')
 				this.$api.login({
 					username: this.username,
 					password: this.password
@@ -82,9 +87,7 @@
 				})
 			},
 			getLoginCode() {
-				uni.showLoading({
-					title: "微信登录中"
-				})
+				this.$utils.showLoading('微信登录中')
 				uni.login({
 					provider: 'weixin',
 					success: (result) => {
@@ -142,7 +145,27 @@
 
 	.login-btn {
 		padding: 5px 10px;
-		margin-top: 175px;
+		margin-top: 200px;
+		.login-by-wx {
+			margin-top: 35px;
+			.inner {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: center;
+				width: 75px;
+				margin: 0 auto;
+				.icon-weixindenglu {
+					font-size: 40px;
+					color: #00c800;
+				}
+				.text {
+					font-size: 14px;
+					padding: 5px 0;
+					color: #666;
+				}	
+			}
+		}
 	}
 
 	.login-function {
@@ -150,16 +173,10 @@
 		padding: 10px 10px 15px 10px;
 	}
 
-	.login-forget {
-		float: left;
-		font-size: 12px;
-		color: #999;
-	}
-
 	.login-register {
 		color: #666;
 		float: right;
-		font-size: 12px;
+		font-size: 14px;
 	}
 
 	.login-input input {

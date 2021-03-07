@@ -176,7 +176,7 @@ var _default2 =
   },
   methods: {
     collecting: function collecting() {var _this = this;
-      uni.showLoading();
+      this.$utils.showLoading('加载中');
       this.$api.collect_documents({
         document_id: this.item._id }).
       then(function (res) {
@@ -188,13 +188,13 @@ var _default2 =
             icon: 'none' });
 
           // 更新列表收藏状态
-          if (_this.isDetail) {
+          if (_this.isDetail || _this.collect) {
             uni.$emit('update_doc_status');
           }
           // 更新收藏列表
           if (_this.collect) {
             uni.$emit('update_collected', {
-              id: _this.item._id });
+              _id: _this.item._id });
 
           }
         }

@@ -180,6 +180,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
 var _regx = __webpack_require__(/*! @/common/js/regx.js */ 79); //
 //
 //
@@ -206,15 +211,15 @@ var _regx = __webpack_require__(/*! @/common/js/regx.js */ 79); //
 //
 //
 //
-var _default = { data: function data() {return { username: '', password: '', id: '' };}, onLoad: function onLoad(query) {this.id = query.id || '';}, methods: { go_register: function go_register() {uni.navigateTo({ url: '/pages/auth/register/register' });}, login: function login() {var _this = this;if (!this.username) {this.$utils.toast('请输入账号');return false;}if (!(_regx.PHONE.test(this.username) || _regx.EMAIL.test(this.username))) {
-        this.$utils.toast('账号格式错误');
+//
+//
+//
+//
+//
+var _default = { data: function data() {return { username: '', password: '', id: '' };}, onLoad: function onLoad(query) {this.id = query.id || '';}, methods: { go_register: function go_register() {uni.navigateTo({ url: '/pages/auth/register/register' });}, login: function login() {var _this = this;if (!this.username) {this.$utils.toast('请输入账号');return false;}if (!(_regx.PHONE.test(this.username) || _regx.EMAIL.test(this.username))) {this.$utils.toast('账号格式错误');return false;}if (this.password.length < 6 || this.password.length > 20) {this.$utils.toast('请输入6-20位密码');
         return false;
       }
-      if (this.password.length < 6 || this.password.length > 20) {
-        this.$utils.toast('请输入6-20位密码');
-        return false;
-      }
-      uni.showLoading();
+      this.$utils.showLoading('登录中');
       this.$api.login({
         username: this.username,
         password: this.password }).
@@ -237,9 +242,7 @@ var _default = { data: function data() {return { username: '', password: '', id:
       });
     },
     getLoginCode: function getLoginCode() {var _this2 = this;
-      uni.showLoading({
-        title: "微信登录中" });
-
+      this.$utils.showLoading('微信登录中');
       uni.login({
         provider: 'weixin',
         success: function success(result) {var

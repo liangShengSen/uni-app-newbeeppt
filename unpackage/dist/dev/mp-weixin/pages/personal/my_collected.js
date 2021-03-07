@@ -184,7 +184,7 @@ var _default =
   created: function created() {var _this = this;
     uni.$on('update_collected', function (data) {
       _this.collectedList.forEach(function (item, i) {
-        if (item._id === data.id) {
+        if (item._id === data._id) {
           _this.collectedList.splice(i, 1);
         }
       });

@@ -112,7 +112,9 @@
 						if (this.isBindPhone) return
 						break
 					case 'email':
-						if (!this.isBindPhone) return
+						if(this.userInfo.username) {
+							if (!this.isBindPhone) return
+						}
 						break
 				}
 				this.formType = type
@@ -120,7 +122,7 @@
 			},
 			bindPickerChange(e) {
 				this.userInfo.gender = e.detail.value
-				uni.showLoading()
+				this.$utils.showLoading('加载中')
 				this.$api.updateUserInfo({
 					gender: this.userInfo.gender
 				}).then(res => {
@@ -133,7 +135,7 @@
 			getUserInfo() {
 				let uniIdToken = uni.getStorageSync('uni_id_token') || ''
 				if (uniIdToken && !this.userInfo._id) {
-					uni.showLoading()
+					this.$utils.showLoading('加载中')
 					this.$api.getUserInfo().then(res => {
 						uni.hideLoading()
 						if (res.code === 0) {
@@ -160,7 +162,7 @@
 					email: this.userInfo.email
 				}
 				this.$refs.popup.close()
-				uni.showLoading()
+				this.$utils.showLoading('加载中')
 				this.$api.updateUserInfo(data).then(res => {
 					if (res.code === 0) {
 						uni.hideLoading()
@@ -177,7 +179,7 @@
 						let fileExtension = res.tempFilePaths[0].substring(res.tempFilePaths[0].lastIndexOf('.') + 1);
 						const filePath = res.tempFilePaths[0],
 							fileName = res.tempFiles[0].name || (new Date().getTime() + '.' + fileExtension)
-						uni.showLoading()
+						this.$utils.showLoading('上传中')
 						const result = await uniCloud.uploadFile({
 							filePath: filePath,
 							cloudPath: fileName
@@ -265,7 +267,7 @@
 
 				.text {
 					color: #666;
-					font-size: 14px;
+					font-size: 16px;
 				}
 
 				.right {
@@ -280,7 +282,7 @@
 						width: 100%;
 						height: 50px;
 						padding-right: 10px;
-						font-size: 14px;
+						font-size: 16px;
 						color: #999;
 
 						.gender-picker {

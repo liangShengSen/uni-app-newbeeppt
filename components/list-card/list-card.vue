@@ -112,10 +112,11 @@
 			.listcard-content_title {
 				position: relative;
 				padding-right: 30px;
-				font-size: 14px;
+				font-size: 15px;
 				color: #333;
 				font-weight: 400;
 				line-height: 1.2;
+				margin-bottom: 10px;
 
 				text {
 					overflow: hidden;
@@ -130,7 +131,7 @@
 			.listcard-content_des {
 				display: flex;
 				justify-content: space-between;
-				font-size: 12px;
+				font-size: 13px;
 
 				.listcard-content_des-label {
 					display: flex;

@@ -1,7 +1,7 @@
 <template>
 	<view class="help">
 		<view class="list">
-			<view class="list-item" v-for="item in list" :key="item.name" @click="showModal(item.content)">
+			<view class="list-item" v-for="item in list" :key="item.title" @click="showModal(item.content)">
 				{{item.title}}
 			</view>
 		</view>
@@ -26,11 +26,11 @@
 					},
 					{
 						title: '下载资料后在手机上找不到怎么办？',
-						content: '资料下载后，一般保存在下载资料浏览器的“我的下载”里。若找不到建议您复制下载地址发送到电脑上下载'
+						content: '资料下载后，一般保存在您手机的文件管理器，因不同类型手机存储位置不同，请自行百度即可。'
 					},
 					{
 						title: '为什么没有下载资料，P豆却少了？',
-						content: '本网站不存在主动乱扣费情况，每一笔消费均可在我的下载清单里看到，如果出现P豆减少情况，请先确认是否把账号借给同事或朋友，如未借出却有P豆减少的情况，请第一时间联系我们！'
+						content: '我们不存在主动乱扣P豆的情况，每一笔消费均可在我的下载里看到，如果出现P豆减少情况，请先确认是否把账号借给同事或朋友，如未借出却有P豆减少的情况，请第一时间联系我们！'
 					}
 				]
 			}
@@ -56,7 +56,7 @@
 		padding: 20px;
 		box-sizing: border-box;
 		.content {
-			font-size: 14px;
+			font-size: 16px;
 			color: #666;
 			margin-bottom: 20px;
 		}
@@ -75,9 +75,9 @@
 		.list {
 			padding: 10px 15px;
 			.list-item {
-				padding: 10px 0;
+				padding: 14px 0;
 				color: #333;
-				font-size: 14px;
+				font-size: 16px;
 				border-bottom: 1px solid #f5f5f5;
 				&::before {
 					content: '•';

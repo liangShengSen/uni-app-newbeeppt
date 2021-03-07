@@ -180,66 +180,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default2 =
 {
   props: {
@@ -272,7 +212,7 @@ var _default2 =
       this.$emit('click', this.item); // 触发搜索页的保存搜索记录
       this.$store.dispatch('set_detail', this.item); // 首页的列表数据保存传到详情页
       uni.navigateTo({
-        url: "/pages/detail/detail?_id=".concat(this.item._id).concat(this.type ? "&type=".concat(this.type) : '') });
+        url: "/pages/detail/detail?_id=".concat(this.item._id) });
 
     } } };exports.default = _default2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

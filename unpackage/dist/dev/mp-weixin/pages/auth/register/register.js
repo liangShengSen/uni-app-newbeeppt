@@ -185,6 +185,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
 var _regx = __webpack_require__(/*! @/common/js/regx.js */ 79); //
 //
 //
@@ -216,11 +221,12 @@ var _regx = __webpack_require__(/*! @/common/js/regx.js */ 79); //
 //
 //
 //
-var _default = { data: function data() {return { width: 120, height: 40, initCode: false, username: '', verify: '', password: '', loading: false };}, methods: { registerSuccess: function registerSuccess() {this.$utils.toast('注册成功', function () {uni.showModal({ title: '提示', content: '新用户首次完善资料可送20P豆哦~~', confirmColor: '#f07373', success: function success(res) {uni.switchTab({ url: '../../tabBar/my/my' });} });});}, getVerify: function getVerify() {var _this = this;
-      if (!this.username) {
-        this.$utils.toast('请输入账号');
-        return false;
-      }
+//
+//
+//
+//
+//
+var _default = { data: function data() {return { width: 120, height: 40, initCode: false, tempCode: '', username: '', verify: '', password: '', loading: false };}, methods: { registerSuccess: function registerSuccess() {this.$utils.toast('注册成功', function () {uni.showModal({ title: '提示', content: '新用户首次完善资料可送20P豆哦~~', confirmColor: '#f07373', success: function success(res) {uni.switchTab({ url: '../../tabBar/my/my' });} });});}, getVerify: function getVerify() {var _this = this;if (!this.username) {this.$utils.toast('请输入账号');return false;}
       if (!(_regx.PHONE.test(this.username) || _regx.EMAIL.test(this.username))) {
         this.$utils.toast('请输入手机号码或者邮箱');
         return false;
@@ -235,9 +241,10 @@ var _default = { data: function data() {return { width: 120, height: 40, initCod
       this.$api.getVerifyCode(data).then(function (res) {
         _this.loading = false;
         if (res.code === 0) {
+          _this.tempCode = res.data.code;
           _this.initCode = true;
           setTimeout(function () {
-            _this.createVerifyCode(res.data.code);
+            _this.createVerifyCode(_this.tempCode);
           }, 0);
         }
       }).catch(function () {
@@ -253,11 +260,19 @@ var _default = { data: function data() {return { width: 120, height: 40, initCod
         this.$utils.toast('账号格式错误');
         return false;
       }
+      if (!this.verify) {
+        this.$utils.toast('请输入验证码');
+        return false;
+      }
+      if (this.verify !== this.tempCode) {
+        this.$utils.toast('验证码错误');
+        return false;
+      }
       if (this.password.length < 6 || this.password.length > 20) {
         this.$utils.toast('请输入6-20位密码');
         return false;
       }
-      uni.showLoading();
+      this.$utils.showLoading('注册中');
       this.$api.register({
         username: this.username,
         code: this.verify,
@@ -276,9 +291,7 @@ var _default = { data: function data() {return { width: 120, height: 40, initCod
       });
     },
     getLoginCode: function getLoginCode() {var _this3 = this;
-      uni.showLoading({
-        title: "微信注册中" });
-
+      this.$utils.showLoading('微信注册中');
       uni.login({
         provider: 'weixin',
         success: function success(result) {var

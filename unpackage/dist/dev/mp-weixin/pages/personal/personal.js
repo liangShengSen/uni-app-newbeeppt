@@ -270,7 +270,9 @@ var _regx = __webpack_require__(/*! @/common/js/regx.js */ 79);function _interop
           if (this.isBindPhone) return;
           break;
         case 'email':
-          if (!this.isBindPhone) return;
+          if (this.userInfo.username) {
+            if (!this.isBindPhone) return;
+          }
           break;}
 
       this.formType = type;
@@ -278,7 +280,7 @@ var _regx = __webpack_require__(/*! @/common/js/regx.js */ 79);function _interop
     },
     bindPickerChange: function bindPickerChange(e) {var _this = this;
       this.userInfo.gender = e.detail.value;
-      uni.showLoading();
+      this.$utils.showLoading('加载中');
       this.$api.updateUserInfo({
         gender: this.userInfo.gender }).
       then(function (res) {
@@ -291,7 +293,7 @@ var _regx = __webpack_require__(/*! @/common/js/regx.js */ 79);function _interop
     getUserInfo: function getUserInfo() {var _this2 = this;
       var uniIdToken = uni.getStorageSync('uni_id_token') || '';
       if (uniIdToken && !this.userInfo._id) {
-        uni.showLoading();
+        this.$utils.showLoading('加载中');
         this.$api.getUserInfo().then(function (res) {
           uni.hideLoading();
           if (res.code === 0) {
@@ -318,7 +320,7 @@ var _regx = __webpack_require__(/*! @/common/js/regx.js */ 79);function _interop
         email: this.userInfo.email };
 
       this.$refs.popup.close();
-      uni.showLoading();
+      this.$utils.showLoading('加载中');
       this.$api.updateUserInfo(data).then(function (res) {
         if (res.code === 0) {
           uni.hideLoading();
@@ -335,7 +337,7 @@ var _regx = __webpack_require__(/*! @/common/js/regx.js */ 79);function _interop
                     fileExtension = res.tempFilePaths[0].substring(res.tempFilePaths[0].lastIndexOf('.') + 1);
                     filePath = res.tempFilePaths[0],
                     fileName = res.tempFiles[0].name || new Date().getTime() + '.' + fileExtension;
-                    uni.showLoading();_context.next = 5;return (
+                    _this4.$utils.showLoading('上传中');_context.next = 5;return (
                       uniCloud.uploadFile({
                         filePath: filePath,
                         cloudPath: fileName }));case 5:result = _context.sent;

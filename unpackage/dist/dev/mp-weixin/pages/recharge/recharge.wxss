@@ -124,6 +124,7 @@ page {
           flex-grow: 1;
   -webkit-flex-shrink: 0;
           flex-shrink: 0;
+  width: -webkit-calc((100% - 50px) / 3);
   width: calc((100% - 50px) / 3);
   height: 40px;
   line-height: 40px;

@@ -8,8 +8,8 @@
 			</view>
 		</view>
 		<view class="recharge-list">
-			<view class="recharge-item" :class="index === active ? 'active' : ''" v-for="(item,index) in rechargeList" :key="item.price"
-			 @click="toggleRecharge(index)">{{item.price}}元</view>
+			<view class="recharge-item" :class="index === active ? 'active' : ''" v-for="(item,index) in rechargeList"
+				:key="item.price" @click="toggleRecharge(index)">{{item.price}}元</view>
 		</view>
 		<view class="tips">
 			<view class="title">充值提示</view>
@@ -21,13 +21,14 @@
 		</view>
 		<uni-popup ref="popup" type="center">
 			<view class="modal-content">
-				<uni-icons type="closeempty" color="#999" size="20" class="close-icon" @click="cancelPay(1)"></uni-icons>
+				<uni-icons type="closeempty" color="#999" size="20" class="close-icon" @click="cancelPay(1)">
+				</uni-icons>
 				<view class="pay-info">充值金额：{{payInfo.price}} 元</view>
 				<view class="pay-info">可得 P 豆：{{payInfo.coins}} 豆</view>
 				<view class="qrcode-wrap">
-					<image :src="payInfo.qrcode" mode="aspectFill"></image>
+					<image :src="payInfo.qrcode" mode="aspectFill" @click="scanImage(payInfo.qrcode)"></image>
 				</view>
-				<view class="recharge-tips">长按-识别图中二维码-付款<view>即可完成充值操作</view>
+				<view class="recharge-tips">点击-长按-发送给好友-长按-付款<view>即可完成充值操作</view>
 				</view>
 				<view class="btn" @click="cancelPay">确认支付</view>
 			</view>
@@ -50,7 +51,7 @@
 		},
 		methods: {
 			getRechargeList() {
-				uni.showLoading()
+				this.$utils.showLoading('加载中')
 				this.$api.get_recharge().then(res => {
 					uni.hideLoading()
 					if (res.code === 0) {
@@ -71,7 +72,7 @@
 			cancelPay(flag) {
 				this.$refs.popup.close()
 				if (flag === 1) return
-				uni.showLoading()
+				this.$utils.showLoading('加载中')
 				this.$api.recharge_pay_cb({
 					_id: this.$utils.guid(),
 					price: this.payInfo.price,
@@ -89,6 +90,15 @@
 				}).catch(() => {
 					uni.hideLoading()
 				})
+			},
+			scanImage(url) {
+				uni.previewImage({
+					current: 0,
+					urls: [url],
+					longPressActions: {
+						itemList: ['发送给朋友']
+					}
+				});
 			}
 		}
 	}

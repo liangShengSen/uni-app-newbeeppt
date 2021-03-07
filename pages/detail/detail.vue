@@ -37,15 +37,9 @@
 				<view class="content-left">
 					<!-- #ifdef MP-WEIXIN -->
 						<button class="share" open-type="share">
-							<uni-icons size="20" type="redo"></uni-icons>
+							<uni-icons size="22" type="redo"></uni-icons>
 							<view class="text">分享</view>
 						</button>					
-					<!-- #endif -->
-					<!-- #ifndef MP-WEIXIN -->
-						<view class="share" @click="shareDetail">
-							<uni-icons size="20" type="redo"></uni-icons>
-							<view class="text">分享</view>
-						</view>					
 					<!-- #endif -->
 					<view class="collect">
 						<collect :item="detailData" :isDetail="true"></collect>
@@ -94,21 +88,18 @@
 				title: `${this.detailData.title}__newbeeppt`,
 				desc: '这是我在newbeeppt小程序中分享的ppt课件，欢迎下载使用哦~',
 				path: `/pages/detail/detail?_id=${this._id}`,
-				imageUrl: `${this.detailData.priview_imgs[0]}?x-oss-process=image/resize,m_fill,w_245,h_60`,
+				imageUrl: `${this.detailData.cover_img}?x-oss-process=image/resize,m_fill,w_245,h_60`,
 			}
 		},
 		onShareTimeline() {
 			return {
 				title: `${this.detailData.title}__newbeeppt`,
-				imageUrl: `${this.detailData.priview_imgs[0]}?x-oss-process=image/resize,m_fixed,h_40,w_40`,
+				imageUrl: `${this.detailData.cover_img}?x-oss-process=image/resize,m_fixed,h_40,w_40`,
 			}
 		},
 		methods: {
 			closeModal(){
 				this.$refs.popup.close()
-			},
-			shareDetail() {
-				this.$utils.toast('请在微信小程序中进行分享操作')
 			},
 			getDetail() {
 				this.$api
@@ -131,7 +122,7 @@
 						})
 					})
 				}
-				uni.showLoading()
+				this.$utils.showLoading('加载中')
 				this.$api.pre_download({
 					_id: this._id,
 					date: this.$utils.getNowDate()
@@ -157,18 +148,21 @@
 					window.open(url,'_self')
 				// #endif
 				// #ifdef  MP-WEIXIN
-				uni.showLoading({
-					title: '文件下载中'
-				})
+				this.$utils.showLoading('文件下载中')
 				uni.downloadFile({
 				    url: url,
 				    success: (res) => {
 						uni.hideLoading()
 				        if (res.statusCode === 200) {
+							let path = res.tempFilePath
 							uni.saveFile({
-							  tempFilePath: res.tempFilePath,
+							  tempFilePath: path,
 							  success: (result) => {
-								this.$utils.toast(`文件保存在${result.savedFilePath},请注意查看！`, null , 3000)
+								this.$utils.toast(`文件保存在${result.savedFilePath},请注意查看！`, () => {
+									uni.openDocument({
+									  filePath: path
+									});
+								} , 3000)
 							  }
 							});
 				        }
@@ -179,7 +173,7 @@
 			},
 			confirmDownload() {
 				this.$refs.popup.close()
-				uni.showLoading()
+				this.$utils.showLoading('加载中')
 				let data = {
 					_id: this._id,
 					coins: this.detailData.price,
@@ -221,7 +215,7 @@
 			margin-bottom: 10px;
 			text-align: center;
 			color: #333;
-			font-size: 14px;
+			font-size: 16px;
 			&.free {
 				color: #999;
 				margin-bottom: 25px;
@@ -236,7 +230,7 @@
 		.btn {
 			height: 36px;
 			line-height: 36px;
-			font-size: 16px;
+			font-size: 18px;
 			text-align: center;
 			color: #fff;
 			border-radius: 36px;
@@ -251,7 +245,7 @@
 
 		.detail-title {
 			padding: 10px 15px 0;
-			font-size: 16px;
+			font-size: 20px;
 			background-color: #fff;
 			font-weight: bold;
 			overflow: hidden;
@@ -267,7 +261,7 @@
 
 			.detail-header_content {
 				width: 100%;
-				font-size: 12px;
+				font-size: 14px;
 				color: #999;
 
 				text {
@@ -301,7 +295,7 @@
 			}
 
 			.attr-tit {
-				font-size: 16px;
+				font-size: 18px;
 				font-weight: 800;
 				color: #333;
 			}
@@ -311,13 +305,13 @@
 
 				.attr-list_item {
 					margin-top: 10px;
-					font-size: 14px;
+					font-size: 16px;
 					color: #666;
 				}
 			}
 
 			.detail-intro {
-				font-size: 12px;
+				font-size: 16px;
 				line-height: 1.5;
 				color: #666;
 				padding-top: 10px;
@@ -330,7 +324,7 @@
 			left: 0;
 			right: 0;
 			width: 100%;
-			height: 50px;
+			height: 60px;
 			padding: 7px 0 6px;
 			box-sizing: border-box;
 			border-top: 1px solid #f1f1f1;
@@ -361,14 +355,14 @@
 						position: relative;
 						display: flex;
 						flex-direction: column;
-						margin-right: 25px;
+						margin-right: 35px;
 
 						.icons {
 							position: inherit;
 						}
 
 						.text {
-							font-size: 12px;
+							font-size: 14px;
 							color: #666;
 						}
 					}
@@ -376,10 +370,10 @@
 
 				.content-right {
 					width: 120px;
-					height: 36px;
-					line-height: 36px;
+					height: 38px;
+					line-height: 38px;
 					text-align: center;
-					font-size: 14px;
+					font-size: 16px;
 					color: #fff;
 					border-radius: 20px;
 					@include base-bg;

@@ -120,7 +120,7 @@
 			.label-header {
 				display: flex;
 				justify-content: space-between;
-				font-size: 14px;
+				font-size: 16px;
 				color: #666;
 				padding: 10px 15px;
 				border-bottom: 1px solid #f5f5f5;
@@ -147,7 +147,7 @@
 					margin-right: 10px;
 					border-radius: 5px;
 					border: 1px solid #666;
-					font-size: 14px;
+					font-size: 16px;
 					color: #666;
 				}
 			}
@@ -158,7 +158,7 @@
 			height: 100px;
 			line-height: 100px;
 			text-align: center;
-			font-size: 12px;
+			font-size: 14px;
 			color: #999;
 		}
 	}

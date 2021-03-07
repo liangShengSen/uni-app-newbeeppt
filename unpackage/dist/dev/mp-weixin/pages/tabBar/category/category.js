@@ -120,48 +120,40 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var l2 = _vm.__map(_vm.versions, function(item, __i2__) {
-    var $orig = _vm.__get_orig(item)
+  var l1 = _vm.versions.length
+    ? _vm.__map(_vm.versions, function(item, __i2__) {
+        var $orig = _vm.__get_orig(item)
 
-    var g0 = JSON.stringify(item.stage)
-    var g1 = JSON.stringify(item.subject)
-    var l1 =
-      item.chapters[item.index] && item.chapters[item.index].data.length
-        ? _vm.__map(item.chapters[item.index].data, function(chapter, __i3__) {
-            var $orig = _vm.__get_orig(chapter)
+        var g0 = JSON.stringify(item.stage)
+        var g1 = JSON.stringify(item.subject)
+        var l0 =
+          item.chapters.length && item.chapters[item.index]
+            ? _vm.__map(item.chapters[item.index].options, function(
+                chapter,
+                __i3__
+              ) {
+                var $orig = _vm.__get_orig(chapter)
 
-            var l0 = _vm.__map(chapter.allChildren, function(
-              sub_chapter,
-              __i4__
-            ) {
-              var $orig = _vm.__get_orig(sub_chapter)
-
-              var g2 = JSON.stringify(sub_chapter)
-              return {
-                $orig: $orig,
-                g2: g2
-              }
-            })
-
-            return {
-              $orig: $orig,
-              l0: l0
-            }
-          })
-        : null
-    return {
-      $orig: $orig,
-      g0: g0,
-      g1: g1,
-      l1: l1
-    }
-  })
-
+                var g2 = JSON.stringify(chapter)
+                return {
+                  $orig: $orig,
+                  g2: g2
+                }
+              })
+            : null
+        return {
+          $orig: $orig,
+          g0: g0,
+          g1: g1,
+          l0: l0
+        }
+      })
+    : null
   _vm.$mp.data = Object.assign(
     {},
     {
       $root: {
-        l2: l2
+        l1: l1
       }
     }
   )
@@ -198,7 +190,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -254,6 +253,7 @@ var _default =
 {
   data: function data() {
     return {
+      scrollTop: 0,
       stage_id: "",
       subject_id: "",
       stages: [],
@@ -270,37 +270,13 @@ var _default =
     toggle: function toggle(type, id) {
       this[type] = id;
       if (type === 'stage_id') {
-        this.subject_id = '2';
+        this.subject_id = this.subjects[0]._id;
+        this.scrollTop = Math.random();
       }
       this.getFilters();
     },
-    toggleBook: function toggleBook(item, book, i) {
-      item.book_id = book.id;
+    toggleBooks: function toggleBooks(item, i) {
       item.index = i;
-    },
-    sortTreeData: function sortTreeData(Data) {var level = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-      var T, F;
-      for (F = Data.length; F;) {
-        T = Data[--F];
-        T['level'] = level + 1;
-        if (T['level'] == 1) {
-          var childrens = this.getTreeChilds(T['children'], []);
-          T['allChildren'] = [].concat(_toConsumableArray(T['children']), _toConsumableArray(childrens));
-        }
-        if (T['children'].length) {
-          this.sortTreeData(T['children'], T['level']);
-        }
-      }
-      return Data;
-    },
-    getTreeChilds: function getTreeChilds(treeData) {var arr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-      for (var i = 0; i < treeData.length; i++) {
-        if (treeData[i].children && treeData[i].children.length) {
-          arr.push.apply(arr, _toConsumableArray(treeData[i].children));
-          this.getTreeChilds(treeData[i].children, arr);
-        }
-      }
-      return arr;
     },
     getFilters: function getFilters() {var _this = this;
       var data = {
@@ -308,7 +284,7 @@ var _default =
         stage: this.stage_id,
         subject: this.subject_id };
 
-      uni.showLoading();
+      this.$utils.showLoading('加载中');
       this.$api.documentFilters(data).then(function (res) {
         uni.hideLoading();
         if (res.code === 0) {
@@ -316,9 +292,6 @@ var _default =
             if (item.key === 'version') {
               item.options.forEach(function (version) {
                 version.index = 0;
-                version.chapters.forEach(function (chapter) {
-                  chapter.data = _this.sortTreeData(chapter.data);
-                });
               });
             }
             _this["".concat(item.key, "s")] = item.options;

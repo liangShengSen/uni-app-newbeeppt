@@ -251,7 +251,9 @@ var _vuex = __webpack_require__(/*! vuex */ 24);function ownKeys(object, enumera
       this.$api.get_search({
         value: value }).
       then(function (res) {var
-        data = res.data;
+
+        data =
+        res.data;
         _this2.loading = false;
         _this2.searchList = data;
       }).catch(function () {

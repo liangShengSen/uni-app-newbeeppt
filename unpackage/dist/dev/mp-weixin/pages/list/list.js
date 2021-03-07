@@ -95,9 +95,6 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
-    uniIcons: function() {
-      return Promise.all(/*! import() | components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/components/uni-icons/uni-icons.vue */ 167))
-    },
     listScroll: function() {
       return __webpack_require__.e(/*! import() | components/list-scroll/list-scroll */ "components/list-scroll/list-scroll").then(__webpack_require__.bind(null, /*! @/components/list-scroll/list-scroll.vue */ 175))
     },
@@ -109,6 +106,9 @@ try {
     },
     uniPopup: function() {
       return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup/uni-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 203))
+    },
+    uniIcons: function() {
+      return Promise.all(/*! import() | components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/components/uni-icons/uni-icons.vue */ 167))
     }
   }
 } catch (e) {
@@ -253,15 +253,15 @@ var _default =
   methods: {
     getFilters: function getFilters(_keys, flag) {var _this2 = this;
       var data = {
-        stage: this.stage.id,
-        subject: this.subject.id,
+        stage: this.stage._id,
+        subject: this.subject._id,
         _keys: _keys };
 
       this.$api.documentFilters(data).then(function (res) {
         if (res.code === 0) {
           res.data.forEach(function (item) {
             _this2["".concat(item.key, "s")] = item.options;
-            _this2["".concat(item.key)]['id'] = item.value;
+            _this2["".concat(item.key)]['_id'] = item.value;
             if (flag && item.key === 'grade') {
               _this2["".concat(item.key)] = item.options[0];
             }
@@ -279,12 +279,12 @@ var _default =
       var data = {
         page: this.page };
 
-      if (this.chapter && this.chapter.id) {
-        data.chapter_id = this.chapter.id;
+      if (this.chapter && this.chapter.value) {
+        data.chapter_id = this.chapter.value;
       } else {
-        data.stage_id = this.stage.id;
-        data.subject_id = this.subject.id;
-        data.grade_id = this.grade.id;
+        data.stage_id = this.stage._id;
+        data.subject_id = this.subject._id;
+        data.grade_id = this.grade._id;
         data.rank_id = this.rank.id;
       }
       this.load = 'loading';

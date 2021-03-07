@@ -54,7 +54,7 @@
 		data() {
 			return {
 				statusBarHeight: 20,
-				navbarHeight:44,
+				navbarHeight: 44,
 				windowWidth: 375,
 				val: ''
 			};
@@ -141,6 +141,7 @@
 						text-align: center;
 						.auth-title {
 							color: #fff;
+							font-weight: 700;
 							font-size: 16px;
 							/*  #ifdef  MP-WEIXIN  */
 							padding-left: 90px; // 胶囊的宽度

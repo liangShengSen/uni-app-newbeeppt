@@ -195,11 +195,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _default =
 {
   data: function data() {
     return {
-      id: '',
       balance: 0,
       active: 1,
       rechargeList: [],
@@ -207,12 +208,11 @@ var _default =
 
   },
   onLoad: function onLoad(query) {
-    this.id = query.id;
     this.getRechargeList();
   },
   methods: {
     getRechargeList: function getRechargeList() {var _this = this;
-      uni.showLoading();
+      this.$utils.showLoading('加载中');
       this.$api.get_recharge().then(function (res) {
         uni.hideLoading();
         if (res.code === 0) {
@@ -233,9 +233,9 @@ var _default =
     cancelPay: function cancelPay(flag) {var _this2 = this;
       this.$refs.popup.close();
       if (flag === 1) return;
-      uni.showLoading();
+      this.$utils.showLoading('加载中');
       this.$api.recharge_pay_cb({
-        id: this.$utils.UUIDGenerator(),
+        _id: this.$utils.guid(),
         price: this.payInfo.price,
         coins: this.payInfo.coins,
         date: this.$utils.getNowDate() }).
@@ -251,6 +251,15 @@ var _default =
       }).catch(function () {
         uni.hideLoading();
       });
+    },
+    scanImage: function scanImage(url) {
+      uni.previewImage({
+        current: 0,
+        urls: [url],
+        longPressActions: {
+          itemList: ['发送给朋友'] } });
+
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -58,10 +58,11 @@
           flex-shrink: 0;
   padding: 0 10px;
   color: #333;
-  font-size: 14px;
+  font-size: 16px;
 }
 .tabs .tabs-scroll .tabs-scroll_box .tabs-scroll_item.active {
   color: #f07373;
+  font-weight: 500;
 }
 .tabs .tabs-icon {
   position: relative;

@@ -3,7 +3,7 @@
 		<view class="list-hd">
 			<view class="filter-icon" @click="showFilterModal">
 				<text class="text">筛选</text>
-				<uni-icons type="gear" size="18" color="#f7931e"></uni-icons>
+				<view class="iconfont icon-shaixuan"></view>
 			</view>
 			<view class="current-filter-text">- {{stage.name}}{{grade.name ? `·${grade.name}`: ''}}{{subject.name && `·${subject.name}`}}{{rank.name ? `·${rank.name}`: ''}}{{chapter.name ? `·${chapter.name}` : ''}}
 				-</view>
@@ -263,7 +263,7 @@
 			padding: 10px 0;
 
 			.current-filter-text {
-				font-size: 13px;
+				font-size: 16px;
 				color: #f60;
 				text-align: center;
 			}
@@ -273,9 +273,12 @@
 				align-items: center;
 				justify-content: flex-end;
 				padding: 0 15px;
-
+				.icon-shaixuan {
+					font-size: 20px;
+					color: #f7931e;
+				}
 				.text {
-					font-size: 14px;
+					font-size: 16px;
 					color: #f7931e;
 					padding-right: 5px;
 				}

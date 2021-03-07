@@ -83,9 +83,10 @@
 					flex-shrink: 0;
 					padding: 0 10px;
 					color: #333;
-					font-size: 14px;
+					font-size: 16px;
 					&.active {
 						color: $base-color;
+						font-weight: 500;
 					}
 				}
 			}

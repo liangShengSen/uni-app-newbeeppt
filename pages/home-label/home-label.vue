@@ -11,7 +11,7 @@
 			<view v-if="!loading" class="label-content">
 				<view class="label-content_item" v-for="(item,index) in subjectList" :key="item._id">
 					{{item.name}}
-					<uni-icons v-if="is_edit" type="clear" size="16" color="red" class="icons-close" @click="del(index)"></uni-icons>
+					<uni-icons v-if="is_edit" type="clear" size="18" color="red" class="icons-close" @click="del(index)"></uni-icons>
 				</view>
 				<view v-if="subjectList.length === 0 && !loading" class="no-data">
 					当前没有数据
@@ -67,7 +67,7 @@
 				this.subjectList.splice(i, 1)
 			},
 			setUpdateSubject(subject_ids) {
-				uni.showLoading()
+				this.$utils.showLoading('加载中')
 				this.$api.update_subject({
 					subject_ids: subject_ids.map(item => {
 						return item._id
@@ -119,7 +119,7 @@
 			text-align: center;
 			padding: 50px 0;
 			color: #999;
-			font-size: 14px;
+			font-size: 15px;
 		}
 
 		.label-box {
@@ -130,7 +130,7 @@
 				display: flex;
 				justify-content: space-between;
 				padding: 10px 15px;
-				font-size: 14px;
+				font-size: 16px;
 				color: #666;
 				border-bottom: 1px solid #f5f5f5;
 
@@ -148,17 +148,17 @@
 
 				.label-content_item {
 					position: relative;
-					padding: 2px 5px;
+					padding: 3px 6px;
 					margin: 12px 10px 0 0;
 					border-radius: 5px;
 					border: 1px solid #666;
-					font-size: 14px;
+					font-size: 16px;
 					color: #666;
 
 					.icons-close {
 						position: absolute;
-						right: -8px;
-						top: -8px;
+						right: -9px;
+						top: -9px;
 						background-color: #fff;
 						border-radius: 50%;
 					}

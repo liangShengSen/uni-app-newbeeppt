@@ -13,6 +13,13 @@ class Utils {
 			}
 		});
 	}
+	
+	showLoading(title) {
+		uni.showLoading({
+			title,
+			mask: true
+		})
+	}
 
 	getNowDate() {
 		let now = new Date()

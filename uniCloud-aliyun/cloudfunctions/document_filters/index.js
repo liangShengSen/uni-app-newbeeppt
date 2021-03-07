@@ -48,8 +48,8 @@ exports.main = async (event, context) => {
 				obj.value = version || (obj.options[0] && obj.options[0]._id)
 				version = obj.value
 				// 给版本添加对应章节
-				let allBooks = await db.collection('books').get(),
-					allChapters = await db.collection('chapters').get()
+				let allBooks = await db.collection('books').limit(500).get(),
+					allChapters = await db.collection('chapters').limit(500).get()
 				obj.options.forEach(v => {
 					v.books = []
 					v.chapters = []

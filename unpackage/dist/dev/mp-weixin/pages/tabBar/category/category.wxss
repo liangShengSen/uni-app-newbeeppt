@@ -38,14 +38,15 @@ page {
   -webkit-align-items: center;
           align-items: center;
   padding: 0 15px;
-  height: 30px;
+  height: 40px;
 }
 .category .stages .stage-item {
   position: relative;
   margin-right: 35px;
   color: #666;
-  font-size: 13px;
-  line-height: 30px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
 }
 .category .stages .stage-item::after {
   position: absolute;
@@ -61,7 +62,7 @@ page {
 }
 .category .stages .stage-item.active {
   color: #333;
-  font-size: 15px;
+  font-size: 16px;
 }
 .category .stages .stage-item.active::after {
   background-color: #f07373;
@@ -71,8 +72,10 @@ page {
   display: -webkit-flex;
   display: flex;
   margin-top: 5px;
-  height: calc(100% - 79px);
-  height: calc(100% - 99px);
+  height: -webkit-calc(100% - 89px);
+  height: calc(100% - 89px);
+  height: -webkit-calc(100% - 109px);
+  height: calc(100% - 109px);
 }
 .category .category-content .category-content_left {
   height: 100%;
@@ -85,9 +88,9 @@ page {
   background-color: #f7f7f7;
 }
 .category .category-content .category-content_left .subjects .subject-item {
-  height: 36px;
-  line-height: 36px;
-  font-size: 12px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 14px;
   color: #333;
   -webkit-transition: all ease-in-out .2s;
   transition: all ease-in-out .2s;
@@ -101,16 +104,43 @@ page {
           border-radius: 6px;
   margin: 0 15px 17px;
   overflow: hidden;
+  height: -webkit-calc((2000vw - 1980px)/64);
   height: calc((2000vw - 1980px)/64);
 }
 .category .category-content .category-content_right .banner-box .swiper {
   height: 100%;
 }
 .category .category-content .category-content_right .banner-box .image {
+  height: -webkit-calc((2000vw - 1980px)/64);
   height: calc((2000vw - 1980px)/64);
   width: 100%;
   -webkit-border-radius: 6px;
           border-radius: 6px;
+}
+.category .category-content .category-content_right .empty-box {
+  padding: 80px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.category .category-content .category-content_right .empty-box .icon-kong {
+  font-size: 50px;
+  color: #ddd;
+}
+.category .category-content .category-content_right .empty-box .empty-tips {
+  margin-top: 20px;
+  color: #ddd;
+  font-size: 14px;
 }
 .category .category-content .category-content_right .version-box {
   padding: 0 15px;
@@ -131,7 +161,7 @@ page {
 }
 .category .category-content .category-content_right .version-box .version-item .name {
   padding: 5px 0;
-  font-size: 13px;
+  font-size: 16px;
   color: #000;
   font-weight: 500;
 }
@@ -145,7 +175,7 @@ page {
 }
 .category .category-content .category-content_right .version-box .version-item .item-box .item {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   width: 33.33333%;
   height: 28px;
   line-height: 28px;
@@ -163,24 +193,17 @@ page {
   overflow: hidden;
   text-overflow: ellipsis;
   color: #666;
+  font-size: 15px;
 }
-.category .category-content .category-content_right .version-box .version-item .chapter-box .chapter {
-  background-color: #fff;
+.category .category-content .category-content_right .version-box .version-item .chapter-box {
+  height: 250px;
 }
-.category .category-content .category-content_right .version-box .version-item .chapter-box .chapter .main-chapter {
-  background-color: #f9f9f9;
-  font-size: 12px;
-  color: #666;
-  padding: 6px 8px;
-  -webkit-border-radius: 3px;
-          border-radius: 3px;
+.category .category-content .category-content_right .version-box .version-item .chapter-box .scroll-box {
+  height: 100%;
 }
-.category .category-content .category-content_right .version-box .version-item .chapter-box .chapter .sub-chapters-box {
-  padding: 8px 5px;
-}
-.category .category-content .category-content_right .version-box .version-item .chapter-box .chapter .sub-chapters-box .sub-chapter {
+.category .category-content .category-content_right .version-box .version-item .chapter-box .chapter-item {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   height: 28px;
   line-height: 28px;
   margin-right: 15px;

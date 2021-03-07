@@ -225,10 +225,10 @@ var _default =
       this.subjectList.splice(i, 1);
     },
     setUpdateSubject: function setUpdateSubject(subject_ids) {var _this = this;
-      uni.showLoading();
+      this.$utils.showLoading('加载中');
       this.$api.update_subject({
         subject_ids: subject_ids.map(function (item) {
-          return item.id;
+          return item._id;
         }) }).
       then(function (res) {
         uni.hideLoading();
@@ -250,7 +250,9 @@ var _default =
         type: 'all' }).
       then(function (res) {
         _this2.loading = false;var
-        data = res.data;
+
+        data =
+        res.data;
         _this2.subjectList = data.filter(function (item) {
           return item.current;
         });

@@ -269,7 +269,7 @@ var _default =
     getUserInfo: function getUserInfo() {var _this = this;
       var uniIdToken = uni.getStorageSync('uni_id_token') || '';
       if (uniIdToken) {
-        uni.showLoading();
+        this.$utils.showLoading('加载中');
         this.$api.getUserInfo().then(function (res) {
           uni.hideLoading();
           if (res.code === 0) {
@@ -289,7 +289,7 @@ var _default =
         confirmColor: '#f07373',
         success: function success(res) {
           if (res.confirm) {
-            uni.showLoading();
+            _this2.$utils.showLoading('退出中');
             _this2.$api.logout().then(function (res) {
               uni.hideLoading();
               if (res.code === 0) {

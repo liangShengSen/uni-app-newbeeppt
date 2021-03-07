@@ -224,11 +224,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
 var _vuex = __webpack_require__(/*! vuex */ 24);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 
 
@@ -246,7 +241,6 @@ var _vuex = __webpack_require__(/*! vuex */ 24);function ownKeys(object, enumera
 
   onLoad: function onLoad(query) {
     this._id = query._id;
-    this.type = query.type;
     this.detailData = this.doc_detail;
     this.getDetail();
   },
@@ -255,25 +249,24 @@ var _vuex = __webpack_require__(/*! vuex */ 24);function ownKeys(object, enumera
       title: "".concat(this.detailData.title, "__newbeeppt"),
       desc: '这是我在newbeeppt小程序中分享的ppt课件，欢迎下载使用哦~',
       path: "/pages/detail/detail?_id=".concat(this._id),
-      imageUrl: "".concat(this.detailData.priview_imgs[0], "?x-oss-process=image/resize,m_fill,w_245,h_60") };
+      imageUrl: "".concat(this.detailData.cover_img, "?x-oss-process=image/resize,m_fill,w_245,h_60") };
 
   },
   onShareTimeline: function onShareTimeline() {
     return {
       title: "".concat(this.detailData.title, "__newbeeppt"),
-      imageUrl: "".concat(this.detailData.priview_imgs[0], "?x-oss-process=image/resize,m_fixed,h_40,w_40") };
+      imageUrl: "".concat(this.detailData.cover_img, "?x-oss-process=image/resize,m_fixed,h_40,w_40") };
 
   },
   methods: {
+    closeModal: function closeModal() {
+      this.$refs.popup.close();
+    },
     getDetail: function getDetail() {var _this = this;
-      var data = {
-        _id: this._id };
-
-      if (this.type) {
-        data.type = this.type;
-      }
       this.$api.
-      get_subject_detail(data).
+      get_detail({
+        _id: this._id }).
+
       then(function (res) {var
 
         data =
@@ -281,29 +274,26 @@ var _vuex = __webpack_require__(/*! vuex */ 24);function ownKeys(object, enumera
         _this.detailData = data;
       });
     },
-    shareDetail: function shareDetail() {
-      this.$utils.toast('请在微信小程序中进行分享操作');
-    },
     preDownload: function preDownload() {var _this2 = this;
       var uniIdToken = uni.getStorageSync('uni_id_token') || null;
       if (!uniIdToken) {
         return this.$utils.toast('请先登录', function () {
           uni.navigateTo({
-            url: "../auth/login/login?id=".concat(_this2._id) });
+            url: "../auth/login/login" });
 
         });
       }
-      uni.showLoading();
+      this.$utils.showLoading('加载中');
       this.$api.pre_download({
-        id: this._id,
+        _id: this._id,
         date: this.$utils.getNowDate() }).
       then(function (res) {
         uni.hideLoading();
         if (res.code === 0) {
-          if (res.data.balance < _this2.detailData.price) {// 不够钱，跳到充值页面
+          if (!res.data.is_free && res.data.balance < _this2.detailData.price) {// 不够钱，跳到充值页面
             return _this2.$utils.toast('账户余额不足，请先充值', function () {
               return uni.navigateTo({
-                url: "../recharge/recharge?id=".concat(_this2._id) });
+                url: "../recharge/recharge" });
 
             });
           }
@@ -319,18 +309,21 @@ var _vuex = __webpack_require__(/*! vuex */ 24);function ownKeys(object, enumera
 
 
 
-      uni.showLoading({
-        title: '文件下载中' });
-
+      this.$utils.showLoading('文件下载中');
       uni.downloadFile({
         url: url,
         success: function success(res) {
           uni.hideLoading();
           if (res.statusCode === 200) {
+            var path = res.tempFilePath;
             uni.saveFile({
-              tempFilePath: res.tempFilePath,
+              tempFilePath: path,
               success: function success(result) {
-                _this3.$utils.toast("\u6587\u4EF6\u4FDD\u5B58\u5728".concat(result.savedFilePath, ",\u8BF7\u6CE8\u610F\u67E5\u770B\uFF01"), null, 3000);
+                _this3.$utils.toast("\u6587\u4EF6\u4FDD\u5B58\u5728".concat(result.savedFilePath, ",\u8BF7\u6CE8\u610F\u67E5\u770B\uFF01"), function () {
+                  uni.openDocument({
+                    filePath: path });
+
+                }, 3000);
               } });
 
           }
@@ -341,16 +334,13 @@ var _vuex = __webpack_require__(/*! vuex */ 24);function ownKeys(object, enumera
     },
     confirmDownload: function confirmDownload() {var _this4 = this;
       this.$refs.popup.close();
-      uni.showLoading();
+      this.$utils.showLoading('加载中');
       var data = {
-        id: this._id,
+        _id: this._id,
         coins: this.detailData.price,
         is_free: this.preDownData.is_free,
         date: this.$utils.getNowDate() };
 
-      if (this.type) {
-        data.type = this.type;
-      }
       this.$api.confirm_download(data).then(function (res) {
         if (res.code === 0) {
           uni.hideLoading();

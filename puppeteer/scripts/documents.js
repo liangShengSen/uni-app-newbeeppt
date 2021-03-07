@@ -9,7 +9,7 @@ const dayjs = require('dayjs');
 	try {
 		const page = await browser.newPage();
 		await page.setDefaultNavigationTimeout(0);
-		await page.goto('http://www.pptok.com/kejian/mulu/107.html');
+		await page.goto('http://www.pptok.com/kejian/mulu/130.html');
 		let arr = await page.$$eval('#mulu .mldy h2 a', (a) =>
 			a.map((v) => {
 				return {
@@ -82,20 +82,20 @@ const dayjs = require('dayjs');
 									"value": "6038483da112ea00011a4ef7"
 								},
 								"subject": {
-									"name": "英语",
-									"value": "5ffef518a811400001d783e5"
+									"name": "美术",
+									"value": "6012895c21a30400011758d6"
 								},
 								"version": {
-									"name": "外研版",
-									"value": "6041e9b78a73750001a43081"
+									"name": "人教版",
+									"value": "60430bf6d465ff0001b205ea"
 								},
 								"book": {
-									"name": "三年级下册",
-									"value": "6041f4c137de64000154d018"
+									"name": "六年级下册",
+									"value": "60430d6537de640001569568"
 								},
 								grade: {
-									"name": "三年级",
-									"value": "603b8a1eb68dad7fd627f703"
+									"name": "六年级",
+									"value": "603b8a1eb68dad7fd627f709"
 								},
 								chapter: {
 									"name": "",

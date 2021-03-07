@@ -1,6 +1,6 @@
 <template>
 	<view class="icons" @click.stop="collecting">
-		<uni-icons size="20" :type="isCollect ? 'heart-filled' : 'heart'"></uni-icons>
+		<uni-icons size="22" :type="isCollect ? 'heart-filled' : 'heart'"></uni-icons>
 	</view>
 </template>
 
@@ -37,7 +37,7 @@
 		},
 		methods: {
 			collecting() {
-				uni.showLoading()
+				this.$utils.showLoading('加载中')
 				this.$api.collect_documents({
 					document_id: this.item._id
 				}).then(res => {

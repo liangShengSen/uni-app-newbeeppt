@@ -28,38 +28,38 @@
 		<view class="my-content">
 			<view class="my-content_list" @click="toCollectedAndDownload('download')">
 				<view class="my-content_list-title">
-					<uni-icons class="icon" type="download" size="18"></uni-icons>
+					<uni-icons class="icon" type="download" size="22"></uni-icons>
 					<text>我的下载</text>
 				</view>
-				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
+				<uni-icons type="arrowright" size="16" color="#999"></uni-icons>
 			</view>
 			<view class="my-content_list" @click="toCollectedAndDownload('collected')">
 				<view class="my-content_list-title">
-					<uni-icons class="icon" type="heart" size="18"></uni-icons>
+					<uni-icons class="icon" type="heart" size="22"></uni-icons>
 					<text>我的收藏</text>
 				</view>
-				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
+				<uni-icons type="arrowright" size="16" color="#999"></uni-icons>
 			</view>
 			<view class="my-content_list" @click="setUserInfo">
 				<view class="my-content_list-title">
-					<uni-icons class="icon" type="chatbubble" size="18"></uni-icons>
+					<uni-icons class="icon" type="chatbubble" size="22"></uni-icons>
 					<text>我的信息</text>
 				</view>
-				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
+				<uni-icons type="arrowright" size="16" color="#999"></uni-icons>
 			</view>
 			<view class="my-content_list" @click="toCollectedAndDownload('rechargeOrders')">
 				<view class="my-content_list-title">
-					<uni-icons class="icon" type="chatboxes" size="18"></uni-icons>
+					<uni-icons class="icon" type="chatboxes" size="22"></uni-icons>
 					<text>充值记录</text>
 				</view>
-				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
+				<uni-icons type="arrowright" size="16" color="#999"></uni-icons>
 			</view>
 			<view class="my-content_list" @click="toHelp">
 				<view class="my-content_list-title">
-					<uni-icons class="icon" type="help" size="18"></uni-icons>
+					<uni-icons class="icon" type="help" size="22"></uni-icons>
 					<text>帮助中心</text>
 				</view>
-				<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
+				<uni-icons type="arrowright" size="16" color="#999"></uni-icons>
 			</view>
 		</view>
 		<view class="login-bar" v-if="userInfo._id" @click="logout">
@@ -114,7 +114,7 @@
 			getUserInfo() {
 				let uniIdToken = uni.getStorageSync('uni_id_token') || ''
 				if (uniIdToken) {
-					uni.showLoading()
+					this.$utils.showLoading('加载中')
 					this.$api.getUserInfo().then(res => {
 						uni.hideLoading()
 						if (res.code === 0) {
@@ -134,7 +134,7 @@
 					confirmColor: '#f07373',
 					success: (res) => {
 						if (res.confirm) {
-							uni.showLoading()
+							this.$utils.showLoading('退出中')
 							this.$api.logout().then(res => {
 								uni.hideLoading()
 								if (res.code === 0) {
@@ -194,7 +194,8 @@
 				}
 
 				.my-header_name {
-					margin-top: 5px;
+					margin-top: 10px;
+					font-size: 18px;
 				}
 			}
 
@@ -220,12 +221,12 @@
 						align-items: center;
 
 						.count {
-							font-size: 18px;
+							font-size: 20px;
 							color: #333;
 						}
 
 						.text {
-							font-size: 12px;
+							font-size: 14px;
 							color: #999;
 						}
 					}
@@ -235,7 +236,7 @@
 
 		.my-content {
 			background-color: #fff;
-			padding: 20px 10px 0;
+			padding: 30px 10px 0;
 
 			.my-content_list {
 				display: flex;
@@ -247,11 +248,11 @@
 					border-bottom: none;
 				}
 
-				padding: 15px 0;
+				padding: 16px 0;
 
 				.my-content_list-title {
 					color: #666;
-					font-size: 14px;
+					font-size: 16px;
 
 					.icon {
 						margin-right: 10px;

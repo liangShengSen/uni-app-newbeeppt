@@ -4,11 +4,11 @@
 			<navbar type="auth" title="注册"></navbar>
 			<view class="forget-card">
 				<view class="forget-input forget-margin-b">
-					<input v-model="username" placeholder="请输入手机号/邮箱" />
+					<input v-model.trim="username" placeholder="请输入手机号/邮箱" />
 				</view>
 				<view class="forget-input forget-margin-b">
 					<view class="verify-left">
-						<input v-model="verify" maxlength="4" placeholder="请输入验证码" />
+						<input v-model.trim="verify" maxlength="4" placeholder="请输入验证码" />
 					</view>
 					<view class="verify-right" @click="getVerify">
 						<canvas v-if="initCode" :style="{width:width+'px',height:height+'px'}" canvas-id="imgcanvas" class="canvas"></canvas>
@@ -16,14 +16,19 @@
 					</view>
 				</view>
 				<view class="forget-input">
-					<input type="password" v-model="password" @confirm="register" placeholder="请输入密码(6-20位)" />
+					<input type="password" v-model.trim="password" @confirm="register" placeholder="请输入密码(6-20位)" />
 				</view>
 			</view>
 		</view>
 		<view class="forget-btn">
 			<button class="landing" type="primary" @click="register">注册</button>
 			<!-- #ifdef MP-WEIXIN -->
-			<button class="wx-btn" type="primary" @click="getLoginCode">微信注册</button>
+			<view class="login-by-wx">
+				<view class="inner" @click="getLoginCode">
+					<view class="iconfont icon-weixindenglu"></view>
+					<text class="text">微信注册</text>					
+				</view>
+			</view>
 			<!-- #endif -->
 		</view>
 	</view>
@@ -40,6 +45,7 @@
 				width: 120,
 				height: 40,
 				initCode: false,
+				tempCode: '',
 				username: '',
 				verify: '',
 				password: '',
@@ -80,9 +86,10 @@
 				this.$api.getVerifyCode(data).then(res => {
 					this.loading = false
 					if (res.code === 0) {
+						this.tempCode = res.data.code
 						this.initCode = true
 						setTimeout(() => {
-							this.createVerifyCode(res.data.code)
+							this.createVerifyCode(this.tempCode)
 						}, 0)
 					}
 				}).catch(() => {
@@ -98,11 +105,19 @@
 					this.$utils.toast('账号格式错误')
 					return false;
 				}
+				if(!this.verify) {
+					this.$utils.toast('请输入验证码')
+					return false;
+				}
+				if(this.verify !== this.tempCode) {
+					this.$utils.toast('验证码错误')
+					return false;
+				}
 				if (this.password.length < 6 || this.password.length > 20) {
 					this.$utils.toast('请输入6-20位密码')
 					return false;
 				}
-				uni.showLoading()
+				this.$utils.showLoading('注册中')
 				this.$api.register({
 					username: this.username,
 					code: this.verify,
@@ -121,9 +136,7 @@
 				})
 			},
 			getLoginCode() {
-				uni.showLoading({
-					title: "微信注册中"
-				})
+				this.$utils.showLoading('微信注册中')
 				uni.login({
 					provider: 'weixin',
 					success: (result) => {
@@ -257,7 +270,27 @@
 
 	.forget-btn {
 		padding: 5px 10px;
-		margin-top: 190px;
+		margin-top: 215px;
+		.login-by-wx {
+			margin-top: 35px;
+			.inner {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: center;	
+				width: 75px;
+				margin: 0 auto;
+				.icon-weixindenglu {
+					font-size: 40px;
+					color: #00c800;
+				}
+				.text {
+					font-size: 14px;
+					padding: 5px 0;
+					color: #666;
+				}
+			}
+		}
 	}
 
 	.forget-input input {

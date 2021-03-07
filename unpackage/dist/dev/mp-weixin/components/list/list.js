@@ -165,7 +165,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     change: function change(e) {var
-      current = e.detail.current;
+
+      current =
+      e.detail.current;
       this.$emit('change', current);
       // TODO 当数据不存在或者长度是0的情况才去请求数据
       if (!this.docsCatchData[current] || this.docsCatchData[current].length === 0) {
@@ -184,7 +186,9 @@ __webpack_require__.r(__webpack_exports__);
         page: this.load[current].page,
         pageSize: this.pageSize }).
       then(function (res) {var
-        data = res.data;
+
+        data =
+        res.data;
         if (data.length === 0) {
           var oldLoad = {};
           oldLoad.loading = 'noMore';

@@ -95,7 +95,7 @@ page {
 }
 .personal .section .personal-item .text {
   color: #666;
-  font-size: 14px;
+  font-size: 16px;
 }
 .personal .section .personal-item .right {
   width: 80%;
@@ -119,7 +119,7 @@ page {
   width: 100%;
   height: 50px;
   padding-right: 10px;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
 }
 .personal .section .personal-item .right .content .gender-picker {

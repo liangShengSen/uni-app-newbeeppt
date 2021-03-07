@@ -28,6 +28,7 @@
   width: 100%;
 }
 .verify-left {
+  width: -webkit-calc(100% - 130px);
   width: calc(100% - 130px);
 }
 .verify-right {
@@ -76,7 +77,36 @@
 }
 .forget-btn {
   padding: 5px 10px;
-  margin-top: 190px;
+  margin-top: 215px;
+}
+.forget-btn .login-by-wx {
+  margin-top: 35px;
+}
+.forget-btn .login-by-wx .inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: 75px;
+  margin: 0 auto;
+}
+.forget-btn .login-by-wx .inner .icon-weixindenglu {
+  font-size: 40px;
+  color: #00c800;
+}
+.forget-btn .login-by-wx .inner .text {
+  font-size: 14px;
+  padding: 5px 0;
+  color: #666;
 }
 .forget-input input {
   background: #F2F5F6;

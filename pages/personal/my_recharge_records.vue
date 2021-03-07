@@ -53,7 +53,7 @@
 			.list-item {
 				padding: 10px 0;
 				color: #333;
-				font-size: 14px;
+				font-size: 16px;
 				border-radius: 5px;
 				border-bottom: 1px solid #f5f5f5;
 
@@ -69,6 +69,7 @@
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
+					font-size: 14px;
 				}
 			}
 		}

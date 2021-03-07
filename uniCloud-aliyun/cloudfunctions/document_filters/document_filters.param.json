@@ -1,5 +1,7 @@
 // 本文件中的json内容将在云函数【运行】时作为参数传给云函数。
 // 配置教程参考：https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=runparam
 {
-	"_keys": "subject"
+	"_keys": "stage,subject,version",
+	"stage":"6038483da112ea00011a4ef7",
+	"subject":"5ffef50cd06eec0001278c79"
 }
