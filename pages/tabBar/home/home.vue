@@ -28,13 +28,17 @@
 		},
 		methods: {
 			getSubjects() {
+				this.$utils.showLoading('加载中')
 				this.$api.get_subjects().then(res => {
 					const { data } = res
 					data.unshift({
 						id:"0",
 						name:"全部"
 					})
+					uni.hideLoading()
 					this.subjectsList = data
+				}).catch(() => {
+					uni.hideLoading()
 				})
 			},
 			tabs({data,index}) {
