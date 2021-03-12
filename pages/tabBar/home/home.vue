@@ -17,6 +17,12 @@
 				subjectsList: [],
 			}
 		},
+		onShareAppMessage() {
+			return {
+				title: `优质ppt应有尽有_newbeeppt`,
+				path: `/pages/tabBar/home/home`
+			}
+		},
 		onLoad() {
 			uni.$on('subjectChange',(res) => {
 				this.subjectsList = []

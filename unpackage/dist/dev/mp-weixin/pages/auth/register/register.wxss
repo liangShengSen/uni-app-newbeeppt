@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.register {
+  width: 100%;
+}
+.verify-left {
+  width: -webkit-calc(100% - 130px);
+  width: calc(100% - 130px);
+}
+.verify-right {
+  padding-left: 10px;
+}
+.verify-right .get-verify {
+  display: block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  font-size: 15px;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
+  background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
+  background: linear-gradient(left, #ff978d, #ffbb69);
+}
+.verify-right .canvas {
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  overflow: hidden;
+}
+.verify-left,
+.verify-right {
+  float: left;
+}
+.landing {
+  height: 40px;
+  line-height: 40px;
+  -webkit-border-radius: 40px;
+          border-radius: 40px;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
+  background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
+  background: linear-gradient(left, #ff978d, #ffbb69);
+}
+.wx-btn {
+  height: 40px;
+  line-height: 40px;
+  -webkit-border-radius: 40px;
+          border-radius: 40px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+.forget-btn {
+  padding: 5px 10px;
+  margin-top: 215px;
+}
+.forget-btn .login-by-wx {
+  margin-top: 35px;
+}
+.forget-btn .login-by-wx .inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: 75px;
+  margin: 0 auto;
+}
+.forget-btn .login-by-wx .inner .icon-weixindenglu {
+  font-size: 40px;
+  color: #00c800;
+}
+.forget-btn .login-by-wx .inner .text {
+  font-size: 14px;
+  padding: 5px 0;
+  color: #666;
+}
+.forget-input input {
+  background: #F2F5F6;
+  font-size: 14px;
+  padding: 5px 12px;
+  height: 30px;
+  line-height: 30px;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+}
+.forget-margin-b {
+  margin-bottom: 12px;
+}
+.forget-input {
+  padding: 5px 10px;
+  overflow: auto;
+}
+.forget-card {
+  background: #fff;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  padding: 30px 12px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, 0.12);
+  position: relative;
+  margin-top: 30px;
+}
+.forget-bg {
+  position: relative;
+  height: 150px;
+  padding: 12px;
+  -webkit-border-radius: 0 0 10px 10px;
+          border-radius: 0 0 10px 10px;
+  background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
+  background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
+  background: linear-gradient(left, #ff978d, #ffbb69);
+}
+

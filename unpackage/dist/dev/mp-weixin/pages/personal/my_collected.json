@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的收藏",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "list-scroll": "/components/list-scroll/list-scroll",
+    "uni-load-more": "/components/uni-load-more/uni-load-more",
+    "list-card": "/components/list-card/list-card"
+  }
+}
