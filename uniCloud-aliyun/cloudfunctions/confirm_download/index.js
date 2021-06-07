@@ -32,7 +32,7 @@ exports.main = async (event, context) => {
 	})
 	// 获取下载地址
 	data.download_url =
-		'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-k9gnc4vsx5e167449b/c971bd61-99dc-42f0-9b23-a58919d3596b.pptx'
+		'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-7d64ea77-4eba-4652-9fb5-6cbebc534629/e011f060-0c38-442e-ab1c-ec449e86b9e5.pptx'
 
 	return {
 		code: 0,

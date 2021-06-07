@@ -72,9 +72,7 @@ page {
   display: -webkit-flex;
   display: flex;
   margin-top: 5px;
-  height: -webkit-calc(100% - 89px);
   height: calc(100% - 89px);
-  height: -webkit-calc(100% - 109px);
   height: calc(100% - 109px);
 }
 .category .category-content .category-content_left {
@@ -104,14 +102,12 @@ page {
           border-radius: 6px;
   margin: 0 15px 17px;
   overflow: hidden;
-  height: -webkit-calc((2000vw - 1980px)/64);
   height: calc((2000vw - 1980px)/64);
 }
 .category .category-content .category-content_right .banner-box .swiper {
   height: 100%;
 }
 .category .category-content .category-content_right .banner-box .image {
-  height: -webkit-calc((2000vw - 1980px)/64);
   height: calc((2000vw - 1980px)/64);
   width: 100%;
   -webkit-border-radius: 6px;

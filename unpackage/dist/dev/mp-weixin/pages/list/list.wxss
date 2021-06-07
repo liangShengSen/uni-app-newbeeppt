@@ -174,7 +174,6 @@ page {
           flex: 1;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: -webkit-calc(100% - 60px);
   height: calc(100% - 60px);
 }
 .list .list-content .list-scroll {

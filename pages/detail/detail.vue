@@ -160,9 +160,9 @@
 							  success: (result) => {
 								this.$utils.toast(`文件保存在${result.savedFilePath},请注意查看！`, () => {
 									uni.openDocument({
-									  filePath: path
+									  filePath: result.savedFilePath
 									});
-								} , 3000)
+								} , 5000)
 							  }
 							});
 				        }

@@ -86,7 +86,6 @@
           justify-content: flex-start;
 }
 .navbar .navbar-fixed .navbar-content.is-auth .auth-box {
-  width: -webkit-calc(100% - 50px);
   width: calc(100% - 50px);
   text-align: center;
 }
@@ -102,7 +101,6 @@
           justify-content: flex-start;
 }
 .navbar .navbar-fixed .navbar-content.is-category .category-box {
-  width: -webkit-calc(100% - 50px);
   width: calc(100% - 50px);
   text-align: center;
 }

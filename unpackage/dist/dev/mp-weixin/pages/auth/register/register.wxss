@@ -28,7 +28,6 @@
   width: 100%;
 }
 .verify-left {
-  width: -webkit-calc(100% - 130px);
   width: calc(100% - 130px);
 }
 .verify-right {
