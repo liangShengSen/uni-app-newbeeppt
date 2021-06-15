@@ -19,7 +19,7 @@ exports.main = async (event, context) => {
 		let ids = arr.map(item => {
 			return item._id
 		})
-		let docs = await db.collection('test_documents').aggregate().match({
+		let docs = await db.collection('documents').aggregate().match({
 			_id: dbCmd.in(ids)
 		}).sort({
 			_id: -1
@@ -34,7 +34,7 @@ exports.main = async (event, context) => {
 		res.data = arr
 	} else if (type === 'collected') {
 		arr = payload.userInfo.collected_ids || []
-		res = await db.collection('test_documents').aggregate().addFields({
+		res = await db.collection('documents').aggregate().addFields({
 			is_collect: $.in(['$_id', payload.userInfo.collected_ids])
 		}).match({
 			_id: dbCmd.in(arr)

@@ -27,7 +27,10 @@ exports.main = async (event, context) => {
 			msgtype: 'actionCard',
 			actionCard: {
 				title: "转账充值",
-				text: `充值金额: ${price}&emsp;&emsp;&emsp;&emsp;&emsp;可得P豆: ${coins}&emsp;充值日期：${getNowDate()}`,
+				text: `充值金额: ${price}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					   可得P豆: ${coins}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					   充值日期: ${getNowDate()}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					   uid: ${payload.uid}`,
 				btns: [{
 					title: "确认支付",
 					actionURL: `https://7d64ea77-4eba-4652-9fb5-6cbebc534629.bspapp.com/http/create_recharge_order?uid=${payload.uid}&_id=${_id}&price=${price}&coins=${coins}&date=${date}`

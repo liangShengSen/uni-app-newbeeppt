@@ -25,7 +25,7 @@ exports.main = async (event, context) => {
 		download_total: dbCmd.inc(1)
 	})
 	// 更新文档的下载次数
-	await db.collection('test_documents').where({
+	await db.collection('documents').where({
 		_id
 	}).update({
 		download_num: dbCmd.inc(1)

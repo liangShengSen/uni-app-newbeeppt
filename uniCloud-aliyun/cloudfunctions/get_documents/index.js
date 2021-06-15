@@ -20,7 +20,7 @@ exports.main = async (event, context) => {
 	if (payload.code === 0) { // 登录态
 		collected_ids = payload.userInfo.collected_ids || []
 	}
-	const res = await db.collection('test_documents').aggregate().addFields({
+	const res = await db.collection('documents').aggregate().addFields({
 		is_collect: $.in(['$_id', collected_ids])
 	}).match(match).skip((page - 1) * pageSize).limit(pageSize).end()
 

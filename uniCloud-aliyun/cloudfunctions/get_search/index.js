@@ -12,7 +12,7 @@ exports.main = async (event, context) => {
 	if (payload.code === 0) {
 		collected_ids = payload.userInfo.collected_ids
 	}
-	const documents = await db.collection('test_documents').aggregate()
+	const documents = await db.collection('documents').aggregate()
 		.addFields({
 			is_collect: $.in(['$_id', collected_ids])
 		}).match({

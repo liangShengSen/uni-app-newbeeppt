@@ -39,17 +39,14 @@
   height: 40px;
   line-height: 40px;
   text-align: center;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  border-radius: 4px;
   font-size: 15px;
   color: #fff;
-  background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
   background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
   background: linear-gradient(left, #ff978d, #ffbb69);
 }
 .verify-right .canvas {
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  border-radius: 4px;
   overflow: hidden;
 }
 .verify-left,
@@ -59,18 +56,15 @@
 .landing {
   height: 40px;
   line-height: 40px;
-  -webkit-border-radius: 40px;
-          border-radius: 40px;
+  border-radius: 40px;
   font-size: 16px;
-  background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
   background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
   background: linear-gradient(left, #ff978d, #ffbb69);
 }
 .wx-btn {
   height: 40px;
   line-height: 40px;
-  -webkit-border-radius: 40px;
-          border-radius: 40px;
+  border-radius: 40px;
   font-size: 16px;
   margin-top: 15px;
 }
@@ -113,8 +107,7 @@
   padding: 5px 12px;
   height: 30px;
   line-height: 30px;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  border-radius: 4px;
 }
 .forget-margin-b {
   margin-bottom: 12px;
@@ -125,11 +118,9 @@
 }
 .forget-card {
   background: #fff;
-  -webkit-border-radius: 6px;
-          border-radius: 6px;
+  border-radius: 6px;
   padding: 30px 12px;
-  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 3px 9px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.12);
   position: relative;
   margin-top: 30px;
 }
@@ -137,9 +128,7 @@
   position: relative;
   height: 150px;
   padding: 12px;
-  -webkit-border-radius: 0 0 10px 10px;
-          border-radius: 0 0 10px 10px;
-  background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
+  border-radius: 0 0 10px 10px;
   background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
   background: linear-gradient(left, #ff978d, #ffbb69);
 }

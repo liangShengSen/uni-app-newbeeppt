@@ -56,8 +56,7 @@ page {
   content: '';
   width: 18px;
   height: 2px;
-  -webkit-border-radius: 2px;
-          border-radius: 2px;
+  border-radius: 2px;
   background-color: transparent;
 }
 .category .stages .stage-item.active {
@@ -98,8 +97,7 @@ page {
   background-color: #fff;
 }
 .category .category-content .category-content_right .banner-box {
-  -webkit-border-radius: 6px;
-          border-radius: 6px;
+  border-radius: 6px;
   margin: 0 15px 17px;
   overflow: hidden;
   height: calc((2000vw - 1980px)/64);
@@ -110,8 +108,7 @@ page {
 .category .category-content .category-content_right .banner-box .image {
   height: calc((2000vw - 1980px)/64);
   width: 100%;
-  -webkit-border-radius: 6px;
-          border-radius: 6px;
+  border-radius: 6px;
 }
 .category .category-content .category-content_right .empty-box {
   padding: 80px 0;
@@ -148,12 +145,10 @@ page {
   line-height: 24px;
 }
 .category .category-content .category-content_right .version-box .version-item {
-  -webkit-box-shadow: -5px 0 5px rgba(0, 0, 0, 0.01), 0 -5px 5px rgba(0, 0, 0, 0.01), 5px 0 5px rgba(0, 0, 0, 0.01), 0 5px 5px rgba(0, 0, 0, 0.01);
-          box-shadow: -5px 0 5px rgba(0, 0, 0, 0.01), 0 -5px 5px rgba(0, 0, 0, 0.01), 5px 0 5px rgba(0, 0, 0, 0.01), 0 5px 5px rgba(0, 0, 0, 0.01);
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.01), 0 -5px 5px rgba(0, 0, 0, 0.01), 5px 0 5px rgba(0, 0, 0, 0.01), 0 5px 5px rgba(0, 0, 0, 0.01);
   padding: 5px 10px;
   margin: 10px auto;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  border-radius: 4px;
 }
 .category .category-content .category-content_right .version-box .version-item .name {
   padding: 5px 0;

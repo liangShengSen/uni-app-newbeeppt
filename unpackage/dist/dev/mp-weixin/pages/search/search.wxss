@@ -80,8 +80,7 @@ page {
   padding: 2px 10px;
   margin-top: 12px;
   margin-right: 10px;
-  -webkit-border-radius: 5px;
-          border-radius: 5px;
+  border-radius: 5px;
   border: 1px solid #666;
   font-size: 16px;
   color: #666;
