@@ -34,10 +34,32 @@ exports.main = async (event, context) => {
 	// 获取下载地址
 	data.download_url =
 		'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-7d64ea77-4eba-4652-9fb5-6cbebc534629/e011f060-0c38-442e-ab1c-ec449e86b9e5.pptx'
-		
+
 	// 判断用户是否完善邮箱信息，有则发送文件的下载地址到用户邮箱
-	if(payload.userInfo.email) {
-		
+	if (payload.userInfo.email) {
+		// 发件人
+		let transporter = nodemailer.createTransport({
+			service: 'qq',
+			port: 465,
+			secure: true,
+			auth: {
+				user: '1213509006@qq.com',
+				pass: 'wnzgxvmwlojtheaj', // smtp授权密码
+			},
+		});
+		// 邮件信息
+		let mailOptions = await transporter.sendMail({
+			from: '"Newbeeppt小程序" <1213509006@qq.com>', // 发送者
+			to: payload.userInfo.email, // 接收者
+			subject: "PPT文档下载地址", // 主题
+			html: `<b>下载地址：${data.download_url}</b>`, // 发送内容
+		});
+		// 捕获错误
+		transporter.sendMail(mailOptions, (error, info) => {
+		  if (error) {
+		    return console.log(error);
+		  }
+		});
 	}
 
 	return {
