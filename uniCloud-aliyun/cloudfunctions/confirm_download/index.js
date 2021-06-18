@@ -1,5 +1,6 @@
 'use strict';
 const uniID = require('uni-id')
+const nodemailer = require('nodemailer');
 const db = uniCloud.database()
 const dbCmd = db.command
 exports.main = async (event, context) => {
@@ -33,6 +34,11 @@ exports.main = async (event, context) => {
 	// 获取下载地址
 	data.download_url =
 		'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-7d64ea77-4eba-4652-9fb5-6cbebc534629/e011f060-0c38-442e-ab1c-ec449e86b9e5.pptx'
+		
+	// 判断用户是否完善邮箱信息，有则发送文件的下载地址到用户邮箱
+	if(payload.userInfo.email) {
+		
+	}
 
 	return {
 		code: 0,
