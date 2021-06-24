@@ -177,6 +177,7 @@
 				this.$utils.showLoading('加载中')
 				let data = {
 					_id: this._id,
+					source_id: this.detailData.source_id,
 					coins: this.detailData.price,
 					is_free: this.preDownData.is_free,
 					date: this.$utils.getNowDate()
