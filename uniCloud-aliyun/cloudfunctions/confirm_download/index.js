@@ -23,7 +23,7 @@ const getDownloadUrl = (id) => {
 	return down_url;
 }
 // 发送下载地址到邮箱
-const sendDownloadUrlToEmail = (email,download_url) => {
+const sendDownloadUrlToEmail = async (email,download_url) => {
 	// 发件人
 	let transporter = nodemailer.createTransport({
 		service: 'qq',
