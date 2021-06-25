@@ -14,7 +14,7 @@ const getDownloadUrl = (id) => {
 		headers: {
 			'Content-Type': 'text/html',
 			'user-agent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Mobile Safari/537.36',
-			'Cookie': 'vzwvlmlusername=Sam6011966; vzwvlmluserid=4407542; vzwvlmlgroupid=2; vzwvlmlrnd=drnWLdEeVy8XzUj74KJ9;'
+			'Cookie': 'vzwvlmlusername=Sam6011966; vzwvlmluserid=4407542; vzwvlmlgroupid=2; vzwvlmlrnd=EDxfmQR9jEVnbS3eKp6u;'
 		},
 	});
 	let responsebody = iconv.decode(res.getBody(), 'gbk');
@@ -23,7 +23,7 @@ const getDownloadUrl = (id) => {
 	return down_url;
 }
 // 发送下载地址到邮箱
-const sendDownloadUrlToEmail = async (email,download_url) => {
+const sendDownloadUrlToEmail = async (email, download_url) => {
 	// 发件人
 	let transporter = nodemailer.createTransport({
 		service: 'qq',
@@ -62,7 +62,21 @@ exports.main = async (event, context) => {
 	if (payload.code) {
 		return payload
 	}
-	let data = {}
+	let data = {},
+		updateInfo = {
+			download_num: dbCmd.inc(1),
+		};
+	// 判断是否有下载地址
+	let docRecord = await db.collection('documents').doc(_id).get(),
+		document = docRecord.data[0]
+	if (document.download_url) {
+		data.download_url = document.download_url
+	} else {
+		data.download_url = getDownloadUrl(source_id); // 获取下载地址
+		updateInfo.download_url = data.download_url
+	}
+	await db.collection('documents').doc(_id).update(updateInfo) // 更新文档
+
 	// 扣费，添加下载记录
 	await db.collection('uni-id-users').doc(payload.uid).update({
 		balance: dbCmd.inc(is_free ? 0 : -(parseInt(coins))),
@@ -72,18 +86,10 @@ exports.main = async (event, context) => {
 		}),
 		download_total: dbCmd.inc(1)
 	})
-	// 更新文档的下载次数
-	await db.collection('documents').where({
-		_id
-	}).update({
-		download_num: dbCmd.inc(1)
-	})
-	// 获取下载地址
-	data.download_url = getDownloadUrl(source_id);
 
 	// 判断用户是否完善邮箱信息，有则发送文件的下载地址到用户邮箱
 	if (payload.userInfo.email) {
-		sendDownloadUrlToEmail(payload.userInfo.email,data.download_url)
+		sendDownloadUrlToEmail(payload.userInfo.email, data.download_url)
 	}
 
 	return {
