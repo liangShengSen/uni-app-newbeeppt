@@ -7,6 +7,11 @@ const iconv = require('iconv-lite');
 const request = require('sync-request');
 const cheerio = require('cheerio')
 const schedule = require('node-schedule');
+const headers = {
+	'Content-Type': 'text/html',
+	'user-agent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Mobile Safari/537.36',
+	'Cookie': 'vzwvlmlusername=Sam6011966; vzwvlmluserid=4407542; vzwvlmlgroupid=2; vzwvlmlrnd=LfXHhQDCqihc6sLCDSCk;'
+}
 
 // 定时访问首页刷新登录session信息
 const refreshSession = () => {
@@ -15,7 +20,9 @@ const refreshSession = () => {
 		let rule = new schedule.RecurrenceRule();
 		rule.hour = [1, 5, 9, 13, 17, 21]; // 每4小时
 		timer = schedule.scheduleJob(rule, () => {
-			request('GET', 'http://www.pptok.com/');
+			request('GET', 'http://www.pptok.com/', {
+				headers
+			});
 		});
 	} catch (e) {
 		timer.cancel();
@@ -27,11 +34,7 @@ refreshSession();
 const getDownloadUrl = (id) => {
 	let url = `http://vip.pptok.com/down.php?id=${id}`;
 	let res = request('GET', url, {
-		headers: {
-			'Content-Type': 'text/html',
-			'user-agent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Mobile Safari/537.36',
-			'Cookie': 'vzwvlmlusername=Sam6011966; vzwvlmluserid=4407542; vzwvlmlgroupid=2; vzwvlmlrnd=LfXHhQDCqihc6sLCDSCk;'
-		},
+		headers
 	});
 	let responsebody = iconv.decode(res.getBody(), 'gbk');
 	const $ = cheerio.load(responsebody)
