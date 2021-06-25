@@ -56,7 +56,7 @@
 				<view class="down-info" v-else>下载需要：<text class="need-pay">{{detailData.price}} P豆</text></view>
 				<view class="down-info">账户余额：{{preDownData.balance}} P豆</view>
 				<view class="down-info free">首次下载后15天内可免费重复下载</view>
-				<view class="down-info email">完善邮箱信息稍后会收到资料附件地址</view>
+				<view class="down-info email">务必完善邮箱信息稍后会收到资料附件地址</view>
 				<view class="btn" @click="confirmDownload">确定下载</view>
 			</view>
 		</uni-popup>

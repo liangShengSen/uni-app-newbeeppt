@@ -6,6 +6,22 @@ const nodemailer = require('nodemailer');
 const iconv = require('iconv-lite');
 const request = require('sync-request');
 const cheerio = require('cheerio')
+const schedule = require('node-schedule');
+
+// 定时访问首页刷新登录session信息
+const refreshSession = () => {
+	let timer = null;
+	try {
+		let rule = new schedule.RecurrenceRule();
+		rule.hour = [1, 5, 9, 13, 17, 21]; // 每4小时
+		timer = schedule.scheduleJob(rule, () => {
+			request('GET', 'http://www.pptok.com/');
+		});
+	} catch (e) {
+		timer.cancel();
+	}
+}
+refreshSession();
 
 // 根据id获取下载地址
 const getDownloadUrl = (id) => {
@@ -14,7 +30,7 @@ const getDownloadUrl = (id) => {
 		headers: {
 			'Content-Type': 'text/html',
 			'user-agent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Mobile Safari/537.36',
-			'Cookie': 'vzwvlmlusername=Sam6011966; vzwvlmluserid=4407542; vzwvlmlgroupid=2; vzwvlmlrnd=EDxfmQR9jEVnbS3eKp6u;'
+			'Cookie': 'vzwvlmlusername=Sam6011966; vzwvlmluserid=4407542; vzwvlmlgroupid=2; vzwvlmlrnd=LfXHhQDCqihc6sLCDSCk;'
 		},
 	});
 	let responsebody = iconv.decode(res.getBody(), 'gbk');
