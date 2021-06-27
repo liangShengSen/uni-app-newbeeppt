@@ -10,7 +10,7 @@ const schedule = require('node-schedule');
 const headers = {
 	'Content-Type': 'text/html',
 	'user-agent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Mobile Safari/537.36',
-	'Cookie': 'vzwvlmlusername=Sam6011966; vzwvlmluserid=4407542; vzwvlmlgroupid=2; vzwvlmlrnd=LfXHhQDCqihc6sLCDSCk;'
+	'Cookie': 'vzwvlmlusername=Sam6011966; vzwvlmluserid=4407542; vzwvlmlgroupid=2; vzwvlmlrnd=BJn56niJRiBDfrNGkpCK;'
 }
 
 // 定时访问首页刷新登录session信息
@@ -29,7 +29,6 @@ const refreshSession = () => {
 	}
 }
 refreshSession();
-
 // 根据id获取下载地址
 const getDownloadUrl = (id) => {
 	let url = `http://vip.pptok.com/down.php?id=${id}`;
@@ -40,6 +39,19 @@ const getDownloadUrl = (id) => {
 	const $ = cheerio.load(responsebody)
 	let down_url = $('.tqdown > .box > a').attr('href')
 	return down_url;
+}
+// 返回前端的文件下载地址
+const createDownloadUrl = async (uid, _id) => {
+	let {
+		token,
+		tokenExpired
+	} = await uniID.createToken({
+		uid
+	});
+	// 云函数URL化后，无法使用token校验
+	let url =
+		`https://7d64ea77-4eba-4652-9fb5-6cbebc534629.bspapp.com/http/create_download_url?_id=${_id}&uid=${uid}&expired=${tokenExpired}`
+	return url;
 }
 // 发送下载地址到邮箱
 const sendDownloadUrlToEmail = async (email, download_url) => {
@@ -105,6 +117,9 @@ exports.main = async (event, context) => {
 		}),
 		download_total: dbCmd.inc(1)
 	})
+
+	// 给下载地址套上一层外壳，并且生成token鉴权
+	data.download_url = await createDownloadUrl(payload.uid, _id)
 
 	// 判断用户是否完善邮箱信息，有则发送文件的下载地址到用户邮箱
 	if (payload.userInfo.email) {

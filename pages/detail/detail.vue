@@ -20,7 +20,7 @@
 					<view class="attr-list_item">学科： {{ detailData.subject.name }}</view>
 					<view class="attr-list_item">版本： {{ detailData.version.name }}</view>
 					<view class="attr-list_item">册别： {{ detailData.book.name }}</view>
-					<view class="attr-list_item">所属章节： {{ detailData.chapter.name }}</view>					
+					<view class="attr-list_item">所属章节： {{ detailData.chapter.name }}</view>
 				</block>
 				<view class="attr-list_item">资料作者： {{ detailData.author.name }}</view>
 				<view class="attr-list_item">适用地区： 全国</view>
@@ -36,10 +36,10 @@
 			<view class="content">
 				<view class="content-left">
 					<!-- #ifdef MP-WEIXIN -->
-						<button class="share" open-type="share">
-							<uni-icons size="22" type="redo"></uni-icons>
-							<view class="text">分享</view>
-						</button>					
+					<button class="share" open-type="share">
+						<uni-icons size="22" type="redo"></uni-icons>
+						<view class="text">分享</view>
+					</button>
 					<!-- #endif -->
 					<view class="collect">
 						<collect :item="detailData" :isDetail="true"></collect>
@@ -52,12 +52,25 @@
 		<uni-popup ref="popup" type="center">
 			<view class="modal-content">
 				<uni-icons type="closeempty" color="#999" size="20" class="close-icon" @click="closeModal"></uni-icons>
-				<view class="down-info" v-if="preDownData.is_free || detailData.price === 0">本次下载：<text class="is-free">免费</text></view>
+				<view class="down-info" v-if="preDownData.is_free || detailData.price === 0">本次下载：<text
+						class="is-free">免费</text></view>
 				<view class="down-info" v-else>下载需要：<text class="need-pay">{{detailData.price}} P豆</text></view>
 				<view class="down-info">账户余额：{{preDownData.balance}} P豆</view>
 				<view class="down-info free">首次下载后15天内可免费重复下载</view>
-				<view class="down-info email">务必完善邮箱信息稍后会收到资料附件地址</view>
+				<view class="down-info email"><span class="red" @click="jump">完善邮箱信息👈</span>稍后会收到资料下载地址</view>
 				<view class="btn" @click="confirmDownload">确定下载</view>
+			</view>
+		</uni-popup>
+		<uni-popup ref="successPopup" type="center">
+			<view class="modal-content">
+				<uni-icons type="closeempty" color="#999" size="20" class="close-icon" @click="closeModal"></uni-icons>
+				<view class="success-wrap">
+					<view class="iconfont icon-yunongtongcaozuochenggong success-icon"></view>
+					<text class="success-text">下载成功</text>
+					<text class="success-tips">复制下方链接地址到手机浏览器下载即可</text>
+					<view class="link-wrap">{{downloadUrl}}</view>
+					<view class="copy-btn" id="copy-btn" @click="copyLink">复制</view>
+				</view>
 			</view>
 		</uni-popup>
 	</view>
@@ -73,7 +86,8 @@
 				_id: "",
 				type: '',
 				detailData: null,
-				preDownData: {}
+				preDownData: {},
+				downloadUrl: ''
 			};
 		},
 		computed: {
@@ -99,8 +113,30 @@
 			}
 		},
 		methods: {
-			closeModal(){
+			jump(){
+				uni.navigateTo({
+					url: '../personal/personal'
+				})
+			},
+			showSuccessDialog(url) {
+				this.downloadUrl = url;
+				this.$refs.successPopup.open()
+			},
+			copyLink() {
+				uni.setClipboardData({
+					data: this.downloadUrl,
+					success: () => {
+						uni.hideToast(); // 隐藏默认提示信息
+						this.closeModal();
+						uni.showToast({
+							title: '链接已复制',
+						});
+					}
+				});
+			},
+			closeModal() {
 				this.$refs.popup.close()
+				this.$refs.successPopup.close()
 			},
 			getDetail() {
 				this.$api
@@ -116,8 +152,8 @@
 			},
 			preDownload() {
 				let uniIdToken = uni.getStorageSync('uni_id_token') || null
-				if(!uniIdToken) {
-					return this.$utils.toast('请先登录',() => {
+				if (!uniIdToken) {
+					return this.$utils.toast('请先登录', () => {
 						uni.navigateTo({
 							url: `../auth/login/login`
 						})
@@ -129,12 +165,12 @@
 					date: this.$utils.getNowDate()
 				}).then(res => {
 					uni.hideLoading()
-					if(res.code === 0) {
-						if(!res.data.is_free && res.data.balance < this.detailData.price) { // 不够钱，跳到充值页面
-							return this.$utils.toast('账户余额不足，请先充值',() => {
+					if (res.code === 0) {
+						if (!res.data.is_free && res.data.balance < this.detailData.price) { // 不够钱，跳到充值页面
+							return this.$utils.toast('账户余额不足，请先充值', () => {
 								return uni.navigateTo({
 									url: `../recharge/recharge`
-								})								
+								})
 							})
 						}
 						this.preDownData = res.data
@@ -144,37 +180,9 @@
 					uni.hideLoading()
 				})
 			},
-			downloadFunc(url) {
-				// #ifdef  H5
-					window.open(url,'_self')
-				// #endif
-				// #ifdef  MP-WEIXIN
-				this.$utils.showLoading('文件下载中')
-				uni.downloadFile({
-				    url: url,
-				    success: (res) => {
-						uni.hideLoading()
-				        if (res.statusCode === 200) {
-							let path = res.tempFilePath
-							uni.saveFile({
-							  tempFilePath: path,
-							  success: (result) => {
-								this.$utils.toast(`文件保存在${result.savedFilePath},请注意查看！`, () => {
-									uni.openDocument({
-									  filePath: result.savedFilePath
-									});
-								} , 5000)
-							  }
-							});
-				        }
-				    }
-				});
-				// #endif
-				uni.$emit('update_doc_status') // 更新列表下载次数
-			},
 			confirmDownload() {
 				this.$refs.popup.close()
-				this.$utils.showLoading('加载中')
+				this.$utils.showLoading('下载中')
 				let data = {
 					_id: this._id,
 					source_id: this.detailData.source_id,
@@ -183,9 +191,10 @@
 					date: this.$utils.getNowDate()
 				}
 				this.$api.confirm_download(data).then(res => {
-					if(res.code === 0) {
+					if (res.code === 0) {
 						uni.hideLoading()
-						this.downloadFunc(res.data.download_url)
+						uni.$emit('update_doc_status') // 更新列表下载次数
+						this.showSuccessDialog(res.data.download_url)
 					}
 				}).catch(() => {
 					uni.hideLoading()
@@ -199,7 +208,7 @@
 	page {
 		height: 100%;
 	}
-	
+
 	.modal-content {
 		position: relative;
 		background-color: #fff;
@@ -208,33 +217,95 @@
 		margin: 0 auto;
 		padding: 20px;
 		box-sizing: border-box;
+
+		.success-wrap {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+
+			.success-icon {
+				color: #07c160;
+				font-size: 60px;
+				margin-bottom: 10px;
+			}
+
+			.success-text {
+				font-size: 16px;
+				color: #333;
+				margin-bottom: 20px;
+			}
+
+			.success-tips {
+				font-size: 14px;
+				color: #999;
+				margin-bottom: 10px;
+			}
+
+			.link-wrap {
+				width: 232px;
+				height: 32px;
+				line-height: 32px;
+				text-align: center;
+				padding: 0 10px;
+				color: #999;
+				font-size: 12px;
+				background-color: #f2f2f2;
+				border-radius: 4px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.copy-btn {
+				width: 150px;
+				height: 36px;
+				line-height: 36px;
+				border-radius: 36px;
+				text-align: center;
+				margin-top: 30px;
+				color: #fff;
+				@include base-bg;
+			}
+		}
+
 		.close-icon {
 			position: absolute;
 			right: 10px;
 			top: 5px;
 		}
+
 		.down-info {
 			margin-bottom: 10px;
 			text-align: center;
 			color: #333;
 			font-size: 16px;
+
 			&.free {
 				color: #999;
 				font-size: 14px;
 				margin-bottom: 5px;
 			}
+
+			.red {
+				color: red;
+			}
+
 			&.email {
 				color: #999;
 				font-size: 14px;
 				margin-bottom: 25px;
 			}
+
 			.is-free {
 				color: #30b33a;
 			}
+
 			.need-pay {
 				color: $base-color;
 			}
 		}
+
 		.btn {
 			height: 36px;
 			line-height: 36px;
@@ -278,6 +349,7 @@
 					&.price {
 						color: $base-color;
 					}
+
 					&.free {
 						color: #30b33a;
 					}
@@ -337,8 +409,9 @@
 			box-sizing: border-box;
 			border-top: 1px solid #f1f1f1;
 			background-color: #fff;
-			z-index: 700;
+			z-index: 50;
 			font-size: 0;
+
 			.content {
 				display: flex;
 				align-items: center;
@@ -349,10 +422,12 @@
 				.content-left {
 					display: flex;
 					align-items: center;
+
 					.share {
 						background-color: transparent;
 						padding: 0;
 						line-height: inherit;
+
 						&::after {
 							border: none;
 						}
