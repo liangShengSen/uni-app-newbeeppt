@@ -6,37 +6,69 @@ const nodemailer = require('nodemailer');
 const iconv = require('iconv-lite');
 const request = require('sync-request');
 const cheerio = require('cheerio')
-const schedule = require('node-schedule');
-const headers = {
-	'Content-Type': 'text/html',
-	'user-agent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Mobile Safari/537.36',
-	'Cookie': 'vzwvlmlusername=Sam6011966; vzwvlmluserid=4407542; vzwvlmlgroupid=2; vzwvlmlrnd=BJn56niJRiBDfrNGkpCK;'
+
+const config_id = '60d9dad44cb0900001cc7815'
+
+const getHeaders = async () => {
+	let res = await db.collection('download_config').doc(config_id).get();
+	let {
+		name,
+		user_id,
+		group_id,
+		rnd
+	} = res.data[0]
+	const headers = {
+		'Content-Type': 'text/html',
+		'user-agent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Mobile Safari/537.36',
+		'Cookie': `vzwvlmlusername=${name}; vzwvlmluserid=${user_id}; vzwvlmlgroupid=${group_id}; vzwvlmlrnd=${rnd}`
+	}
+	return headers;
 }
 
-// 定时访问首页刷新登录session信息
-const refreshSession = () => {
-	let timer = null;
-	try {
-		let rule = new schedule.RecurrenceRule();
-		rule.hour = [1, 5, 9, 13, 17, 21]; // 每4小时
-		timer = schedule.scheduleJob(rule, () => {
-			request('GET', 'http://www.pptok.com/', {
-				headers
-			});
-		});
-	} catch (e) {
-		timer.cancel();
-	}
+const updateConfig = async () => {
+	const url =
+		'https://oapi.dingtalk.com/robot/send?access_token=bd2aaca8466f6540d0dd5cc00f80bcc9150d77f837da21ebbe857f0979248090'
+	const res = await uniCloud.httpclient.request(url, {
+		method: 'POST',
+		data: {
+			msgtype: 'actionCard',
+			actionCard: {
+				title: "更新配置",
+				text: `更新链接: https://7d64ea77-4eba-4652-9fb5-6cbebc534629.bspapp.com/http/update_config?rnd=`,
+				btns: [{
+					title: "确认更新",
+					actionURL: `https://7d64ea77-4eba-4652-9fb5-6cbebc534629.bspapp.com/http/update_config?rnd=`
+				}]
+			}
+		},
+		contentType: 'json',
+		dataType: 'json'
+	})
+	return res;
 }
-refreshSession();
+
 // 根据id获取下载地址
-const getDownloadUrl = (id) => {
-	let url = `http://vip.pptok.com/down.php?id=${id}`;
-	let res = request('GET', url, {
-		headers
-	});
-	let responsebody = iconv.decode(res.getBody(), 'gbk');
-	const $ = cheerio.load(responsebody)
+const getDownloadUrl = async (id) => {
+	const req = async (id) => {
+		let url = `http://vip.pptok.com/down.php?id=${id}`,
+			headers = await getHeaders();
+		let body = request('GET', url, {
+			headers
+		});
+		body = iconv.decode(body.getBody(), 'gbk');
+		return body
+	}
+	let res = await req(id);
+	// source_id有的前面带8位格式日期，有的不带，因此需要截取后再请求一次
+	if (res.indexOf('此信息不存在') > -1 || res.indexOf('window.close') > -1) {
+		res = await req(id.slice(8));
+	}
+	// 下载配置信息失效，发出更新通知
+	if (res.indexOf('QQ登录') > -1 || res.indexOf('微信登录') > -1) {
+		await updateConfig();
+		return '';
+	}
+	const $ = cheerio.load(res)
 	let down_url = $('.tqdown > .box > a').attr('href')
 	return down_url;
 }
@@ -103,8 +135,17 @@ exports.main = async (event, context) => {
 	if (document.download_url) {
 		data.download_url = document.download_url
 	} else {
-		data.download_url = getDownloadUrl(source_id); // 获取下载地址
-		updateInfo.download_url = data.download_url
+		// 获取下载地址
+		data.download_url = getDownloadUrl(source_id);
+		if (data.download_url) {
+			updateInfo.download_url = data.download_url
+		} else {
+			return {
+				code: 0,
+				msg: '当前下载人数较多，请5分钟后重试。',
+				data
+			}
+		}
 	}
 	await db.collection('documents').doc(_id).update(updateInfo) // 更新文档
 

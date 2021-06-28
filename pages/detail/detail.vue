@@ -113,7 +113,7 @@
 			}
 		},
 		methods: {
-			jump(){
+			jump() {
 				uni.navigateTo({
 					url: '../personal/personal'
 				})
@@ -191,10 +191,14 @@
 					date: this.$utils.getNowDate()
 				}
 				this.$api.confirm_download(data).then(res => {
-					if (res.code === 0) {
+					if (res.code === 0 && res.data.download_url) {
 						uni.hideLoading()
-						uni.$emit('update_doc_status') // 更新列表下载次数
 						this.showSuccessDialog(res.data.download_url)
+						// 更新列表下载次数
+						this.getDetail()
+						uni.$emit('update_doc_status') 
+					} else {
+						this.$utils.toast(res.msg);
 					}
 				}).catch(() => {
 					uni.hideLoading()
