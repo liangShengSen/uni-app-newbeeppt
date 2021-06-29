@@ -136,7 +136,7 @@ exports.main = async (event, context) => {
 		data.download_url = document.download_url
 	} else {
 		// 获取下载地址
-		data.download_url = getDownloadUrl(source_id);
+		data.download_url = await getDownloadUrl(source_id);
 		if (data.download_url) {
 			updateInfo.download_url = data.download_url
 		} else {
@@ -147,6 +147,7 @@ exports.main = async (event, context) => {
 			}
 		}
 	}
+	
 	await db.collection('documents').doc(_id).update(updateInfo) // 更新文档
 
 	// 扣费，添加下载记录
