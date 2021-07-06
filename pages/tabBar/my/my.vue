@@ -20,7 +20,7 @@
 					</view>
 					<view class="my-header_info-item">
 						<text class="count">{{userInfo.balance || 0}}</text>
-						<text class="text">我的P豆</text>
+						<text class="text">我的账户</text>
 					</view>
 				</view>
 			</view>

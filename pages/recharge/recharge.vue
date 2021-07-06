@@ -13,8 +13,9 @@
 		</view>
 		<view class="tips">
 			<view class="title">充值提示</view>
-			<view class="tips-item">1、如果出现无法充值、充值失败等情况，请添加客服QQ(1213509006)进行咨询相关问题，谢谢配合。</view>
-			<view class="tips-item">2、凡是充值成功之后，为了减少双方不必要的麻烦，概不退款，请注意！！！</view>
+			<view class="tips-item">1、确认支付后，会有大概10秒的缓冲时间(由网络情况决定)，再次下载若还提示余额不足，请1分钟后再试。</view>
+			<view class="tips-item">2、如果出现无法充值、充值失败等情况，请添加客服微信(lssdwx)进行咨询相关问题，谢谢配合。</view>
+			<view class="tips-item">3、凡是充值成功之后，为了减少双方不必要的麻烦，概不退款，请注意！！！</view>
 		</view>
 		<view class="recharge-btn">
 			<button class="landing" type="primary" @click="showPayQrcode">立即支付</button>

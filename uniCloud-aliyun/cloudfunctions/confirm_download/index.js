@@ -6,6 +6,7 @@ const nodemailer = require('nodemailer');
 const iconv = require('iconv-lite');
 const request = require('sync-request');
 const cheerio = require('cheerio')
+const EMAIL = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
 
 const config_id = '60d9dad44cb0900001cc7815'
 
@@ -102,7 +103,7 @@ const sendDownloadUrlToEmail = async (email, download_url) => {
 		from: '"Newbeeppt小程序" <1213509006@qq.com>', // 发送者
 		to: email, // 接收者
 		subject: "PPT文档下载地址", // 主题
-		html: `<b>下载地址：${download_url}</b>`, // 发送内容
+		html: `<b>复制链接到浏览器打开即可下载：${download_url}</b>`, // 发送内容
 	});
 	// 捕获错误
 	transporter.sendMail(mailOptions, (error, info) => {
@@ -147,7 +148,7 @@ exports.main = async (event, context) => {
 			}
 		}
 	}
-	
+
 	await db.collection('documents').doc(_id).update(updateInfo) // 更新文档
 
 	// 扣费，添加下载记录
@@ -164,8 +165,8 @@ exports.main = async (event, context) => {
 	data.download_url = await createDownloadUrl(payload.uid, _id)
 
 	// 判断用户是否完善邮箱信息，有则发送文件的下载地址到用户邮箱
-	if (payload.userInfo.email) {
-		sendDownloadUrlToEmail(payload.userInfo.email, data.download_url)
+	if (payload.userInfo.email || EMAIL.test(payload.userInfo.username)) {
+		await sendDownloadUrlToEmail(payload.userInfo.email, data.download_url)
 	}
 
 	return {
