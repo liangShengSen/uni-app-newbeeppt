@@ -22,7 +22,6 @@ exports.main = async (event, context) => {
 	}
 	const res = await db.collection('documents').aggregate().sort({
 		source_id: -1,
-		_id: -1,
 	}).addFields({
 		is_collect: $.in(['$_id', collected_ids])
 	}).match(match).skip((page - 1) * pageSize).limit(pageSize).end()

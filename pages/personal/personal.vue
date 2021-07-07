@@ -34,15 +34,15 @@
 			<view class="personal-item">
 				<text class="text">手机绑定</text>
 				<view class="right" @click="showModal('mobile')">
-					<view class="content">{{isBindPhone ? userInfo.username : `${userInfo.mobile || '未设置'}`}}</view>
-					<uni-icons v-if="!userInfo.username || !isBindPhone" type="arrowright" size="14" color="#999"></uni-icons>
+					<view class="content">{{userInfo.mobile || '未设置'}}</view>
+					<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
 				</view>
 			</view>
 			<view class="personal-item">
 				<text class="text">邮箱绑定</text>
 				<view class="right" @click="showModal('email')">
-					<view class="content">{{!isBindPhone ? `${userInfo.username || '未设置'}` : `${userInfo.email || '未设置'}`}}</view>
-					<uni-icons v-if="!userInfo.username || isBindPhone" type="arrowright" size="14" color="#999"></uni-icons>
+					<view class="content">{{userInfo.email || '未设置'}}</view>
+					<uni-icons type="arrowright" size="14" color="#999"></uni-icons>
 				</view>
 			</view>
 		</view>
@@ -97,26 +97,11 @@
 				]
 			}
 		},
-		computed: {
-			isBindPhone() {
-				return PHONE.test(this.userInfo.username)
-			}
-		},
 		created() {
 			this.getUserInfo()
 		},
 		methods: {
 			showModal(type) {
-				switch (type) {
-					case 'mobile':
-						if (this.isBindPhone) return
-						break
-					case 'email':
-						if(this.userInfo.username) {
-							if (!this.isBindPhone) return
-						}
-						break
-				}
 				this.formType = type
 				this.$refs.popup.open()
 			},
