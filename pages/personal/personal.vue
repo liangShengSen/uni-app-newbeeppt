@@ -165,21 +165,31 @@
 						const filePath = res.tempFilePaths[0],
 							fileName = res.tempFiles[0].name || (new Date().getTime() + '.' + fileExtension)
 						this.$utils.showLoading('上传中')
-						const result = await uniCloud.uploadFile({
-							filePath: filePath,
-							cloudPath: fileName
-						});
-						if (result.success) {
-							this.$api.setUserAvatar({
-								avatar: result.fileID
-							}).then(res => {
-								uni.hideLoading()
-								this.userInfo.avatar = result.fileID
-								this.$forceUpdate()
-								if (res.code === 0) {
-									this.$utils.toast(res.msg)
-								}
-							})
+						try {
+							const result = await uniCloud.uploadFile({
+								filePath: filePath,
+								cloudPath: fileName
+							});
+							if (result.success) {
+								this.$api.setUserAvatar({
+									avatar: result.fileID
+								}).then(res => {
+									uni.hideLoading()
+									this.userInfo.avatar = result.fileID
+									this.$forceUpdate()
+									if (res.code === 0) {
+										this.$utils.toast(res.msg)
+									}
+								})
+							}
+						}catch(error) {
+							uni.hideLoading()
+							let err = JSON.parse(JSON.stringify(error))
+							let errorMsg = err.errMsg
+							if(err.errMsg == 'cloud_storage_capacity_is_full') {
+								errorMsg = '云存储容量已满，暂时无法上传'
+							}
+							this.$utils.toast(errorMsg,null,2500)
 						}
 					}
 				});

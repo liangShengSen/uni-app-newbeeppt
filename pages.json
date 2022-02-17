@@ -13,145 +13,121 @@
 		// 	}
 		// },
 		{
-		    "path" : "pages/tabBar/home/home",
-		    "style" : {
-		        "navigationBarTitleText": "newbeeppt",
-				"navigationStyle":"custom",
-				"navigationBarTextStyle":"white",
-		        "enablePullDownRefresh": false
-		    }
+			"path": "pages/tabBar/home/home",
+			"style": {
+				"navigationBarTitleText": "newbeeppt",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false
+			}
 		},
-	    {
-            "path" : "pages/tabBar/category/category",
-            "style" :{
-                "navigationBarTitleText": "分类",
-				"navigationStyle":"custom",
-                "enablePullDownRefresh": false
-            }
-            
-        },
 		{
-            "path" : "pages/tabBar/my/my",
-            "style" : {
-                "navigationBarTitleText": "个人中心",
-				"navigationStyle":"custom",
-                "enablePullDownRefresh": false
-            }
-        }
-        ,{
-            "path" : "pages/search/search",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-				"navigationStyle":"custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/home-label/home-label",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "学科管理",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/detail/detail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "资料详情",
-                "enablePullDownRefresh": false
-				
-            }
-            
-        }
-        ,{
-            "path" : "pages/auth/login/login",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-				"navigationStyle":"custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/auth/register/register",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-				"navigationStyle":"custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/personal/personal",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "个人信息",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/personal/help",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "帮助中心",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/personal/my_collected",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的收藏",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/personal/my_download",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的下载",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-		,{
-		    "path" : "pages/personal/my_recharge_records",
-		    "style" :                                                                                    
-		    {
-		        "navigationBarTitleText": "充值记录",
-		        "enablePullDownRefresh": false
-		    }
-		    
+			"path": "pages/tabBar/category/category",
+			"style": {
+				"navigationBarTitleText": "分类",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/tabBar/my/my",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/home-label/home-label",
+			"style": {
+				"navigationBarTitleText": "学科管理",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "资料详情",
+				"enablePullDownRefresh": false
+
+			}
+
+		}, {
+			"path": "pages/auth/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/auth/register/register",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/personal/personal",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/personal/help",
+			"style": {
+				"navigationBarTitleText": "帮助中心",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/personal/my_collected",
+			"style": {
+				"navigationBarTitleText": "我的收藏",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/personal/my_download",
+			"style": {
+				"navigationBarTitleText": "我的下载",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/personal/my_recharge_records",
+			"style": {
+				"navigationBarTitleText": "充值记录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/recharge/recharge",
+			"style": {
+				"navigationBarTitleText": "充值中心",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/list/list",
+			"style": {
+				"navigationBarTitleText": "列表",
+				"enablePullDownRefresh": false
+			}
+
 		}
-        ,{
-            "path" : "pages/recharge/recharge",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "充值中心",
-				"navigationStyle":"custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/list/list",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "列表",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -159,27 +135,26 @@
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
-		"color":"#666",
+		"color": "#666",
 		"selectedColor": "#f07373",
-		"backgroundColor":"#fff",
-		"list": [
-			{
-				"pagePath":"pages/tabBar/home/home",
-				"iconPath":"static/tabBar/home.png",
-				"selectedIconPath":"static/tabBar/home_active.png",
-				"text":"首页"
+		"backgroundColor": "#fff",
+		"list": [{
+				"pagePath": "pages/tabBar/home/home",
+				"iconPath": "static/tabBar/home.png",
+				"selectedIconPath": "static/tabBar/home_active.png",
+				"text": "首页"
 			},
 			{
-				"pagePath":"pages/tabBar/category/category",
-				"iconPath":"static/tabBar/category.png",
-				"selectedIconPath":"static/tabBar/category_active.png",
-				"text":"分类"
+				"pagePath": "pages/tabBar/category/category",
+				"iconPath": "static/tabBar/category.png",
+				"selectedIconPath": "static/tabBar/category_active.png",
+				"text": "分类"
 			},
 			{
-				"pagePath":"pages/tabBar/my/my",
-				"iconPath":"static/tabBar/my.png",
-				"selectedIconPath":"static/tabBar/my_active.png",
-				"text":"我的"
+				"pagePath": "pages/tabBar/my/my",
+				"iconPath": "static/tabBar/my.png",
+				"selectedIconPath": "static/tabBar/my_active.png",
+				"text": "我的"
 			}
 		]
 	}

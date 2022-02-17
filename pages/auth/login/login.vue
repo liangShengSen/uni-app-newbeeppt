@@ -21,7 +21,7 @@
 			<view class="login-by-wx">
 				<view class="inner" @click="getLoginCode">
 					<view class="iconfont icon-weixindenglu"></view>
-					<text class="text">微信登陆</text>					
+					<text class="text">微信登陆</text>
 				</view>
 			</view>
 			<!-- #endif -->
@@ -87,34 +87,51 @@
 				})
 			},
 			getLoginCode() {
-				this.$utils.showLoading('微信登录中')
-				uni.login({
-					provider: 'weixin',
-					success: (result) => {
+				uni.getUserProfile({
+					desc: '授权登录', //不写不弹提示框
+					success: res => {	
 						let {
-							code
-						} = result
-						if (code) {
-							this.$api.loginByWeixin({
-								code
-							}).then(res => {
-								uni.hideLoading()
-								if (res.code === 0) {
-									uni.setStorageSync('uni_id_token', res.token)
-									uni.$emit('subjectChange') // 更新tab学科信息
-									this.$utils.toast('登录成功', () => {
-										uni.navigateBack({
-											delta: 1
-										})
+							nickName,
+							avatarUrl
+						} = res.userInfo
+						this.$utils.showLoading('微信登录中')
+						uni.login({
+							provider: 'weixin',
+							success: (result) => {
+								let {
+									code
+								} = result
+								if (code) {
+									this.$api.loginByWeixin({
+										code,
+										nickname: nickName,
+										avatar: avatarUrl
+									}).then(res => {
+										uni.hideLoading()
+										if (res.code === 0) {
+											uni.setStorageSync('uni_id_token', res.token)
+											uni.$emit('subjectChange') // 更新tab学科信息
+											this.$utils.toast('登录成功', () => {
+												uni.navigateBack({
+													delta: 1
+												})
+											})
+										}
+									}).catch(() => {
+										uni.hideLoading()
 									})
 								}
-							}).catch(() => {
+							},
+							fail: () => {
 								uni.hideLoading()
-							})
-						}
+							}
+						})
 					},
-					fail: () => {
-						uni.hideLoading()
+					fail: err => {
+						uni.showToast({
+							title: '请点击授权进行登录',
+							icon: 'none'
+						});
 					}
 				})
 			}
@@ -146,8 +163,10 @@
 	.login-btn {
 		padding: 5px 10px;
 		margin-top: 200px;
+
 		.login-by-wx {
 			margin-top: 35px;
+
 			.inner {
 				display: flex;
 				align-items: center;
@@ -155,15 +174,17 @@
 				justify-content: center;
 				width: 75px;
 				margin: 0 auto;
+
 				.icon-weixindenglu {
 					font-size: 40px;
 					color: #00c800;
 				}
+
 				.text {
 					font-size: 14px;
 					padding: 5px 0;
 					color: #666;
-				}	
+				}
 			}
 		}
 	}

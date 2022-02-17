@@ -16,7 +16,7 @@
 $base-color: #f07373;
 	
 @mixin base-bg {
-  background: linear-gradient(left,#ff978d, #ffbb69);
+  background: linear-gradient(to right,#ff978d, #ffbb69);
 }
 
 /* 行为相关颜色 */
