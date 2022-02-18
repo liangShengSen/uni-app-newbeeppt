@@ -19,7 +19,7 @@
 			<button class="landing" type="primary" @click="login">登陆</button>
 			<!-- #ifdef MP-WEIXIN -->
 			<view class="login-by-wx">
-				<view class="inner" @click="getLoginCode">
+				<view class="inner" @click="loginByWechat">
 					<view class="iconfont icon-weixindenglu"></view>
 					<text class="text">微信登陆</text>
 				</view>
@@ -72,7 +72,6 @@
 					uni.hideLoading()
 					if (res.code === 0) {
 						uni.setStorageSync('uni_id_token', res.token)
-
 						this.$utils.toast('登录成功', () => {
 							uni.navigateBack({
 								delta: 1
@@ -86,52 +85,66 @@
 					this.$utils.toast(err.msg)
 				})
 			},
-			getLoginCode() {
-				uni.getUserProfile({
-					desc: '授权登录', //不写不弹提示框
-					success: res => {	
+			loginByWechat() {
+				const isAuthorize = uni.getStorageSync('authorize');
+				if (isAuthorize) {
+					this.getLoginCode()
+				} else {
+					uni.getUserProfile({
+						desc: '授权登录', //不写不弹提示框
+						success: res => {
+							let {
+								nickName,
+								avatarUrl
+							} = res.userInfo
+							this.getLoginCode(nickName, avatarUrl)
+						},
+						fail: err => {
+							uni.showToast({
+								title: '请点击授权进行登录',
+								icon: 'none'
+							});
+						}
+					})
+				}
+			},
+			getLoginCode(nickName, avatarUrl) {
+				this.$utils.showLoading('微信登录中')
+				uni.login({
+					provider: 'weixin',
+					success: (result) => {
 						let {
-							nickName,
-							avatarUrl
-						} = res.userInfo
-						this.$utils.showLoading('微信登录中')
-						uni.login({
-							provider: 'weixin',
-							success: (result) => {
-								let {
-									code
-								} = result
-								if (code) {
-									this.$api.loginByWeixin({
-										code,
-										nickname: nickName,
-										avatar: avatarUrl
-									}).then(res => {
-										uni.hideLoading()
-										if (res.code === 0) {
-											uni.setStorageSync('uni_id_token', res.token)
-											uni.$emit('subjectChange') // 更新tab学科信息
-											this.$utils.toast('登录成功', () => {
-												uni.navigateBack({
-													delta: 1
-												})
-											})
-										}
-									}).catch(() => {
-										uni.hideLoading()
+							code
+						} = result
+						if (code) {
+							let data = {
+								code
+							}
+							if(nickName || avatarUrl) {
+								data.nickname = nickName
+								data.avatar = avatarUrl
+							}
+							this.$api.loginByWeixin(data).then(res => {
+								uni.hideLoading()
+								if (res.code === 0) {
+									if(nickName || avatarUrl) {
+										uni.setStorageSync('authorize', 1)
+									}
+									uni.setStorageSync('uni_id_token', res.token)
+									uni.$emit('subjectChange') // 更新tab学科信息
+									this.$utils.toast('登录成功', () => {
+										uni.navigateBack({
+											delta: 1
+										})
 									})
 								}
-							},
-							fail: () => {
+							}).catch(() => {
 								uni.hideLoading()
-							}
-						})
+							})
+						}
 					},
-					fail: err => {
-						uni.showToast({
-							title: '请点击授权进行登录',
-							icon: 'none'
-						});
+					fail: () => {
+						uni.hideLoading()
 					}
 				})
 			}
